@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="finanzacloudModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="finanzacloudEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="fc_asociados" EntityType="finanzacloudModel.fc_asociados" />
+    <EntitySet Name="fc_clientesentidad" EntityType="finanzacloudModel.fc_clientesentidad" />
+    <EntitySet Name="fc_entidad" EntityType="finanzacloudModel.fc_entidad" />
+    <EntitySet Name="fc_menu" EntityType="finanzacloudModel.fc_menu" />
+    <EntitySet Name="fc_terceros" EntityType="finanzacloudModel.fc_terceros" />
+    <EntitySet Name="fc_transacciones" EntityType="finanzacloudModel.fc_transacciones" />
+    <AssociationSet Name="CupoId" Association="finanzacloudModel.CupoId">
+      <End Role="fc_clientesentidad" EntitySet="fc_clientesentidad" />
+      <End Role="fc_asociados" EntitySet="fc_asociados" />
+    </AssociationSet>
+    <AssociationSet Name="SocioFk" Association="finanzacloudModel.SocioFk">
+      <End Role="fc_terceros" EntitySet="fc_terceros" />
+      <End Role="fc_asociados" EntitySet="fc_asociados" />
+    </AssociationSet>
+    <AssociationSet Name="Clientes" Association="finanzacloudModel.Clientes">
+      <End Role="fc_terceros" EntitySet="fc_terceros" />
+      <End Role="fc_clientesentidad" EntitySet="fc_clientesentidad" />
+    </AssociationSet>
+    <AssociationSet Name="CupoFk" Association="finanzacloudModel.CupoFk">
+      <End Role="fc_clientesentidad" EntitySet="fc_clientesentidad" />
+      <End Role="fc_transacciones" EntitySet="fc_transacciones" />
+    </AssociationSet>
+    <AssociationSet Name="Entidad" Association="finanzacloudModel.Entidad">
+      <End Role="fc_entidad" EntitySet="fc_entidad" />
+      <End Role="fc_clientesentidad" EntitySet="fc_clientesentidad" />
+    </AssociationSet>
+    <AssociationSet Name="TerceroFk" Association="finanzacloudModel.TerceroFk">
+      <End Role="fc_terceros" EntitySet="fc_terceros" />
+      <End Role="fc_entidad" EntitySet="fc_entidad" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="fc_asociados">
+    <Key>
+      <PropertyRef Name="AsociadoId" />
+    </Key>
+    <Property Name="AsociadoId" Type="Int32" Nullable="false" />
+    <Property Name="SocioId" Type="Int32" />
+    <Property Name="CupoId" Type="Int32" />
+    <Property Name="FechaAsoc" Type="DateTime" Precision="0" />
+    <Property Name="Estado" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="fc_clientesentidad" Relationship="finanzacloudModel.CupoId" FromRole="fc_asociados" ToRole="fc_clientesentidad" />
+    <NavigationProperty Name="fc_terceros" Relationship="finanzacloudModel.SocioFk" FromRole="fc_asociados" ToRole="fc_terceros" />
+  </EntityType>
+  <EntityType Name="fc_clientesentidad">
+    <Key>
+      <PropertyRef Name="CupoId" />
+    </Key>
+    <Property Name="EntidadId" Type="Int32" Nullable="false" />
+    <Property Name="ClientesId" Type="Int32" Nullable="false" />
+    <Property Name="FechaReg" Type="DateTime" Precision="0" />
+    <Property Name="ValorCupo" Type="Decimal" Precision="17" Scale="0" />
+    <Property Name="TotalPrestado" Type="Decimal" Precision="17" Scale="0" />
+    <Property Name="TotalPagado" Type="Decimal" Precision="17" Scale="0" />
+    <Property Name="Saldo" Type="Decimal" Precision="17" Scale="0" />
+    <Property Name="Estado" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="CupoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="fc_asociados" Relationship="finanzacloudModel.CupoId" FromRole="fc_clientesentidad" ToRole="fc_asociados" />
+    <NavigationProperty Name="fc_terceros" Relationship="finanzacloudModel.Clientes" FromRole="fc_clientesentidad" ToRole="fc_terceros" />
+    <NavigationProperty Name="fc_transacciones" Relationship="finanzacloudModel.CupoFk" FromRole="fc_clientesentidad" ToRole="fc_transacciones" />
+    <NavigationProperty Name="fc_entidad" Relationship="finanzacloudModel.Entidad" FromRole="fc_clientesentidad" ToRole="fc_entidad" />
+  </EntityType>
+  <EntityType Name="fc_entidad">
+    <Key>
+      <PropertyRef Name="TercerosId" />
+    </Key>
+    <Property Name="TercerosId" Type="Int32" Nullable="false" />
+    <Property Name="FechaMat" Type="DateTime" Precision="0" />
+    <Property Name="ValorMat" Type="Decimal" Precision="17" Scale="0" />
+    <Property Name="ValorMes" Type="Decimal" Precision="17" Scale="0" />
+    <Property Name="Estado" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="Logo" Type="Binary" MaxLength="65535" FixedLength="false" />
+    <NavigationProperty Name="fc_clientesentidad" Relationship="finanzacloudModel.Entidad" FromRole="fc_entidad" ToRole="fc_clientesentidad" />
+    <NavigationProperty Name="fc_terceros" Relationship="finanzacloudModel.TerceroFk" FromRole="fc_entidad" ToRole="fc_terceros" />
+  </EntityType>
+  <EntityType Name="fc_menu">
+    <Key>
+      <PropertyRef Name="fc_menuid" />
+    </Key>
+    <Property Name="fc_menuid" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="fc_titulo" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="fc_descripcion" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="fc_padreid" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="fc_posicion" Type="Int32" />
+    <Property Name="fc_icono" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="fc_habilitado" Type="Int32" />
+    <Property Name="fc_url" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="fc_modulo" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="fc_target" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="fc_ppal" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="fc_roles" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="fc_terceros">
+    <Key>
+      <PropertyRef Name="terceroId" />
+    </Key>
+    <Property Name="terceroId" Type="Int32" Nullable="false" />
+    <Property Name="tipodoc" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="tipoper" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="nombre" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="direccion" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="telefono" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="correo" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="fc_asociados" Relationship="finanzacloudModel.SocioFk" FromRole="fc_terceros" ToRole="fc_asociados" />
+    <NavigationProperty Name="fc_clientesentidad" Relationship="finanzacloudModel.Clientes" FromRole="fc_terceros" ToRole="fc_clientesentidad" />
+    <NavigationProperty Name="fc_entidad" Relationship="finanzacloudModel.TerceroFk" FromRole="fc_terceros" ToRole="fc_entidad" />
+  </EntityType>
+  <EntityType Name="fc_transacciones">
+    <Key>
+      <PropertyRef Name="TransaccionesId" />
+    </Key>
+    <Property Name="TransaccionesId" Type="Int32" Nullable="false" />
+    <Property Name="CupoId" Type="Int32" />
+    <Property Name="Tipo" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="FechaTrans" Type="DateTime" Precision="0" />
+    <Property Name="Debito" Type="Decimal" Precision="17" Scale="0" />
+    <Property Name="Credito" Type="Decimal" Precision="17" Scale="0" />
+    <NavigationProperty Name="fc_clientesentidad" Relationship="finanzacloudModel.CupoFk" FromRole="fc_transacciones" ToRole="fc_clientesentidad" />
+  </EntityType>
+  <Association Name="CupoId">
+    <End Role="fc_clientesentidad" Type="finanzacloudModel.fc_clientesentidad" Multiplicity="0..1" />
+    <End Role="fc_asociados" Type="finanzacloudModel.fc_asociados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="fc_clientesentidad">
+        <PropertyRef Name="CupoId" />
+      </Principal>
+      <Dependent Role="fc_asociados">
+        <PropertyRef Name="CupoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SocioFk">
+    <End Role="fc_terceros" Type="finanzacloudModel.fc_terceros" Multiplicity="1" />
+    <End Role="fc_asociados" Type="finanzacloudModel.fc_asociados" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="fc_terceros">
+        <PropertyRef Name="terceroId" />
+      </Principal>
+      <Dependent Role="fc_asociados">
+        <PropertyRef Name="AsociadoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Clientes">
+    <End Role="fc_terceros" Type="finanzacloudModel.fc_terceros" Multiplicity="1" />
+    <End Role="fc_clientesentidad" Type="finanzacloudModel.fc_clientesentidad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="fc_terceros">
+        <PropertyRef Name="terceroId" />
+      </Principal>
+      <Dependent Role="fc_clientesentidad">
+        <PropertyRef Name="ClientesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CupoFk">
+    <End Role="fc_clientesentidad" Type="finanzacloudModel.fc_clientesentidad" Multiplicity="0..1" />
+    <End Role="fc_transacciones" Type="finanzacloudModel.fc_transacciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="fc_clientesentidad">
+        <PropertyRef Name="CupoId" />
+      </Principal>
+      <Dependent Role="fc_transacciones">
+        <PropertyRef Name="CupoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Entidad">
+    <End Role="fc_entidad" Type="finanzacloudModel.fc_entidad" Multiplicity="1" />
+    <End Role="fc_clientesentidad" Type="finanzacloudModel.fc_clientesentidad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="fc_entidad">
+        <PropertyRef Name="TercerosId" />
+      </Principal>
+      <Dependent Role="fc_clientesentidad">
+        <PropertyRef Name="EntidadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TerceroFk">
+    <End Role="fc_terceros" Type="finanzacloudModel.fc_terceros" Multiplicity="1" />
+    <End Role="fc_entidad" Type="finanzacloudModel.fc_entidad" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="fc_terceros">
+        <PropertyRef Name="terceroId" />
+      </Principal>
+      <Dependent Role="fc_entidad">
+        <PropertyRef Name="TercerosId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

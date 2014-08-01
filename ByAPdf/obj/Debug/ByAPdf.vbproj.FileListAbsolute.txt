@@ -1,0 +1,10 @@
+D:\Dev\GDocumental\ByAPdf\bin\Debug\ByAPdf.dll
+D:\Dev\GDocumental\ByAPdf\bin\Debug\ByAPdf.pdb
+D:\Dev\GDocumental\ByAPdf\bin\Debug\ByAPdf.xml
+D:\Dev\GDocumental\ByAPdf\bin\Debug\itextsharp.dll
+D:\Dev\GDocumental\ByAPdf\bin\Debug\itextsharp.xml
+D:\Dev\GDocumental\ByAPdf\obj\Debug\ByAPdf.Resources.resources
+D:\Dev\GDocumental\ByAPdf\obj\Debug\ByAPdf.vbproj.GenerateResource.Cache
+D:\Dev\GDocumental\ByAPdf\obj\Debug\ByAPdf.dll
+D:\Dev\GDocumental\ByAPdf\obj\Debug\ByAPdf.xml
+D:\Dev\GDocumental\ByAPdf\obj\Debug\ByAPdf.pdb

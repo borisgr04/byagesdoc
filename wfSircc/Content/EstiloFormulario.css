@@ -1,0 +1,241 @@
+﻿body{
+font-family:”Lucida Grande”, “Lucida Sans Unicode”, Verdana, Arial, Helvetica, sans-serif;
+font-size:11px;
+}
+
+.spacer{clear:both; height:1px;}
+
+ h2 {  
+    font-size: 1.6em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    margin:5px auto;
+    margin-left:10px;
+    display: block;
+    width:auto;
+    height:auto;
+    padding:5px;
+    background:#fcfcfc;
+	-webkit-box-shadow:0px 1px 3px rgba(0,0,0,.25);
+	-moz-box-shadow:0px 1px 3px rgba(0,0,0,.25);
+	box-shadow:0px 1px 3px rgba(0,0,0,.25);
+	-webkit-border-radius:0px 0px 4px 4px;
+	-moz-border-radius:0px 0px 4px 4px;
+	border-radius:0px 0px 4px 4px;
+	text-align:center;
+	color:#266d9b;
+	font-family:Tahoma, Arial;
+	font-size:16px;
+	}
+
+
+.editedRow
+        {
+            color: #b90f0f;
+            font-style: italic;
+        }
+        
+.FondoAplicacion
+{
+ background-color: Gray;
+ filter: alpha(opacity=70);
+ opacity: 0.7;
+}
+
+/* 
+LOGIN FORM CAPUTA
+*/
+.formLogin {
+color:#333333;
+min-height:150px;
+margin:0;
+padding:20px ;
+font-size:11px;
+}
+
+.formLogin .filaform
+{
+    width:90%;
+    padding:1px;
+    margin:2px;
+    vertical-align:middle;
+}
+
+/**/
+
+
+.formLogin .filaform:hover
+{
+    background:#E1EEf4;
+    color:#00557F;
+}  
+
+.formLogin label{
+    display:inline;
+    font-size:12px;
+    text-align:left;
+    width:100px;
+    float:left;
+    vertical-align:middle;
+    padding-right:5px;
+    padding-top:5px;
+    height:100%;
+}
+/* 
+LOGIN FORM CAPUTA
+*/
+
+
+
+/* 
+INICIO FORM CAPUTA
+*/
+.formC {
+color:#333333;
+min-height:400px;
+padding:20px ;
+font-size:11px;
+}
+
+.formC .filaform
+{
+    width:95%;
+    padding:1px;
+    margin:2px;
+    vertical-align:middle;
+}
+/*
+.formC .filaform:hover
+{
+    background:#E1EEf4;
+    color:#00557F;
+}  
+*/
+
+.formC label{
+    display:inline-block;
+    font-size:12px;
+    text-align:left;
+    width:230px;
+    float:left;
+    vertical-align:middle;
+    padding-right:5px;
+    padding-top:5px;
+    height:100%;
+}
+/* 
+FIN FORM CAPUTA
+*/
+
+
+
+.form {
+color:#333333;
+min-height:400px;
+padding:5px 0 0 20px ;
+font-size:11px;
+}
+
+.form h1 {
+font-size:14px;
+font-weight:bold;
+margin-bottom:8px;
+}
+
+.form .filaform
+{
+    width:90%;
+    padding:1px;
+    margin:2px;
+    vertical-align:middle;
+    
+}   
+
+.form .filaformBtn
+{
+    width:90%;
+    padding:1px;
+    margin:2px;
+    vertical-align:middle;
+    text-align:center;
+    
+    
+}    
+    /*background-color:Aqua*/
+.form .filaform:hover
+{
+    background:#E1EEf4;
+    color:#00557F;
+}    
+
+
+.form label{
+display:inline-block;
+font-size:12px;
+text-align:left;
+width:140px;
+ float:left;
+ vertical-align:middle;
+ padding-right:5px;
+ padding-top:5px;
+ height:100%;
+}
+
+.textareapq
+{
+ min-height: 100px;
+}
+
+.form select{
+float:left;
+font-size:11px;
+padding:4px 2px;
+border:solid 1px #aacfe4;
+width:140px;
+margin:2px 0 20px 10px;
+display:inline;
+}
+
+
+.form textGrande{
+  width:95%;
+}
+    
+
+/*background-color: #FFFF99;*/
+.form #botones
+{
+    width:100%;
+    display:block;
+   text-align:center;   
+    }
+
+/* mensajes */
+
+div.information {	
+	display:block;
+	padding: 10px 10px 10px 35px;
+	background-color: #e0ebf6;
+	border: 1px solid #72a6d6;
+	border-top-width: 3px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	background-image: url(../jqwidgets/images/24-message-info.gif);
+	background-position: 5px 5px;
+	background-repeat: no-repeat;
+	margin-bottom: 10px;
+}
+
+div.error {	
+	display:block;
+	padding: 10px 10px 10px 35px;
+	background-color: #FFDFDF;
+	border: 1px solid #FF0000;
+	border-top-width: 3px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	background-image: url(../jqwidgets/images/24-message-warn.gif);
+	background-position: 5px 5px;
+	background-repeat: no-repeat;
+	margin-bottom: 10px;
+}

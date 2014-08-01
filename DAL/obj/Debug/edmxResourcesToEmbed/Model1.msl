@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="trdModelStoreContainer" CdmEntityContainer="trdEntities">
+    <EntitySetMapping Name="dependencias">
+      <EntityTypeMapping TypeName="trdModel.dependencias">
+        <MappingFragment StoreEntitySet="dependencias">
+          <ScalarProperty Name="idDependencia" ColumnName="idDependencia" />
+          <ScalarProperty Name="Dependencia" ColumnName="Dependencia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fc_menu">
+      <EntityTypeMapping TypeName="trdModel.fc_menu">
+        <MappingFragment StoreEntitySet="fc_menu">
+          <ScalarProperty Name="fc_menuid" ColumnName="fc_menuid" />
+          <ScalarProperty Name="fc_titulo" ColumnName="fc_titulo" />
+          <ScalarProperty Name="fc_descripcion" ColumnName="fc_descripcion" />
+          <ScalarProperty Name="fc_padreid" ColumnName="fc_padreid" />
+          <ScalarProperty Name="fc_posicion" ColumnName="fc_posicion" />
+          <ScalarProperty Name="fc_icono" ColumnName="fc_icono" />
+          <ScalarProperty Name="fc_habilitado" ColumnName="fc_habilitado" />
+          <ScalarProperty Name="fc_url" ColumnName="fc_url" />
+          <ScalarProperty Name="fc_modulo" ColumnName="fc_modulo" />
+          <ScalarProperty Name="fc_target" ColumnName="fc_target" />
+          <ScalarProperty Name="fc_ppal" ColumnName="fc_ppal" />
+          <ScalarProperty Name="fc_roles" ColumnName="fc_roles" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="series">
+      <EntityTypeMapping TypeName="trdModel.series">
+        <MappingFragment StoreEntitySet="series">
+          <ScalarProperty Name="idSerie" ColumnName="idSerie" />
+          <ScalarProperty Name="Serie" ColumnName="Serie" />
+          <ScalarProperty Name="Procedimiento" ColumnName="Procedimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subseries">
+      <EntityTypeMapping TypeName="trdModel.subseries">
+        <MappingFragment StoreEntitySet="subseries">
+          <ScalarProperty Name="idSubSeries" ColumnName="idSubSeries" />
+          <ScalarProperty Name="SubSerie" ColumnName="SubSerie" />
+          <ScalarProperty Name="RetencionAG" ColumnName="RetencionAG" />
+          <ScalarProperty Name="DisposicionA" ColumnName="DisposicionA" />
+          <ScalarProperty Name="DisposicionCT" ColumnName="DisposicionCT" />
+          <ScalarProperty Name="DisposicionE" ColumnName="DisposicionE" />
+          <ScalarProperty Name="DisposicionMD" ColumnName="DisposicionMD" />
+          <ScalarProperty Name="DisposicionS" ColumnName="DisposicionS" />
+          <ScalarProperty Name="Series_idSerie" ColumnName="Series_idSerie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tiposdocumentales">
+      <EntityTypeMapping TypeName="trdModel.tiposdocumentales">
+        <MappingFragment StoreEntitySet="tiposdocumentales">
+          <ScalarProperty Name="idTipDocumentales" ColumnName="idTipDocumentales" />
+          <ScalarProperty Name="Nombe" ColumnName="Nombe" />
+          <ScalarProperty Name="TD_Original" ColumnName="TD_Original" />
+          <ScalarProperty Name="TD_Copia" ColumnName="TD_Copia" />
+          <ScalarProperty Name="SerieId" ColumnName="SerieId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fc_terceros">
+      <EntityTypeMapping TypeName="trdModel.fc_terceros">
+        <MappingFragment StoreEntitySet="fc_terceros">
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="tipoper" ColumnName="tipoper" />
+          <ScalarProperty Name="tipodoc" ColumnName="tipodoc" />
+          <ScalarProperty Name="terceroId" ColumnName="terceroId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="unidaddocumental">
+      <EntityTypeMapping TypeName="trdModel.unidaddocumental">
+        <MappingFragment StoreEntitySet="unidaddocumental">
+          <ScalarProperty Name="Dependencias_idDependencia" ColumnName="Dependencias_idDependencia" />
+          <ScalarProperty Name="FechaExtFinal" ColumnName="FechaExtFinal" />
+          <ScalarProperty Name="FechaExtInicial" ColumnName="FechaExtInicial" />
+          <ScalarProperty Name="GabetaNo" ColumnName="GabetaNo" />
+          <ScalarProperty Name="ArchivadorNo" ColumnName="ArchivadorNo" />
+          <ScalarProperty Name="EntidadProductora" ColumnName="EntidadProductora" />
+          <ScalarProperty Name="idSubSeries" ColumnName="idSubSeries" />
+          <ScalarProperty Name="NroFolios" ColumnName="NroFolios" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="PalabrasClave" ColumnName="PalabrasClave" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="idUnidadDocumental" ColumnName="idUnidadDocumental" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="configuracion">
+      <EntityTypeMapping TypeName="trdModel.configuracion">
+        <MappingFragment StoreEntitySet="configuracion">
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Clave" ColumnName="Clave" />
+          <ScalarProperty Name="PropiedadId" ColumnName="PropiedadId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

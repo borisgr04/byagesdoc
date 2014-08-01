@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="trdModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="trdModelStoreContainer">
+    <EntitySet Name="configuracion" EntityType="trdModel.Store.configuracion" store:Type="Tables" Schema="trd" />
+    <EntitySet Name="dependencias" EntityType="trdModel.Store.dependencias" store:Type="Tables" Schema="trd" />
+    <EntitySet Name="fc_menu" EntityType="trdModel.Store.fc_menu" store:Type="Tables" Schema="trd" />
+    <EntitySet Name="fc_terceros" EntityType="trdModel.Store.fc_terceros" store:Type="Tables" Schema="trd" />
+    <EntitySet Name="series" EntityType="trdModel.Store.series" store:Type="Tables" Schema="trd" />
+    <EntitySet Name="subseries" EntityType="trdModel.Store.subseries" store:Type="Tables" Schema="trd" />
+    <EntitySet Name="tiposdocumentales" EntityType="trdModel.Store.tiposdocumentales" store:Type="Tables" Schema="trd" />
+    <EntitySet Name="unidaddocumental" EntityType="trdModel.Store.unidaddocumental" store:Type="Tables" Schema="trd" />
+    <AssociationSet Name="SerieFK" Association="trdModel.Store.SerieFK">
+      <End Role="series" EntitySet="series" />
+      <End Role="subseries" EntitySet="subseries" />
+    </AssociationSet>
+    <AssociationSet Name="SubSeriesIdTD" Association="trdModel.Store.SubSeriesIdTD">
+      <End Role="subseries" EntitySet="subseries" />
+      <End Role="tiposdocumentales" EntitySet="tiposdocumentales" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="configuracion">
+    <Key>
+      <PropertyRef Name="PropiedadId" />
+    </Key>
+    <Property Name="PropiedadId" Type="int" Nullable="false" />
+    <Property Name="Clave" Type="varchar" MaxLength="45" />
+    <Property Name="Valor" Type="varchar" MaxLength="45" />
+    <Property Name="Tipo" Type="varchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="dependencias">
+    <Key>
+      <PropertyRef Name="idDependencia" />
+    </Key>
+    <Property Name="idDependencia" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="Dependencia" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="fc_menu">
+    <Key>
+      <PropertyRef Name="fc_menuid" />
+    </Key>
+    <Property Name="fc_menuid" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="fc_titulo" Type="varchar" MaxLength="45" />
+    <Property Name="fc_descripcion" Type="varchar" MaxLength="45" />
+    <Property Name="fc_padreid" Type="varchar" MaxLength="10" />
+    <Property Name="fc_posicion" Type="int" />
+    <Property Name="fc_icono" Type="varchar" MaxLength="45" />
+    <Property Name="fc_habilitado" Type="int" />
+    <Property Name="fc_url" Type="varchar" MaxLength="100" />
+    <Property Name="fc_modulo" Type="varchar" MaxLength="10" />
+    <Property Name="fc_target" Type="varchar" MaxLength="20" />
+    <Property Name="fc_ppal" Type="varchar" MaxLength="1" />
+    <Property Name="fc_roles" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="fc_terceros">
+    <Key>
+      <PropertyRef Name="terceroId" />
+    </Key>
+    <Property Name="terceroId" Type="int" Nullable="false" />
+    <Property Name="tipodoc" Type="varchar" MaxLength="2" />
+    <Property Name="tipoper" Type="varchar" MaxLength="10" />
+    <Property Name="nombre" Type="varchar" MaxLength="45" />
+    <Property Name="direccion" Type="varchar" MaxLength="45" />
+    <Property Name="telefono" Type="varchar" MaxLength="45" />
+    <Property Name="correo" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="series">
+    <Key>
+      <PropertyRef Name="idSerie" />
+    </Key>
+    <Property Name="idSerie" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="Serie" Type="varchar" MaxLength="45" />
+    <Property Name="Procedimiento" Type="text" />
+  </EntityType>
+  <EntityType Name="subseries">
+    <Key>
+      <PropertyRef Name="idSubSeries" />
+    </Key>
+    <Property Name="idSubSeries" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="SubSerie" Type="varchar" MaxLength="45" />
+    <Property Name="RetencionAG" Type="int" />
+    <Property Name="DisposicionA" Type="int" />
+    <Property Name="DisposicionCT" Type="bool" />
+    <Property Name="DisposicionE" Type="bool" />
+    <Property Name="DisposicionMD" Type="bool" />
+    <Property Name="DisposicionS" Type="bool" />
+    <Property Name="Series_idSerie" Type="varchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tiposdocumentales">
+    <Key>
+      <PropertyRef Name="idTipDocumentales" />
+    </Key>
+    <Property Name="idTipDocumentales" Type="varchar" Nullable="false" MaxLength="11" />
+    <Property Name="Nombe" Type="varchar" MaxLength="45" />
+    <Property Name="TD_Original" Type="varchar" MaxLength="1" />
+    <Property Name="TD_Copia" Type="varchar" MaxLength="1" />
+    <Property Name="SerieId" Type="varchar" MaxLength="11" />
+  </EntityType>
+  <EntityType Name="unidaddocumental">
+    <Key>
+      <PropertyRef Name="idUnidadDocumental" />
+    </Key>
+    <Property Name="idUnidadDocumental" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Nombre" Type="varchar" MaxLength="45" />
+    <Property Name="PalabrasClave" Type="text" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="NroFolios" Type="int" />
+    <Property Name="idSubSeries" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="EntidadProductora" Type="int" />
+    <Property Name="ArchivadorNo" Type="int" />
+    <Property Name="GabetaNo" Type="int" />
+    <Property Name="FechaExtInicial" Type="date" />
+    <Property Name="FechaExtFinal" Type="date" />
+    <Property Name="Dependencias_idDependencia" Type="varchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <Association Name="SerieFK">
+    <End Role="series" Type="trdModel.Store.series" Multiplicity="1" />
+    <End Role="subseries" Type="trdModel.Store.subseries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="series">
+        <PropertyRef Name="idSerie" />
+      </Principal>
+      <Dependent Role="subseries">
+        <PropertyRef Name="Series_idSerie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SubSeriesIdTD">
+    <End Role="subseries" Type="trdModel.Store.subseries" Multiplicity="0..1" />
+    <End Role="tiposdocumentales" Type="trdModel.Store.tiposdocumentales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subseries">
+        <PropertyRef Name="idSubSeries" />
+      </Principal>
+      <Dependent Role="tiposdocumentales">
+        <PropertyRef Name="SerieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

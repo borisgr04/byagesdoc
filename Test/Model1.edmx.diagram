@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a5117907d6524c55960d17358d76d09d" Name="Diagrama1">
+        <EntityTypeShape EntityType="finanzacloudModel.fc_asociados" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="finanzacloudModel.fc_clientesentidad" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="finanzacloudModel.fc_entidad" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="finanzacloudModel.fc_menu" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="finanzacloudModel.fc_terceros" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="finanzacloudModel.fc_transacciones" Width="1.5" PointX="7.5" PointY="8.75" IsExpanded="true" />
+        <AssociationConnector Association="finanzacloudModel.CupoId" ManuallyRouted="false" />
+        <AssociationConnector Association="finanzacloudModel.SocioFk" ManuallyRouted="false" />
+        <AssociationConnector Association="finanzacloudModel.Clientes" ManuallyRouted="false" />
+        <AssociationConnector Association="finanzacloudModel.CupoFk" ManuallyRouted="false" />
+        <AssociationConnector Association="finanzacloudModel.Entidad" ManuallyRouted="false" />
+        <AssociationConnector Association="finanzacloudModel.TerceroFk" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="trdModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="trdEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="dependencias" EntityType="trdModel.dependencias" />
+    <EntitySet Name="fc_menu" EntityType="trdModel.fc_menu" />
+    <EntitySet Name="series" EntityType="trdModel.series" />
+    <EntitySet Name="subseries" EntityType="trdModel.subseries" />
+    <EntitySet Name="tiposdocumentales" EntityType="trdModel.tiposdocumentales" />
+    <AssociationSet Name="SerieFK" Association="trdModel.SerieFK">
+      <End Role="series" EntitySet="series" />
+      <End Role="subseries" EntitySet="subseries" />
+    </AssociationSet>
+    <AssociationSet Name="SubSeriesIdTD" Association="trdModel.SubSeriesIdTD">
+      <End Role="subseries" EntitySet="subseries" />
+      <End Role="tiposdocumentales" EntitySet="tiposdocumentales" />
+    </AssociationSet>
+    <EntitySet Name="fc_terceros" EntityType="trdModel.fc_terceros" />
+    <EntitySet Name="unidaddocumental" EntityType="trdModel.unidaddocumental" />
+    <EntitySet Name="configuracion" EntityType="trdModel.configuracion" />
+  </EntityContainer>
+  <EntityType Name="dependencias">
+    <Key>
+      <PropertyRef Name="idDependencia" />
+    </Key>
+    <Property Name="idDependencia" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Dependencia" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="fc_menu">
+    <Key>
+      <PropertyRef Name="fc_menuid" />
+    </Key>
+    <Property Name="fc_menuid" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="fc_titulo" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="fc_descripcion" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="fc_padreid" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="fc_posicion" Type="Int32" />
+    <Property Name="fc_icono" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="fc_habilitado" Type="Int32" />
+    <Property Name="fc_url" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="fc_modulo" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="fc_target" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="fc_ppal" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="fc_roles" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="series">
+    <Key>
+      <PropertyRef Name="idSerie" />
+    </Key>
+    <Property Name="idSerie" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Serie" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="Procedimiento" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="subseries" Relationship="trdModel.SerieFK" FromRole="series" ToRole="subseries" />
+  </EntityType>
+  <EntityType Name="subseries">
+    <Key>
+      <PropertyRef Name="idSubSeries" />
+    </Key>
+    <Property Name="idSubSeries" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="SubSerie" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="RetencionAG" Type="Int32" />
+    <Property Name="DisposicionA" Type="Int32" />
+    <Property Name="DisposicionCT" Type="Boolean" />
+    <Property Name="DisposicionE" Type="Boolean" />
+    <Property Name="DisposicionMD" Type="Boolean" />
+    <Property Name="DisposicionS" Type="Boolean" />
+    <Property Name="Series_idSerie" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="series" Relationship="trdModel.SerieFK" FromRole="subseries" ToRole="series" />
+    <NavigationProperty Name="tiposdocumentales" Relationship="trdModel.SubSeriesIdTD" FromRole="subseries" ToRole="tiposdocumentales" />
+  </EntityType>
+  <EntityType Name="tiposdocumentales">
+    <Key>
+      <PropertyRef Name="idTipDocumentales" />
+    </Key>
+    <Property Name="idTipDocumentales" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
+    <Property Name="Nombe" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="TD_Original" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="TD_Copia" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="SerieId" Type="String" MaxLength="11" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="subseries" Relationship="trdModel.SubSeriesIdTD" FromRole="tiposdocumentales" ToRole="subseries" />
+  </EntityType>
+  <Association Name="SerieFK">
+    <End Role="series" Type="trdModel.series" Multiplicity="1" />
+    <End Role="subseries" Type="trdModel.subseries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="series">
+        <PropertyRef Name="idSerie" />
+      </Principal>
+      <Dependent Role="subseries">
+        <PropertyRef Name="Series_idSerie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SubSeriesIdTD">
+    <End Role="subseries" Type="trdModel.subseries" Multiplicity="0..1" />
+    <End Role="tiposdocumentales" Type="trdModel.tiposdocumentales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subseries">
+        <PropertyRef Name="idSubSeries" />
+      </Principal>
+      <Dependent Role="tiposdocumentales">
+        <PropertyRef Name="SerieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="fc_terceros">
+    <Key>
+      <PropertyRef Name="terceroId" />
+    </Key>
+    <Property Type="Int32" Name="terceroId" Nullable="false" />
+    <Property Type="String" Name="tipodoc" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="tipoper" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nombre" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="direccion" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="telefono" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="correo" MaxLength="45" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="unidaddocumental">
+    <Key>
+      <PropertyRef Name="idUnidadDocumental" />
+    </Key>
+    <Property Type="String" Name="idUnidadDocumental" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Nombre" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PalabrasClave" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaCreacion" />
+    <Property Type="Int32" Name="NroFolios" />
+    <Property Type="String" Name="idSubSeries" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="EntidadProductora" />
+    <Property Type="Int32" Name="ArchivadorNo" />
+    <Property Type="Int32" Name="GabetaNo" />
+    <Property Type="DateTime" Name="FechaExtInicial" />
+    <Property Type="DateTime" Name="FechaExtFinal" />
+    <Property Type="String" Name="Dependencias_idDependencia" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="configuracion">
+    <Key>
+      <PropertyRef Name="PropiedadId" />
+    </Key>
+    <Property Type="Int32" Name="PropiedadId" Nullable="false" />
+    <Property Type="String" Name="Clave" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Valor" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Tipo" MaxLength="2" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

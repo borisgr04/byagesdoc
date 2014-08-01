@@ -1,0 +1,19 @@
+﻿  .ACT_VENCIDAS
+        {
+            color: #fff !important;
+            background-color: #000 !important;
+            font-style: italic;
+        }
+        .ACT_HOY
+        {
+            color: #fff  !important;
+            background-color: #b90f0f !important;
+            font-style: italic;
+        }
+
+        .ACT_POR_VENCER
+        {
+            color: #fff !important;
+            background-color: #ffd800 !important;
+            font-style: italic;
+        }

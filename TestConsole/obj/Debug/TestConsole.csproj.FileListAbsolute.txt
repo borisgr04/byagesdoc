@@ -1,0 +1,5 @@
+D:\Programas\Proyecto\CrediControl\CrediControl\TestConsole\bin\Debug\TestConsole.exe.config
+D:\Programas\Proyecto\CrediControl\CrediControl\TestConsole\bin\Debug\TestConsole.exe
+D:\Programas\Proyecto\CrediControl\CrediControl\TestConsole\bin\Debug\TestConsole.pdb
+D:\Programas\Proyecto\CrediControl\CrediControl\TestConsole\obj\Debug\TestConsole.exe
+D:\Programas\Proyecto\CrediControl\CrediControl\TestConsole\obj\Debug\TestConsole.pdb

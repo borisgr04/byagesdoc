@@ -1,0 +1,86 @@
+E:\ByA\Sircc4\Sircc4\DAL\bin\Debug\DAL.dll.config
+E:\ByA\Sircc4\Sircc4\DAL\bin\Debug\DAL.dll
+E:\ByA\Sircc4\Sircc4\DAL\bin\Debug\DAL.pdb
+E:\ByA\Sircc4\Sircc4\DAL\bin\Debug\Entidades.dll
+E:\ByA\Sircc4\Sircc4\DAL\bin\Debug\Entidades.pdb
+E:\ByA\Sircc4\Sircc4\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\ByA\Sircc4\Sircc4\DAL\obj\Debug\DAL.dll
+E:\ByA\Sircc4\Sircc4\DAL\obj\Debug\DAL.pdb
+D:\Programas\svnSircc\svnSircc4_10102013_5\DAL\bin\Debug\DAL.dll.config
+D:\Programas\svnSircc\svnSircc4_10102013_5\DAL\bin\Debug\DAL.dll
+D:\Programas\svnSircc\svnSircc4_10102013_5\DAL\bin\Debug\DAL.pdb
+D:\Programas\svnSircc\svnSircc4_10102013_5\DAL\bin\Debug\Entidades.dll
+D:\Programas\svnSircc\svnSircc4_10102013_5\DAL\bin\Debug\Entidades.pdb
+D:\Programas\svnSircc\svnSircc4_10102013_5\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\Programas\svnSircc\svnSircc4_10102013_5\DAL\obj\Debug\DAL.dll
+D:\Programas\svnSircc\svnSircc4_10102013_5\DAL\obj\Debug\DAL.pdb
+D:\Programas\svnSircc\svnSircc_27092013\DAL\bin\Debug\DAL.dll.config
+D:\Programas\svnSircc\svnSircc_27092013\DAL\bin\Debug\DAL.dll
+D:\Programas\svnSircc\svnSircc_27092013\DAL\bin\Debug\DAL.pdb
+D:\Programas\svnSircc\svnSircc_27092013\DAL\bin\Debug\Entidades.dll
+D:\Programas\svnSircc\svnSircc_27092013\DAL\bin\Debug\Entidades.pdb
+D:\Programas\svnSircc\svnSircc_27092013\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\Programas\svnSircc\svnSircc_27092013\DAL\obj\Debug\DAL.dll
+D:\Programas\svnSircc\svnSircc_27092013\DAL\obj\Debug\DAL.pdb
+D:\Programas\svnSircc\svnSircc4_12\DAL\bin\Debug\DAL.dll.config
+D:\Programas\svnSircc\svnSircc4_12\DAL\bin\Debug\DAL.dll
+D:\Programas\svnSircc\svnSircc4_12\DAL\bin\Debug\DAL.pdb
+D:\Programas\svnSircc\svnSircc4_12\DAL\bin\Debug\Entidades.dll
+D:\Programas\svnSircc\svnSircc4_12\DAL\bin\Debug\Entidades.pdb
+D:\Programas\svnSircc\svnSircc4_12\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\Programas\svnSircc\svnSircc4_12\DAL\obj\Debug\DAL.dll
+D:\Programas\svnSircc\svnSircc4_12\DAL\obj\Debug\DAL.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\DAL\bin\Debug\DAL.dll.config
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\DAL\bin\Debug\DAL.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\DAL\bin\Debug\DAL.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\DAL\bin\Debug\Entidades.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\DAL\bin\Debug\Entidades.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\DAL\obj\Debug\DAL.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\DAL\obj\Debug\DAL.pdb
+D:\Dev\Sircc47\DAL\bin\Debug\DAL.dll.config
+D:\Dev\Sircc47\DAL\bin\Debug\DAL.dll
+D:\Dev\Sircc47\DAL\bin\Debug\DAL.pdb
+D:\Dev\Sircc47\DAL\bin\Debug\Entidades.dll
+D:\Dev\Sircc47\DAL\bin\Debug\Entidades.pdb
+D:\Dev\Sircc47\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\Dev\Sircc47\DAL\obj\Debug\DAL.dll
+D:\Dev\Sircc47\DAL\obj\Debug\DAL.pdb
+D:\Dev\CrediControl\DAL\bin\Debug\DAL.dll.config
+D:\Dev\CrediControl\DAL\bin\Debug\DAL.dll
+D:\Dev\CrediControl\DAL\bin\Debug\DAL.pdb
+D:\Dev\CrediControl\DAL\bin\Debug\Entidades.dll
+D:\Dev\CrediControl\DAL\bin\Debug\EntityFramework.dll
+D:\Dev\CrediControl\DAL\bin\Debug\Entidades.pdb
+D:\Dev\CrediControl\DAL\bin\Debug\EntityFramework.xml
+D:\Dev\CrediControl\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\Dev\CrediControl\DAL\obj\Debug\DAL.dll
+D:\Dev\CrediControl\DAL\obj\Debug\DAL.pdb
+D:\Programas\Proyecto\CrediControl\CrediControl\DAL\bin\Debug\DAL.dll.config
+D:\Programas\Proyecto\CrediControl\CrediControl\DAL\bin\Debug\DAL.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\DAL\bin\Debug\DAL.pdb
+D:\Programas\Proyecto\CrediControl\CrediControl\DAL\bin\Debug\Entidades.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\DAL\bin\Debug\EntityFramework.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\DAL\bin\Debug\Entidades.pdb
+D:\Programas\Proyecto\CrediControl\CrediControl\DAL\bin\Debug\EntityFramework.xml
+D:\Programas\Proyecto\CrediControl\CrediControl\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Programas\Proyecto\CrediControl\CrediControl\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\Programas\Proyecto\CrediControl\CrediControl\DAL\obj\Debug\DAL.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\DAL\obj\Debug\DAL.pdb
+D:\Programas\Proyecto\CrediControl\CrediControl\DAL\bin\Debug\MySql.Data.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\DAL\bin\Debug\mysql.data.entity.EF6.dll
+D:\Dev\GDocumental\DAL\bin\Debug\DAL.dll.config
+D:\Dev\GDocumental\DAL\bin\Debug\DAL.dll
+D:\Dev\GDocumental\DAL\bin\Debug\DAL.pdb
+D:\Dev\GDocumental\DAL\bin\Debug\Entidades.dll
+D:\Dev\GDocumental\DAL\bin\Debug\EntityFramework.dll
+D:\Dev\GDocumental\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Dev\GDocumental\DAL\bin\Debug\MySql.Data.dll
+D:\Dev\GDocumental\DAL\bin\Debug\mysql.data.entity.EF6.dll
+D:\Dev\GDocumental\DAL\bin\Debug\Entidades.pdb
+D:\Dev\GDocumental\DAL\bin\Debug\EntityFramework.xml
+D:\Dev\GDocumental\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Dev\GDocumental\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\Dev\GDocumental\DAL\obj\Debug\DAL.dll
+D:\Dev\GDocumental\DAL\obj\Debug\DAL.pdb

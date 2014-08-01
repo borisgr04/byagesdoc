@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="finanzacloudModelStoreContainer" CdmEntityContainer="finanzacloudEntities">
+    <EntitySetMapping Name="fc_asociados">
+      <EntityTypeMapping TypeName="finanzacloudModel.fc_asociados">
+        <MappingFragment StoreEntitySet="fc_asociados">
+          <ScalarProperty Name="AsociadoId" ColumnName="AsociadoId" />
+          <ScalarProperty Name="SocioId" ColumnName="SocioId" />
+          <ScalarProperty Name="CupoId" ColumnName="CupoId" />
+          <ScalarProperty Name="FechaAsoc" ColumnName="FechaAsoc" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fc_clientesentidad">
+      <EntityTypeMapping TypeName="finanzacloudModel.fc_clientesentidad">
+        <MappingFragment StoreEntitySet="fc_clientesentidad">
+          <ScalarProperty Name="EntidadId" ColumnName="EntidadId" />
+          <ScalarProperty Name="ClientesId" ColumnName="ClientesId" />
+          <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+          <ScalarProperty Name="ValorCupo" ColumnName="ValorCupo" />
+          <ScalarProperty Name="TotalPrestado" ColumnName="TotalPrestado" />
+          <ScalarProperty Name="TotalPagado" ColumnName="TotalPagado" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="CupoId" ColumnName="CupoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fc_entidad">
+      <EntityTypeMapping TypeName="finanzacloudModel.fc_entidad">
+        <MappingFragment StoreEntitySet="fc_entidad">
+          <ScalarProperty Name="TercerosId" ColumnName="TercerosId" />
+          <ScalarProperty Name="FechaMat" ColumnName="FechaMat" />
+          <ScalarProperty Name="ValorMat" ColumnName="ValorMat" />
+          <ScalarProperty Name="ValorMes" ColumnName="ValorMes" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fc_menu">
+      <EntityTypeMapping TypeName="finanzacloudModel.fc_menu">
+        <MappingFragment StoreEntitySet="fc_menu">
+          <ScalarProperty Name="fc_menuid" ColumnName="fc_menuid" />
+          <ScalarProperty Name="fc_titulo" ColumnName="fc_titulo" />
+          <ScalarProperty Name="fc_descripcion" ColumnName="fc_descripcion" />
+          <ScalarProperty Name="fc_padreid" ColumnName="fc_padreid" />
+          <ScalarProperty Name="fc_posicion" ColumnName="fc_posicion" />
+          <ScalarProperty Name="fc_icono" ColumnName="fc_icono" />
+          <ScalarProperty Name="fc_habilitado" ColumnName="fc_habilitado" />
+          <ScalarProperty Name="fc_url" ColumnName="fc_url" />
+          <ScalarProperty Name="fc_modulo" ColumnName="fc_modulo" />
+          <ScalarProperty Name="fc_target" ColumnName="fc_target" />
+          <ScalarProperty Name="fc_ppal" ColumnName="fc_ppal" />
+          <ScalarProperty Name="fc_roles" ColumnName="fc_roles" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fc_terceros">
+      <EntityTypeMapping TypeName="finanzacloudModel.fc_terceros">
+        <MappingFragment StoreEntitySet="fc_terceros">
+          <ScalarProperty Name="terceroId" ColumnName="terceroId" />
+          <ScalarProperty Name="tipodoc" ColumnName="tipodoc" />
+          <ScalarProperty Name="tipoper" ColumnName="tipoper" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fc_transacciones">
+      <EntityTypeMapping TypeName="finanzacloudModel.fc_transacciones">
+        <MappingFragment StoreEntitySet="fc_transacciones">
+          <ScalarProperty Name="TransaccionesId" ColumnName="TransaccionesId" />
+          <ScalarProperty Name="CupoId" ColumnName="CupoId" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="FechaTrans" ColumnName="FechaTrans" />
+          <ScalarProperty Name="Debito" ColumnName="Debito" />
+          <ScalarProperty Name="Credito" ColumnName="Credito" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

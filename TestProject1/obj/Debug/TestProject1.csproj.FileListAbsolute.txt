@@ -1,0 +1,73 @@
+D:\Programas\svnSircc\svnSircc_27092013\TestProject1\obj\Debug\TestProject1.csprojResolveAssemblyReference.cache
+D:\Programas\svnSircc\svnSircc_27092013\TestProject1\bin\Debug\TestProject1.dll
+D:\Programas\svnSircc\svnSircc_27092013\TestProject1\bin\Debug\TestProject1.pdb
+D:\Programas\svnSircc\svnSircc_27092013\TestProject1\bin\Debug\BLL.dll
+D:\Programas\svnSircc\svnSircc_27092013\TestProject1\bin\Debug\ByA.dll
+D:\Programas\svnSircc\svnSircc_27092013\TestProject1\bin\Debug\DAL.dll
+D:\Programas\svnSircc\svnSircc_27092013\TestProject1\bin\Debug\Entidades.dll
+D:\Programas\svnSircc\svnSircc_27092013\TestProject1\bin\Debug\GDocWord.dll
+D:\Programas\svnSircc\svnSircc_27092013\TestProject1\bin\Debug\Financiero.dll
+D:\Programas\svnSircc\svnSircc_27092013\TestProject1\bin\Debug\AutoMapper.dll
+D:\Programas\svnSircc\svnSircc_27092013\TestProject1\bin\Debug\BLL.pdb
+D:\Programas\svnSircc\svnSircc_27092013\TestProject1\bin\Debug\ByA.pdb
+D:\Programas\svnSircc\svnSircc_27092013\TestProject1\bin\Debug\DAL.pdb
+D:\Programas\svnSircc\svnSircc_27092013\TestProject1\bin\Debug\Entidades.pdb
+D:\Programas\svnSircc\svnSircc_27092013\TestProject1\bin\Debug\GDocWord.pdb
+D:\Programas\svnSircc\svnSircc_27092013\TestProject1\bin\Debug\GDocWord.xml
+D:\Programas\svnSircc\svnSircc_27092013\TestProject1\bin\Debug\Financiero.pdb
+D:\Programas\svnSircc\svnSircc_27092013\TestProject1\bin\Debug\AutoMapper.xml
+D:\Programas\svnSircc\svnSircc_27092013\TestProject1\obj\Debug\TestProject1.dll
+D:\Programas\svnSircc\svnSircc_27092013\TestProject1\obj\Debug\TestProject1.pdb
+D:\Programas\svnSircc\svnSircc4_12\TestProject1\bin\Debug\TestProject1.dll
+D:\Programas\svnSircc\svnSircc4_12\TestProject1\bin\Debug\TestProject1.pdb
+D:\Programas\svnSircc\svnSircc4_12\TestProject1\bin\Debug\BLL.dll
+D:\Programas\svnSircc\svnSircc4_12\TestProject1\bin\Debug\ByA.dll
+D:\Programas\svnSircc\svnSircc4_12\TestProject1\bin\Debug\DAL.dll
+D:\Programas\svnSircc\svnSircc4_12\TestProject1\bin\Debug\Entidades.dll
+D:\Programas\svnSircc\svnSircc4_12\TestProject1\bin\Debug\GDocWord.dll
+D:\Programas\svnSircc\svnSircc4_12\TestProject1\bin\Debug\Financiero.dll
+D:\Programas\svnSircc\svnSircc4_12\TestProject1\bin\Debug\AutoMapper.dll
+D:\Programas\svnSircc\svnSircc4_12\TestProject1\bin\Debug\BLL.pdb
+D:\Programas\svnSircc\svnSircc4_12\TestProject1\bin\Debug\ByA.pdb
+D:\Programas\svnSircc\svnSircc4_12\TestProject1\bin\Debug\DAL.pdb
+D:\Programas\svnSircc\svnSircc4_12\TestProject1\bin\Debug\Entidades.pdb
+D:\Programas\svnSircc\svnSircc4_12\TestProject1\bin\Debug\GDocWord.pdb
+D:\Programas\svnSircc\svnSircc4_12\TestProject1\bin\Debug\GDocWord.xml
+D:\Programas\svnSircc\svnSircc4_12\TestProject1\bin\Debug\Financiero.pdb
+D:\Programas\svnSircc\svnSircc4_12\TestProject1\bin\Debug\AutoMapper.xml
+D:\Programas\svnSircc\svnSircc4_12\TestProject1\obj\Debug\TestProject1.csprojResolveAssemblyReference.cache
+D:\Programas\svnSircc\svnSircc4_12\TestProject1\obj\Debug\TestProject1.dll
+D:\Programas\svnSircc\svnSircc4_12\TestProject1\obj\Debug\TestProject1.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\TestProject1\obj\Debug\TestProject1.csprojResolveAssemblyReference.cache
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\TestProject1\bin\Debug\TestProject1.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\TestProject1\bin\Debug\TestProject1.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\TestProject1\bin\Debug\BLL.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\TestProject1\bin\Debug\ByA.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\TestProject1\bin\Debug\DAL.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\TestProject1\bin\Debug\Entidades.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\TestProject1\bin\Debug\GDocWord.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\TestProject1\bin\Debug\AutoMapper.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\TestProject1\bin\Debug\BLL.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\TestProject1\bin\Debug\ByA.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\TestProject1\bin\Debug\DAL.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\TestProject1\bin\Debug\Entidades.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\TestProject1\bin\Debug\GDocWord.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\TestProject1\bin\Debug\GDocWord.xml
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\TestProject1\bin\Debug\AutoMapper.xml
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\TestProject1\obj\Debug\TestProject1.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\TestProject1\obj\Debug\TestProject1.pdb
+D:\Programas\Proyecto\CrediControl\CrediControl\TestProject1\bin\Debug\TestProject1.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\TestProject1\bin\Debug\TestProject1.pdb
+D:\Programas\Proyecto\CrediControl\CrediControl\TestProject1\bin\Debug\BLL.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\TestProject1\bin\Debug\ByA.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\TestProject1\bin\Debug\DAL.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\TestProject1\bin\Debug\Entidades.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\TestProject1\bin\Debug\BLL.pdb
+D:\Programas\Proyecto\CrediControl\CrediControl\TestProject1\bin\Debug\ByA.pdb
+D:\Programas\Proyecto\CrediControl\CrediControl\TestProject1\bin\Debug\DAL.pdb
+D:\Programas\Proyecto\CrediControl\CrediControl\TestProject1\bin\Debug\Entidades.pdb
+D:\Programas\Proyecto\CrediControl\CrediControl\TestProject1\obj\Debug\TestProject1.csprojResolveAssemblyReference.cache
+D:\Programas\Proyecto\CrediControl\CrediControl\TestProject1\obj\Debug\TestProject1.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\TestProject1\obj\Debug\TestProject1.pdb
+D:\Programas\Proyecto\CrediControl\CrediControl\TestProject1\bin\Debug\AutoMapper.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\TestProject1\bin\Debug\AutoMapper.xml

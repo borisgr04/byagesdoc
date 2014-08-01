@@ -1,0 +1,38 @@
+E:\ByA\Sircc4\Sircc4\Entidades\bin\Debug\Entidades.dll
+E:\ByA\Sircc4\Sircc4\Entidades\bin\Debug\Entidades.pdb
+E:\ByA\Sircc4\Sircc4\Entidades\obj\Debug\Entidades.dll
+E:\ByA\Sircc4\Sircc4\Entidades\obj\Debug\Entidades.pdb
+D:\Programas\svnSircc\svnSircc4_10102013_5\Entidades\bin\Debug\Entidades.dll
+D:\Programas\svnSircc\svnSircc4_10102013_5\Entidades\bin\Debug\Entidades.pdb
+D:\Programas\svnSircc\svnSircc4_10102013_5\Entidades\obj\Debug\Entidades.dll
+D:\Programas\svnSircc\svnSircc4_10102013_5\Entidades\obj\Debug\Entidades.pdb
+D:\Programas\svnSircc\svnSircc_27092013\Entidades\bin\Debug\Entidades.dll
+D:\Programas\svnSircc\svnSircc_27092013\Entidades\bin\Debug\Entidades.pdb
+D:\Programas\svnSircc\svnSircc_27092013\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+D:\Programas\svnSircc\svnSircc_27092013\Entidades\obj\Debug\Entidades.dll
+D:\Programas\svnSircc\svnSircc_27092013\Entidades\obj\Debug\Entidades.pdb
+D:\Programas\svnSircc\svnSircc4_12\Entidades\bin\Debug\Entidades.dll
+D:\Programas\svnSircc\svnSircc4_12\Entidades\bin\Debug\Entidades.pdb
+D:\Programas\svnSircc\svnSircc4_12\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+D:\Programas\svnSircc\svnSircc4_12\Entidades\obj\Debug\Entidades.dll
+D:\Programas\svnSircc\svnSircc4_12\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\Entidades\bin\Debug\Entidades.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\Entidades\obj\Debug\Entidades.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\Entidades\obj\Debug\Entidades.pdb
+D:\Dev\Sircc47\Entidades\bin\Debug\Entidades.dll
+D:\Dev\Sircc47\Entidades\bin\Debug\Entidades.pdb
+D:\Dev\Sircc47\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+D:\Dev\Sircc47\Entidades\obj\Debug\Entidades.dll
+D:\Dev\Sircc47\Entidades\obj\Debug\Entidades.pdb
+D:\Programas\Proyecto\CrediControl\CrediControl\Entidades\bin\Debug\Entidades.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\Entidades\bin\Debug\Entidades.pdb
+D:\Programas\Proyecto\CrediControl\CrediControl\Entidades\obj\Debug\Entidades.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\Entidades\obj\Debug\Entidades.pdb
+D:\Programas\Proyecto\CrediControl\CrediControl\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+D:\Dev\GDocumental\Entidades\bin\Debug\Entidades.dll
+D:\Dev\GDocumental\Entidades\bin\Debug\Entidades.pdb
+D:\Dev\GDocumental\Entidades\obj\Debug\Entidades.dll
+D:\Dev\GDocumental\Entidades\obj\Debug\Entidades.pdb
+D:\Dev\GDocumental\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache

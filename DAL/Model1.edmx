@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="trdModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="trdModelStoreContainer">
+          <EntitySet Name="configuracion" EntityType="trdModel.Store.configuracion" store:Type="Tables" Schema="trd" />
+          <EntitySet Name="dependencias" EntityType="trdModel.Store.dependencias" store:Type="Tables" Schema="trd" />
+          <EntitySet Name="fc_menu" EntityType="trdModel.Store.fc_menu" store:Type="Tables" Schema="trd" />
+          <EntitySet Name="fc_terceros" EntityType="trdModel.Store.fc_terceros" store:Type="Tables" Schema="trd" />
+          <EntitySet Name="series" EntityType="trdModel.Store.series" store:Type="Tables" Schema="trd" />
+          <EntitySet Name="subseries" EntityType="trdModel.Store.subseries" store:Type="Tables" Schema="trd" />
+          <EntitySet Name="tiposdocumentales" EntityType="trdModel.Store.tiposdocumentales" store:Type="Tables" Schema="trd" />
+          <EntitySet Name="unidaddocumental" EntityType="trdModel.Store.unidaddocumental" store:Type="Tables" Schema="trd" />
+          <AssociationSet Name="SerieFK" Association="trdModel.Store.SerieFK">
+            <End Role="series" EntitySet="series" />
+            <End Role="subseries" EntitySet="subseries" />
+          </AssociationSet>
+          <AssociationSet Name="SubSeriesIdTD" Association="trdModel.Store.SubSeriesIdTD">
+            <End Role="subseries" EntitySet="subseries" />
+            <End Role="tiposdocumentales" EntitySet="tiposdocumentales" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="configuracion">
+          <Key>
+            <PropertyRef Name="PropiedadId" />
+          </Key>
+          <Property Name="PropiedadId" Type="int" Nullable="false" />
+          <Property Name="Clave" Type="varchar" MaxLength="45" />
+          <Property Name="Valor" Type="varchar" MaxLength="45" />
+          <Property Name="Tipo" Type="varchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="dependencias">
+          <Key>
+            <PropertyRef Name="idDependencia" />
+          </Key>
+          <Property Name="idDependencia" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Dependencia" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="fc_menu">
+          <Key>
+            <PropertyRef Name="fc_menuid" />
+          </Key>
+          <Property Name="fc_menuid" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="fc_titulo" Type="varchar" MaxLength="45" />
+          <Property Name="fc_descripcion" Type="varchar" MaxLength="45" />
+          <Property Name="fc_padreid" Type="varchar" MaxLength="10" />
+          <Property Name="fc_posicion" Type="int" />
+          <Property Name="fc_icono" Type="varchar" MaxLength="45" />
+          <Property Name="fc_habilitado" Type="int" />
+          <Property Name="fc_url" Type="varchar" MaxLength="100" />
+          <Property Name="fc_modulo" Type="varchar" MaxLength="10" />
+          <Property Name="fc_target" Type="varchar" MaxLength="20" />
+          <Property Name="fc_ppal" Type="varchar" MaxLength="1" />
+          <Property Name="fc_roles" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="fc_terceros">
+          <Key>
+            <PropertyRef Name="terceroId" />
+          </Key>
+          <Property Name="terceroId" Type="int" Nullable="false" />
+          <Property Name="tipodoc" Type="varchar" MaxLength="2" />
+          <Property Name="tipoper" Type="varchar" MaxLength="10" />
+          <Property Name="nombre" Type="varchar" MaxLength="45" />
+          <Property Name="direccion" Type="varchar" MaxLength="45" />
+          <Property Name="telefono" Type="varchar" MaxLength="45" />
+          <Property Name="correo" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="series">
+          <Key>
+            <PropertyRef Name="idSerie" />
+          </Key>
+          <Property Name="idSerie" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Serie" Type="varchar" MaxLength="45" />
+          <Property Name="Procedimiento" Type="text" />
+        </EntityType>
+        <EntityType Name="subseries">
+          <Key>
+            <PropertyRef Name="idSubSeries" />
+          </Key>
+          <Property Name="idSubSeries" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="SubSerie" Type="varchar" MaxLength="45" />
+          <Property Name="RetencionAG" Type="int" />
+          <Property Name="DisposicionA" Type="int" />
+          <Property Name="DisposicionCT" Type="bool" />
+          <Property Name="DisposicionE" Type="bool" />
+          <Property Name="DisposicionMD" Type="bool" />
+          <Property Name="DisposicionS" Type="bool" />
+          <Property Name="Series_idSerie" Type="varchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tiposdocumentales">
+          <Key>
+            <PropertyRef Name="idTipDocumentales" />
+          </Key>
+          <Property Name="idTipDocumentales" Type="varchar" Nullable="false" MaxLength="11" />
+          <Property Name="Nombe" Type="varchar" MaxLength="45" />
+          <Property Name="TD_Original" Type="varchar" MaxLength="1" />
+          <Property Name="TD_Copia" Type="varchar" MaxLength="1" />
+          <Property Name="SerieId" Type="varchar" MaxLength="11" />
+        </EntityType>
+        <EntityType Name="unidaddocumental">
+          <Key>
+            <PropertyRef Name="idUnidadDocumental" />
+          </Key>
+          <Property Name="idUnidadDocumental" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Nombre" Type="varchar" MaxLength="45" />
+          <Property Name="PalabrasClave" Type="text" />
+          <Property Name="FechaCreacion" Type="datetime" />
+          <Property Name="NroFolios" Type="int" />
+          <Property Name="idSubSeries" Type="varchar" Nullable="false" MaxLength="45" />
+          <Property Name="EntidadProductora" Type="int" />
+          <Property Name="ArchivadorNo" Type="int" />
+          <Property Name="GabetaNo" Type="int" />
+          <Property Name="FechaExtInicial" Type="date" />
+          <Property Name="FechaExtFinal" Type="date" />
+          <Property Name="Dependencias_idDependencia" Type="varchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <Association Name="SerieFK">
+          <End Role="series" Type="trdModel.Store.series" Multiplicity="1" />
+          <End Role="subseries" Type="trdModel.Store.subseries" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="series">
+              <PropertyRef Name="idSerie" />
+            </Principal>
+            <Dependent Role="subseries">
+              <PropertyRef Name="Series_idSerie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SubSeriesIdTD">
+          <End Role="subseries" Type="trdModel.Store.subseries" Multiplicity="0..1" />
+          <End Role="tiposdocumentales" Type="trdModel.Store.tiposdocumentales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="subseries">
+              <PropertyRef Name="idSubSeries" />
+            </Principal>
+            <Dependent Role="tiposdocumentales">
+              <PropertyRef Name="SerieId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="trdModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="trdEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="dependencias" EntityType="trdModel.dependencias" />
+          <EntitySet Name="fc_menu" EntityType="trdModel.fc_menu" />
+          <EntitySet Name="series" EntityType="trdModel.series" />
+          <EntitySet Name="subseries" EntityType="trdModel.subseries" />
+          <EntitySet Name="tiposdocumentales" EntityType="trdModel.tiposdocumentales" />
+          <AssociationSet Name="SerieFK" Association="trdModel.SerieFK">
+            <End Role="series" EntitySet="series" />
+            <End Role="subseries" EntitySet="subseries" />
+          </AssociationSet>
+          <AssociationSet Name="SubSeriesIdTD" Association="trdModel.SubSeriesIdTD">
+            <End Role="subseries" EntitySet="subseries" />
+            <End Role="tiposdocumentales" EntitySet="tiposdocumentales" />
+          </AssociationSet>
+          <EntitySet Name="fc_terceros" EntityType="trdModel.fc_terceros" />
+          <EntitySet Name="unidaddocumental" EntityType="trdModel.unidaddocumental" />
+          <EntitySet Name="configuracion" EntityType="trdModel.configuracion" />
+        </EntityContainer>
+        <EntityType Name="dependencias">
+          <Key>
+            <PropertyRef Name="idDependencia" />
+          </Key>
+          <Property Name="idDependencia" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Dependencia" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="fc_menu">
+          <Key>
+            <PropertyRef Name="fc_menuid" />
+          </Key>
+          <Property Name="fc_menuid" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="fc_titulo" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="fc_descripcion" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="fc_padreid" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="fc_posicion" Type="Int32" />
+          <Property Name="fc_icono" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="fc_habilitado" Type="Int32" />
+          <Property Name="fc_url" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="fc_modulo" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="fc_target" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="fc_ppal" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="fc_roles" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="series">
+          <Key>
+            <PropertyRef Name="idSerie" />
+          </Key>
+          <Property Name="idSerie" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Serie" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Procedimiento" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="subseries" Relationship="trdModel.SerieFK" FromRole="series" ToRole="subseries" />
+        </EntityType>
+        <EntityType Name="subseries">
+          <Key>
+            <PropertyRef Name="idSubSeries" />
+          </Key>
+          <Property Name="idSubSeries" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SubSerie" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="RetencionAG" Type="Int32" />
+          <Property Name="DisposicionA" Type="Int32" />
+          <Property Name="DisposicionCT" Type="Boolean" />
+          <Property Name="DisposicionE" Type="Boolean" />
+          <Property Name="DisposicionMD" Type="Boolean" />
+          <Property Name="DisposicionS" Type="Boolean" />
+          <Property Name="Series_idSerie" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="series" Relationship="trdModel.SerieFK" FromRole="subseries" ToRole="series" />
+          <NavigationProperty Name="tiposdocumentales" Relationship="trdModel.SubSeriesIdTD" FromRole="subseries" ToRole="tiposdocumentales" />
+        </EntityType>
+        <EntityType Name="tiposdocumentales">
+          <Key>
+            <PropertyRef Name="idTipDocumentales" />
+          </Key>
+          <Property Name="idTipDocumentales" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
+          <Property Name="Nombe" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="TD_Original" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="TD_Copia" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="SerieId" Type="String" MaxLength="11" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="subseries" Relationship="trdModel.SubSeriesIdTD" FromRole="tiposdocumentales" ToRole="subseries" />
+        </EntityType>
+        <Association Name="SerieFK">
+          <End Role="series" Type="trdModel.series" Multiplicity="1" />
+          <End Role="subseries" Type="trdModel.subseries" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="series">
+              <PropertyRef Name="idSerie" />
+            </Principal>
+            <Dependent Role="subseries">
+              <PropertyRef Name="Series_idSerie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SubSeriesIdTD">
+          <End Role="subseries" Type="trdModel.subseries" Multiplicity="0..1" />
+          <End Role="tiposdocumentales" Type="trdModel.tiposdocumentales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="subseries">
+              <PropertyRef Name="idSubSeries" />
+            </Principal>
+            <Dependent Role="tiposdocumentales">
+              <PropertyRef Name="SerieId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="fc_terceros">
+          <Key>
+            <PropertyRef Name="terceroId" />
+          </Key>
+          <Property Type="Int32" Name="terceroId" Nullable="false" />
+          <Property Type="String" Name="tipodoc" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="tipoper" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nombre" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="direccion" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="telefono" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="correo" MaxLength="45" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="unidaddocumental">
+          <Key>
+            <PropertyRef Name="idUnidadDocumental" />
+          </Key>
+          <Property Type="String" Name="idUnidadDocumental" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Nombre" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PalabrasClave" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="FechaCreacion" />
+          <Property Type="Int32" Name="NroFolios" />
+          <Property Type="String" Name="idSubSeries" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="EntidadProductora" />
+          <Property Type="Int32" Name="ArchivadorNo" />
+          <Property Type="Int32" Name="GabetaNo" />
+          <Property Type="DateTime" Name="FechaExtInicial" />
+          <Property Type="DateTime" Name="FechaExtFinal" />
+          <Property Type="String" Name="Dependencias_idDependencia" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="configuracion">
+          <Key>
+            <PropertyRef Name="PropiedadId" />
+          </Key>
+          <Property Type="Int32" Name="PropiedadId" Nullable="false" />
+          <Property Type="String" Name="Clave" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Valor" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Tipo" MaxLength="2" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="trdModelStoreContainer" CdmEntityContainer="trdEntities">
+          <EntitySetMapping Name="dependencias">
+            <EntityTypeMapping TypeName="trdModel.dependencias">
+              <MappingFragment StoreEntitySet="dependencias">
+                <ScalarProperty Name="idDependencia" ColumnName="idDependencia" />
+                <ScalarProperty Name="Dependencia" ColumnName="Dependencia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fc_menu">
+            <EntityTypeMapping TypeName="trdModel.fc_menu">
+              <MappingFragment StoreEntitySet="fc_menu">
+                <ScalarProperty Name="fc_menuid" ColumnName="fc_menuid" />
+                <ScalarProperty Name="fc_titulo" ColumnName="fc_titulo" />
+                <ScalarProperty Name="fc_descripcion" ColumnName="fc_descripcion" />
+                <ScalarProperty Name="fc_padreid" ColumnName="fc_padreid" />
+                <ScalarProperty Name="fc_posicion" ColumnName="fc_posicion" />
+                <ScalarProperty Name="fc_icono" ColumnName="fc_icono" />
+                <ScalarProperty Name="fc_habilitado" ColumnName="fc_habilitado" />
+                <ScalarProperty Name="fc_url" ColumnName="fc_url" />
+                <ScalarProperty Name="fc_modulo" ColumnName="fc_modulo" />
+                <ScalarProperty Name="fc_target" ColumnName="fc_target" />
+                <ScalarProperty Name="fc_ppal" ColumnName="fc_ppal" />
+                <ScalarProperty Name="fc_roles" ColumnName="fc_roles" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="series">
+            <EntityTypeMapping TypeName="trdModel.series">
+              <MappingFragment StoreEntitySet="series">
+                <ScalarProperty Name="idSerie" ColumnName="idSerie" />
+                <ScalarProperty Name="Serie" ColumnName="Serie" />
+                <ScalarProperty Name="Procedimiento" ColumnName="Procedimiento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="subseries">
+            <EntityTypeMapping TypeName="trdModel.subseries">
+              <MappingFragment StoreEntitySet="subseries">
+                <ScalarProperty Name="idSubSeries" ColumnName="idSubSeries" />
+                <ScalarProperty Name="SubSerie" ColumnName="SubSerie" />
+                <ScalarProperty Name="RetencionAG" ColumnName="RetencionAG" />
+                <ScalarProperty Name="DisposicionA" ColumnName="DisposicionA" />
+                <ScalarProperty Name="DisposicionCT" ColumnName="DisposicionCT" />
+                <ScalarProperty Name="DisposicionE" ColumnName="DisposicionE" />
+                <ScalarProperty Name="DisposicionMD" ColumnName="DisposicionMD" />
+                <ScalarProperty Name="DisposicionS" ColumnName="DisposicionS" />
+                <ScalarProperty Name="Series_idSerie" ColumnName="Series_idSerie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tiposdocumentales">
+            <EntityTypeMapping TypeName="trdModel.tiposdocumentales">
+              <MappingFragment StoreEntitySet="tiposdocumentales">
+                <ScalarProperty Name="idTipDocumentales" ColumnName="idTipDocumentales" />
+                <ScalarProperty Name="Nombe" ColumnName="Nombe" />
+                <ScalarProperty Name="TD_Original" ColumnName="TD_Original" />
+                <ScalarProperty Name="TD_Copia" ColumnName="TD_Copia" />
+                <ScalarProperty Name="SerieId" ColumnName="SerieId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fc_terceros">
+            <EntityTypeMapping TypeName="trdModel.fc_terceros">
+              <MappingFragment StoreEntitySet="fc_terceros">
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="tipoper" ColumnName="tipoper" />
+                <ScalarProperty Name="tipodoc" ColumnName="tipodoc" />
+                <ScalarProperty Name="terceroId" ColumnName="terceroId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="unidaddocumental">
+            <EntityTypeMapping TypeName="trdModel.unidaddocumental">
+              <MappingFragment StoreEntitySet="unidaddocumental">
+                <ScalarProperty Name="Dependencias_idDependencia" ColumnName="Dependencias_idDependencia" />
+                <ScalarProperty Name="FechaExtFinal" ColumnName="FechaExtFinal" />
+                <ScalarProperty Name="FechaExtInicial" ColumnName="FechaExtInicial" />
+                <ScalarProperty Name="GabetaNo" ColumnName="GabetaNo" />
+                <ScalarProperty Name="ArchivadorNo" ColumnName="ArchivadorNo" />
+                <ScalarProperty Name="EntidadProductora" ColumnName="EntidadProductora" />
+                <ScalarProperty Name="idSubSeries" ColumnName="idSubSeries" />
+                <ScalarProperty Name="NroFolios" ColumnName="NroFolios" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="PalabrasClave" ColumnName="PalabrasClave" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="idUnidadDocumental" ColumnName="idUnidadDocumental" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="configuracion">
+            <EntityTypeMapping TypeName="trdModel.configuracion">
+              <MappingFragment StoreEntitySet="configuracion">
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="PropiedadId" ColumnName="PropiedadId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

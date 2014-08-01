@@ -1,0 +1,24 @@
+D:\Programas\svnSircc\svnSircc_27092013\ByA\bin\Debug\ByA.dll
+D:\Programas\svnSircc\svnSircc_27092013\ByA\bin\Debug\ByA.pdb
+D:\Programas\svnSircc\svnSircc_27092013\ByA\obj\Debug\ByA.csprojResolveAssemblyReference.cache
+D:\Programas\svnSircc\svnSircc_27092013\ByA\obj\Debug\ByA.dll
+D:\Programas\svnSircc\svnSircc_27092013\ByA\obj\Debug\ByA.pdb
+D:\Programas\svnSircc\svnSircc4_12\ByA\bin\Debug\ByA.dll
+D:\Programas\svnSircc\svnSircc4_12\ByA\bin\Debug\ByA.pdb
+D:\Programas\svnSircc\svnSircc4_12\ByA\obj\Debug\ByA.csprojResolveAssemblyReference.cache
+D:\Programas\svnSircc\svnSircc4_12\ByA\obj\Debug\ByA.dll
+D:\Programas\svnSircc\svnSircc4_12\ByA\obj\Debug\ByA.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\ByA\bin\Debug\ByA.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\ByA\bin\Debug\ByA.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\ByA\obj\Debug\ByA.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\ByA\obj\Debug\ByA.pdb
+D:\Dev\Sircc47\ByA\bin\Debug\ByA.dll
+D:\Dev\Sircc47\ByA\bin\Debug\ByA.pdb
+D:\Dev\Sircc47\ByA\obj\Debug\ByA.csprojResolveAssemblyReference.cache
+D:\Dev\Sircc47\ByA\obj\Debug\ByA.dll
+D:\Dev\Sircc47\ByA\obj\Debug\ByA.pdb
+D:\Dev\GDocumental\ByA\bin\Debug\ByA.dll
+D:\Dev\GDocumental\ByA\bin\Debug\ByA.pdb
+D:\Dev\GDocumental\ByA\obj\Debug\ByA.csprojResolveAssemblyReference.cache
+D:\Dev\GDocumental\ByA\obj\Debug\ByA.dll
+D:\Dev\GDocumental\ByA\obj\Debug\ByA.pdb

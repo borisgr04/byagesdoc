@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ef676ca4e9a74a2daaec1a510ab77004" Name="Diagrama1" ZoomLevel="94">
+        <EntityTypeShape EntityType="trdModel.dependencias" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="trdModel.fc_menu" Width="1.5" PointX="9.875" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="trdModel.series" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="trdModel.subseries" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="trdModel.tiposdocumentales" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="trdModel.SerieFK" ManuallyRouted="false" />
+        <AssociationConnector Association="trdModel.SubSeriesIdTD" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="trdModel.fc_terceros" Width="1.5" PointX="9.75" PointY="4.375" />
+        <EntityTypeShape EntityType="trdModel.unidaddocumental" Width="1.5" PointX="5.375" PointY="4" />
+        <EntityTypeShape EntityType="trdModel.configuracion" Width="1.5" PointX="7.875" PointY="1.125" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,289 @@
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\wfSircc.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\wfSircc.pdb
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\Antlr3.Runtime.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\AspNet.ScriptManager.jQuery.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\DotNetOpenAuth.AspNet.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\DotNetOpenAuth.Core.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\DotNetOpenAuth.OAuth.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\DotNetOpenAuth.OpenId.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\EntityFramework.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\Microsoft.ScriptManager.WebForms.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\Microsoft.Web.Infrastructure.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\System.Web.Optimization.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\System.Web.Providers.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\WebGrease.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\EntityFramework.xml
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\DotNetOpenAuth.Core.xml
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\DotNetOpenAuth.OAuth.xml
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\DotNetOpenAuth.OpenId.xml
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\DotNetOpenAuth.AspNet.xml
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\es\EntityFramework.resources.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\es\System.Web.Optimization.resources.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\es\System.Web.Providers.resources.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\es\Microsoft.AspNet.Membership.OpenAuth.resources.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\obj\Debug\wfSircc.csprojResolveAssemblyReference.cache
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\obj\Debug\wfSircc.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\obj\Debug\wfSircc.pdb
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\AutoMapper.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\AutoMapper.Net4.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\BLL.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\ByA.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\Entidades.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\Newtonsoft.Json.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\GDocWord.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\DAL.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\Financiero.dll
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\BLL.pdb
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\ByA.pdb
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\Entidades.pdb
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\Newtonsoft.Json.xml
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\GDocWord.pdb
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\GDocWord.xml
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\DAL.pdb
+D:\Programas\svnSircc\snvSircc4_092013\wfSircc\bin\Financiero.pdb
+D:\Programas\svnSircc\svnSircc4_21092013_2\wfSircc\obj\Debug\wfSircc.csprojResolveAssemblyReference.cache
+D:\Programas\svnSircc\svnSircc4_21092013_2\wfSircc\obj\Debug\wfSircc.dll
+D:\Programas\svnSircc\svnSircc4_21092013_2\wfSircc\obj\Debug\wfSircc.pdb
+D:\Programas\svnSircc\svnSircc4_21092013_2\wfSircc\bin\wfSircc.dll
+D:\Programas\svnSircc\svnSircc4_21092013_2\wfSircc\bin\wfSircc.pdb
+D:\Programas\svnSircc\svnSircc4_21092013_2\wfSircc\bin\BLL.dll
+D:\Programas\svnSircc\svnSircc4_21092013_2\wfSircc\bin\ByA.dll
+D:\Programas\svnSircc\svnSircc4_21092013_2\wfSircc\bin\Entidades.dll
+D:\Programas\svnSircc\svnSircc4_21092013_2\wfSircc\bin\Microsoft.Web.Infrastructure.dll
+D:\Programas\svnSircc\svnSircc4_21092013_2\wfSircc\bin\GDocWord.dll
+D:\Programas\svnSircc\svnSircc4_21092013_2\wfSircc\bin\DAL.dll
+D:\Programas\svnSircc\svnSircc4_21092013_2\wfSircc\bin\Financiero.dll
+D:\Programas\svnSircc\svnSircc4_21092013_2\wfSircc\bin\BLL.pdb
+D:\Programas\svnSircc\svnSircc4_21092013_2\wfSircc\bin\ByA.pdb
+D:\Programas\svnSircc\svnSircc4_21092013_2\wfSircc\bin\Entidades.pdb
+D:\Programas\svnSircc\svnSircc4_21092013_2\wfSircc\bin\Microsoft.Web.Infrastructure.xml
+D:\Programas\svnSircc\svnSircc4_21092013_2\wfSircc\bin\GDocWord.pdb
+D:\Programas\svnSircc\svnSircc4_21092013_2\wfSircc\bin\GDocWord.xml
+D:\Programas\svnSircc\svnSircc4_21092013_2\wfSircc\bin\DAL.pdb
+D:\Programas\svnSircc\svnSircc4_21092013_2\wfSircc\bin\Financiero.pdb
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\wfSircc.dll
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\wfSircc.pdb
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\BLL.dll
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\ByA.dll
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\Entidades.dll
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\Microsoft.Web.Infrastructure.dll
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\GDocWord.dll
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\DAL.dll
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\Financiero.dll
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\BLL.pdb
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\ByA.pdb
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\Entidades.pdb
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\Microsoft.Web.Infrastructure.xml
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\GDocWord.pdb
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\GDocWord.xml
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\DAL.pdb
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\Financiero.pdb
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\obj\Debug\wfSircc.csprojResolveAssemblyReference.cache
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\obj\Debug\wfSircc.dll
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\obj\Debug\wfSircc.pdb
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\Newtonsoft.Json.dll
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\System.Net.Http.Formatting.dll
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\System.Web.Http.dll
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\System.Web.Http.WebHost.dll
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\Newtonsoft.Json.xml
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\System.Net.Http.Formatting.xml
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\System.Web.Http.xml
+D:\Programas\svnSircc\svnSircc_27092013\wfSircc\bin\System.Web.Http.WebHost.xml
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\obj\Debug\wfSircc.csprojResolveAssemblyReference.cache
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\obj\Debug\RdlCompile.cache
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\obj\Debug\RdlCompile.compiled
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\wfSircc.dll
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\wfSircc.pdb
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\BLL.CGestion.dll
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\BLL.dll
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\ByA.dll
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\Entidades.dll
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\Microsoft.Web.Infrastructure.dll
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\Newtonsoft.Json.dll
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\System.Net.Http.Formatting.dll
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\System.Web.Http.dll
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\System.Web.Http.WebHost.dll
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\GDocWord.dll
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\DAL.dll
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\Financiero.dll
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\BLL.CGestion.pdb
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\BLL.pdb
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\ByA.pdb
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\Entidades.pdb
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\Newtonsoft.Json.xml
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\System.Net.Http.Formatting.xml
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\System.Web.Http.xml
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\System.Web.Http.WebHost.xml
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\Microsoft.Web.Infrastructure.xml
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\GDocWord.pdb
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\GDocWord.xml
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\DAL.pdb
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\bin\Financiero.pdb
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\obj\Debug\wfSircc.dll
+D:\Programas\svnSircc\svnSircc4_12\wfSircc\obj\Debug\wfSircc.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\obj\Debug\wfSircc.csprojResolveAssemblyReference.cache
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\obj\Debug\RdlCompile.cache
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\obj\Debug\RdlCompile.compiled
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\wfSircc.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\wfSircc.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\BLL.CGestion.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\BLL.Contratos.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\BLL.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\BLL.DOC.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\BLL.EstPrev.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\BLL.PROCESOS.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\BLL.Security.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\ByA.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\Entidades.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\Financiero.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\Newtonsoft.Json.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\System.Net.Http.Formatting.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\System.Web.Http.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\System.Web.Http.WebHost.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\GDocWord.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\DAL.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\BLL.CGestion.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\BLL.Contratos.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\BLL.DOC.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\BLL.EstPrev.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\BLL.PROCESOS.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\BLL.Security.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\BLL.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\ByA.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\Entidades.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\Financiero.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\Newtonsoft.Json.xml
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\System.Net.Http.Formatting.xml
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\System.Web.Http.xml
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\System.Web.Http.WebHost.xml
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\GDocWord.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\GDocWord.xml
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\bin\DAL.pdb
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\obj\Debug\wfSircc.dll
+C:\Users\Kevinhmendoza\Documents\Visual Studio 2012\Projects\Sircc4_Kevin\wfSircc\obj\Debug\wfSircc.pdb
+D:\Dev\Sircc47\wfSircc\bin\wfSircc.dll
+D:\Dev\Sircc47\wfSircc\bin\wfSircc.pdb
+D:\Dev\Sircc47\wfSircc\bin\BLL.CGestion.dll
+D:\Dev\Sircc47\wfSircc\bin\BLL.Contratos.dll
+D:\Dev\Sircc47\wfSircc\bin\BLL.dll
+D:\Dev\Sircc47\wfSircc\bin\BLL.DOC.dll
+D:\Dev\Sircc47\wfSircc\bin\BLL.EstPrev.dll
+D:\Dev\Sircc47\wfSircc\bin\BLL.PROCESOS.dll
+D:\Dev\Sircc47\wfSircc\bin\BLL.Security.dll
+D:\Dev\Sircc47\wfSircc\bin\ByA.dll
+D:\Dev\Sircc47\wfSircc\bin\Entidades.dll
+D:\Dev\Sircc47\wfSircc\bin\Financiero.dll
+D:\Dev\Sircc47\wfSircc\bin\Microsoft.Web.Infrastructure.dll
+D:\Dev\Sircc47\wfSircc\bin\Newtonsoft.Json.dll
+D:\Dev\Sircc47\wfSircc\bin\System.Net.Http.Formatting.dll
+D:\Dev\Sircc47\wfSircc\bin\System.Web.Http.dll
+D:\Dev\Sircc47\wfSircc\bin\System.Web.Http.WebHost.dll
+D:\Dev\Sircc47\wfSircc\bin\GDocWord.dll
+D:\Dev\Sircc47\wfSircc\bin\DAL.dll
+D:\Dev\Sircc47\wfSircc\bin\BLL.CGestion.pdb
+D:\Dev\Sircc47\wfSircc\bin\BLL.Contratos.pdb
+D:\Dev\Sircc47\wfSircc\bin\BLL.DOC.pdb
+D:\Dev\Sircc47\wfSircc\bin\BLL.EstPrev.pdb
+D:\Dev\Sircc47\wfSircc\bin\BLL.PROCESOS.pdb
+D:\Dev\Sircc47\wfSircc\bin\BLL.Security.pdb
+D:\Dev\Sircc47\wfSircc\bin\BLL.pdb
+D:\Dev\Sircc47\wfSircc\bin\ByA.pdb
+D:\Dev\Sircc47\wfSircc\bin\Entidades.pdb
+D:\Dev\Sircc47\wfSircc\bin\Financiero.pdb
+D:\Dev\Sircc47\wfSircc\bin\Newtonsoft.Json.xml
+D:\Dev\Sircc47\wfSircc\bin\System.Net.Http.Formatting.xml
+D:\Dev\Sircc47\wfSircc\bin\System.Web.Http.xml
+D:\Dev\Sircc47\wfSircc\bin\System.Web.Http.WebHost.xml
+D:\Dev\Sircc47\wfSircc\bin\Microsoft.Web.Infrastructure.xml
+D:\Dev\Sircc47\wfSircc\bin\GDocWord.pdb
+D:\Dev\Sircc47\wfSircc\bin\GDocWord.xml
+D:\Dev\Sircc47\wfSircc\bin\DAL.pdb
+D:\Dev\Sircc47\wfSircc\obj\Debug\wfSircc.csprojResolveAssemblyReference.cache
+D:\Dev\Sircc47\wfSircc\obj\Debug\RdlCompile.cache
+D:\Dev\Sircc47\wfSircc\obj\Debug\RdlCompile.compiled
+D:\Dev\Sircc47\wfSircc\obj\Debug\wfSircc.dll
+D:\Dev\Sircc47\wfSircc\obj\Debug\wfSircc.pdb
+D:\Dev\CrediControl\wfSircc\obj\Debug\wfSircc.csprojResolveAssemblyReference.cache
+D:\Dev\CrediControl\wfSircc\obj\Debug\RdlCompile.cache
+D:\Dev\CrediControl\wfSircc\obj\Debug\RdlCompile.compiled
+D:\Dev\CrediControl\wfSircc\obj\Debug\wfSircc.dll
+D:\Dev\CrediControl\wfSircc\obj\Debug\wfSircc.pdb
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\wfSircc.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\wfSircc.pdb
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\BLL.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\BLL.Security.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\ByA.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\Entidades.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\EntityFramework.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\EntityFramework.SqlServer.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\Microsoft.Web.Infrastructure.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\MySql.Data.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\MySql.Web.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\Newtonsoft.Json.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\System.Net.Http.Formatting.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\System.Web.Http.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\System.Web.Http.WebHost.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\DAL.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\BLL.Security.pdb
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\BLL.pdb
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\ByA.pdb
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\Entidades.pdb
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\EntityFramework.xml
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\EntityFramework.SqlServer.xml
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\Newtonsoft.Json.xml
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\System.Net.Http.Formatting.xml
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\System.Web.Http.xml
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\System.Web.Http.WebHost.xml
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\Microsoft.Web.Infrastructure.xml
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\DAL.pdb
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\obj\Debug\wfSircc.csprojResolveAssemblyReference.cache
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\obj\Debug\wfSircc.dll
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\obj\Debug\wfSircc.pdb
+D:\Programas\Proyecto\CrediControl\CrediControl\wfSircc\bin\mysql.data.entity.EF6.dll
+D:\Dev\GDocumental\wfSircc\bin\wfSircc.dll
+D:\Dev\GDocumental\wfSircc\bin\wfSircc.pdb
+D:\Dev\GDocumental\wfSircc\bin\BLL.dll
+D:\Dev\GDocumental\wfSircc\bin\BLL.Security.dll
+D:\Dev\GDocumental\wfSircc\bin\ByA.dll
+D:\Dev\GDocumental\wfSircc\bin\ByAPdf.dll
+D:\Dev\GDocumental\wfSircc\bin\Entidades.dll
+D:\Dev\GDocumental\wfSircc\bin\EntityFramework.dll
+D:\Dev\GDocumental\wfSircc\bin\EntityFramework.SqlServer.dll
+D:\Dev\GDocumental\wfSircc\bin\Microsoft.Web.Infrastructure.dll
+D:\Dev\GDocumental\wfSircc\bin\MySql.Data.dll
+D:\Dev\GDocumental\wfSircc\bin\mysql.data.entity.EF6.dll
+D:\Dev\GDocumental\wfSircc\bin\MySql.Web.dll
+D:\Dev\GDocumental\wfSircc\bin\Newtonsoft.Json.dll
+D:\Dev\GDocumental\wfSircc\bin\System.Net.Http.Formatting.dll
+D:\Dev\GDocumental\wfSircc\bin\System.Web.Http.dll
+D:\Dev\GDocumental\wfSircc\bin\System.Web.Http.WebHost.dll
+D:\Dev\GDocumental\wfSircc\bin\DAL.dll
+D:\Dev\GDocumental\wfSircc\bin\itextsharp.dll
+D:\Dev\GDocumental\wfSircc\bin\BLL.Security.pdb
+D:\Dev\GDocumental\wfSircc\bin\BLL.pdb
+D:\Dev\GDocumental\wfSircc\bin\ByAPdf.pdb
+D:\Dev\GDocumental\wfSircc\bin\ByAPdf.xml
+D:\Dev\GDocumental\wfSircc\bin\ByA.pdb
+D:\Dev\GDocumental\wfSircc\bin\Entidades.pdb
+D:\Dev\GDocumental\wfSircc\bin\EntityFramework.xml
+D:\Dev\GDocumental\wfSircc\bin\EntityFramework.SqlServer.xml
+D:\Dev\GDocumental\wfSircc\bin\Newtonsoft.Json.xml
+D:\Dev\GDocumental\wfSircc\bin\System.Net.Http.Formatting.xml
+D:\Dev\GDocumental\wfSircc\bin\System.Web.Http.xml
+D:\Dev\GDocumental\wfSircc\bin\System.Web.Http.WebHost.xml
+D:\Dev\GDocumental\wfSircc\bin\Microsoft.Web.Infrastructure.xml
+D:\Dev\GDocumental\wfSircc\bin\DAL.pdb
+D:\Dev\GDocumental\wfSircc\bin\itextsharp.xml
+D:\Dev\GDocumental\wfSircc\obj\Debug\wfSircc.csprojResolveAssemblyReference.cache
+D:\Dev\GDocumental\wfSircc\obj\Debug\wfSircc.dll
+D:\Dev\GDocumental\wfSircc\obj\Debug\wfSircc.pdb
