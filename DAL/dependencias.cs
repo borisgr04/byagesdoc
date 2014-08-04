@@ -14,7 +14,14 @@ namespace DAL
     
     public partial class dependencias
     {
+        public dependencias()
+        {
+            this.unidaddocumental = new HashSet<unidaddocumental>();
+        }
+    
         public string idDependencia { get; set; }
         public string Dependencia { get; set; }
+    
+        public virtual ICollection<unidaddocumental> unidaddocumental { get; set; }
     }
 }

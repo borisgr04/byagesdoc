@@ -17,6 +17,7 @@ namespace DAL
         public subseries()
         {
             this.tiposdocumentales = new HashSet<tiposdocumentales>();
+            this.unidaddocumental = new HashSet<unidaddocumental>();
         }
     
         public string idSubSeries { get; set; }
@@ -31,5 +32,6 @@ namespace DAL
     
         public virtual series series { get; set; }
         public virtual ICollection<tiposdocumentales> tiposdocumentales { get; set; }
+        public virtual ICollection<unidaddocumental> unidaddocumental { get; set; }
     }
 }

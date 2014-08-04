@@ -25,13 +25,13 @@ namespace DAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<dependencias> dependencias { get; set; }
         public DbSet<fc_menu> fc_menu { get; set; }
         public DbSet<series> series { get; set; }
         public DbSet<subseries> subseries { get; set; }
         public DbSet<tiposdocumentales> tiposdocumentales { get; set; }
         public DbSet<fc_terceros> fc_terceros { get; set; }
-        public DbSet<unidaddocumental> unidaddocumental { get; set; }
         public DbSet<configuracion> configuracion { get; set; }
+        public DbSet<dependencias> dependencias { get; set; }
+        public DbSet<unidaddocumental> unidaddocumental { get; set; }
     }
 }
