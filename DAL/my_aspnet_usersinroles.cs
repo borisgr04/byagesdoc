@@ -12,15 +12,9 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class fc_terceros
+    public partial class my_aspnet_usersinroles
     {
-        public string terceroId { get; set; }
-        public string tipodoc { get; set; }
-        public string tipoper { get; set; }
-        public string nombre { get; set; }
-        public string direccion { get; set; }
-        public string telefono { get; set; }
-        public string correo { get; set; }
-        public string lugarexpe { get; set; }
+        public int userId { get; set; }
+        public int roleId { get; set; }
     }
 }

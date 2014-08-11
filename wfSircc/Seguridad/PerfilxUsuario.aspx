@@ -21,18 +21,14 @@
         </div>
         <div class="col-md-3" >
             <select id="CboFil" class="form-control input-sm">
-                <optgroup label="PreContractual">
-                    <option value="ESPR4">Estudios Previos</option>
-                    <option value="SOLI4">Procesos</option>
+                <optgroup label="Datos Básicos">
+                    <option value="ADMIN">Administrador</option>
+                 
                 </optgroup>
-                <optgroup label="Contractual">
-                    <option value="CONT">Contratos</option>
-                    <option value="SUPV4">Supervisión</option>
+                <optgroup label="Seguridad">
+                    <option value="SEGU">Seguridad</option>
                 </optgroup>
-                <optgroup label="Administración">
-                    <option value="SUPV4">Datos Básicos</option>
-                    <option value="ADMI4">Seguridad</option>
-                </optgroup>
+                
 
 
             </select>

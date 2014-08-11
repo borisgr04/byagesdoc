@@ -27,6 +27,7 @@ namespace Entidades
         public string direccion { get; set; }
         public string telefono { get; set; }
         public string correo { get; set; }
+        public string lugarexpe { get; set; }
     
      /*   public virtual ICollection<fc_asociadoscupo> fc_asociadoscupo { get; set; }
         public virtual ICollection<fc_clientesentidad> fc_clientesentidad { get; set; }

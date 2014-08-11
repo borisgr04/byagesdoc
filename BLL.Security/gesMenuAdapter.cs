@@ -12,13 +12,13 @@ namespace BLL.Security
     public class gesMenuAdapter
     {
 
-        public fcEntities ctx { get; set; }
+        public  trdEntities  ctx { get; set; }
         public ByARpt byaRpt { get; set; }
 
         public List<dataTree> getOpciones(string modulo)
         {
             List<dataTree> lt;
-            using (ctx = new fcEntities())
+            using (ctx = new trdEntities())
             {
 
                 lt = ctx.fc_menu.Where(t => t.fc_modulo == modulo && t.fc_menuid!=t.fc_padreid ).Select(t => new dataTree

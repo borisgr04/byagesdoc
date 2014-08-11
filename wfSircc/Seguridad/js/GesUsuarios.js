@@ -7,16 +7,16 @@
     var TituloForm = "Gestión de Usuarios <small > Seguridad</small>";
     var gridCon = '#jqxgridSol';
 
-    var urlToGridCon = "/Servicios/wsSecurity.asmx/GetUsuarios";
-    var urlToGuardarNuevo = "/Servicios/wsSecurity.asmx/InsUsuarios";
+    var urlToGridCon = "/Servicios/ControlFlujo/wsSecurity.asmx/GetUsuarios";
+    var urlToGuardarNuevo = "/Servicios/ControlFlujo/wsSecurity.asmx/InsUsuarios";
 
-    var urlToGuardarActivar = "/Servicios/wsSecurity.asmx/ActivarUsuario";
-    var urlToGuardarInactivar = "/Servicios/wsSecurity.asmx/InactivarUsuario";
-    var urlToGuardarDesbloquear = "/Servicios/wsSecurity.asmx/DesbloquearUsuario";
-    var urlToGuardarForzarPass = "/Servicios/wsSecurity.asmx/Forzar_Cambio_Clave";
+    var urlToGuardarActivar = "/Servicios/ControlFlujo/wsSecurity.asmx/ActivarUsuario";
+    var urlToGuardarInactivar = "/Servicios/ControlFlujo/wsSecurity.asmx/InactivarUsuario";
+    var urlToGuardarDesbloquear = "/Servicios/ControlFlujo/wsSecurity.asmx/DesbloquearUsuario";
+    var urlToGuardarForzarPass = "/Servicios/ControlFlujo/wsSecurity.asmx/Forzar_Cambio_Clave";
     var urlToGuardar;
     
-    var urlToTercero = '/Servicios/wsDatosBasicos.asmx/GetvTercerosPk';
+    var urlToTercero = '/Servicios/DatosBasicosG/wsTerceros.asmx/Get';
     var urlToDetContratos = "GesDetContratos.aspx";
     var urlToFiltro = '/Servicios/wsContratosGestionC.asmx/GetDepContratos';
     var urlToRoles = "PerfilxUsuario.aspx";
@@ -45,9 +45,10 @@
         
         $('#BtnBuscar').click(function () {
             $('#modalNuevo').modal('hide');
+            
             ModTer.showWindow(function (ter) {
-                $("#txtNom").val(ter.NOMBRE);
-                $("#txtIde").val(ter.IDE_TER);
+                $("#txtNom").val(ter.nombre);
+                $("#txtIde").val(ter.terceroId);
                 $('#modalNuevo').modal('show');
             });
            
@@ -115,7 +116,7 @@
         $('#modalNuevo').modal('show');
     };
     var _changeId = function () {
-        var source = byaPage.getSource(urlToTercero, { ide_ter: $('#txtIde').val() });
+        var source = byaPage.getSource(urlToTercero, { tercerosId: $('#txtIde').val() });
         if (source != null) {
             $('#txtNom').val(source.NOMBRE);
         }
@@ -204,16 +205,13 @@
             datafields: [
                     { name: 'USERNAME' },
                     { name: 'TERCERO' },
-                    { name: 'ISAPPROVED', type: 'bool' },
-                    { name: 'ISLOCKEDOUT', type: 'bool' },
-                    { name: 'LASTACTIVITYDATE', type: 'date' },
-                    { name: 'LASTLOGINDATE', type: 'date' },
-                    { name: 'LASTPASSWORDCHANGEDDATE', type: 'date' },
-                    { name: 'LASTLOCKOUTDATE', type: 'date' },
-                    { name: 'CREATEDATE', type: 'date' },
-                    { name: 'FAILEDPWDATTEMPTCOUNT', type: 'number' },
-                    { name: 'FAILEDPWDATTEMPTWINSTART', type: 'date' },
-                    { name: 'FAILEDPWDANSWERATTEMPTWINSTART', type: 'date' }
+                    { name: 'IsApproved', type: 'bool' },
+                    { name: 'IsLockedOut', type: 'bool' },
+                    { name: 'LastActivityDate', type: 'date' },
+                    { name: 'LastLoginDate', type: 'date' },
+                    { name: 'LastPasswordChangedDate', type: 'date' },
+                    { name: 'LastLockedOutDate', type: 'date' },
+                    { name: 'CreationDate', type: 'date' }
             ],
             async: true,
             record: 'Table',
@@ -224,7 +222,6 @@
         var dataAdapter = new $.jqx.dataAdapter(source, { contentType: 'application/json; charset=utf-8' });
         return dataAdapter;
     };
-
     //crea GridTipos
     var addfilter = function () {
         var filtergroup = new $.jqx.filter();
@@ -243,11 +240,10 @@
         // apply the filters.
         $("#jqxgrid").jqxGrid('applyfilters');
     };
-
     var _esValido = function () {
         var error = false;
         if (activarValidar) {
-            alert($("#txtPassword2").val() +","+ $("#txtPassword1").val())
+            //alert($("#txtPassword2").val() +","+ $("#txtPassword1").val())
             if ($("#txtPassword2").val() != $("#txtPassword1").val()) {
                 $("#pw2").addClass("has-error");
                 $("#pw1").addClass("has-error");
@@ -263,7 +259,6 @@
         return error;
     };
     var _createGridCon = function () {
-        
         $(gridCon).jqxGrid(
                     {
                         width: '100%',
@@ -280,16 +275,13 @@
                         columns: [
                         { text: 'USERNAME', datafield: 'USERNAME', width: 150 },
                         { text: 'TERCERO', datafield: 'TERCERO', width: 150 },
-                        { text: 'ACTIVO', datafield: 'ISAPPROVED', columntype: 'checkbox', filtertype: 'bool',  width: 150,  },
-                        { text: 'BLOQUEADO', datafield: 'ISLOCKEDOUT',columntype: 'checkbox', filtertype: 'bool',  width: 150},
-                        { text: 'ULT. ACTIVIDAD', datafield: 'LASTACTIVITYDATE', columntype: 'datetimeinput', cellsformat: 'd', width: 150 },
-                        { text: 'FECHA CREACIÓN', datafield: 'CREATEDATE', columntype: 'datetimeinput', cellsformat: 'd', width: 150 },
-                        { text: 'ULT. LOGIN', datafield: 'LASTLOGINDATE', columntype: 'datetimeinput', cellsformat: 'd', width: 150 },
-                        { text: 'ULT. CAMBIO PASSWORD', datafield: 'LASTPASSWORDCHANGEDDATE', columntype: 'datetimeinput', cellsformat: 'd', width: 150 },
-                        { text: 'ULT. BLOQUEO', datafield: 'LASTLOCKOUTDATE', columntype: 'datetimeinput', cellsformat: 'd', width: 150 },
-                        { text: 'FAILEDPWDATTEMPTCOUNT', datafield: 'FAILEDPWDATTEMPTCOUNT', columntype: 'datetimeinput', cellsformat: 'd', width: 150 },
-                        { text: 'FAILEDPWDATTEMPTWINSTART', datafield: 'FAILEDPWDATTEMPTWINSTART', columntype: 'datetimeinput', cellsformat: 'd', width: 150 },
-                        { text: 'FAILEDPWDANSWERATTEMPTWINSTART', datafield: 'FAILEDPWDANSWERATTEMPTWINSTART', columntype: 'datetimeinput', cellsformat: 'd', width: 150 }
+                        { text: 'ACTIVO', datafield: 'IsApproved', columntype: 'checkbox', filtertype: 'bool', width: 150, },
+                        { text: 'BLOQUEADO', datafield: 'IsLockedOut', columntype: 'checkbox', filtertype: 'bool', width: 150 },
+                        { text: 'ULT. ACTIVIDAD', datafield: 'LastActivityDate', columntype: 'datetimeinput', cellsformat: 'd', width: 150 },
+                        { text: 'FECHA CREACIÓN', datafield: 'CreationDate', columntype: 'datetimeinput', cellsformat: 'd', width: 150 },
+                        { text: 'ULT. LOGIN', datafield: 'LastLoginDate', columntype: 'datetimeinput', cellsformat: 'd', width: 150 },
+                        { text: 'ULT. CAMBIO PASSWORD', datafield: 'LastPasswordChangedDate', columntype: 'datetimeinput', cellsformat: 'd', width: 150 },
+                        { text: 'ULT. BLOQUEO', datafield: 'LastLockedOutDate', columntype: 'datetimeinput', cellsformat: 'd', width: 150 }
                         ]
                     });
         };
@@ -315,7 +307,7 @@
 } ());
 
 $(function () {
-    byaSite.SetModuloP({ TituloForm: "Panel de Administración", Modulo: "Seguridad", urlToPanelModulo: "PanelAdmin.aspx", Cod_Mod: "ADMI4", Rol: "AD_SEC_USUARIO" });
+    byaSite.SetModuloP({ TituloForm: "Panel de Administración", Modulo: "Seguridad", urlToPanelModulo: "PanelAdmin.aspx", Cod_Mod: "SEGU", Rol: "SG_SEC_USUARIO" });
     GesUsuarios.config.theme = byaSite.tema;
     GesUsuarios.init();
 });

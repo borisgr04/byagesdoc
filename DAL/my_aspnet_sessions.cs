@@ -12,15 +12,17 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class fc_terceros
+    public partial class my_aspnet_sessions
     {
-        public string terceroId { get; set; }
-        public string tipodoc { get; set; }
-        public string tipoper { get; set; }
-        public string nombre { get; set; }
-        public string direccion { get; set; }
-        public string telefono { get; set; }
-        public string correo { get; set; }
-        public string lugarexpe { get; set; }
+        public string SessionId { get; set; }
+        public int ApplicationId { get; set; }
+        public System.DateTime Created { get; set; }
+        public System.DateTime Expires { get; set; }
+        public System.DateTime LockDate { get; set; }
+        public int LockId { get; set; }
+        public int Timeout { get; set; }
+        public bool Locked { get; set; }
+        public byte[] SessionItems { get; set; }
+        public int Flags { get; set; }
     }
 }

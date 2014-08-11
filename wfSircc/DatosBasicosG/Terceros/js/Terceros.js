@@ -1,6 +1,7 @@
 ﻿var admTercero = (function () {
 
-    var urlToAbrir = "/Servicios/DatosBasicosG/wsTerceros.asmx/Get";
+    var urlToAbrir = "/Servicios/DatosBasicosG/wsTerceros.asmx/Gets";
+    var urlToAbrir2 = "/Servicios/DatosBasicosG/wsTerceros.asmx/Get";
     var urlToGuardarNuevo = "/Servicios/DatosBasicosG/wsTerceros.asmx/Insert";
     var urlToGuardarMod = "/Servicios/DatosBasicosG/wsTerceros.asmx/Update";
     var activarValidar = false;
@@ -9,16 +10,15 @@
     
     var msgPpal = "#LbMsg";
 
-
     var _addHandlers = function () {
         $('#BtnDwnAbrir').click(function (event) {
             _Abrir($("#txtNumero").val());
         });
-
         $("#txtFecNac").datepicker({
             showOtherMonths: true,
             selectOtherMonths: false,
         });
+
         $("#guardarButton").click(function (event) {
             _guardar();
         });
@@ -31,20 +31,16 @@
         $("#nuevoButton").click(function (event) {
             Nuevo();
         });
-
         $(".validar").change(function () {
             _esValido();
         });
         $(".validar").blur(function () {
             _esValido();
         });
-
     };
-
 
     var _esValido = function () {
         var error = false;
-
         var _ValidarEmpty = function (Tipo, Control) {
             if ($("#" + Tipo + Control).val() == "") {
                 $("#dvd" + Control).addClass("has-error");
@@ -121,7 +117,7 @@
     var _cancelar = function () {
         byaMsgBox.confirm("Desea cancelar el proceso?", function (result) {
             if (result) {
-                Solicitudes.config.oper = 'cancelar';
+                admTercero.config.oper = 'cancelar';
                 _reset();
             }
         });
@@ -148,6 +144,7 @@
         e.Direccion = $('#txtDir').val();
         e.Telefono = $('#txtTel').val();
         e.Correo = $('#txtEma').val();
+        e.lugarexpe = $('#txtLugExp').val();
 
         //e.EXP_IDE = $('#txtLugExp').val();
         //e.DV_TER = $('#TxtDV').val();
@@ -158,11 +155,8 @@
 
     var _guardarNuevo = function () {
         jsonData = "{'Reg':" + JSON.stringify(_getDatos()) + "}";
-
         byaPage.POST_Sync(urlToGuardarNuevo, jsonData, function (result) {
-
-            byaRpta = byaPage.retObj(result.d);
-            
+            byaRpta = byaPage.retObj(result.d);            
             $(msgPpal).msgBox({ titulo: "Registro de Nuevo Tercero", mensaje: byaRpta.Mensaje + " N°: <b>" + byaRpta.id + "</b>", tipo: !byaRpta.Error });
             if (!byaRpta.Error) {
              //   $("#txtNSol").val(byaRpta.id);
@@ -183,7 +177,7 @@
         byaPage.POST_Sync(urlToGuardarMod, jsonData, function (result) {
             byaRpta = byaPage.retObj(result.d);
             admTercero.Limpiar();
-            $(msgPpal).msgBox({ titulo: "Registro de Nueva Solicitud", mensaje: byaRpta.Mensaje, tipo: !byaRpta.Error });
+            $(msgPpal).msgBox({ titulo: "Registro de Tercero", mensaje: byaRpta.Mensaje, tipo: !byaRpta.Error });
         });
         $("#nuevoButton").byaSetHabilitar(true);
         $("#editarButton").byaSetHabilitar(false);
@@ -222,16 +216,16 @@
 
     var _Abrir = function (ideTer) {
         var sw = false;
+        
         if (ideTer == "") {
             $(msgPpal).msgBox({ titulo: "Consulta de Tercero", mensaje: "Debe especificar un número de Identificación", tipo: false });
             $("#txtNumero").focus();
             return false;
         }
-        var parametrosJSON = { "tercerosId": ideTer };
-                
+        var parametrosJSON = { "tercerosId": ideTer };                
         $.ajax({
             type: "GET",
-            url: urlToAbrir,
+            url: urlToAbrir2,
             data: parametrosJSON,
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -241,34 +235,34 @@
             },
             success: function (result) {
                 var ter = byaPage.retObj(result.d);
-                
+                //alert(JSON.stringify(ter));
                 if (ter.IDE_TER == 0) {
-                   $(msgPpal).msgBox({ titulo: "Tercero", mensaje: "El tercero con N° Identificación  " + nep + " no se encuentra registrado...!!!", tipo: "warning" });
-                   
+                   $(msgPpal).msgBox({ titulo: "Tercero", mensaje: "El tercero con N° Identificación  " + nep + " no se encuentra registrado...!!!", tipo: "warning" });                   
                 }
                 else {
-                    $('.input').attr('disabled', false);
-                    
+                    $('.input').attr('disabled', false);                    
                     $('#CboTipDoc').val(ter.tipodoc);
                     $('#txtNroDoc').val(ter.terceroId);
                     $('#CboTipPer').val(ter.tipoper);
-                    $('#txtNombre').val(ter.nombre);
+                    $('#txtNombre').val(ter.nombre); 
+                    $('#txtLugExp').val(ter.lugarexpe);
                     $('#txtDir').val(ter.direccion);
                     $('#txtTel').val(ter.telefono);
                     $('#txtEma').val(ter.correo);
 
+                    $("#txtNroDoc").byaSetHabilitar(false);
                     $("#guardarButton").byaSetHabilitar(false);
                     $("#nuevoButton").byaSetHabilitar(false);
                     $("#BtnDwnAbrir").byaSetHabilitar(false);
                     $("#editarButton").byaSetHabilitar(true);
-                    $("#cancelarButton").byaSetHabilitar(true);
+                    $("#cancelarButton").byaSetHabilitar(false);
                     $("#txtNumero").byaSetHabilitar(false);
                     $("#BtnDwnAbrir").byaSetHabilitar(false);
                    
                     
                     $(msgPpal).msgBox({ titulo: "Tercero", mensaje: "Se cargaron los datos del Tercero", tipo: "info" });
                     sw = true;
-
+                    Editar();
                 }
             },
             error: function (jqXHR, status, error) {
@@ -289,10 +283,12 @@
             _addHandlers();
             _crearElements();
             terceroId = $.getUrlVar('terceroId');
-            //$("#txtNumero").val(terceroId);
             if (terceroId != null) {
-                _Abrir(terceroId);
+               _Abrir(terceroId);
+            } else {
+                Nuevo();
             }
+            //$("#txtNumero").val(terceroId);
             
             
         },
@@ -332,17 +328,12 @@
             //Colocar Valores Por Defecto
             $('#form1')[0].reset();
             byaPage.msgLimpiar($("#LbMsg"));
-        },
+        }
     }
-
-
-
-
 }());
 
-
 $(function () {
-    byaSite.SetModuloP({ TituloForm: " Terceros", Modulo: "Administración", urlToPanelModulo: "gTerceros.aspx", Cod_Mod: "ADMIN", Rol: "ADM_TERC" });
+    byaSite.SetModuloP({ TituloForm: " Terceros", Modulo: "Administración", urlToPanelModulo: "gTerceros.aspx", Cod_Mod: "ADMIN", Rol: "AD_DB_TER" });
     //admTercero.config.theme = byaSite.tema;
     admTercero.init();
     //GesCronograma.init();

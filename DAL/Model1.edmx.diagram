@@ -4,19 +4,29 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ef676ca4e9a74a2daaec1a510ab77004" Name="Diagrama1" ZoomLevel="94">
-        <EntityTypeShape EntityType="trdModel.fc_menu" Width="1.5" PointX="9.875" PointY="7" IsExpanded="true" />
+      <Diagram DiagramId="ef676ca4e9a74a2daaec1a510ab77004" Name="Diagrama1" ZoomLevel="75">
+        <EntityTypeShape EntityType="trdModel.fc_menu" Width="1.5" PointX="8" PointY="3.75" IsExpanded="true" FillColor="192, 64, 0" />
         <EntityTypeShape EntityType="trdModel.series" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="trdModel.subseries" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="trdModel.tiposdocumentales" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="trdModel.SerieFK" ManuallyRouted="false" />
         <AssociationConnector Association="trdModel.SubSeriesIdTD" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="trdModel.fc_terceros" Width="1.5" PointX="9.75" PointY="4.375" />
         <EntityTypeShape EntityType="trdModel.configuracion" Width="1.5" PointX="7.875" PointY="1.125" />
         <EntityTypeShape EntityType="trdModel.dependencias" Width="1.5" PointX="5.6055885598089485" PointY="4.8317001186458857" />
-        <EntityTypeShape EntityType="trdModel.unidaddocumental" Width="1.5" PointX="10.393468105417428" PointY="12.405187061245174" />
+        <EntityTypeShape EntityType="trdModel.unidaddocumental" Width="1.5" PointX="2.75" PointY="5.75" />
         <AssociationConnector Association="trdModel.FKDependencias" />
         <AssociationConnector Association="trdModel.FkSubseries" />
+        <EntityTypeShape EntityType="trdModel.fc_terceros" Width="1.5" PointX="5.6456742909018294" PointY="31.709650024636485" />
+      </Diagram>
+      <Diagram DiagramId="59676ead4e8d4373ad951952f6caa9e8" Name="Diagrama3" >
+        <EntityTypeShape EntityType="trdModel.my_aspnet_applications" Width="1.5" PointX="0.75" PointY="0.75" FillColor="192, 64, 0" />
+        <EntityTypeShape EntityType="trdModel.my_aspnet_membership" Width="1.5" PointX="2.75" PointY="0.75" FillColor="192, 64, 0" />
+        <EntityTypeShape EntityType="trdModel.my_aspnet_roles" Width="1.5" PointX="4.75" PointY="0.75" FillColor="192, 64, 0" />
+        <EntityTypeShape EntityType="trdModel.my_aspnet_users" Width="1.5" PointX="4.75" PointY="3.75" FillColor="192, 64, 0" />
+        <EntityTypeShape EntityType="trdModel.my_aspnet_sessioncleanup" Width="1.5" PointX="6.75" PointY="0.75" FillColor="192, 64, 0" />
+        <EntityTypeShape EntityType="trdModel.my_aspnet_profiles" Width="1.5" PointX="0.875" PointY="2.625" FillColor="192, 64, 0" />
+        <EntityTypeShape EntityType="trdModel.my_aspnet_sessions" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="trdModel.my_aspnet_usersinroles" Width="1.5" PointX="2.75" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

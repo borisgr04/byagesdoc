@@ -3,7 +3,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <div class="row">
         <div class="col-md-12">
             <div class="col-md-3">
@@ -79,7 +78,7 @@
                     <input id='txtNombre' type="text" class="form-control validar" autocomplete="off" />
                 </div>
             </div>
-         <%--   <div class="form-group">
+<%--   <div class="form-group">
                 <label class="col-sm-3 control-label no-padding-right" for="txtFecNac">Fecha de nacimiento</label>
                 <div class="col-sm-3">
                     <div class="input-medium">
@@ -130,11 +129,6 @@
 
         </div>
     </div>
-
-
-
-
-
     <script src="js/Terceros.js" type="text/javascript"></script>
 
 </asp:Content>

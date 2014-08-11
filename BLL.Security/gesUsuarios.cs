@@ -8,6 +8,7 @@ using ByA;
 using Entidades;
 using Entidades.Security;
 using System.Web.Security;
+using DAL;
 
 
 namespace BLL.Security
@@ -15,60 +16,64 @@ namespace BLL.Security
     public class gesUsuarios
     {
         //Entities ctx;
+        public trdEntities ctx { get; set; }
+
         ByARpt byaRpt = new ByARpt();
 
-        //public DateTime GetUsuarios(string usuario)
+        //public DateTime? GetUsuarios(string usuario)
         //{
-        //    DateTime ultAct = ctx.ORA_ASPNET_USERS.Select(t => t.LASTACTIVITYDATE).FirstOrDefault();
+        //    DateTime? ultAct = ctx.my_aspnet_users.Select(t => t.lastActivityDate).FirstOrDefault();
         //    return ultAct;
         //}
         public List<USUARIOS_DTO> GetUsuarios(string filtro)
         {
           
-            /*List<USUARIOS_DTO> lst = new List<USUARIOS_DTO>();
-            List<USUARIOS_DTO> lstF ;
-            ctx = new Entities();
-            
-                List<ORA_ASPNET_MEMBERSHIP> lstO = ctx.ORA_ASPNET_MEMBERSHIP.ToList();
-                Mapper.CreateMap<ORA_ASPNET_MEMBERSHIP, USUARIOS_DTO>()
-                    .ForMember(dest => dest.USERNAME, opt => opt.MapFrom(src => src.ORA_ASPNET_USERS.USERNAME))
-                    .ForMember(dest => dest.LASTACTIVITYDATE, opt => opt.MapFrom(src => src.ORA_ASPNET_USERS.LASTACTIVITYDATE))
-                    .ForMember(dest => dest.TERCERO, opt => opt.MapFrom(src => GetTercero(src.ORA_ASPNET_USERS.USERNAME)));
+            List<USUARIOS_DTO> lst = new List<USUARIOS_DTO>();
+            ctx = new trdEntities();
+
+            List<my_aspnet_membership> lstO = ctx.my_aspnet_membership.ToList();
+
+            Mapper.CreateMap<my_aspnet_membership, USUARIOS_DTO>()
+                   .ForMember(dest => dest.USERNAME, opt => opt.MapFrom(src => ctx.my_aspnet_users.Where(t => t.id == src.userId).FirstOrDefault().name))
+                   .ForMember(dest => dest.TERCERO, opt => opt.MapFrom(src => GetTercero(ctx.my_aspnet_users.Where(t => t.id == src.userId).FirstOrDefault().name)))
+                   .ForMember(dest => dest.LASTACTIVITYDATE, opt => opt.MapFrom(src => ctx.my_aspnet_users.Where(t => t.id == src.userId).FirstOrDefault().lastActivityDate))
+                   .ForMember(dest => dest.CreationDate, opt => opt.MapFrom(src => ctx.my_aspnet_users.Where(t => t.id == src.userId).FirstOrDefault().lastActivityDate));
+
+
                 Mapper.Map(lstO, lst);
                 
-            lstF=lst.Where(u=>u.USERNAME.Contains(filtro) || u.TERCERO.ToUpper().Contains(filtro.ToUpper())).ToList();
-            return lstF.OrderBy(t => t.LASTACTIVITYDATE).ToList();
+            //lstF=lst.Where(u=>u.USERNAME.Contains(filtro) || u.TERCERO.ToUpper().Contains(filtro.ToUpper())).ToList();
+            return lst.OrderBy(t => t.LASTACTIVITYDATE).ToList();
                 
-            */
-            return new List<USUARIOS_DTO>();
+           
+            
         }
         
-           /* 
+         
         private string GetTercero(string username)
         {
-            string nomter = "";
-            TERCEROS t = ctx.TERCEROS.Where(ter => ter.IDE_TER == username).FirstOrDefault();
-            if (t != null)
-            {
-                nomter=(t.APE1_TER.Trim() + " " + (t.APE2_TER == null ? "" : t.APE2_TER.Trim()) + " " + (t.NOM1_TER == null ? "" : t.NOM1_TER.Trim()) + " " + (t.NOM2_TER == null ? "" : t.NOM2_TER.Trim())).Trim();
-            }
-            return nomter;
+            fc_terceros t = ctx.fc_terceros.Where(ter => ter.terceroId == username).FirstOrDefault();
+            return t.nombre;
         }
 
         public List<ModuloRoles> GetRoles(string Modulo,string UserName)
         {
-            ctx = new Entities();
+            ctx = new trdEntities();
 
-            List<ModuloRoles> lm = ctx.MENU2.Where(t => t.MODULO == Modulo && t.MENUID!= t.PADREID).OrderBy(t=>t.POSICION)
+            List<ModuloRoles> lm = ctx.fc_menu.Where(t => t.fc_modulo == Modulo && t.fc_menuid != t.fc_padreid).OrderBy(t=>t.fc_posicion)
                 .Select(t => new ModuloRoles
                 {
-                    Modulo = t.MODULO,
-                    Roles = t.ROLES,
-                  Titulo = t.TITULO
+                    Modulo = t.fc_modulo,
+                    Roles = t.fc_roles,
+                  Titulo = t.fc_titulo
                 }).Distinct().ToList();
             foreach (ModuloRoles item in lm)
             {
-                item.hasRol = Roles.IsUserInRole(UserName, item.Roles);
+                if (item.Roles != null)
+                {
+                    item.hasRol = Roles.IsUserInRole(UserName, item.Roles);
+                }
+              
             }
             return lm;
         }
@@ -115,14 +120,13 @@ namespace BLL.Security
 
         public List<ListBoxJq> GetRolesLB(string Modulo)
         {
-            ctx = new Entities();
+            ctx = new trdEntities();
 
-            List<ListBoxJq> lm = ctx.MENU2.Where(t => t.MODULO == Modulo)
+            List<ListBoxJq> lm = ctx.fc_menu.Where(t => t.fc_modulo == Modulo)
                 .Select(t => new ListBoxJq
-                { group = t.MODULO,
-                    value = t.ROLES,
-                  label = t.TITULO,
-                  
+                { group = t.fc_modulo,
+                    value = t.fc_roles,
+                  label = t.fc_titulo,
                 }).Distinct().ToList();
             foreach(ListBoxJq item in lm){
                 item.hasRol = Roles.IsUserInRole("admin", item.value);
@@ -152,7 +156,7 @@ namespace BLL.Security
         {
 	        try {
                 string rst = Membership.GetUser(Reg.USERNAME).ResetPassword();
-                Membership.GetUser(Reg.USERNAME).ChangePassword(rst, Reg.PASSWORD);
+                Membership.GetUser(Reg.USERNAME).ChangePassword(rst, Reg.Password);
                 byaRpt.Mensaje = "Se realizó el cambio de contraseña";
                 byaRpt.Error = false;
 	        } catch (Exception ex) {
@@ -198,23 +202,25 @@ namespace BLL.Security
 
         public List<USUARIOS_DTO> GetUsuariosEnLinea()
         {
+            /*
             List<USUARIOS_DTO> lst = new List<USUARIOS_DTO>();
             
-            ctx = new Entities();
+            ctx = new trdEntities ();
 
-            List<ORA_ASPNET_MEMBERSHIP> lstO = ctx.ORA_ASPNET_MEMBERSHIP.ToList();
-            Mapper.CreateMap<ORA_ASPNET_MEMBERSHIP, USUARIOS_DTO>()
-                .ForMember(dest => dest.USERNAME, opt => opt.MapFrom(src => src.ORA_ASPNET_USERS.USERNAME))
-                .ForMember(dest => dest.LASTACTIVITYDATE, opt => opt.MapFrom(src => src.ORA_ASPNET_USERS.LASTACTIVITYDATE))
-                .ForMember(dest => dest.TERCERO, opt => opt.MapFrom(src => GetTercero(src.ORA_ASPNET_USERS.USERNAME)));
-            foreach(ORA_ASPNET_MEMBERSHIP item in lstO){
+            List<my_aspnet_membership> lstO = ctx.my_aspnet_membership.ToList();
+            Mapper.CreateMap<my_aspnet_membership, USUARIOS_DTO>();
+              //  .ForMember(dest => dest.USERNAME, opt => opt.MapFrom(src => src.my .USERNAME))
+               // .ForMember(dest => dest.LASTACTIVITYDATE, opt => opt.MapFrom(src => src.ORA_ASPNET_USERS.LASTACTIVITYDATE))
+               // .ForMember(dest => dest.TERCERO, opt => opt.MapFrom(src => GetTercero(src.ORA_ASPNET_USERS.USERNAME)));
+            foreach(my_aspnet_membership item in lstO){
                 if (Membership.GetUser(item.ORA_ASPNET_USERS.USERNAME).IsOnline) {
                     USUARIOS_DTO itemDTO = new USUARIOS_DTO();
                     Mapper.Map(item, itemDTO);
                     lst.Add(itemDTO);
                 }
             }
-            return lst.OrderBy(t => t.LASTACTIVITYDATE).ToList();
+             * */
+            return new List<USUARIOS_DTO>(); //lst.OrderBy(t => t.LASTACTIVITYDATE).ToList();
 
         }
 
@@ -223,7 +229,7 @@ namespace BLL.Security
             string Msg="";
             try
             {
-                Membership.CreateUser(Reg.USERNAME, Reg.PASSWORD);
+                Membership.CreateUser(Reg.USERNAME, Reg.Password);
                 switch (status) {
                         case MembershipCreateStatus.DuplicateEmail:
                                 Msg = Msg + "Correo Eléctronico Duplicado";
@@ -274,7 +280,7 @@ namespace BLL.Security
             }
             return byaRpt;
         }
-      */  
+       
 
     }
 

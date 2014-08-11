@@ -700,6 +700,7 @@
     <Content Include="jqscripts\kendoui\kendo.web.min.js" />
     <Content Include="jqscripts\knockout-2.2.1.js" />
     <Content Include="jqscripts\knockout-mapping-2.0.0.js" />
+    <Content Include="jqscripts\ModalTer.js" />
     <Content Include="jqscripts\qunit-git.js" />
     <Content Include="jqscripts\respond.min.js" />
     <Content Include="jqwidgets\globalization\globalize.culture.cs-CZ.js" />
@@ -1049,6 +1050,7 @@
     <Content Include="jqwidgets\styles\jqx.ui-sunny.css" />
     <Content Include="jqwidgets\styles\jqx.web.css" />
     <Content Include="jqwidgets\styles\jqx.windowsphone.css" />
+    <Content Include="jsMaster\masterP.js" />
     <Content Include="login.aspx" />
     <Content Include="packages.config" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
@@ -1062,6 +1064,9 @@
     <Content Include="Seguridad\PanelAdmin.aspx" />
     <Content Include="Seguridad\PerfilxUsuario.aspx" />
     <Content Include="Servicios\Bandeja\wsBandejaEntrada.asmx" />
+    <Content Include="Servicios\ControlFlujo\wsMenu.asmx" />
+    <Content Include="Servicios\ControlFlujo\wsSecurity.asmx" />
+    <Content Include="Servicios\DatosBasicosG\wsTerceros.asmx" />
     <Content Include="WebForm2.aspx" />
     <Content Include="jqwidgets\Web.config" />
     <Content Include="jqscripts\Web.config" />
@@ -1289,6 +1294,18 @@
       <DependentUpon>wsBandejaEntrada.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Servicios\ControlFlujo\wsMenu.asmx.cs">
+      <DependentUpon>wsMenu.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Servicios\ControlFlujo\wsSecurity.asmx.cs">
+      <DependentUpon>wsSecurity.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Servicios\DatosBasicosG\wsTerceros.asmx.cs">
+      <DependentUpon>wsTerceros.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1321,8 +1338,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Docs\" />
-    <Folder Include="Servicios\ControlFlujo\" />
-    <Folder Include="Servicios\DatosBasicosG\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />

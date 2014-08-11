@@ -5,6 +5,7 @@ using System.Text;
 using ByA;
 using Entidades;
 using System.Web.Security;
+using DAL;
 
 
 namespace BLL.Menu
@@ -16,14 +17,13 @@ namespace BLL.Menu
         
         public string GenerarRoles()
         {
-            /*
-            using (Entities ctx = new Entities())
-            {
+           using (trdEntities ctx = new trdEntities ())
+           {
                 string strrole = "";
-                List<MENU2> lm = ctx.MENU2.ToList();
-                foreach (MENU2 im in lm)
+                List<fc_menu> lm = ctx.fc_menu.ToList();
+                foreach (fc_menu im in lm)
                 {
-                    string rol = im.ROLES;
+                    string rol = im.fc_roles;
                     if (!String.IsNullOrEmpty(rol) && (!Roles.RoleExists(rol)))
                     {
                         Roles.CreateRole(rol);
@@ -37,11 +37,10 @@ namespace BLL.Menu
                     }
                 }
                 return strrole;
-                */
+                
             return "";
-    }
+           }
 
         }
-
-        
     }
+}

@@ -6,7 +6,6 @@ using System.Web.Services;
 using BLL;
 using ByA;
 using Entidades;
-//using Entidades.VistasGC;
 using Sircc4.Clases;
 using System.Web.Script.Services;
 using BLL.Gestion;

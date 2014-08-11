@@ -11,7 +11,7 @@ namespace BLL.Gestion
 {
   public  class mTerceros
     {
-      public fcEntities ctx { get; set; }
+      public trdEntities ctx { get; set; }
 
       public mTerceros() {
           Mapper.CreateMap<fc_tercerosDto, fc_terceros>();
@@ -20,8 +20,9 @@ namespace BLL.Gestion
 
       public List<fc_tercerosDto> Gets() {
           
-          List<fc_tercerosDto> lstT= new List<fc_tercerosDto>(); 
-          using (ctx = new fcEntities()) {
+          List<fc_tercerosDto> lstT= new List<fc_tercerosDto>();
+          using (ctx = new trdEntities())
+          {
               List<fc_terceros> lstO = ctx.fc_terceros.ToList();
               Mapper.Map(lstO, lstT);
           }
@@ -31,7 +32,7 @@ namespace BLL.Gestion
       public fc_tercerosDto Gets(string terceroId)
       {
           fc_tercerosDto objT = new fc_tercerosDto();
-          using (ctx = new fcEntities())
+          using (ctx = new trdEntities())
           {
               fc_terceros objO = ctx.fc_terceros.Find(terceroId);
               Mapper.Map(objO, objT);
@@ -66,6 +67,7 @@ namespace BLL.Gestion
                 else {
                     byaRpt.Mensaje = "Ya se encuentra el tercero con ese número de identificación";
                     byaRpt.Error = true;
+                    byaRpt.id = oDto.terceroId;
                     return false;
                 }
             }
@@ -106,6 +108,7 @@ namespace BLL.Gestion
               Dto.telefono = oDto.telefono;
               Dto.tipodoc = oDto.tipodoc;
               Dto.tipoper = oDto.tipoper;
+              Dto.lugarexpe = oDto.lugarexpe;
 
               byaRpt.id = Dto.terceroId.ToString();
           }

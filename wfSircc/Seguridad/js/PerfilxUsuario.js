@@ -7,11 +7,11 @@
     var TituloForm = "Gestión de Usuarios <small > Seguridad</small>";
     var gridCon = '#jqxgrid';
 
-    var urlToGridCon = "/Servicios/wsSecurity.asmx/GetRoles";
-    var urlToRoles = "/Servicios/wsSecurity.asmx/GetRolesJ";
+    var urlToGridCon = "/Servicios/ControlFlujo/wsSecurity.asmx/GetRoles";
+    var urlToRoles = "/Servicios/ControlFlujo/wsSecurity.asmx/GetRolesJ";
     var urlToDetContratos = "GesDetContratos.aspx";
     var urlToFiltro = '/Servicios/wsContratosGestionC.asmx/GetDepContratos';
-    var urlToGuardarRoles = "/Servicios/wsSecurity.asmx/GuardarRoles";
+    var urlToGuardarRoles = "/Servicios/ControlFlujo/wsSecurity.asmx/GuardarRoles";
     var msgPpal = "#LbMsg";
 
     var _addHandlers = function () {
@@ -136,7 +136,7 @@
 } ());
 
 $(function () {
-    byaSite.SetModuloP({ TituloForm: "Asinación de Roles a Usuarios", Modulo: "Seguridad", urlToPanelModulo: "PanelAdmin.aspx", Cod_Mod: "ADMI4", Rol: "AD_SEC_USUARIO" });
+    byaSite.SetModuloP({ TituloForm: "Asinación de Roles a Usuarios", Modulo: "Seguridad", urlToPanelModulo: "PanelAdmin.aspx", Cod_Mod: "SEGU", Rol: "SG_SEC_USUARIO" });
     PerfilxUsuario.config.theme = byaSite.tema;
     PerfilxUsuario.init();
 });

@@ -127,8 +127,8 @@
             </div>
         </div>
     </div>
-
-    <script src="/EstPrev/js/ModalTer.js"></script>
+    <script src="/jqscripts/ModalTer.js"></script>
+   <%-- <script src="/EstPrev/js/ModalTer.js"></script>--%>
     <script src="js/GesUsuarios.js"></script>
 
 </asp:Content>

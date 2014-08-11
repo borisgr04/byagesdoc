@@ -62,6 +62,7 @@
     <Compile Include="Gestion\mDocumentos.cs" />
     <Compile Include="Gestion\mSubSeries.cs" />
     <Compile Include="Gestion\mSeries.cs" />
+    <Compile Include="Gestion\mTerceros.cs" />
     <Compile Include="IO\Directorios.cs" />
     <Compile Include="Menu\genRoles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

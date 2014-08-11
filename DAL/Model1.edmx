@@ -10,6 +10,14 @@
           <EntitySet Name="dependencias" EntityType="trdModel.Store.dependencias" store:Type="Tables" Schema="trd" />
           <EntitySet Name="fc_menu" EntityType="trdModel.Store.fc_menu" store:Type="Tables" Schema="trd" />
           <EntitySet Name="fc_terceros" EntityType="trdModel.Store.fc_terceros" store:Type="Tables" Schema="trd" />
+          <EntitySet Name="my_aspnet_applications" EntityType="trdModel.Store.my_aspnet_applications" store:Type="Tables" Schema="trd" />
+          <EntitySet Name="my_aspnet_membership" EntityType="trdModel.Store.my_aspnet_membership" store:Type="Tables" Schema="trd" />
+          <EntitySet Name="my_aspnet_profiles" EntityType="trdModel.Store.my_aspnet_profiles" store:Type="Tables" Schema="trd" />
+          <EntitySet Name="my_aspnet_roles" EntityType="trdModel.Store.my_aspnet_roles" store:Type="Tables" Schema="trd" />
+          <EntitySet Name="my_aspnet_sessioncleanup" EntityType="trdModel.Store.my_aspnet_sessioncleanup" store:Type="Tables" Schema="trd" />
+          <EntitySet Name="my_aspnet_sessions" EntityType="trdModel.Store.my_aspnet_sessions" store:Type="Tables" Schema="trd" />
+          <EntitySet Name="my_aspnet_users" EntityType="trdModel.Store.my_aspnet_users" store:Type="Tables" Schema="trd" />
+          <EntitySet Name="my_aspnet_usersinroles" EntityType="trdModel.Store.my_aspnet_usersinroles" store:Type="Tables" Schema="trd" />
           <EntitySet Name="series" EntityType="trdModel.Store.series" store:Type="Tables" Schema="trd" />
           <EntitySet Name="subseries" EntityType="trdModel.Store.subseries" store:Type="Tables" Schema="trd" />
           <EntitySet Name="tiposdocumentales" EntityType="trdModel.Store.tiposdocumentales" store:Type="Tables" Schema="trd" />
@@ -68,13 +76,106 @@
           <Key>
             <PropertyRef Name="terceroId" />
           </Key>
-          <Property Name="terceroId" Type="int" Nullable="false" />
+          <Property Name="terceroId" Type="varchar" Nullable="false" MaxLength="12" />
           <Property Name="tipodoc" Type="varchar" MaxLength="2" />
           <Property Name="tipoper" Type="varchar" MaxLength="10" />
           <Property Name="nombre" Type="varchar" MaxLength="45" />
           <Property Name="direccion" Type="varchar" MaxLength="45" />
           <Property Name="telefono" Type="varchar" MaxLength="45" />
           <Property Name="correo" Type="varchar" MaxLength="45" />
+          <Property Name="lugarexpe" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="my_aspnet_applications">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" MaxLength="256" />
+          <Property Name="description" Type="varchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="my_aspnet_membership">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="128" />
+          <Property Name="Comment" Type="varchar" MaxLength="255" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordKey" Type="char" MaxLength="32" />
+          <Property Name="PasswordFormat" Type="tinyint" />
+          <Property Name="PasswordQuestion" Type="varchar" MaxLength="255" />
+          <Property Name="PasswordAnswer" Type="varchar" MaxLength="255" />
+          <Property Name="IsApproved" Type="bool" />
+          <Property Name="LastActivityDate" Type="datetime" />
+          <Property Name="LastLoginDate" Type="datetime" />
+          <Property Name="LastPasswordChangedDate" Type="datetime" />
+          <Property Name="CreationDate" Type="datetime" />
+          <Property Name="IsLockedOut" Type="bool" />
+          <Property Name="LastLockedOutDate" Type="datetime" />
+          <Property Name="FailedPasswordAttemptCount" Type="uint" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="uint" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" />
+        </EntityType>
+        <EntityType Name="my_aspnet_profiles">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="valueindex" Type="longtext" />
+          <Property Name="stringdata" Type="longtext" />
+          <Property Name="binarydata" Type="longblob" />
+          <Property Name="lastUpdatedDate" Type="timestamp" Nullable="false" />
+        </EntityType>
+        <EntityType Name="my_aspnet_roles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="applicationId" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="my_aspnet_sessioncleanup">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Name="LastRun" Type="datetime" Nullable="false" />
+          <Property Name="IntervalMinutes" Type="int" Nullable="false" />
+          <Property Name="ApplicationId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="my_aspnet_sessions">
+          <Key>
+            <PropertyRef Name="SessionId" />
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Name="SessionId" Type="varchar" Nullable="false" MaxLength="191" />
+          <Property Name="ApplicationId" Type="int" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="Expires" Type="datetime" Nullable="false" />
+          <Property Name="LockDate" Type="datetime" Nullable="false" />
+          <Property Name="LockId" Type="int" Nullable="false" />
+          <Property Name="Timeout" Type="int" Nullable="false" />
+          <Property Name="Locked" Type="bool" Nullable="false" />
+          <Property Name="SessionItems" Type="longblob" />
+          <Property Name="Flags" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="my_aspnet_users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="applicationId" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="isAnonymous" Type="bool" Nullable="false" />
+          <Property Name="lastActivityDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="my_aspnet_usersinroles">
+          <Key>
+            <PropertyRef Name="userId" />
+            <PropertyRef Name="roleId" />
+          </Key>
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="roleId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="series">
           <Key>
@@ -190,7 +291,6 @@
             <End Role="subseries" EntitySet="subseries" />
             <End Role="tiposdocumentales" EntitySet="tiposdocumentales" />
           </AssociationSet>
-          <EntitySet Name="fc_terceros" EntityType="trdModel.fc_terceros" />
           <EntitySet Name="configuracion" EntityType="trdModel.configuracion" />
           <EntitySet Name="dependencias" EntityType="trdModel.dependencias" />
           <EntitySet Name="unidaddocumental" EntityType="trdModel.unidaddocumental" />
@@ -202,6 +302,15 @@
             <End Role="subseries" EntitySet="subseries" />
             <End Role="unidaddocumental" EntitySet="unidaddocumental" />
           </AssociationSet>
+          <EntitySet Name="my_aspnet_applications" EntityType="trdModel.my_aspnet_applications" />
+          <EntitySet Name="my_aspnet_membership" EntityType="trdModel.my_aspnet_membership" />
+          <EntitySet Name="my_aspnet_profiles" EntityType="trdModel.my_aspnet_profiles" />
+          <EntitySet Name="my_aspnet_roles" EntityType="trdModel.my_aspnet_roles" />
+          <EntitySet Name="my_aspnet_sessioncleanup" EntityType="trdModel.my_aspnet_sessioncleanup" />
+          <EntitySet Name="my_aspnet_sessions" EntityType="trdModel.my_aspnet_sessions" />
+          <EntitySet Name="my_aspnet_users" EntityType="trdModel.my_aspnet_users" />
+          <EntitySet Name="my_aspnet_usersinroles" EntityType="trdModel.my_aspnet_usersinroles" />
+          <EntitySet Name="fc_terceros" EntityType="trdModel.fc_terceros" />
         </EntityContainer>
         <EntityType Name="fc_menu">
           <Key>
@@ -281,18 +390,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="fc_terceros">
-          <Key>
-            <PropertyRef Name="terceroId" />
-          </Key>
-          <Property Type="Int32" Name="terceroId" Nullable="false" />
-          <Property Type="String" Name="tipodoc" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="tipoper" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="nombre" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="direccion" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="telefono" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="correo" MaxLength="45" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="configuracion">
           <Key>
             <PropertyRef Name="PropiedadId" />
@@ -353,6 +450,111 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="my_aspnet_applications">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="description" MaxLength="256" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="my_aspnet_membership">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Type="Int32" Name="userId" Nullable="false" />
+          <Property Type="String" Name="Email" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Comment" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PasswordKey" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Type="SByte" Name="PasswordFormat" />
+          <Property Type="String" Name="PasswordQuestion" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PasswordAnswer" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsApproved" />
+          <Property Type="DateTime" Name="LastActivityDate" />
+          <Property Type="DateTime" Name="LastLoginDate" />
+          <Property Type="DateTime" Name="LastPasswordChangedDate" />
+          <Property Type="DateTime" Name="CreationDate" />
+          <Property Type="Boolean" Name="IsLockedOut" />
+          <Property Type="DateTime" Name="LastLockedOutDate" />
+          <Property Type="Int64" Name="FailedPasswordAttemptCount" />
+          <Property Type="DateTime" Name="FailedPasswordAttemptWindowStart" />
+          <Property Type="Int64" Name="FailedPasswordAnswerAttemptCount" />
+          <Property Type="DateTime" Name="FailedPasswordAnswerAttemptWindowStart" />
+        </EntityType>
+        <EntityType Name="my_aspnet_profiles">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Type="Int32" Name="userId" Nullable="false" />
+          <Property Type="String" Name="valueindex" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="stringdata" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Type="Binary" Name="binarydata" MaxLength="Max" FixedLength="false" />
+          <Property Type="DateTime" Name="lastUpdatedDate" Nullable="false" />
+        </EntityType>
+        <EntityType Name="my_aspnet_roles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="applicationId" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="my_aspnet_sessioncleanup">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Type="DateTime" Name="LastRun" Nullable="false" />
+          <Property Type="Int32" Name="IntervalMinutes" Nullable="false" />
+          <Property Type="Int32" Name="ApplicationId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="my_aspnet_sessions">
+          <Key>
+            <PropertyRef Name="SessionId" />
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Type="String" Name="SessionId" Nullable="false" MaxLength="191" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ApplicationId" Nullable="false" />
+          <Property Type="DateTime" Name="Created" Nullable="false" />
+          <Property Type="DateTime" Name="Expires" Nullable="false" />
+          <Property Type="DateTime" Name="LockDate" Nullable="false" />
+          <Property Type="Int32" Name="LockId" Nullable="false" />
+          <Property Type="Int32" Name="Timeout" Nullable="false" />
+          <Property Type="Boolean" Name="Locked" Nullable="false" />
+          <Property Type="Binary" Name="SessionItems" MaxLength="Max" FixedLength="false" />
+          <Property Type="Int32" Name="Flags" Nullable="false" />
+        </EntityType>
+        <EntityType Name="my_aspnet_users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="applicationId" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="isAnonymous" Nullable="false" />
+          <Property Type="DateTime" Name="lastActivityDate" />
+        </EntityType>
+        <EntityType Name="my_aspnet_usersinroles">
+          <Key>
+            <PropertyRef Name="userId" />
+            <PropertyRef Name="roleId" />
+          </Key>
+          <Property Type="Int32" Name="userId" Nullable="false" />
+          <Property Type="Int32" Name="roleId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="fc_terceros">
+          <Key>
+            <PropertyRef Name="terceroId" />
+          </Key>
+          <Property Type="String" Name="terceroId" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="tipodoc" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="tipoper" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nombre" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="direccion" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="telefono" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="correo" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="lugarexpe" MaxLength="45" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -412,19 +614,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="fc_terceros">
-            <EntityTypeMapping TypeName="trdModel.fc_terceros">
-              <MappingFragment StoreEntitySet="fc_terceros">
-                <ScalarProperty Name="correo" ColumnName="correo" />
-                <ScalarProperty Name="telefono" ColumnName="telefono" />
-                <ScalarProperty Name="direccion" ColumnName="direccion" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="tipoper" ColumnName="tipoper" />
-                <ScalarProperty Name="tipodoc" ColumnName="tipodoc" />
-                <ScalarProperty Name="terceroId" ColumnName="terceroId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="configuracion">
             <EntityTypeMapping TypeName="trdModel.configuracion">
               <MappingFragment StoreEntitySet="configuracion">
@@ -458,6 +647,118 @@
                 <ScalarProperty Name="PalabrasClave" ColumnName="PalabrasClave" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="idUnidadDocumental" ColumnName="idUnidadDocumental" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="my_aspnet_applications">
+            <EntityTypeMapping TypeName="trdModel.my_aspnet_applications">
+              <MappingFragment StoreEntitySet="my_aspnet_applications">
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="my_aspnet_membership">
+            <EntityTypeMapping TypeName="trdModel.my_aspnet_membership">
+              <MappingFragment StoreEntitySet="my_aspnet_membership">
+                <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+                <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+                <ScalarProperty Name="LastLockedOutDate" ColumnName="LastLockedOutDate" />
+                <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+                <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+                <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+                <ScalarProperty Name="PasswordKey" ColumnName="PasswordKey" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="my_aspnet_profiles">
+            <EntityTypeMapping TypeName="trdModel.my_aspnet_profiles">
+              <MappingFragment StoreEntitySet="my_aspnet_profiles">
+                <ScalarProperty Name="lastUpdatedDate" ColumnName="lastUpdatedDate" />
+                <ScalarProperty Name="binarydata" ColumnName="binarydata" />
+                <ScalarProperty Name="stringdata" ColumnName="stringdata" />
+                <ScalarProperty Name="valueindex" ColumnName="valueindex" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="my_aspnet_roles">
+            <EntityTypeMapping TypeName="trdModel.my_aspnet_roles">
+              <MappingFragment StoreEntitySet="my_aspnet_roles">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="applicationId" ColumnName="applicationId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="my_aspnet_sessioncleanup">
+            <EntityTypeMapping TypeName="trdModel.my_aspnet_sessioncleanup">
+              <MappingFragment StoreEntitySet="my_aspnet_sessioncleanup">
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="IntervalMinutes" ColumnName="IntervalMinutes" />
+                <ScalarProperty Name="LastRun" ColumnName="LastRun" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="my_aspnet_sessions">
+            <EntityTypeMapping TypeName="trdModel.my_aspnet_sessions">
+              <MappingFragment StoreEntitySet="my_aspnet_sessions">
+                <ScalarProperty Name="Flags" ColumnName="Flags" />
+                <ScalarProperty Name="SessionItems" ColumnName="SessionItems" />
+                <ScalarProperty Name="Locked" ColumnName="Locked" />
+                <ScalarProperty Name="Timeout" ColumnName="Timeout" />
+                <ScalarProperty Name="LockId" ColumnName="LockId" />
+                <ScalarProperty Name="LockDate" ColumnName="LockDate" />
+                <ScalarProperty Name="Expires" ColumnName="Expires" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="my_aspnet_users">
+            <EntityTypeMapping TypeName="trdModel.my_aspnet_users">
+              <MappingFragment StoreEntitySet="my_aspnet_users">
+                <ScalarProperty Name="lastActivityDate" ColumnName="lastActivityDate" />
+                <ScalarProperty Name="isAnonymous" ColumnName="isAnonymous" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="applicationId" ColumnName="applicationId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="my_aspnet_usersinroles">
+            <EntityTypeMapping TypeName="trdModel.my_aspnet_usersinroles">
+              <MappingFragment StoreEntitySet="my_aspnet_usersinroles">
+                <ScalarProperty Name="roleId" ColumnName="roleId" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fc_terceros">
+            <EntityTypeMapping TypeName="trdModel.fc_terceros">
+              <MappingFragment StoreEntitySet="fc_terceros">
+                <ScalarProperty Name="lugarexpe" ColumnName="lugarexpe" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="tipoper" ColumnName="tipoper" />
+                <ScalarProperty Name="tipodoc" ColumnName="tipodoc" />
+                <ScalarProperty Name="terceroId" ColumnName="terceroId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
