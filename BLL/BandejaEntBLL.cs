@@ -1,5 +1,6 @@
 ﻿using BLL.Gestion;
 using BLL.IO;
+using ByA;
 using Entidades;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace BLL
 {
     public  class BandejaEntBLL
     {
+        ByARpt byaRpt = new ByARpt();
         public string sourcePath { get; set; }
         public string targetPath { get; set; }
 
@@ -20,11 +22,11 @@ namespace BLL
         { 
             this.sourcePath=sourcePath;
             this.targetPath=targetPath;
-            d = new Directorios(sourcePath, targetPath);
+            
         }
         
 
-        public void MoverArchivos(List<BandejaEntrada> lBE)
+        public ByARpt MoverArchivos(List<BandejaEntrada> lBE)
         {
             
             mGDocumentos m = new mGDocumentos();
@@ -32,42 +34,50 @@ namespace BLL
 
             foreach (BandejaEntrada be in lBE)
             {
+                d = new Directorios(sourcePath, targetPath,be);
                 if (Validar(be))
                 {
+                    
                     // Use Path class to manipulate file and directory paths.
                     dto = new gdocumentosDto();
                     dto.estado = "SA";
                     //dto.idGDocumentos
-                    dto.tipo =d.GetExtension(be);
-                    dto.documento = d.GetBytes(be);
+                    dto.tipo =d.GetExtension();
+                    dto.documento = d.GetBytes();
                     dto.longitud = dto.documento.Length;
                     dto.nombre = be.Archivo;
-
-                    if (m.Insert(dto))
+                    ByARpt rpt =m.Insert(dto);
+                    if (!rpt.Error)
                     {
-                        d.MoverArchivos(be);
+                        d.MoverArchivos();
+                    }
+                    else {
+                        byaRpt.Mensaje += String.Format("El Documento {0} no se pudo cargar: {1} <br/>", be.Archivo, rpt.Mensaje);
                     }
                 }
             }
+            return byaRpt;
         }
 
         private bool Validar(BandejaEntrada be)
         {
-
             if (be.Archivo.EndsWith(".pdf", StringComparison.Ordinal))
             {
-                return true;
+                mDocumentos mDoc = new mDocumentos();
+                unidaddocumentalDto doc = mDoc.Get(d.GetFileName());
+                if (doc.idUnidadDocumental == null)
+                {
+                    byaRpt.Mensaje += String.Format("No existe la Unidad documental Código {0} <br/>", be.Archivo);
+                    return false;
+                }
+                else {
+                    return true;
+                }
             }
             else {
+                byaRpt.Mensaje += String.Format("El Documento {0} no es un archivo (*.pdf) <br/>", be.Archivo);
                 return false;
             }
-            //throw new NotImplementedException();
-            //Validar que sea pdf
-
-            //mUnindadDOcument mu= new mUnindadDOcument();
-            //doc = mu.Get(be.Archivo)
-            //return doc != null;
-            //return true;
         }
 
     }

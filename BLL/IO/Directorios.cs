@@ -11,6 +11,15 @@ namespace BLL.IO
     {
         public string sourcePath { get; set; }
         public string targetPath { get; set; }
+        public BandejaEntrada be{get; set;}
+
+        public Directorios(string sourcePath, string targetPath, BandejaEntrada be)
+        {
+            this.sourcePath = sourcePath;
+            this.targetPath = targetPath;
+            this.be = be;
+
+        }
 
         public Directorios(string sourcePath, string targetPath)
         {
@@ -18,7 +27,7 @@ namespace BLL.IO
             this.targetPath = targetPath;
         }
 
-        public byte[] GetBytes(BandejaEntrada be)
+        public byte[] GetBytes()
         {
                 string sourceFile = System.IO.Path.Combine(sourcePath, be.Archivo);
                 MemoryStream ms = new MemoryStream();
@@ -30,13 +39,19 @@ namespace BLL.IO
                 }
                 return ms.ToArray();
         }
-        public string GetExtension(BandejaEntrada be)
+        public string GetExtension()
         {
             string sourceFile = System.IO.Path.Combine(sourcePath, be.Archivo);
             return Path.GetExtension(sourceFile);
         }
+
+        public string GetFileName()
+        {
+            string sourceFile = System.IO.Path.Combine(sourcePath, be.Archivo);
+            return Path.GetFileNameWithoutExtension(sourceFile);
+        }
         
-        public void MoverArchivos(BandejaEntrada be)
+        public void MoverArchivos()
         {
                 // Use Path class to manipulate file and directory paths.
                 string sourceFile = System.IO.Path.Combine(sourcePath, be.Archivo);
