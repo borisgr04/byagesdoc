@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ByA;
 using DAL;
 using Entidades;
 using System;
@@ -8,10 +9,9 @@ using System.Text;
 
 namespace BLL.Gestion
 {
-   public class mDocumentos
-    {
-        
-         public trdEntities ctx { get; set; }
+   public class mDocumentos:absBLL
+    {        
+       
 
          public mDocumentos()
          {
@@ -19,7 +19,25 @@ namespace BLL.Gestion
              Mapper.CreateMap<unidaddocumentalDto, unidaddocumental>();
              Mapper.CreateMap<unidaddocumental, unidaddocumentalDto>();
          }
+         public ByARpt Insert(unidaddocumentalDto Reg)
+         {
+             unidaddocumental r = new unidaddocumental();
+             Mapper.Map(Reg, r);
+             cmdInsert o = new cmdInsert { reg = r };
+             return o.Enviar();
+         }
+         public unidaddocumentalDto Get(string Codigo)
+         {
 
+             unidaddocumentalDto objT = new unidaddocumentalDto();
+             using (ctx = new trdEntities())
+             {
+                 unidaddocumental objO = ctx.unidaddocumental.Find(Codigo);
+                 Mapper.Map(objO, objT);
+
+             }
+             return objT;
+         }
          public List<unidaddocumentalDto> Gets(string Filtro)
          {
 
@@ -55,5 +73,25 @@ namespace BLL.Gestion
           return lstT;
       }
 
+
+         class cmdInsert : absTemplate
+         {
+
+            
+             public unidaddocumental reg { get; set; }
+             protected internal override bool esValido()
+             {
+                 reg.idUnidadDocumental = ctx.unidaddocumental.Select(t => t.idUnidadDocumental).Max() + 1;
+                 return true;
+             }
+             protected internal override void Antes()
+             {
+
+                 ctx.unidaddocumental.Add(reg);
+
+             }
+
+
+         }
     }
 }
