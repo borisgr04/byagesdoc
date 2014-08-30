@@ -11,6 +11,7 @@ using System.Collections;
 using BLL.IO;
 using BLL.Gestion;
 using Entidades;
+using BLL;
 
 namespace wfSircc.UpDocumentos.UpDirectorio
 {
@@ -84,6 +85,38 @@ namespace wfSircc.UpDocumentos.UpDirectorio
             d = new Directorios(Server.MapPath(BE.Valor), Server.MapPath(BOK.Valor));
 
 
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            mConfiguracion mc = new mConfiguracion();
+            configuracionDto BE = mc.Get("BandejaE");
+            configuracionDto BOK = mc.Get("BandejaOK");
+
+            BandejaEntBLL bll = new BandejaEntBLL(Server.MapPath(BE.Valor), Server.MapPath(BOK.Valor));
+
+            BandejaEntrada be;
+            
+            List<BandejaEntrada> lBE = new List<BandejaEntrada>();
+
+            foreach (ListItem elem in ChkBE.Items)
+            {
+                if (elem.Selected)
+                {
+                    be = new BandejaEntrada();
+                    be.Archivo = (elem.Value);
+                    lBE.Add(be);
+                }
+            }
+
+            bll.MoverArchivos(lBE);
+
+            ChkOK.DataSource = lBE;
+            ChkOK.DataTextField = "Archivo";
+            ChkOK.DataValueField = "Archivo";
+            ChkOK.DataBind();
+
+            ActualizarBandejaEntrada();
         }
 
     }

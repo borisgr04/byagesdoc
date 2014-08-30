@@ -15,6 +15,7 @@
                 <label for="CboTipDoc" class="col-sm-3 control-label"></label>
                 <div class="col-sm-3">
                   <asp:Button ID="BtnMoverArchivos" runat="server" Text="Mover" OnClick="BtnMoverArchivos_Click" />
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
                 </div>
             </div>
 

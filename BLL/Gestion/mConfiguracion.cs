@@ -8,6 +8,8 @@ using System.Text;
 
 namespace BLL.Gestion
 {
+   
+
    public class mConfiguracion
     {
         

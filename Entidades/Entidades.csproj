@@ -48,6 +48,7 @@
     <Compile Include="fc_entidadDto.cs" />
     <Compile Include="fc_tercerosDto.cs" />
     <Compile Include="fc_transaccionesDto.cs" />
+    <Compile Include="gdocumentosDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\USUARIOS_DTO.cs" />
     <Compile Include="seriesDto.cs" />

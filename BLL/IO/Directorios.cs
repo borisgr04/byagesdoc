@@ -18,6 +18,32 @@ namespace BLL.IO
             this.targetPath = targetPath;
         }
 
+        public byte[] GetBytes(BandejaEntrada be)
+        {
+                string sourceFile = System.IO.Path.Combine(sourcePath, be.Archivo);
+                MemoryStream ms = new MemoryStream();
+                using (FileStream file = new FileStream(sourceFile, FileMode.Open, FileAccess.Read))
+                {
+                    byte[] bytes = new byte[file.Length];
+                    file.Read(bytes, 0, (int)file.Length);
+                    ms.Write(bytes, 0, (int)file.Length);
+                }
+                return ms.ToArray();
+        }
+        public string GetExtension(BandejaEntrada be)
+        {
+            string sourceFile = System.IO.Path.Combine(sourcePath, be.Archivo);
+            return Path.GetExtension(sourceFile);
+        }
+        
+        public void MoverArchivos(BandejaEntrada be)
+        {
+                // Use Path class to manipulate file and directory paths.
+                string sourceFile = System.IO.Path.Combine(sourcePath, be.Archivo);
+                string destFile = System.IO.Path.Combine(targetPath, be.Archivo);
+                Directory.Move(sourceFile, destFile);
+        }
+
         public void MoverArchivos(List<BandejaEntrada> lBE)
         {
             foreach (BandejaEntrada be in lBE)
@@ -27,6 +53,8 @@ namespace BLL.IO
                 string destFile = System.IO.Path.Combine(targetPath, be.Archivo);
 
                 Directory.Move(sourceFile, destFile);
+
+
             }
         }
 
@@ -43,10 +71,10 @@ namespace BLL.IO
             return listaBE;
         }
     }
-
-    public class BandejaEntrada
+    //
+    public  class BandejaEntrada
     {
-        public bool Chk  { get; set; }
+        public bool Chk { get; set; }
         public string Completa { get; set; }
         public string Archivo { get; set; }
     }
