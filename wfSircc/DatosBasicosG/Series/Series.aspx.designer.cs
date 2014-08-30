@@ -7,18 +7,9 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace wfSircc.DatosBasicosG.Consultas {
+namespace wfSircc.DatosBasicosG.Series {
     
     
-    public partial class Consultas {
-        
-        /// <summary>
-        /// Control ltPrew.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltPrew;
+    public partial class Series {
     }
 }

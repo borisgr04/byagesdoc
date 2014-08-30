@@ -15,19 +15,16 @@ namespace wfSircc.DatosBasicosG.Consultas
         {
            
 
-            mDocumentos md = new mDocumentos();
-
-            GridView1.DataSource = md.Gets();
-            GridView1.DataBind();
+           
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Response.Redirect("/ashx/ashxDoc.ashx?doc="+GridView1.SelectedValue.ToString());
+        //protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    //Response.Redirect("/ashx/ashxDoc.ashx?doc="+GridView1.SelectedValue.ToString());
 
-            string prew = "<embed src='/Docs/BE/" + GridView1.SelectedValue.ToString() + ".pdf' width='100%' height='375'>";
+        //    //string prew = "<embed src='/Docs/BE/" + GridView1.SelectedValue.ToString() + ".pdf' width='100%' height='375'>";
 
-            ltPrew.Text = prew;
-        }
+        //    //ltPrew.Text = prew;
+        //}
     }
 }

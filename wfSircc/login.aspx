@@ -29,7 +29,7 @@
 </head>
 <body>
     <div class="form-signin-img">
-        <h3> SIRCC &reg</h3>
+        <h3> GesDoc &reg</h3>
         <%--<img src="Images/imagesLogin/sircc.png" alt="Usuario"
             style="margin: 0px;" />--%>
     </div>

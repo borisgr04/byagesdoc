@@ -18,6 +18,6 @@ namespace Entidades
         public Nullable<int> GabetaNo { get; set; }
         public Nullable<System.DateTime> FechaExtInicial { get; set; }
         public Nullable<System.DateTime> FechaExtFinal { get; set; }
-        public string Dependencias_idDependencia { get; set; }
+        public string DependenciaId { get; set; }
     }
 }

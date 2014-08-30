@@ -646,7 +646,10 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="DatosBasicosG\Consultas\Consultas.aspx" />
+    <Content Include="DatosBasicosG\Consultas\js\Consultas.js" />
     <Content Include="DatosBasicosG\Prueba\Prueba.aspx" />
+    <Content Include="DatosBasicosG\Series\js\Series.js" />
+    <Content Include="DatosBasicosG\Series\Series.aspx" />
     <Content Include="DatosBasicosG\Terceros\gTerceros.aspx" />
     <Content Include="DatosBasicosG\Terceros\js\gTercersos.js" />
     <Content Include="DatosBasicosG\Terceros\js\Terceros.js" />
@@ -1063,10 +1066,8 @@
     <Content Include="Seguridad\js\GesUsuarios.js" />
     <Content Include="Seguridad\PanelAdmin.aspx" />
     <Content Include="Seguridad\PerfilxUsuario.aspx" />
+    <Content Include="Servicios\Archivos\wsSeries.asmx" />
     <Content Include="Servicios\Bandeja\wsBandejaEntrada.asmx" />
-    <Content Include="Servicios\ControlFlujo\wsMenu.asmx" />
-    <Content Include="Servicios\ControlFlujo\wsSecurity.asmx" />
-    <Content Include="Servicios\DatosBasicosG\wsTerceros.asmx" />
     <Content Include="WebForm2.aspx" />
     <Content Include="jqwidgets\Web.config" />
     <Content Include="jqscripts\Web.config" />
@@ -1226,6 +1227,13 @@
     <Compile Include="DatosBasicosG\Prueba\Prueba.aspx.designer.cs">
       <DependentUpon>Prueba.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DatosBasicosG\Series\Series.aspx.cs">
+      <DependentUpon>Series.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosBasicosG\Series\Series.aspx.designer.cs">
+      <DependentUpon>Series.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DatosBasicosG\Terceros\gTerceros.aspx.cs">
       <DependentUpon>gTerceros.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1290,20 +1298,12 @@
     <Compile Include="Seguridad\PerfilxUsuario.aspx.designer.cs">
       <DependentUpon>PerfilxUsuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Servicios\Archivos\wsSeries.asmx.cs">
+      <DependentUpon>wsSeries.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Servicios\Bandeja\wsBandejaEntrada.asmx.cs">
       <DependentUpon>wsBandejaEntrada.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Servicios\ControlFlujo\wsMenu.asmx.cs">
-      <DependentUpon>wsMenu.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Servicios\ControlFlujo\wsSecurity.asmx.cs">
-      <DependentUpon>wsSecurity.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Servicios\DatosBasicosG\wsTerceros.asmx.cs">
-      <DependentUpon>wsTerceros.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Site.Master.cs">

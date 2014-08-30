@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ByA;
 using DAL;
 using Entidades;
 using System;
@@ -8,15 +9,22 @@ using System.Text;
 
 namespace BLL.Gestion
 {
-  public  class mSeries
+  public  class mSeries:absBLL
     {
-         public trdEntities ctx { get; set; }
+       
 
          public mSeries()
          {
 
              Mapper.CreateMap<seriesDto, series>();
              Mapper.CreateMap<series, seriesDto>();
+         }
+         public ByARpt Insert(seriesDto Reg)
+         {
+             series r = new series();
+             Mapper.Map(Reg, r);
+             cmdInsert o = new cmdInsert { reg = r };
+             return o.Enviar();
          }
 
          public List<seriesDto> Gets()
@@ -30,7 +38,6 @@ namespace BLL.Gestion
           }
           return lstT;
       }
-
          public seriesDto Gets(string terceroId)
       {
           seriesDto objT = new seriesDto();
@@ -41,7 +48,28 @@ namespace BLL.Gestion
           }
           return objT;
       }
-      
+
+
+
+
+          class cmdInsert : absTemplate
+          {
+         
+             public series found { get; set; }
+             public series reg { get; set; }
+             protected internal override bool esValido()
+             {
+                 return true;
+             }
+             protected internal override void Antes()
+             {
+                
+                 ctx.series.Add(reg);
+                
+             }
+
+
+         }
       //public ByARpt Insert(fc_tercerosDto Reg)
       //{
       //      cmdInsert o = new cmdInsert();
