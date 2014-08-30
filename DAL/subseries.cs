@@ -29,6 +29,7 @@ namespace DAL
         public Nullable<bool> DisposicionMD { get; set; }
         public Nullable<bool> DisposicionS { get; set; }
         public string Series_idSerie { get; set; }
+        public string Estado { get; set; }
     
         public virtual series series { get; set; }
         public virtual ICollection<tiposdocumentales> tiposdocumentales { get; set; }

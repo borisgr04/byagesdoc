@@ -27,6 +27,8 @@ namespace DAL
         public Nullable<System.DateTime> FechaExtFinal { get; set; }
         public string DependenciaId { get; set; }
         public string Codigo { get; set; }
+        public string Estado { get; set; }
+        public string Vigencia { get; set; }
     
         public virtual dependencias dependencias { get; set; }
         public virtual subseries subseries { get; set; }

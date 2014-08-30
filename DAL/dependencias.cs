@@ -21,6 +21,7 @@ namespace DAL
     
         public string idDependencia { get; set; }
         public string Dependencia { get; set; }
+        public string Estado { get; set; }
     
         public virtual ICollection<unidaddocumental> unidaddocumental { get; set; }
     }

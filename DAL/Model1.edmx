@@ -60,6 +60,7 @@
           </Key>
           <Property Name="idDependencia" Type="varchar" Nullable="false" MaxLength="10" />
           <Property Name="Dependencia" Type="varchar" MaxLength="45" />
+          <Property Name="Estado" Type="varchar" MaxLength="45" />
         </EntityType>
         <EntityType Name="fc_menu">
           <Key>
@@ -222,6 +223,7 @@
           <Property Name="DisposicionMD" Type="bool" />
           <Property Name="DisposicionS" Type="bool" />
           <Property Name="Series_idSerie" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Estado" Type="varchar" MaxLength="45" />
         </EntityType>
         <EntityType Name="tiposdocumentales">
           <Key>
@@ -250,6 +252,8 @@
           <Property Name="FechaExtFinal" Type="date" />
           <Property Name="DependenciaId" Type="varchar" MaxLength="10" />
           <Property Name="Codigo" Type="varchar" MaxLength="45" />
+          <Property Name="Estado" Type="varchar" MaxLength="45" />
+          <Property Name="Vigencia" Type="varchar" MaxLength="45" />
         </EntityType>
         <Association Name="FKDependencias">
           <End Role="dependencias" Type="trdModel.Store.dependencias" Multiplicity="0..1" />
@@ -398,6 +402,7 @@
           <NavigationProperty Name="series" Relationship="trdModel.SerieFK" FromRole="subseries" ToRole="series" />
           <NavigationProperty Name="tiposdocumentales" Relationship="trdModel.SubSeriesIdTD" FromRole="subseries" ToRole="tiposdocumentales" />
           <NavigationProperty Name="unidaddocumental" Relationship="trdModel.FkSubseries" FromRole="subseries" ToRole="unidaddocumental" />
+          <Property Type="String" Name="Estado" MaxLength="45" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="tiposdocumentales">
           <Key>
@@ -450,6 +455,7 @@
           <Property Type="String" Name="idDependencia" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Dependencia" MaxLength="45" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="unidaddocumental" Relationship="trdModel.FKDependencias" FromRole="dependencias" ToRole="unidaddocumental" />
+          <Property Type="String" Name="Estado" MaxLength="45" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="unidaddocumental">
           <Key>
@@ -470,6 +476,8 @@
           <NavigationProperty Name="dependencias" Relationship="trdModel.FKDependencias" FromRole="unidaddocumental" ToRole="dependencias" />
           <NavigationProperty Name="subseries" Relationship="trdModel.FkSubseries" FromRole="unidaddocumental" ToRole="subseries" />
           <Property Type="String" Name="Codigo" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Estado" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Vigencia" MaxLength="45" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FKDependencias">
           <End Type="trdModel.dependencias" Role="dependencias" Multiplicity="0..1" />
@@ -668,6 +676,7 @@
           <EntitySetMapping Name="subseries">
             <EntityTypeMapping TypeName="trdModel.subseries">
               <MappingFragment StoreEntitySet="subseries">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="idSubSeries" ColumnName="idSubSeries" />
                 <ScalarProperty Name="SubSerie" ColumnName="SubSerie" />
                 <ScalarProperty Name="RetencionAG" ColumnName="RetencionAG" />
@@ -704,6 +713,7 @@
           <EntitySetMapping Name="dependencias">
             <EntityTypeMapping TypeName="trdModel.dependencias">
               <MappingFragment StoreEntitySet="dependencias">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="Dependencia" ColumnName="Dependencia" />
                 <ScalarProperty Name="idDependencia" ColumnName="idDependencia" />
               </MappingFragment>
@@ -712,6 +722,8 @@
           <EntitySetMapping Name="unidaddocumental">
             <EntityTypeMapping TypeName="trdModel.unidaddocumental">
               <MappingFragment StoreEntitySet="unidaddocumental">
+                <ScalarProperty Name="Vigencia" ColumnName="Vigencia" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
                 <ScalarProperty Name="DependenciaId" ColumnName="DependenciaId" />
                 <ScalarProperty Name="FechaExtFinal" ColumnName="FechaExtFinal" />
