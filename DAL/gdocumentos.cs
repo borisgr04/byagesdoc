@@ -12,15 +12,14 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class fc_terceros
+    public partial class gdocumentos
     {
-        public string terceroId { get; set; }
-        public string tipodoc { get; set; }
-        public string tipoper { get; set; }
+        public int idGDocumentos { get; set; }
         public string nombre { get; set; }
-        public string direccion { get; set; }
-        public string telefono { get; set; }
-        public string correo { get; set; }
-        public string lugarexpe { get; set; }
+        public Nullable<int> longitud { get; set; }
+        public string tipo { get; set; }
+        public string estado { get; set; }
+    
+        public virtual gddocumentos gddocumentos { get; set; }
     }
 }

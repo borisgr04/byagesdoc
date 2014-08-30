@@ -40,6 +40,8 @@ namespace DAL
         public DbSet<my_aspnet_sessions> my_aspnet_sessions { get; set; }
         public DbSet<my_aspnet_users> my_aspnet_users { get; set; }
         public DbSet<my_aspnet_usersinroles> my_aspnet_usersinroles { get; set; }
+        public DbSet<gddocumentos> gddocumentos { get; set; }
+        public DbSet<gdocumentos> gdocumentos { get; set; }
         public DbSet<fc_terceros> fc_terceros { get; set; }
     }
 }

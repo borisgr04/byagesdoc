@@ -4,12 +4,14 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="trdModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="trdModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="trdModelStoreContainer">
           <EntitySet Name="configuracion" EntityType="trdModel.Store.configuracion" store:Type="Tables" Schema="trd" />
           <EntitySet Name="dependencias" EntityType="trdModel.Store.dependencias" store:Type="Tables" Schema="trd" />
           <EntitySet Name="fc_menu" EntityType="trdModel.Store.fc_menu" store:Type="Tables" Schema="trd" />
           <EntitySet Name="fc_terceros" EntityType="trdModel.Store.fc_terceros" store:Type="Tables" Schema="trd" />
+          <EntitySet Name="gddocumentos" EntityType="trdModel.Store.gddocumentos" store:Type="Tables" Schema="trd" />
+          <EntitySet Name="gdocumentos" EntityType="trdModel.Store.gdocumentos" store:Type="Tables" Schema="trd" />
           <EntitySet Name="my_aspnet_applications" EntityType="trdModel.Store.my_aspnet_applications" store:Type="Tables" Schema="trd" />
           <EntitySet Name="my_aspnet_membership" EntityType="trdModel.Store.my_aspnet_membership" store:Type="Tables" Schema="trd" />
           <EntitySet Name="my_aspnet_profiles" EntityType="trdModel.Store.my_aspnet_profiles" store:Type="Tables" Schema="trd" />
@@ -29,6 +31,10 @@
           <AssociationSet Name="FkSubseries" Association="trdModel.Store.FkSubseries">
             <End Role="subseries" EntitySet="subseries" />
             <End Role="unidaddocumental" EntitySet="unidaddocumental" />
+          </AssociationSet>
+          <AssociationSet Name="id" Association="trdModel.Store.id">
+            <End Role="gdocumentos" EntitySet="gdocumentos" />
+            <End Role="gddocumentos" EntitySet="gddocumentos" />
           </AssociationSet>
           <AssociationSet Name="SerieFK" Association="trdModel.Store.SerieFK">
             <End Role="series" EntitySet="series" />
@@ -76,7 +82,7 @@
           <Key>
             <PropertyRef Name="terceroId" />
           </Key>
-          <Property Name="terceroId" Type="varchar" Nullable="false" MaxLength="12" />
+          <Property Name="terceroId" Type="int" Nullable="false" />
           <Property Name="tipodoc" Type="varchar" MaxLength="2" />
           <Property Name="tipoper" Type="varchar" MaxLength="10" />
           <Property Name="nombre" Type="varchar" MaxLength="45" />
@@ -84,6 +90,23 @@
           <Property Name="telefono" Type="varchar" MaxLength="45" />
           <Property Name="correo" Type="varchar" MaxLength="45" />
           <Property Name="lugarexpe" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="gddocumentos">
+          <Key>
+            <PropertyRef Name="idgddocumentos" />
+          </Key>
+          <Property Name="idgddocumentos" Type="int" Nullable="false" />
+          <Property Name="documento" Type="blob" />
+        </EntityType>
+        <EntityType Name="gdocumentos">
+          <Key>
+            <PropertyRef Name="idGDocumentos" />
+          </Key>
+          <Property Name="idGDocumentos" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="45" />
+          <Property Name="longitud" Type="int" />
+          <Property Name="tipo" Type="varchar" MaxLength="45" />
+          <Property Name="estado" Type="varchar" MaxLength="45" />
         </EntityType>
         <EntityType Name="my_aspnet_applications">
           <Key>
@@ -125,7 +148,7 @@
           <Property Name="valueindex" Type="longtext" />
           <Property Name="stringdata" Type="longtext" />
           <Property Name="binarydata" Type="longblob" />
-          <Property Name="lastUpdatedDate" Type="timestamp" Nullable="false" />
+          <Property Name="lastUpdatedDate" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="my_aspnet_roles">
           <Key>
@@ -184,6 +207,7 @@
           <Property Name="idSerie" Type="varchar" Nullable="false" MaxLength="10" />
           <Property Name="Serie" Type="varchar" MaxLength="45" />
           <Property Name="Procedimiento" Type="text" />
+          <Property Name="Estado" Type="varchar" MaxLength="45" />
         </EntityType>
         <EntityType Name="subseries">
           <Key>
@@ -225,6 +249,7 @@
           <Property Name="FechaExtInicial" Type="date" />
           <Property Name="FechaExtFinal" Type="date" />
           <Property Name="DependenciaId" Type="varchar" MaxLength="10" />
+          <Property Name="Codigo" Type="varchar" MaxLength="45" />
         </EntityType>
         <Association Name="FKDependencias">
           <End Role="dependencias" Type="trdModel.Store.dependencias" Multiplicity="0..1" />
@@ -247,6 +272,18 @@
             </Principal>
             <Dependent Role="unidaddocumental">
               <PropertyRef Name="idSubSeries" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="id">
+          <End Role="gdocumentos" Type="trdModel.Store.gdocumentos" Multiplicity="1" />
+          <End Role="gddocumentos" Type="trdModel.Store.gddocumentos" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="gdocumentos">
+              <PropertyRef Name="idGDocumentos" />
+            </Principal>
+            <Dependent Role="gddocumentos">
+              <PropertyRef Name="idgddocumentos" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -274,6 +311,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <!--Errors Found During Generation:
+      warning 6013: The table/view 'def.trd.my_aspnet_schemaversion' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="my_aspnet_schemaversion">
+        <Property Name="version" Type="int" />
+      </EntityType>-->
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -310,6 +353,12 @@
           <EntitySet Name="my_aspnet_sessions" EntityType="trdModel.my_aspnet_sessions" />
           <EntitySet Name="my_aspnet_users" EntityType="trdModel.my_aspnet_users" />
           <EntitySet Name="my_aspnet_usersinroles" EntityType="trdModel.my_aspnet_usersinroles" />
+          <EntitySet Name="gddocumentos" EntityType="trdModel.gddocumentos" />
+          <EntitySet Name="gdocumentos" EntityType="trdModel.gdocumentos" />
+          <AssociationSet Name="id" Association="trdModel.id">
+            <End Role="gdocumentos" EntitySet="gdocumentos" />
+            <End Role="gddocumentos" EntitySet="gddocumentos" />
+          </AssociationSet>
           <EntitySet Name="fc_terceros" EntityType="trdModel.fc_terceros" />
         </EntityContainer>
         <EntityType Name="fc_menu">
@@ -337,6 +386,7 @@
           <Property Name="Serie" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
           <Property Name="Procedimiento" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="subseries" Relationship="trdModel.SerieFK" FromRole="series" ToRole="subseries" />
+          <Property Type="String" Name="Estado" MaxLength="45" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="subseries">
           <Key>
@@ -425,6 +475,7 @@
           <Property Type="String" Name="DependenciaId" MaxLength="10" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="dependencias" Relationship="trdModel.FKDependencias" FromRole="unidaddocumental" ToRole="dependencias" />
           <NavigationProperty Name="subseries" Relationship="trdModel.FkSubseries" FromRole="unidaddocumental" ToRole="subseries" />
+          <Property Type="String" Name="Codigo" MaxLength="45" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FKDependencias">
           <End Type="trdModel.dependencias" Role="dependencias" Multiplicity="0..1" />
@@ -542,11 +593,42 @@
           <Property Type="Int32" Name="userId" Nullable="false" />
           <Property Type="Int32" Name="roleId" Nullable="false" />
         </EntityType>
+        <EntityType Name="gddocumentos">
+          <Key>
+            <PropertyRef Name="idgddocumentos" />
+          </Key>
+          <Property Type="Int32" Name="idgddocumentos" Nullable="false" />
+          <Property Type="Binary" Name="documento" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="gdocumentos" Relationship="trdModel.id" FromRole="gddocumentos" ToRole="gdocumentos" />
+        </EntityType>
+        <EntityType Name="gdocumentos">
+          <Key>
+            <PropertyRef Name="idGDocumentos" />
+          </Key>
+          <Property Type="Int32" Name="idGDocumentos" Nullable="false" />
+          <Property Type="String" Name="nombre" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="longitud" />
+          <Property Type="String" Name="tipo" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="estado" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="gddocumentos" Relationship="trdModel.id" FromRole="gdocumentos" ToRole="gddocumentos" />
+        </EntityType>
+        <Association Name="id">
+          <End Type="trdModel.gdocumentos" Role="gdocumentos" Multiplicity="1" />
+          <End Type="trdModel.gddocumentos" Role="gddocumentos" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="gdocumentos">
+              <PropertyRef Name="idGDocumentos" />
+            </Principal>
+            <Dependent Role="gddocumentos">
+              <PropertyRef Name="idgddocumentos" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityType Name="fc_terceros">
           <Key>
             <PropertyRef Name="terceroId" />
           </Key>
-          <Property Type="String" Name="terceroId" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="terceroId" Nullable="false" />
           <Property Type="String" Name="tipodoc" MaxLength="2" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="tipoper" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="nombre" MaxLength="45" FixedLength="false" Unicode="false" />
@@ -582,6 +664,7 @@
           <EntitySetMapping Name="series">
             <EntityTypeMapping TypeName="trdModel.series">
               <MappingFragment StoreEntitySet="series">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="idSerie" ColumnName="idSerie" />
                 <ScalarProperty Name="Serie" ColumnName="Serie" />
                 <ScalarProperty Name="Procedimiento" ColumnName="Procedimiento" />
@@ -635,6 +718,7 @@
           <EntitySetMapping Name="unidaddocumental">
             <EntityTypeMapping TypeName="trdModel.unidaddocumental">
               <MappingFragment StoreEntitySet="unidaddocumental">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
                 <ScalarProperty Name="DependenciaId" ColumnName="DependenciaId" />
                 <ScalarProperty Name="FechaExtFinal" ColumnName="FechaExtFinal" />
                 <ScalarProperty Name="FechaExtInicial" ColumnName="FechaExtInicial" />
@@ -745,6 +829,25 @@
               <MappingFragment StoreEntitySet="my_aspnet_usersinroles">
                 <ScalarProperty Name="roleId" ColumnName="roleId" />
                 <ScalarProperty Name="userId" ColumnName="userId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gddocumentos">
+            <EntityTypeMapping TypeName="trdModel.gddocumentos">
+              <MappingFragment StoreEntitySet="gddocumentos">
+                <ScalarProperty Name="documento" ColumnName="documento" />
+                <ScalarProperty Name="idgddocumentos" ColumnName="idgddocumentos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gdocumentos">
+            <EntityTypeMapping TypeName="trdModel.gdocumentos">
+              <MappingFragment StoreEntitySet="gdocumentos">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="longitud" ColumnName="longitud" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idGDocumentos" ColumnName="idGDocumentos" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

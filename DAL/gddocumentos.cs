@@ -12,18 +12,11 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class series
+    public partial class gddocumentos
     {
-        public series()
-        {
-            this.subseries = new HashSet<subseries>();
-        }
+        public int idgddocumentos { get; set; }
+        public byte[] documento { get; set; }
     
-        public string idSerie { get; set; }
-        public string Serie { get; set; }
-        public string Procedimiento { get; set; }
-        public string Estado { get; set; }
-    
-        public virtual ICollection<subseries> subseries { get; set; }
+        public virtual gdocumentos gdocumentos { get; set; }
     }
 }
