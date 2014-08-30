@@ -63,6 +63,7 @@
     <Compile Include="absBLL.cs" />
     <Compile Include="absTemplate.cs" />
     <Compile Include="BandejaEntBLL.cs" />
+    <Compile Include="DependenciasBLL.cs" />
     <Compile Include="Gestion\mConfiguracion.cs" />
     <Compile Include="Gestion\mDependencias.cs" />
     <Compile Include="Gestion\mDocumentos.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Menu\genRoles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeriesBLL.cs" />
+    <Compile Include="SubSeriesBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ByA\ByA.csproj">

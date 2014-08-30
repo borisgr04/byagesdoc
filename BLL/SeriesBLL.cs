@@ -19,6 +19,10 @@ namespace BLL
         {
             return SManager.Gets();
         }
+        public seriesDto Gets(string IdSerie)
+        {
+            return SManager.Gets(IdSerie);
+        }
     
     
 

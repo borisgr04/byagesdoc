@@ -30,7 +30,6 @@ namespace BLL.Gestion
           }
           return lstT;
       }
-
          public dependenciasDto Gets(string terceroId)
       {
           dependenciasDto objT = new dependenciasDto();
