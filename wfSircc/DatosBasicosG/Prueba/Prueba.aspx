@@ -43,7 +43,7 @@
              <div class="form-group" id="Div4">
                 <label for="CboTipDoc" class="col-sm-3 control-label"></label>
                 <div class="col-sm-3">
-                  <asp:Button ID="BtnMoverArchivos" runat="server" Text="Mostrar" OnClick="BtnMoverArchivos_Click" />
+                  <asp:Button ID="BtnMoverArchivos" runat="server" Text="Mover" OnClick="BtnMoverArchivos_Click" />
                 </div>
             </div>
         </div>
@@ -52,7 +52,6 @@
 
    
     <div class="row">
-
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -64,10 +63,7 @@
                 </div>
             </div>
         </div>
-
         <div class="col-md-6">
-
-
     <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Lista de Documentos Seleccionados</h3>

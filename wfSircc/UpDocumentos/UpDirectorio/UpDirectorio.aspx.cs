@@ -12,69 +12,28 @@ using BLL.IO;
 using BLL.Gestion;
 using Entidades;
 
-namespace wfSircc.DatosBasicosG.Prueba
+namespace wfSircc.UpDocumentos.UpDirectorio
 {
-    public partial class Prueba : System.Web.UI.Page
+    public partial class UpDirectorio : System.Web.UI.Page
     {
+        Directorios d;
 
-        Directorios d ;
-          
         protected void Page_Load(object sender, EventArgs e)
         {
             InicializarForm();
-            if (!Page.IsPostBack) {
+            if (!Page.IsPostBack)
+            {
                 ActualizarBandejaEntrada();
             }
         }
 
-        private void InicializarForm()
-        {
-            mConfiguracion mc = new mConfiguracion();
-
-            configuracionDto BE = mc.Get("BandejaE");
-            configuracionDto BOK = mc.Get("BandejaOK");
-
-            d = new Directorios(Server.MapPath(BE.Valor), Server.MapPath(BOK.Valor));
-
-         
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            //Mostrar Archivos
-
-            //string FilePath = Server.MapPath("/Docs/POOJava.pdf");
-            //WebClient User = new WebClient();
-            //Byte[] FileBuffer = User.DownloadData(FilePath);
-            
-            //FileBuffer=PdfManipulation2.ExtractPdfPage(FileBuffer, 1, 2); 
-            
-            ////TextBox1.Text = "Hola Mundo";
-
-            ////string FilePath = Server.MapPath("/Docs/POOJava.pdf");
-            ////WebClient User = new WebClient();
-            ////Byte[] FileBuffer = User.DownloadData(FilePath);
-            
-            //if (FileBuffer != null)
-            //{
-            //    Response.ContentType = "application/pdf";
-            //    Response.AddHeader("content-length", FileBuffer.Length.ToString());
-            //    Response.BinaryWrite(FileBuffer);
-            //}
-        }
-
-
-        protected void Button3_Click(object sender, EventArgs e)
-        {
-            List<BandejaEntrada> lBE =d.ObtenerBE();
-            d.MoverArchivos(lBE);
-        }
+     
 
         protected void BtnAceptar_Click(object sender, EventArgs e)
         {
             ActualizarBandejaEntrada();
 
-           
+
         }
         protected void BtnMoverArchivos_Click(object sender, EventArgs e)
         {
@@ -93,7 +52,7 @@ namespace wfSircc.DatosBasicosG.Prueba
             ChkBE.DataBind();
         }
 
-        
+
 
         private void MoverArchivosFromBandejaEntradaTemporalToBandejaEntradaOK()
         {
@@ -114,6 +73,19 @@ namespace wfSircc.DatosBasicosG.Prueba
             ChkOK.DataValueField = "Archivo";
             ChkOK.DataBind();
         }
+
+        private void InicializarForm()
+        {
+            mConfiguracion mc = new mConfiguracion();
+
+            configuracionDto BE = mc.Get("BandejaE");
+            configuracionDto BOK = mc.Get("BandejaOK");
+
+            d = new Directorios(Server.MapPath(BE.Valor), Server.MapPath(BOK.Valor));
+
+
+        }
+
     }
-   
+
 }

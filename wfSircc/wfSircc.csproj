@@ -43,13 +43,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.9.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
     </Reference>
-    <Reference Include="AutoMapper, Version=1.1.0.188, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\AutoMapper.NET35.1.1.0.118\lib\net35\AutoMapper.dll</HintPath>
-    </Reference>
-    <Reference Include="AutoMapper.Net4">
-      <HintPath>..\packages\AutoMapper.3.0.0\lib\net40\AutoMapper.Net4.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
@@ -233,6 +226,8 @@
     <Content Include="Content\aceadmin\css\uncompressed\font-awesome-ie7.css" />
     <Content Include="Content\aceadmin\css\uncompressed\font-awesome.css" />
     <Content Include="Content\aceadmin\css\uncompressed\jquery-ui-1.10.3.custom.css" />
+    <Content Include="Content\aceadmin\font\fontawesome-webfont.svg" />
+    <Content Include="Content\aceadmin\font\glyphicons-halflings-regular.svg" />
     <Content Include="Content\aceadmin\images\back_disabled.png" />
     <Content Include="Content\aceadmin\images\back_enabled.png" />
     <Content Include="Content\aceadmin\images\back_enabled_hover.png" />
@@ -1068,6 +1063,11 @@
     <Content Include="Seguridad\PerfilxUsuario.aspx" />
     <Content Include="Servicios\Archivos\wsSeries.asmx" />
     <Content Include="Servicios\Bandeja\wsBandejaEntrada.asmx" />
+    <Content Include="Servicios\ControlFlujo\wsMenu.asmx" />
+    <Content Include="Servicios\ControlFlujo\wsSecurity.asmx" />
+    <Content Include="Servicios\DatosBasicosG\wsTerceros.asmx" />
+    <Content Include="Servicios\wsConsultas.asmx" />
+    <Content Include="UpDocumentos\UpDirectorio\UpDirectorio.aspx" />
     <Content Include="WebForm2.aspx" />
     <Content Include="jqwidgets\Web.config" />
     <Content Include="jqscripts\Web.config" />
@@ -1138,19 +1138,31 @@
     <Content Include="Content\aceadmin\css\less\utility.less" />
     <Content Include="Content\aceadmin\css\less\variables.less" />
     <Content Include="Content\aceadmin\css\less\widget.less" />
+    <Content Include="Content\aceadmin\fonts\cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff" />
+    <Content Include="Content\aceadmin\fonts\DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff" />
+    <Content Include="Content\aceadmin\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\aceadmin\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\aceadmin\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\aceadmin\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\aceadmin\fonts\FontAwesome.otf" />
+    <Content Include="jqscripts\kendoui\kendo.web.min.js.map" />
+    <Content Include="Content\aceadmin\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\aceadmin\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\aceadmin\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\aceadmin\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="ashx\ashxDoc.ashx" />
     <Content Include="Content\aceadmin\font\cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff" />
     <Content Include="Content\aceadmin\font\DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff" />
     <Content Include="Content\aceadmin\font\fontawesome-webfont.eot" />
-    <Content Include="Content\aceadmin\font\fontawesome-webfont.svg" />
     <Content Include="Content\aceadmin\font\fontawesome-webfont.ttf" />
     <Content Include="Content\aceadmin\font\fontawesome-webfont.woff" />
     <Content Include="Content\aceadmin\font\FontAwesome.otf" />
-    <Content Include="jqscripts\kendoui\kendo.web.min.js.map" />
     <Content Include="Content\aceadmin\font\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\aceadmin\font\glyphicons-halflings-regular.svg" />
     <Content Include="Content\aceadmin\font\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\aceadmin\font\glyphicons-halflings-regular.woff" />
-    <Content Include="ashx\ashxDoc.ashx" />
+    <Content Include="Docs\BE\10.10.0001.pdf" />
+    <Content Include="Docs\BE\10.10.0002.pdf" />
+    <Content Include="Docs\BE\10.10.0003.pdf" />
     <None Include="Properties\PublishProfiles\prueba.pubxml" />
     <None Include="Properties\PublishProfiles\Sircc4.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
@@ -1306,19 +1318,21 @@
       <DependentUpon>wsBandejaEntrada.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Site.Master.cs">
-      <DependentUpon>Site.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="Servicios\ControlFlujo\wsMenu.asmx.cs">
+      <DependentUpon>wsMenu.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Site.Master.designer.cs">
-      <DependentUpon>Site.Master</DependentUpon>
+    <Compile Include="Servicios\ControlFlujo\wsSecurity.asmx.cs">
+      <DependentUpon>wsSecurity.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Site1.Master.cs">
-      <DependentUpon>Site1.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="Servicios\DatosBasicosG\wsTerceros.asmx.cs">
+      <DependentUpon>wsTerceros.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Site1.Master.designer.cs">
-      <DependentUpon>Site1.Master</DependentUpon>
+    <Compile Include="Servicios\wsConsultas.asmx.cs">
+      <DependentUpon>wsConsultas.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="SiteBS.Master.cs">
       <DependentUpon>SiteBS.Master</DependentUpon>
@@ -1326,6 +1340,13 @@
     </Compile>
     <Compile Include="SiteBS.Master.designer.cs">
       <DependentUpon>SiteBS.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UpDocumentos\UpDirectorio\UpDirectorio.aspx.cs">
+      <DependentUpon>UpDirectorio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpDocumentos\UpDirectorio\UpDirectorio.aspx.designer.cs">
+      <DependentUpon>UpDirectorio.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm2.aspx.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>
@@ -1337,15 +1358,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Docs\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Site.Master" />
+    <Folder Include="Docs\OK\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Seguridad\Web.config" />
     <Content Include="SiteBS.Master" />
-    <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

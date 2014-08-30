@@ -7,45 +7,45 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace wfSircc {
+namespace wfSircc.UpDocumentos.UpDirectorio {
     
     
-    public partial class Site1 {
+    public partial class UpDirectorio {
         
         /// <summary>
-        /// Control head.
+        /// Control BtnAceptar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Button BtnAceptar;
         
         /// <summary>
-        /// Control form1.
+        /// Control BtnMoverArchivos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Button BtnMoverArchivos;
         
         /// <summary>
-        /// Control ScriptManager1.
+        /// Control ChkBE.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.CheckBoxList ChkBE;
         
         /// <summary>
-        /// Control ContentPlaceHolder1.
+        /// Control ChkOK.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.CheckBoxList ChkOK;
     }
 }
