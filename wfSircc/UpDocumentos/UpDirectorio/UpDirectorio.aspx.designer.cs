@@ -22,22 +22,13 @@ namespace wfSircc.UpDocumentos.UpDirectorio {
         protected global::System.Web.UI.WebControls.Button BtnAceptar;
         
         /// <summary>
-        /// Control BtnMoverArchivos.
+        /// Control BtnMover.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnMoverArchivos;
-        
-        /// <summary>
-        /// Control Button1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button BtnMover;
         
         /// <summary>
         /// Control ChkBE.
@@ -56,5 +47,14 @@ namespace wfSircc.UpDocumentos.UpDirectorio {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBoxList ChkOK;
+        
+        /// <summary>
+        /// Control lbLog.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbLog;
     }
 }

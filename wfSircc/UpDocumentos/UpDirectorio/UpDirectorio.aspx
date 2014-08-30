@@ -3,22 +3,19 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="form-group" id="Div3">
-                <label for="CboTipDoc" class="col-sm-3 control-label"></label>
-                <div class="col-sm-3">
-                    <asp:Button ID="BtnAceptar" runat="server" OnClick="BtnAceptar_Click" Text="Ver Bandeja de Entrada" Width="167px" />
-
-                </div>
-            </div>
-
-             <div class="form-group" id="Div4">
-                <label for="CboTipDoc" class="col-sm-3 control-label"></label>
-                <div class="col-sm-3">
-                  <asp:Button ID="BtnMoverArchivos" runat="server" Text="Mover" OnClick="BtnMoverArchivos_Click" />
-                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
-                </div>
-            </div>
-
+    <div class="row">
+        <div class="col-sm-3">
+            <asp:Button ID="BtnAceptar" runat="server" class="btn btn-primary"  Text="Ver Bandeja de Entrada" Width="167px" OnClick="BtnAceptar_Click1" />
+                                     </div>
+        <div class="col-sm-3"> 
+                                     </div>
+        <div class="col-sm-3">
+             <asp:Button ID="BtnMover" runat="server" class="btn btn-primary"  Text="Importar" OnClick="BtnMover_Click1" />
+                                     </div>
+        <div class="col-sm-3">
+                                     </div>
+        </div>
+    <br />
      <div class="row">
         <div class="col-md-6">
             <div class="panel panel-default">
@@ -39,8 +36,13 @@
                 <div class="panel-body">
                     <asp:CheckBoxList ID="ChkOK" runat="server" CssClass="table-hover">
                     </asp:CheckBoxList>
+                    
                 </div>
             </div>
         </div>
     </div>
+    <div class="row">
+        <h3>Log de Resultados</h3>
+    <asp:Label ID="lbLog" runat="server" Text=""></asp:Label>
+        </div>
 </asp:Content>

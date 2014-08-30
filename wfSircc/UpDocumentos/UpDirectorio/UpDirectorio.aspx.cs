@@ -87,7 +87,7 @@ namespace wfSircc.UpDocumentos.UpDirectorio
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        private void Mover()
         {
             mConfiguracion mc = new mConfiguracion();
             configuracionDto BE = mc.Get("BandejaE");
@@ -96,7 +96,7 @@ namespace wfSircc.UpDocumentos.UpDirectorio
             BandejaEntBLL bll = new BandejaEntBLL(Server.MapPath(BE.Valor), Server.MapPath(BOK.Valor));
 
             BandejaEntrada be;
-            
+
             List<BandejaEntrada> lBE = new List<BandejaEntrada>();
 
             foreach (ListItem elem in ChkBE.Items)
@@ -109,7 +109,7 @@ namespace wfSircc.UpDocumentos.UpDirectorio
                 }
             }
 
-            bll.MoverArchivos(lBE);
+            lbLog.Text = bll.MoverArchivos(lBE);
 
             ChkOK.DataSource = lBE;
             ChkOK.DataTextField = "Archivo";
@@ -117,6 +117,16 @@ namespace wfSircc.UpDocumentos.UpDirectorio
             ChkOK.DataBind();
 
             ActualizarBandejaEntrada();
+        }
+
+        protected void BtnMover_Click1(object sender, EventArgs e)
+        {
+            Mover();
+        }
+
+        protected void BtnAceptar_Click1(object sender, EventArgs e)
+        {
+            MoverArchivosFromBandejaEntradaTemporalToBandejaEntradaOK();
         }
 
     }
