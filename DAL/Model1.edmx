@@ -82,7 +82,7 @@
           <Key>
             <PropertyRef Name="terceroId" />
           </Key>
-          <Property Name="terceroId" Type="int" Nullable="false" />
+          <Property Name="terceroId" Type="varchar" Nullable="false" MaxLength="11" />
           <Property Name="tipodoc" Type="varchar" MaxLength="2" />
           <Property Name="tipoper" Type="varchar" MaxLength="10" />
           <Property Name="nombre" Type="varchar" MaxLength="45" />
@@ -311,12 +311,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errors Found During Generation:
-      warning 6013: The table/view 'def.trd.my_aspnet_schemaversion' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-      
-      <EntityType Name="my_aspnet_schemaversion">
-        <Property Name="version" Type="int" />
-      </EntityType>-->
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -628,7 +622,7 @@
           <Key>
             <PropertyRef Name="terceroId" />
           </Key>
-          <Property Type="Int32" Name="terceroId" Nullable="false" />
+          <Property Type="String" Name="terceroId" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="tipodoc" MaxLength="2" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="tipoper" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="nombre" MaxLength="45" FixedLength="false" Unicode="false" />

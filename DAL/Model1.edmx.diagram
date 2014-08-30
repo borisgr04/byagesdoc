@@ -19,7 +19,7 @@
         <EntityTypeShape EntityType="trdModel.gddocumentos" Width="1.5" PointX="6.4233555656035222" PointY="2.9438429339527352" />
         <EntityTypeShape EntityType="trdModel.gdocumentos" Width="1.5" PointX="2.1585955536731496" PointY="14.638538024685596" />
         <AssociationConnector Association="trdModel.id" />
-        <EntityTypeShape EntityType="trdModel.fc_terceros" Width="1.5" PointX="7.4796773248723145" PointY="29.818808837709394" />
+        <EntityTypeShape EntityType="trdModel.fc_terceros" Width="1.5" PointX="1.9741363404198253" PointY="23.721029903609786" />
       </Diagram>
       <Diagram DiagramId="59676ead4e8d4373ad951952f6caa9e8" Name="Diagrama3" >
         <EntityTypeShape EntityType="trdModel.my_aspnet_applications" Width="1.5" PointX="0.75" PointY="0.75" FillColor="192, 64, 0" />

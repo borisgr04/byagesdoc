@@ -14,7 +14,7 @@ namespace DAL
     
     public partial class fc_terceros
     {
-        public int terceroId { get; set; }
+        public string terceroId { get; set; }
         public string tipodoc { get; set; }
         public string tipoper { get; set; }
         public string nombre { get; set; }
