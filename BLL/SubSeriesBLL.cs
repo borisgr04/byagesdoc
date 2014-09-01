@@ -11,10 +11,18 @@ namespace BLL
     public class SubSeriesBLL
     {
         mSubSeries SubManager = new mSubSeries();
-        //public ByARpt Insert( Reg)
-        //{
-        //    return SManager.Insert(Reg);
-        //}
+        public ByARpt Insert(subseriesDto Reg)
+        {
+            return SubManager.Insert(Reg);
+        }
+        public ByARpt Update(subseriesDto Reg)
+        {
+            return SubManager.Update(Reg);
+        }
+        public ByARpt Anular(subseriesDto Reg)
+        {
+            return SubManager.Anular(Reg);
+        }
         public List<subseriesDto> Gets()
         {
             return SubManager.Gets();
