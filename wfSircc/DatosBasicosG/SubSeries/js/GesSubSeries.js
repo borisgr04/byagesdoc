@@ -14,7 +14,7 @@
 
             var dataRecord = SubSeriesList.getRecord();
             if (dataRecord != undefined) {
-                var target = urlToNuevo + "?idSubSerie=" + dataRecord.idSubSerie;
+                var target = urlToNuevo + "?idSubSerie=" + dataRecord.idSubSeries;
                 byaPage.AbrirPagina(target);
             } else { alert("Debe Selecionar una fila de la tabla"); }
         });
@@ -89,7 +89,7 @@
                 localization: byaPage.getLocalization(),
                 columns: [
                   { text: 'Id', datafield: 'idSubSeries', width: 150 },
-                  { text: 'Nombre Serie ', datafield: 'SubSerie', width: 150 },
+                  { text: 'Nombre Serie ', datafield: 'SubSerie', width: 200 },
                   { text: 'RetencionAG', datafield: 'RetencionAG', width: 150 },
                   { text: 'DisposicionA', datafield: 'DisposicionA', width: 150 },
                   { text: 'DisposicionCT', datafield: 'DisposicionCT', width: 150 },
