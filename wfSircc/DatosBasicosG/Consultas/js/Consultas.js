@@ -2,7 +2,7 @@
     "use strict";
     var grid = '#jqxgridConsul';
     
-    var urlToConsultas = "/Servicios/wsConsultas.asmx/Gets";
+    var urlToConsultas = "/Servicios/Archivos/wsDocumentos.asmx/Gets";
     
    
 
