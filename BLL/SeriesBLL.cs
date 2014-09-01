@@ -15,6 +15,14 @@ namespace BLL
         {
             return SManager.Insert(Reg);
         }
+        public ByARpt Update(seriesDto Reg)
+        {
+            return SManager.Update(Reg);
+        }
+        public ByARpt Anular(seriesDto Reg)
+        {
+            return SManager.Anular(Reg);
+        }
         public List<seriesDto> Gets()
         {
             return SManager.Gets();
