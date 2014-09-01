@@ -13,10 +13,7 @@
                             Nuevo</button>
                              <button type="button" class="btn btn-success" id="guardarButton">
                             <span class="glyphicon glyphicon-floppy-saved"></span>
-                            Guardar</button>
-                        <button type="button" class="btn btn-primary" id="editarButton">
-                            <span class="glyphicon glyphicon-pencil"></span>
-                            Editar</button>                   
+                            Guardar</button>                                
                         <button type="button" class="btn btn-danger" id="cancelarButton">
                             <span class="glyphicon glyphicon-remove"></span>
                             Cancelar</button>                 
@@ -31,7 +28,7 @@
      <div class="form-horizontal" role="form" id="formDATOS">
          <ul class="nav nav-tabs">
             <li class="active"><a href="#tabSeries" data-toggle="tab">1.Registro Series</a></li>
-            <li><a href="#tabList" data-toggle="tab">2.Listado Series</a></li>        
+          
         </ul>
          <div   class="tab-content">
              <div id="tabSeries" class="tab-pane in active ">
@@ -63,20 +60,7 @@
                     </div>          
                 </div>
             </div>
-             <div id="tabList" class="tab-pane ">                          
-                      <div class="row">                        
-                           
-                      <div class="col-md-3">  
-                                         Listado de Series  
-                      </div>                                      
-                      <div class="col-md-12">  
-                             &nbsp                            
-                      </div>                                     
-                      <div class="col-md-12"> 
-                      <div id="jqxgridHisto"></div> 
-                      </div>
-                      </div>                             
-            </div>
+           
 
           </div>
             
