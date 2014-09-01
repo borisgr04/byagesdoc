@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ByA;
 using DAL;
 using Entidades;
 using System;
@@ -19,12 +20,34 @@ namespace BLL.Gestion
              Mapper.CreateMap<subseries, subseriesDto>();
          }
 
+         public ByARpt Insert(subseriesDto Reg)
+         {
+             subseries r = new subseries();
+             Mapper.Map(Reg, r);
+             cmdInsert o = new cmdInsert { reg = r };
+             return o.Enviar();
+         }
+         public ByARpt Update(subseriesDto Reg)
+         {
+             subseries r = new subseries();
+             Mapper.Map(Reg, r);
+             cmdUpdate o = new cmdUpdate { reg = r };
+             return o.Enviar();
+         }
+         public ByARpt Anular(subseriesDto Reg)
+         {
+             subseries r = new subseries();
+             Mapper.Map(Reg, r);
+             cmdAnular o = new cmdAnular { reg = r };
+             return o.Enviar();
+         }
+
          public List<subseriesDto> Gets()
          {
              List<subseriesDto> lstT = new List<subseriesDto>();
              using (ctx = new trdEntities())
           {
-              List<subseries> lstO = ctx.subseries.ToList();
+              List<subseries> lstO = ctx.subseries.Where(t=>t.Estado!="AN").ToList();
               Mapper.Map(lstO, lstT);
           }
           return lstT;
@@ -49,7 +72,92 @@ namespace BLL.Gestion
           }
           return objT;
       }
-      
+
+         class cmdInsert : absTemplate
+         {
+
+             public subseries found { get; set; }
+             public subseries reg { get; set; }
+             protected internal override bool esValido()
+             {
+                 return true;
+             }
+             protected internal override void Antes()
+             {
+
+                 ctx.subseries.Add(reg);
+
+             }
+
+
+         }
+         class cmdUpdate : absTemplate
+         {
+
+             public subseries reg { get; set; }
+             public subseries found { get; set; }
+             protected internal override bool esValido()
+             {
+                 found = ctx.subseries.Where(t => t.idSubSeries == reg.idSubSeries).FirstOrDefault();
+                 if (found != null)
+                 {
+                     found.SubSerie = reg.SubSerie;
+                     found.RetencionAG = reg.RetencionAG;
+                     found.DisposicionA = reg.DisposicionA;
+                     found.DisposicionCT = reg.DisposicionCT;
+                     found.DisposicionE = reg.DisposicionE;
+                     found.DisposicionMD = reg.DisposicionMD;
+                     found.DisposicionS = reg.DisposicionS;
+                     found.Series_idSerie = reg.Series_idSerie;
+                     return true;
+                 }
+                 else
+                 {
+                     byaRpt.Mensaje = "No se encontro La SubSerie";
+                     byaRpt.Error = true;
+                     return !byaRpt.Error;
+                 }
+
+
+             }
+             protected internal override void Antes()
+             {
+                
+                 ctx.Entry(found).State = System.Data.Entity.EntityState.Modified; 
+             }
+
+
+         }
+         class cmdAnular : absTemplate
+         {
+
+             public subseries found { get; set; }
+             public subseries reg { get; set; }
+             protected internal override bool esValido()
+             {
+                  found = ctx.subseries.Where(t => t.idSubSeries == reg.idSubSeries).FirstOrDefault();
+                 if (found != null)
+                 {
+                     found.Estado = "AN";
+                     return true;
+                 }
+                 else
+                 {
+                     byaRpt.Mensaje = "No se encontro La SubSerie";
+                     byaRpt.Error = true;
+                     return !byaRpt.Error;
+                 }
+
+
+             }
+             protected internal override void Antes()
+             {
+                
+                 ctx.Entry(found).State = System.Data.Entity.EntityState.Modified; 
+             }
+
+
+         }
       
     }
 }
