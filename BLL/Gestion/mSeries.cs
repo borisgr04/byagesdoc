@@ -26,6 +26,20 @@ namespace BLL.Gestion
              cmdInsert o = new cmdInsert { reg = r };
              return o.Enviar();
          }
+         public ByARpt Update(seriesDto Reg)
+         {
+             series r = new series();
+             Mapper.Map(Reg, r);
+             cmdUpdate o = new cmdUpdate { reg = r };
+             return o.Enviar();
+         }
+         public ByARpt Anular(seriesDto Reg)
+         {
+             series r = new series();
+             Mapper.Map(Reg, r);
+             cmdAnular o = new cmdAnular { reg = r };
+             return o.Enviar();
+         }
 
          public List<seriesDto> Gets()
          {
@@ -33,7 +47,7 @@ namespace BLL.Gestion
           List<seriesDto> lstT = new List<seriesDto>();
           using (ctx = new trdEntities())
           {
-              List<series> lstO = ctx.series.ToList();
+              List<series> lstO = ctx.series.Where(t=>t.Estado!="AN").ToList();
               Mapper.Map(lstO, lstT);
           }
           return lstT;
@@ -70,77 +84,69 @@ namespace BLL.Gestion
 
 
          }
-      //public ByARpt Insert(fc_tercerosDto Reg)
-      //{
-      //      cmdInsert o = new cmdInsert();
-      //      o.oDto = Reg;
-      //      return o.Enviar();
-      //}
+          class cmdUpdate : absTemplate
+          {
 
-      //public ByARpt Update(fc_tercerosDto Reg)
-      //  {
-      //      cmdUpdate o = new cmdUpdate();
-      //      o.oDto = Reg;
-      //      return o.Enviar();
-      //  }
-
-      //class cmdInsert : absTemplate
-      //  {
-      //      public fc_tercerosDto oDto {get; set;}
-      //      fc_terceros Dto{get; set;}
-
-      //      #region ImplementaciónMetodosAbstractos
-      //      protected internal override bool esValido()
-      //      {
-      //          fc_terceros objO = ctx.fc_terceros.Where( t=> t.terceroId==oDto.terceroId).FirstOrDefault();
-      //          if (objO == null) return true;
-      //          else {
-      //              byaRpt.Mensaje = "Ya se encuentra el tercero con ese número de identificación";
-      //              byaRpt.Error = true;
-      //              return false;
-      //          }
-      //      }
-      //      protected internal override void Antes()
-      //      {
-      //          Dto = new fc_terceros();
-      //          Mapper.Map(oDto, Dto);
-      //          ctx.fc_terceros.Add(Dto);
-      //          byaRpt.id = Dto.terceroId.ToString();
-      //      }
-      //      #endregion
-      //  }
+              public series found { get; set; }
+              public series reg { get; set; }
+              protected internal override bool esValido()
+              {
+                  found = ctx.series.Where(t => t.idSerie == reg.idSerie).FirstOrDefault();
+                  if (found != null)
+                  {
+                      found.Serie = reg.Serie;
+                      found.Procedimiento = reg.Procedimiento;
+                   
+                      return true;
+                  }
+                  else
+                  {
+                      byaRpt.Mensaje = "No se encontro La SubSerie";
+                      byaRpt.Error = true;
+                      return !byaRpt.Error;
+                  }
 
 
-      //class cmdUpdate: absTemplate
-      //{
-      //    public fc_tercerosDto oDto { get; set; }
-      //    fc_terceros Dto { get; set; }
+              }
+              protected internal override void Antes()
+              {
 
-      //    #region ImplementaciónMetodosAbstractos
-      //    protected internal override bool esValido()
-      //    {
-      //        Dto = ctx.fc_terceros.Find(oDto.terceroId);
-      //        if (Dto != null) return true;
-      //        else
-      //        {
-      //            byaRpt.Mensaje = "No se encuentra el tercero con ese número de identificación";
-      //            byaRpt.Error = true;
-      //            return false;
-      //        }
-      //    }
+                  ctx.Entry(found).State = System.Data.Entity.EntityState.Modified;
+              }
 
-      //    protected internal override void Antes()
-      //    {
-      //        Dto.correo = oDto.correo;
-      //        Dto.direccion = oDto.direccion;
-      //        Dto.nombre = oDto.nombre;
-      //        Dto.telefono = oDto.telefono;
-      //        Dto.tipodoc = oDto.tipodoc;
-      //        Dto.tipoper = oDto.tipoper;
 
-      //        byaRpt.id = Dto.terceroId.ToString();
-      //    }
-      //    #endregion
-      //}
+          }
+          class cmdAnular : absTemplate
+          {
+
+              public series found { get; set; }
+              public series reg { get; set; }
+              protected internal override bool esValido()
+              {
+                  found = ctx.series.Where(t => t.idSerie == reg.idSerie).FirstOrDefault();
+                  if (found != null)
+                  {
+                      found.Estado = "AN";
+                      return true;
+                  }
+                  else
+                  {
+                      byaRpt.Mensaje = "No se encontro La Serie";
+                      byaRpt.Error = true;
+                      return !byaRpt.Error;
+                  }
+
+
+              }
+              protected internal override void Antes()
+              {
+
+                  ctx.Entry(found).State = System.Data.Entity.EntityState.Modified;
+              }
+
+
+
+          }
+    
     }
 }

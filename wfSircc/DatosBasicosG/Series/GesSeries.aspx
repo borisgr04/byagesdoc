@@ -10,7 +10,10 @@
                             Nuevo</button>                          
                         <button type="button" class="btn btn-primary" id="editarButton">
                             <span class="glyphicon glyphicon-pencil"></span>
-                            Editar</button>                  
+                            Editar</button>   
+                            <button type="button" class="btn btn-danger" id="anularButton">
+                            <span class="glyphicon glyphicon-remove"></span>
+                            Anular</button>                 
                                    
                     </div>
                 </div>    

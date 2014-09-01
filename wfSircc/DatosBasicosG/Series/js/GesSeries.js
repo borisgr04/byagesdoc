@@ -2,6 +2,7 @@
     "use strict";
     var grid = '#jqxgridHisto';
     var urlToGridSeries = "/Servicios/Archivos/wsSeries.asmx/GetSeries";
+    var urlToAnular = "/Servicios/Archivos/wsSeries.asmx/Anular";
     var byaRpta;
     var msgPpal = "#LbMsg";
     var urlToNuevo="Series.aspx"
@@ -17,9 +18,31 @@
                 byaPage.AbrirPagina(target);
             } else { alert("Debe Selecionar una fila de la tabla");}
         });
+        $("#anularButton").click(function () {
 
+            Anular();
+        });
+        
 
     };
+    var Anular = function () {
+        var dataRecord = SeriesList.getRecord();
+        if (dataRecord == undefined) {
+            alert("Debe Selecionar Una Fila");
+        }
+        else {
+            var jsonData = "{'Reg':" + JSON.stringify(dataRecord) + "}";
+            byaPage.POST_Sync(urlToAnular, jsonData, function (result) {
+                byaRpta = byaPage.retObj(result.d);
+                SeriesList.refresh();
+                $(msgPpal).msgBox({ titulo: "Anulación de Series", mensaje: byaRpta.Mensaje, tipo: !byaRpta.Error });
+                if (!byaRpta.Error) {
+
+                }
+
+            });
+        }
+    }
     var _createElements = function () {
         _createGrid();
     };
