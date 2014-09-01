@@ -33,6 +33,21 @@ namespace wfSircc.Servicios.Archivos
             return Manager.Insert(Reg);
         }
 
+        [WebMethod(EnableSession = true)]
+        public ByARpt Update(seriesDto Reg)
+        {
+            Manager = new SeriesBLL();
+            return Manager.Update(Reg);
+        }
+
+        [WebMethod(EnableSession = true)]
+        public ByARpt Anular(seriesDto Reg)
+        {
+            Manager = new SeriesBLL();
+            return Manager.Anular(Reg);
+        }
+
+
 
         [WebMethod(EnableSession = true)]
         [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Xml)]
@@ -40,6 +55,17 @@ namespace wfSircc.Servicios.Archivos
         {
             Manager = new SeriesBLL();
             return ByAUtil.convertListToXML(Manager.Gets());
+
+        }
+
+
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
+        public seriesDto GetSeries2(string idSeries)
+        {
+            Manager = new SeriesBLL();
+            return Manager.Gets(idSeries);
 
         }
       
