@@ -26,13 +26,27 @@ namespace BLL.Gestion
              cmdInsert o = new cmdInsert { reg = r };
              return o.Enviar();
          }
-         public unidaddocumentalDto Get(string Codigo)
+         public ByARpt Update(unidaddocumentalDto Reg)
+         {
+             unidaddocumental r = new unidaddocumental();
+             Mapper.Map(Reg, r);
+             cmdUpdate o = new cmdUpdate { reg = r };
+             return o.Enviar();
+         }
+         public ByARpt Anular(unidaddocumentalDto Reg)
+         {
+             unidaddocumental r = new unidaddocumental();
+             Mapper.Map(Reg, r);
+             cmdAnular o = new cmdAnular { reg = r };
+             return o.Enviar();
+         }
+         public unidaddocumentalDto Get(unidaddocumentalDto Reg)
          {
 
              unidaddocumentalDto objT = new unidaddocumentalDto();
              using (ctx = new trdEntities())
              {
-                 unidaddocumental objO = ctx.unidaddocumental.Find(Codigo);
+                 unidaddocumental objO = ctx.unidaddocumental.Where(t=>t.Codigo==Reg.Codigo).FirstOrDefault();
                  Mapper.Map(objO, objT);
 
              }
@@ -57,14 +71,15 @@ namespace BLL.Gestion
                                                   t.GabetaNo.ToString() == Filtro ||
                                                   t.FechaExtInicial.ToString() == Filtro ||
                                                   t.FechaExtFinal.ToString() == Filtro ||
-                                                  t.DependenciaId.ToString() == Filtro).ToList();
+                                                  t.DependenciaId.ToString() == Filtro &&
+                                                  t.Estado!="AN").ToList();
 
                   Mapper.Map(lstO, lstT);
               }
               else
               {
 
-                  List<unidaddocumental> lstO = ctx.unidaddocumental.ToList();
+                  List<unidaddocumental> lstO = ctx.unidaddocumental.Where(t=>t.Estado!="AN").ToList();
                   Mapper.Map(lstO, lstT);
 
               }
@@ -81,7 +96,7 @@ namespace BLL.Gestion
              public unidaddocumental reg { get; set; }
              protected internal override bool esValido()
              {
-                 reg.idUnidadDocumental = ctx.unidaddocumental.Select(t => t.idUnidadDocumental).Max() + 1;
+                 reg.idUnidadDocumental =Convert.ToString(Convert.ToInt32(ctx.unidaddocumental.Select(t => t.idUnidadDocumental).Max()) + 1);
                  return true;
              }
              protected internal override void Antes()
@@ -90,6 +105,75 @@ namespace BLL.Gestion
                  ctx.unidaddocumental.Add(reg);
 
              }
+
+
+         }
+         class cmdUpdate : absTemplate
+         {
+             public unidaddocumental reg { get; set; }
+             public unidaddocumental found { get; set; }
+             protected internal override bool esValido()
+             {
+                 found = ctx.unidaddocumental.Where(t => t.Codigo == reg.Codigo).FirstOrDefault();
+                 if (found != null)
+                 {
+                     found.Nombre = reg.Nombre;
+                     found.PalabrasClave = reg.PalabrasClave;
+                     found.FechaCreacion = reg.FechaCreacion;
+                     found.NroFolios = reg.NroFolios;
+                     found.EntidadProductora = reg.EntidadProductora;
+                     found.ArchivadorNo = reg.ArchivadorNo;
+                     found.GabetaNo = reg.GabetaNo;
+                     found.ArchivadorNo = reg.ArchivadorNo;
+                     found.GabetaNo = reg.GabetaNo;
+                     found.FechaExtInicial = reg.FechaExtInicial;
+                     found.FechaExtFinal = reg.FechaExtFinal;
+                     return true;
+                 }
+                 else
+                 {
+                     byaRpt.Mensaje = "No se encontro el Documento";
+                     byaRpt.Error = true;
+                     return !byaRpt.Error;
+                 }
+
+             }
+             protected internal override void Antes()
+             {
+
+                 ctx.Entry(found).State = System.Data.Entity.EntityState.Modified;
+             }
+         }
+         class cmdAnular : absTemplate
+         {
+
+             public unidaddocumental found { get; set; }
+             public unidaddocumental reg { get; set; }
+             protected internal override bool esValido()
+             {
+                 found = ctx.unidaddocumental.Where(t => t.Codigo == reg.Codigo).FirstOrDefault();
+                 if (found != null)
+                 {
+                     found.Estado = "AN";
+                     return true;
+                 }
+                 else
+                 {
+                     byaRpt.Mensaje = "No se encontro el Documento";
+                     byaRpt.Error = true;
+                     return !byaRpt.Error;
+                 }
+
+
+             }
+             protected internal override void Antes()
+             {
+
+                 ctx.Entry(found).State = System.Data.Entity.EntityState.Modified;
+             }
+
+           
+            
 
 
          }

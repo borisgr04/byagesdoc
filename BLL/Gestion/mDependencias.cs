@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ByA;
 using DAL;
 using Entidades;
 using System;
@@ -18,6 +19,27 @@ namespace BLL.Gestion
              Mapper.CreateMap<dependenciasDto, dependencias>();
              Mapper.CreateMap<dependencias, dependenciasDto>();
          }
+         public ByARpt Insert(dependenciasDto Reg)
+         {
+             dependencias r = new dependencias();
+             Mapper.Map(Reg, r);
+             cmdInsert o = new cmdInsert { reg = r };
+             return o.Enviar();
+         }
+         public ByARpt Update(dependenciasDto Reg)
+         {
+             dependencias r = new dependencias();
+             Mapper.Map(Reg, r);
+             cmdUpdate o = new cmdUpdate { reg = r };
+             return o.Enviar();
+         }
+         public ByARpt Anular(dependenciasDto Reg)
+         {
+             dependencias r = new dependencias();
+             Mapper.Map(Reg, r);
+             cmdAnular o = new cmdAnular { reg = r };
+             return o.Enviar();
+         }
 
          public List<dependenciasDto> Gets()
          {
@@ -25,7 +47,7 @@ namespace BLL.Gestion
              List<dependenciasDto> lstT = new List<dependenciasDto>();
           using (ctx = new trdEntities())
           {
-              List<dependencias> lstO = ctx.dependencias.ToList();
+              List<dependencias> lstO = ctx.dependencias.Where(t=>t.Estado!="AN").ToList();
               Mapper.Map(lstO, lstT);
           }
           return lstT;
@@ -35,83 +57,94 @@ namespace BLL.Gestion
           dependenciasDto objT = new dependenciasDto();
           using (ctx = new trdEntities())
           {
+              char pad = '0';
+              terceroId = terceroId.ToString().PadLeft(2, pad);      
               dependencias objO = ctx.dependencias.Find(terceroId);
               Mapper.Map(objO, objT);
           }
           return objT;
       }
-      
-      //public ByARpt Insert(fc_tercerosDto Reg)
-      //{
-      //      cmdInsert o = new cmdInsert();
-      //      o.oDto = Reg;
-      //      return o.Enviar();
-      //}
 
-      //public ByARpt Update(fc_tercerosDto Reg)
-      //  {
-      //      cmdUpdate o = new cmdUpdate();
-      //      o.oDto = Reg;
-      //      return o.Enviar();
-      //  }
+         class cmdInsert : absTemplate
+         {
 
-      //class cmdInsert : absTemplate
-      //  {
-      //      public fc_tercerosDto oDto {get; set;}
-      //      fc_terceros Dto{get; set;}
+             public dependencias found { get; set; }
+             public dependencias reg { get; set; }
+             protected internal override bool esValido()
+             {
+                 return true;
+             }
+             protected internal override void Antes()
+             {
 
-      //      #region ImplementaciónMetodosAbstractos
-      //      protected internal override bool esValido()
-      //      {
-      //          fc_terceros objO = ctx.fc_terceros.Where( t=> t.terceroId==oDto.terceroId).FirstOrDefault();
-      //          if (objO == null) return true;
-      //          else {
-      //              byaRpt.Mensaje = "Ya se encuentra el tercero con ese número de identificación";
-      //              byaRpt.Error = true;
-      //              return false;
-      //          }
-      //      }
-      //      protected internal override void Antes()
-      //      {
-      //          Dto = new fc_terceros();
-      //          Mapper.Map(oDto, Dto);
-      //          ctx.fc_terceros.Add(Dto);
-      //          byaRpt.id = Dto.terceroId.ToString();
-      //      }
-      //      #endregion
-      //  }
+                 ctx.dependencias.Add(reg);
+
+             }
 
 
-      //class cmdUpdate: absTemplate
-      //{
-      //    public fc_tercerosDto oDto { get; set; }
-      //    fc_terceros Dto { get; set; }
+         }
+         class cmdUpdate : absTemplate
+         {
 
-      //    #region ImplementaciónMetodosAbstractos
-      //    protected internal override bool esValido()
-      //    {
-      //        Dto = ctx.fc_terceros.Find(oDto.terceroId);
-      //        if (Dto != null) return true;
-      //        else
-      //        {
-      //            byaRpt.Mensaje = "No se encuentra el tercero con ese número de identificación";
-      //            byaRpt.Error = true;
-      //            return false;
-      //        }
-      //    }
+             public dependencias reg { get; set; }
+             public dependencias found { get; set; }
+             protected internal override bool esValido()
+             {
+                 found = ctx.dependencias.Where(t => t.idDependencia == reg.idDependencia).FirstOrDefault();
+                 if (found != null)
+                 {
+                     found.Dependencia = reg.Dependencia;
+ 
+          
+                     return true;
+                 }
+                 else
+                 {
+                     byaRpt.Mensaje = "No se encontro La Dependencia";
+                     byaRpt.Error = true;
+                     return !byaRpt.Error;
+                 }
 
-      //    protected internal override void Antes()
-      //    {
-      //        Dto.correo = oDto.correo;
-      //        Dto.direccion = oDto.direccion;
-      //        Dto.nombre = oDto.nombre;
-      //        Dto.telefono = oDto.telefono;
-      //        Dto.tipodoc = oDto.tipodoc;
-      //        Dto.tipoper = oDto.tipoper;
 
-      //        byaRpt.id = Dto.terceroId.ToString();
-      //    }
-      //    #endregion
-      //}
+             }
+             protected internal override void Antes()
+             {
+
+                 ctx.Entry(found).State = System.Data.Entity.EntityState.Modified;
+             }
+
+
+         }
+         class cmdAnular : absTemplate
+         {
+
+             public dependencias found { get; set; }
+             public dependencias reg { get; set; }
+             protected internal override bool esValido()
+             {
+                 found = ctx.dependencias.Where(t => t.idDependencia == reg.idDependencia).FirstOrDefault();
+                 if (found != null)
+                 {
+                     found.Estado = "AN";
+                     return true;
+                 }
+                 else
+                 {
+                     byaRpt.Mensaje = "No se encontro La Dependencia";
+                     byaRpt.Error = true;
+                     return !byaRpt.Error;
+                 }
+
+
+             }
+             protected internal override void Antes()
+             {
+
+                 ctx.Entry(found).State = System.Data.Entity.EntityState.Modified;
+             }
+
+
+         }
+    
     }
 }
