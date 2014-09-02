@@ -11,39 +11,38 @@ using System.Web.Services;
 namespace wfSircc.Servicios.Archivos
 {
     /// <summary>
-    /// Descripción breve de wsSeries
+    /// Descripción breve de wsDocumentos
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // Para permitir que se llame a este servicio web desde un script, usando ASP.NET AJAX, quite la marca de comentario de la línea siguiente. 
     [System.Web.Script.Services.ScriptService]
-    public class wsSeries : System.Web.Services.WebService
+    public class wsDocumentos : System.Web.Services.WebService
     {
-        SeriesBLL Manager;
+
+        DocumentosBLL Manager;
         [WebMethod]
         public string HelloWorld()
         {
             return "Hola a todos";
         }
         [WebMethod(EnableSession = true)]
-        public ByARpt Insert(seriesDto Reg)
+        public ByARpt Insert(unidaddocumentalDto Reg)
         {
-            Manager = new SeriesBLL();
+            Manager = new DocumentosBLL();
             return Manager.Insert(Reg);
         }
-
         [WebMethod(EnableSession = true)]
-        public ByARpt Update(seriesDto Reg)
+        public ByARpt Update(unidaddocumentalDto Reg)
         {
-            Manager = new SeriesBLL();
+            Manager = new DocumentosBLL();
             return Manager.Update(Reg);
         }
-
         [WebMethod(EnableSession = true)]
-        public ByARpt Anular(seriesDto Reg)
+        public ByARpt Anular(unidaddocumentalDto Reg)
         {
-            Manager = new SeriesBLL();
+            Manager = new DocumentosBLL();
             return Manager.Anular(Reg);
         }
 
@@ -51,30 +50,23 @@ namespace wfSircc.Servicios.Archivos
 
         [WebMethod(EnableSession = true)]
         [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Xml)]
-        public string GetSeries()
+        public string Gets(string Filtro)
         {
-            Manager = new SeriesBLL();
-            return ByAUtil.convertListToXML(Manager.Gets());
+            Manager = new DocumentosBLL();
+            return ByAUtil.convertListToXML(Manager.Gets(Filtro));
 
         }
+
 
         [WebMethod(EnableSession = true)]
         [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
-        public seriesDto GetSeries2(string idSeries)
+        public unidaddocumentalDto Get(unidaddocumentalDto Reg)
         {
-            Manager = new SeriesBLL();
-            return Manager.Gets(idSeries);
+            Manager = new DocumentosBLL();
+            return Manager.Get(Reg);
 
         }
-
-        [WebMethod(EnableSession = true)]
-        [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
-        public List<seriesDto> GetSeriesCbo()
-        {
-            Manager = new SeriesBLL();
-            return Manager.Gets();
-
-        }
-
+      
+       
     }
 }

@@ -51,15 +51,25 @@ namespace wfSircc.Servicios.Archivos
         {
             Manager = new SubSeriesBLL();
             return Manager.Gets();
-
+                    
         }
-        [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
+         [WebMethod(EnableSession = true)]
+        [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Xml)]
         public string Gets() 
         {
             Manager = new SubSeriesBLL();
             return ByAUtil.convertListToXML( Manager.Gets());
 
         }
+
+         [WebMethod(EnableSession = true)]
+         [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
+         public subseriesDto Get(string idSubSeries)
+         {
+             Manager = new SubSeriesBLL();
+             return Manager.Get(idSubSeries);
+
+         }
       
     }
 }
