@@ -47,6 +47,13 @@ namespace wfSircc.UpDocumentos.UpDirectorio
 
         private void ActualizarBandejaEntrada()
         {
+            mConfiguracion mc = new mConfiguracion();
+
+            configuracionDto BE = mc.Get("BandejaE");
+            configuracionDto BOK = mc.Get("BandejaOK");
+
+            d = new Directorios(Server.MapPath(BE.Valor), Server.MapPath(BOK.Valor));
+
             ChkBE.DataSource = d.ObtenerBE();
             ChkBE.DataTextField = "Archivo";
             ChkBE.DataValueField = "Archivo";

@@ -13,6 +13,8 @@ namespace BLL
     public  class BandejaEntBLL
     {
         ByARpt byaRpt = new ByARpt();
+        mGDocumentos m = new mGDocumentos();
+        mDocumentos mDoc = new mDocumentos();
         public string sourcePath { get; set; }
         public string targetPath { get; set; }
 
@@ -22,14 +24,56 @@ namespace BLL
         { 
             this.sourcePath=sourcePath;
             this.targetPath=targetPath;
-            
         }
-        
 
+        public BandejaEntBLL()
+        {
+            this.sourcePath = sourcePath;
+            this.targetPath = targetPath;
+        }
+
+        public ByARpt Insert(gdocumentosDto dto ) {
+            dto.estado = "SA";
+            //dto.tipo = d.GetExtension();
+            //d = new Directorios(sourcePath, targetPath);
+
+            if (EsValidoDocumento(dto))
+            {
+                return m.Insert(dto);
+            }
+            else {
+                return byaRpt;
+            }
+        }
+
+        private bool EsValidoDocumento(gdocumentosDto dto)
+        {
+            if (dto.nombre.EndsWith(".pdf", StringComparison.Ordinal))
+            {
+                string FileName =Path.GetFileNameWithoutExtension(dto.nombre);
+                
+                unidaddocumentalDto doc = mDoc.Get(FileName);
+
+                if (doc.idUnidadDocumental == null)
+                {
+                    byaRpt.Mensaje += String.Format("No existe la Unidad documental Código {0} <br/>", dto.nombre);
+
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                byaRpt.Mensaje += String.Format("El Documento {0} no es un archivo (*.pdf) <br/>", dto.nombre);
+                return false;
+            }
+        }
         public ByARpt MoverArchivos(List<BandejaEntrada> lBE)
         {
             
-            mGDocumentos m = new mGDocumentos();
             gdocumentosDto dto; 
 
             foreach (BandejaEntrada be in lBE)
@@ -37,7 +81,6 @@ namespace BLL
                 d = new Directorios(sourcePath, targetPath,be);
                 if (Validar(be))
                 {
-                    
                     // Use Path class to manipulate file and directory paths.
                     dto = new gdocumentosDto();
                     dto.estado = "SA";
@@ -46,7 +89,7 @@ namespace BLL
                     dto.documento = d.GetBytes();
                     dto.longitud = dto.documento.Length;
                     dto.nombre = be.Archivo;
-                    ByARpt rpt =m.Insert(dto);
+                    ByARpt rpt =Insert(dto);
                     if (!rpt.Error)
                     {
                         d.MoverArchivos();

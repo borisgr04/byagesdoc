@@ -4,15 +4,24 @@ using System;
 using System.Web;
 using System.Web.Script.Serialization;
 using Entidades;
-using BLL.DOC;
-using  Sircc4.Clases;
+using System.Collections.Generic;
+using System.IO;
+using BLL;
+using BLL.Gestion;
+//using BLL.DOC;
+//using  Sircc4.Clases;
 
 public class Handler : IHttpHandler {
     
     public void ProcessRequest (HttpContext context) {
         context.Response.ContentType = "text/plain";//"application/json";
-        var r = new System.Collections.Generic.List<ViewDataUploadFilesResult>();
+        var r = new List<ViewDataUploadFilesResult>();
         JavaScriptSerializer js = new JavaScriptSerializer();
+        
+        mConfiguracion mc = new mConfiguracion();
+        configuracionDto BE = mc.Get("BandejaE");
+        string Carpeta = BE.Valor;
+        
         foreach (string file in context.Request.Files)
         {
             HttpPostedFile hpf = context.Request.Files[file] as HttpPostedFile;
@@ -28,24 +37,28 @@ public class Handler : IHttpHandler {
             }
             if (hpf.ContentLength == 0)
                 continue;
-            string savedFileName = "c:\\tmp\\" + FileName;
            
-            System.IO.BinaryReader b = new System.IO.BinaryReader(hpf.InputStream);
+            BinaryReader b = new BinaryReader(hpf.InputStream);
             byte[] DocBinario = b.ReadBytes(hpf.ContentLength);
 
+            gdocumentosDto a = new gdocumentosDto();
+            a.documento = DocBinario;
+            a.tipo = hpf.ContentType;
+            a.longitud = hpf.ContentLength;
+            a.nombre = FileName;
+            //a.usu = Usuario.UserName;
+            //a.de = "";
 
-            GD_DOCUMENTOSDTO a = new GD_DOCUMENTOSDTO();
-            a.DOCUMENTO = DocBinario;
-            a.TYPE = hpf.ContentType;
-            a.LONGITUD = hpf.ContentLength;
-            a.NOMBRE = FileName;
-            a.USUARIO = Usuario.UserName;
-            a.DESCRIPCION = "";
+            //BandejaEntBLL gd = new BandejaEntBLL();
+            //string msg=gd.Insert(a);
+
             
-            GestionDOC gd = new GestionDOC();
-            string msg=gd.Guardar(a);
-            
+            string msg = "";
+            //"c:\\Temp\\" 
+            string sourcePath = System.Web.HttpContext.Current.Server.MapPath(Carpeta);
+            string savedFileName = System.IO.Path.Combine(sourcePath, FileName);
             hpf.SaveAs(savedFileName);
+            
 
             r.Add(new ViewDataUploadFilesResult()
             {

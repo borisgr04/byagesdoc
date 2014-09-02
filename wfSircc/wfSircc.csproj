@@ -665,6 +665,7 @@
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
     <Content Include="jqfileupload\application.js" />
+    <Content Include="jqfileupload\bootstrap.min.css" />
     <Content Include="jqfileupload\Default.aspx" />
     <Content Include="jqfileupload\Gestion\GD_Bandeja.aspx" />
     <Content Include="jqfileupload\index.html" />

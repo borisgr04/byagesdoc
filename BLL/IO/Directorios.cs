@@ -47,6 +47,11 @@ namespace BLL.IO
 
         public string GetFileName()
         {
+            return GetFileName(be.Archivo);
+        }
+
+        public string GetFileName(string Nombre)
+        {
             string sourceFile = System.IO.Path.Combine(sourcePath, be.Archivo);
             return Path.GetFileNameWithoutExtension(sourceFile);
         }
