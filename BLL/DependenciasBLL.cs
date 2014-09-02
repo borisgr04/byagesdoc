@@ -1,4 +1,5 @@
 ﻿using BLL.Gestion;
+using ByA;
 using Entidades;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,18 @@ namespace BLL
     public class DependenciasBLL
     {
         mDependencias DepManager = new mDependencias();
-        //public ByARpt Insert( Reg)
-        //{
-        //    return SManager.Insert(Reg);
-        //}
+        public ByARpt Insert(dependenciasDto Reg)
+        {
+            return DepManager.Insert(Reg);
+        }
+        public ByARpt Update(dependenciasDto Reg)
+        {
+            return DepManager.Update(Reg);
+        }
+        public ByARpt Anular(dependenciasDto Reg)
+        {
+            return DepManager.Anular(Reg);
+        }
         public List<dependenciasDto> Gets()
         {
             return DepManager.Gets();
