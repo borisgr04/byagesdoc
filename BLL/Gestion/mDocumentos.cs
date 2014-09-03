@@ -40,18 +40,19 @@ namespace BLL.Gestion
              cmdAnular o = new cmdAnular { reg = r };
              return o.Enviar();
          }
-         public unidaddocumentalDto Get(unidaddocumentalDto Reg)
+         public unidaddocumentalDto Get(string  Codigo)
          {
 
              unidaddocumentalDto objT = new unidaddocumentalDto();
              using (ctx = new trdEntities())
              {
-                 unidaddocumental objO = ctx.unidaddocumental.Where(t=>t.Codigo==Reg.Codigo).FirstOrDefault();
+                 unidaddocumental objO = ctx.unidaddocumental.Where(t=>t.Codigo==Codigo).FirstOrDefault();
                  Mapper.Map(objO, objT);
 
              }
              return objT;
          } 
+
          public List<unidaddocumentalDto> Gets(string Filtro)
          {
 
