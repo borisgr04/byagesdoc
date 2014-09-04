@@ -29,9 +29,9 @@ namespace BLL
         {
             return DocManager.Anular(Reg);
         }
-        public unidaddocumentalDto Get(unidaddocumentalDto Reg)
+        public unidaddocumentalDto Get(string Codigo)
         {
-            return DocManager.Get(Reg);
+            return DocManager.Get(Codigo);
         }
         public List<unidaddocumentalDto> Gets(string Filtro)
         {
