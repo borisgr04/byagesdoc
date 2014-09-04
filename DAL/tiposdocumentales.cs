@@ -14,12 +14,19 @@ namespace DAL
     
     public partial class tiposdocumentales
     {
+        public tiposdocumentales()
+        {
+            this.unidadd_tipodoc = new HashSet<unidadd_tipodoc>();
+        }
+    
         public string idTipDocumentales { get; set; }
         public string Nombe { get; set; }
         public string TD_Original { get; set; }
         public string TD_Copia { get; set; }
-        public string SerieId { get; set; }
+        public string SubSerieId { get; set; }
+        public string Estado { get; set; }
     
         public virtual subseries subseries { get; set; }
+        public virtual ICollection<unidadd_tipodoc> unidadd_tipodoc { get; set; }
     }
 }

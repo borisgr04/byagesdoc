@@ -8,18 +8,21 @@
         <EntityTypeShape EntityType="trdModel.fc_menu" Width="1.5" PointX="8" PointY="3.75" IsExpanded="true" FillColor="192, 64, 0" />
         <EntityTypeShape EntityType="trdModel.series" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="trdModel.subseries" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="trdModel.tiposdocumentales" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="trdModel.SerieFK" ManuallyRouted="false" />
-        <AssociationConnector Association="trdModel.SubSeriesIdTD" ManuallyRouted="false" />
         <EntityTypeShape EntityType="trdModel.configuracion" Width="1.5" PointX="7.875" PointY="1.125" />
         <EntityTypeShape EntityType="trdModel.dependencias" Width="1.5" PointX="5.6055885598089485" PointY="4.8317001186458857" />
         <EntityTypeShape EntityType="trdModel.unidaddocumental" Width="1.5" PointX="2.75" PointY="5.75" />
         <AssociationConnector Association="trdModel.FKDependencias" />
         <AssociationConnector Association="trdModel.FkSubseries" />
-        <EntityTypeShape EntityType="trdModel.gddocumentos" Width="1.5" PointX="6.4233555656035222" PointY="2.9438429339527352" />
+        <EntityTypeShape EntityType="trdModel.gddocumentos" Width="1.5" PointX="10.75" PointY="2.5" />
         <EntityTypeShape EntityType="trdModel.gdocumentos" Width="1.5" PointX="2.1585955536731496" PointY="14.638538024685596" />
         <AssociationConnector Association="trdModel.id" />
         <EntityTypeShape EntityType="trdModel.fc_terceros" Width="1.5" PointX="1.9741363404198253" PointY="23.721029903609786" />
+        <EntityTypeShape EntityType="trdModel.unidadd_tipodoc" Width="1.5" PointX="0.5" PointY="4.625" />
+        <AssociationConnector Association="trdModel.Fk_UnidadDoc" />
+        <EntityTypeShape EntityType="trdModel.tiposdocumentales" Width="1.5" PointX="5" PointY="0.5" />
+        <AssociationConnector Association="trdModel.SubSeriesIdTD" />
+        <AssociationConnector Association="trdModel.Fk_TipoDoc" />
       </Diagram>
       <Diagram DiagramId="59676ead4e8d4373ad951952f6caa9e8" Name="Diagrama3" >
         <EntityTypeShape EntityType="trdModel.my_aspnet_applications" Width="1.5" PointX="0.75" PointY="0.75" FillColor="192, 64, 0" />

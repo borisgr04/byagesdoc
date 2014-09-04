@@ -23,7 +23,16 @@
           <EntitySet Name="series" EntityType="trdModel.Store.series" store:Type="Tables" Schema="trd" />
           <EntitySet Name="subseries" EntityType="trdModel.Store.subseries" store:Type="Tables" Schema="trd" />
           <EntitySet Name="tiposdocumentales" EntityType="trdModel.Store.tiposdocumentales" store:Type="Tables" Schema="trd" />
+          <EntitySet Name="unidadd_tipodoc" EntityType="trdModel.Store.unidadd_tipodoc" store:Type="Tables" Schema="trd" />
           <EntitySet Name="unidaddocumental" EntityType="trdModel.Store.unidaddocumental" store:Type="Tables" Schema="trd" />
+          <AssociationSet Name="Fk_TipoDoc" Association="trdModel.Store.Fk_TipoDoc">
+            <End Role="tiposdocumentales" EntitySet="tiposdocumentales" />
+            <End Role="unidadd_tipodoc" EntitySet="unidadd_tipodoc" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_UnidadDoc" Association="trdModel.Store.Fk_UnidadDoc">
+            <End Role="unidaddocumental" EntitySet="unidaddocumental" />
+            <End Role="unidadd_tipodoc" EntitySet="unidadd_tipodoc" />
+          </AssociationSet>
           <AssociationSet Name="FKDependencias" Association="trdModel.Store.FKDependencias">
             <End Role="dependencias" EntitySet="dependencias" />
             <End Role="unidaddocumental" EntitySet="unidaddocumental" />
@@ -97,7 +106,7 @@
             <PropertyRef Name="idgddocumentos" />
           </Key>
           <Property Name="idgddocumentos" Type="int" Nullable="false" />
-          <Property Name="documento" Type="blob" />
+          <Property Name="documento" Type="longblob" />
         </EntityType>
         <EntityType Name="gdocumentos">
           <Key>
@@ -233,7 +242,20 @@
           <Property Name="Nombe" Type="varchar" MaxLength="45" />
           <Property Name="TD_Original" Type="varchar" MaxLength="1" />
           <Property Name="TD_Copia" Type="varchar" MaxLength="1" />
-          <Property Name="SerieId" Type="varchar" MaxLength="11" />
+          <Property Name="SubSerieId" Type="varchar" MaxLength="11" />
+          <Property Name="Estado" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="unidadd_tipodoc">
+          <Key>
+            <PropertyRef Name="IdUnidadDoc" />
+          </Key>
+          <Property Name="IdUnidadDoc" Type="varchar" Nullable="false" MaxLength="45" />
+          <Property Name="IdTipoDoc" Type="varchar" MaxLength="45" />
+          <Property Name="Codigo" Type="varchar" MaxLength="45" />
+          <Property Name="FechaDoc" Type="varchar" MaxLength="45" />
+          <Property Name="PagIni" Type="varchar" MaxLength="45" />
+          <Property Name="CantidadPag" Type="varchar" MaxLength="45" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="45" />
         </EntityType>
         <EntityType Name="unidaddocumental">
           <Key>
@@ -255,6 +277,30 @@
           <Property Name="Estado" Type="varchar" MaxLength="45" />
           <Property Name="Vigencia" Type="varchar" MaxLength="45" />
         </EntityType>
+        <Association Name="Fk_TipoDoc">
+          <End Role="tiposdocumentales" Type="trdModel.Store.tiposdocumentales" Multiplicity="0..1" />
+          <End Role="unidadd_tipodoc" Type="trdModel.Store.unidadd_tipodoc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tiposdocumentales">
+              <PropertyRef Name="idTipDocumentales" />
+            </Principal>
+            <Dependent Role="unidadd_tipodoc">
+              <PropertyRef Name="IdTipoDoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_UnidadDoc">
+          <End Role="unidaddocumental" Type="trdModel.Store.unidaddocumental" Multiplicity="1" />
+          <End Role="unidadd_tipodoc" Type="trdModel.Store.unidadd_tipodoc" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="unidaddocumental">
+              <PropertyRef Name="idUnidadDocumental" />
+            </Principal>
+            <Dependent Role="unidadd_tipodoc">
+              <PropertyRef Name="IdUnidadDoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FKDependencias">
           <End Role="dependencias" Type="trdModel.Store.dependencias" Multiplicity="0..1" />
           <End Role="unidaddocumental" Type="trdModel.Store.unidaddocumental" Multiplicity="*" />
@@ -311,7 +357,7 @@
               <PropertyRef Name="idSubSeries" />
             </Principal>
             <Dependent Role="tiposdocumentales">
-              <PropertyRef Name="SerieId" />
+              <PropertyRef Name="SubSerieId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -323,14 +369,9 @@
           <EntitySet Name="fc_menu" EntityType="trdModel.fc_menu" />
           <EntitySet Name="series" EntityType="trdModel.series" />
           <EntitySet Name="subseries" EntityType="trdModel.subseries" />
-          <EntitySet Name="tiposdocumentales" EntityType="trdModel.tiposdocumentales" />
           <AssociationSet Name="SerieFK" Association="trdModel.SerieFK">
             <End Role="series" EntitySet="series" />
             <End Role="subseries" EntitySet="subseries" />
-          </AssociationSet>
-          <AssociationSet Name="SubSeriesIdTD" Association="trdModel.SubSeriesIdTD">
-            <End Role="subseries" EntitySet="subseries" />
-            <End Role="tiposdocumentales" EntitySet="tiposdocumentales" />
           </AssociationSet>
           <EntitySet Name="configuracion" EntityType="trdModel.configuracion" />
           <EntitySet Name="dependencias" EntityType="trdModel.dependencias" />
@@ -358,6 +399,20 @@
             <End Role="gddocumentos" EntitySet="gddocumentos" />
           </AssociationSet>
           <EntitySet Name="fc_terceros" EntityType="trdModel.fc_terceros" />
+          <EntitySet Name="unidadd_tipodoc" EntityType="trdModel.unidadd_tipodoc" />
+          <AssociationSet Name="Fk_UnidadDoc" Association="trdModel.Fk_UnidadDoc">
+            <End Role="unidaddocumental" EntitySet="unidaddocumental" />
+            <End Role="unidadd_tipodoc" EntitySet="unidadd_tipodoc" />
+          </AssociationSet>
+          <EntitySet Name="tiposdocumentales" EntityType="trdModel.tiposdocumentales" />
+          <AssociationSet Name="SubSeriesIdTD" Association="trdModel.SubSeriesIdTD">
+            <End Role="subseries" EntitySet="subseries" />
+            <End Role="tiposdocumentales" EntitySet="tiposdocumentales" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_TipoDoc" Association="trdModel.Fk_TipoDoc">
+            <End Role="tiposdocumentales" EntitySet="tiposdocumentales" />
+            <End Role="unidadd_tipodoc" EntitySet="unidadd_tipodoc" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="fc_menu">
           <Key>
@@ -400,20 +455,9 @@
           <Property Name="DisposicionS" Type="Boolean" />
           <Property Name="Series_idSerie" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="series" Relationship="trdModel.SerieFK" FromRole="subseries" ToRole="series" />
-          <NavigationProperty Name="tiposdocumentales" Relationship="trdModel.SubSeriesIdTD" FromRole="subseries" ToRole="tiposdocumentales" />
           <NavigationProperty Name="unidaddocumental" Relationship="trdModel.FkSubseries" FromRole="subseries" ToRole="unidaddocumental" />
           <Property Type="String" Name="Estado" MaxLength="45" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="tiposdocumentales">
-          <Key>
-            <PropertyRef Name="idTipDocumentales" />
-          </Key>
-          <Property Name="idTipDocumentales" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
-          <Property Name="Nombe" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
-          <Property Name="TD_Original" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
-          <Property Name="TD_Copia" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
-          <Property Name="SerieId" Type="String" MaxLength="11" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="subseries" Relationship="trdModel.SubSeriesIdTD" FromRole="tiposdocumentales" ToRole="subseries" />
+          <NavigationProperty Name="tiposdocumentales" Relationship="trdModel.SubSeriesIdTD" FromRole="subseries" ToRole="tiposdocumentales" />
         </EntityType>
         <Association Name="SerieFK">
           <End Role="series" Type="trdModel.series" Multiplicity="1" />
@@ -424,18 +468,6 @@
             </Principal>
             <Dependent Role="subseries">
               <PropertyRef Name="Series_idSerie" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="SubSeriesIdTD">
-          <End Role="subseries" Type="trdModel.subseries" Multiplicity="0..1" />
-          <End Role="tiposdocumentales" Type="trdModel.tiposdocumentales" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="subseries">
-              <PropertyRef Name="idSubSeries" />
-            </Principal>
-            <Dependent Role="tiposdocumentales">
-              <PropertyRef Name="SerieId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -478,6 +510,7 @@
           <Property Type="String" Name="Codigo" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Estado" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Vigencia" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="unidadd_tipodoc" Relationship="trdModel.Fk_UnidadDoc" FromRole="unidaddocumental" ToRole="unidadd_tipodoc" />
         </EntityType>
         <Association Name="FKDependencias">
           <End Type="trdModel.dependencias" Role="dependencias" Multiplicity="0..1" />
@@ -639,6 +672,69 @@
           <Property Type="String" Name="correo" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="lugarexpe" MaxLength="45" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="unidadd_tipodoc">
+          <Key>
+            <PropertyRef Name="IdUnidadDoc" />
+          </Key>
+          <Property Type="String" Name="IdUnidadDoc" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IdTipoDoc" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Codigo" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FechaDoc" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PagIni" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CantidadPag" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Descripcion" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="unidaddocumental" Relationship="trdModel.Fk_UnidadDoc" FromRole="unidadd_tipodoc" ToRole="unidaddocumental" />
+          <NavigationProperty Name="tiposdocumentales" Relationship="trdModel.Fk_TipoDoc" FromRole="unidadd_tipodoc" ToRole="tiposdocumentales" />
+        </EntityType>
+        <Association Name="Fk_UnidadDoc">
+          <End Type="trdModel.unidaddocumental" Role="unidaddocumental" Multiplicity="1" />
+          <End Type="trdModel.unidadd_tipodoc" Role="unidadd_tipodoc" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="unidaddocumental">
+              <PropertyRef Name="idUnidadDocumental" />
+            </Principal>
+            <Dependent Role="unidadd_tipodoc">
+              <PropertyRef Name="IdUnidadDoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tiposdocumentales">
+          <Key>
+            <PropertyRef Name="idTipDocumentales" />
+          </Key>
+          <Property Type="String" Name="idTipDocumentales" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Nombe" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TD_Original" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TD_Copia" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SubSerieId" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Estado" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="subseries" Relationship="trdModel.SubSeriesIdTD" FromRole="tiposdocumentales" ToRole="subseries" />
+          <NavigationProperty Name="unidadd_tipodoc" Relationship="trdModel.Fk_TipoDoc" FromRole="tiposdocumentales" ToRole="unidadd_tipodoc" />
+        </EntityType>
+        <Association Name="SubSeriesIdTD">
+          <End Type="trdModel.subseries" Role="subseries" Multiplicity="0..1" />
+          <End Type="trdModel.tiposdocumentales" Role="tiposdocumentales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="subseries">
+              <PropertyRef Name="idSubSeries" />
+            </Principal>
+            <Dependent Role="tiposdocumentales">
+              <PropertyRef Name="SubSerieId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_TipoDoc">
+          <End Type="trdModel.tiposdocumentales" Role="tiposdocumentales" Multiplicity="0..1" />
+          <End Type="trdModel.unidadd_tipodoc" Role="unidadd_tipodoc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tiposdocumentales">
+              <PropertyRef Name="idTipDocumentales" />
+            </Principal>
+            <Dependent Role="unidadd_tipodoc">
+              <PropertyRef Name="IdTipoDoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -686,17 +782,6 @@
                 <ScalarProperty Name="DisposicionMD" ColumnName="DisposicionMD" />
                 <ScalarProperty Name="DisposicionS" ColumnName="DisposicionS" />
                 <ScalarProperty Name="Series_idSerie" ColumnName="Series_idSerie" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tiposdocumentales">
-            <EntityTypeMapping TypeName="trdModel.tiposdocumentales">
-              <MappingFragment StoreEntitySet="tiposdocumentales">
-                <ScalarProperty Name="idTipDocumentales" ColumnName="idTipDocumentales" />
-                <ScalarProperty Name="Nombe" ColumnName="Nombe" />
-                <ScalarProperty Name="TD_Original" ColumnName="TD_Original" />
-                <ScalarProperty Name="TD_Copia" ColumnName="TD_Copia" />
-                <ScalarProperty Name="SerieId" ColumnName="SerieId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -868,6 +953,31 @@
                 <ScalarProperty Name="tipoper" ColumnName="tipoper" />
                 <ScalarProperty Name="tipodoc" ColumnName="tipodoc" />
                 <ScalarProperty Name="terceroId" ColumnName="terceroId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="unidadd_tipodoc">
+            <EntityTypeMapping TypeName="trdModel.unidadd_tipodoc">
+              <MappingFragment StoreEntitySet="unidadd_tipodoc">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="CantidadPag" ColumnName="CantidadPag" />
+                <ScalarProperty Name="PagIni" ColumnName="PagIni" />
+                <ScalarProperty Name="FechaDoc" ColumnName="FechaDoc" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="IdTipoDoc" ColumnName="IdTipoDoc" />
+                <ScalarProperty Name="IdUnidadDoc" ColumnName="IdUnidadDoc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tiposdocumentales">
+            <EntityTypeMapping TypeName="trdModel.tiposdocumentales">
+              <MappingFragment StoreEntitySet="tiposdocumentales">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="SubSerieId" ColumnName="SubSerieId" />
+                <ScalarProperty Name="TD_Copia" ColumnName="TD_Copia" />
+                <ScalarProperty Name="TD_Original" ColumnName="TD_Original" />
+                <ScalarProperty Name="Nombe" ColumnName="Nombe" />
+                <ScalarProperty Name="idTipDocumentales" ColumnName="idTipDocumentales" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

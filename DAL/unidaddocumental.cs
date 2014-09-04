@@ -32,5 +32,6 @@ namespace DAL
     
         public virtual dependencias dependencias { get; set; }
         public virtual subseries subseries { get; set; }
+        public virtual unidadd_tipodoc unidadd_tipodoc { get; set; }
     }
 }
