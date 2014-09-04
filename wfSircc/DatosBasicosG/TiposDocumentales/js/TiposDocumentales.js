@@ -65,7 +65,7 @@
                     $('#TextNombre').val(TipD.Nombe);
                     $('#TextTdOriginal').val(TipD.TD_Original);
                     $('#TextTdCopia').val(TipD.TD_Copia);
-                    $('#CboSubSeries').val(TipD.SerieId);
+                    $('#CboSubSeries').val(TipD.SubSerieId);
                     Editar = "Si";
                 } else {
                     Editar = "No";
@@ -84,7 +84,7 @@
         TipD.Nombe = $('#TextNombre').val();
         TipD.TD_Original = $('#TextTdOriginal').val();
         TipD.TD_Copia = $('#TextTdCopia').val();
-        TipD.SerieId = $('#CboSubSeries').val();
+        TipD.SubSerieId = $('#CboSubSeries').val();
         return TipD;
     }
     var Insert = function () {

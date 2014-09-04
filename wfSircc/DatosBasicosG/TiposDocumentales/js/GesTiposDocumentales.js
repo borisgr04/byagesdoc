@@ -55,7 +55,7 @@
                     { name: 'Nombe' },
                     { name: 'TD_Original' },
                     { name: 'TD_Copia' },
-                    { name: 'SerieId' }
+                    { name: 'SubSerieId' }
                  
             ],
             async: true,
@@ -88,7 +88,7 @@
                   { text: 'Nombre  ', datafield: 'Nombe', width: 250 },
                   { text: 'TD_Original', datafield: 'TD_Original', width: 200 },
                   { text: 'TD_Copia', datafield: 'TD_Copia', width: 200 },
-                  { text: 'SerieId', datafield: 'SerieId', width: 250 }
+                  { text: 'SubSerieId', datafield: 'SubSerieId', width: 250 }
 
 
 
