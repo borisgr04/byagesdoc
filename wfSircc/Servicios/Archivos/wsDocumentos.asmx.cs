@@ -63,7 +63,7 @@ namespace wfSircc.Servicios.Archivos
         public unidaddocumentalDto Get(unidaddocumentalDto Reg)
         {
             Manager = new DocumentosBLL();
-            return Manager.Get(Reg);
+            return Manager.Get(Reg.Codigo);
 
         }
       
