@@ -53,6 +53,7 @@
     <Compile Include="Security\USUARIOS_DTO.cs" />
     <Compile Include="seriesDto.cs" />
     <Compile Include="subseriesDto.cs" />
+    <Compile Include="tiposdocumentalesDto.cs" />
     <Compile Include="unidaddocumentalDto.cs" />
   </ItemGroup>
   <ItemGroup>
