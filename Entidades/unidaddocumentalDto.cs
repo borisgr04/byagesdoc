@@ -8,6 +8,7 @@ namespace Entidades
  public   class unidaddocumentalDto
     {
         public string idUnidadDocumental { get; set; }
+        public string Codigo { get; set; }
         public string Nombre { get; set; }
         public string PalabrasClave { get; set; }
         public Nullable<System.DateTime> FechaCreacion { get; set; }
