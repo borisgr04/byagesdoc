@@ -19,7 +19,12 @@
             } else { alert("Debe Selecionar una fila de la tabla"); }
         });
         $("#anularButton").click(function () {
-            Anular();
+
+            byaMsgBox.confirm("Desea Anular el proceso?", function (result) {
+                if (result) {
+                    Anular();
+                }
+            }); 
         });
 
 

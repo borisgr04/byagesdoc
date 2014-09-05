@@ -18,7 +18,11 @@
             } else { Update() }
         });
         $("#cancelarButton").click(function () {
-            limpiar();
+            byaMsgBox.confirm("Desea cancelar el proceso?", function (result) {
+                if (result) {
+                    limpiar();
+                }
+            });
         });
 
 
