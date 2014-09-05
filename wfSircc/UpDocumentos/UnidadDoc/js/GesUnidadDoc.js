@@ -15,7 +15,11 @@
             byaPage.AbrirPagina(target);
         });
         $("#anularButton").click(function () {
-          Anular();
+            byaMsgBox.confirm("Desea Anular el Item Seleccionado?", function (result) {
+                if (result) {
+                    Anular();
+                }
+            });
         });
         
     };

@@ -20,7 +20,7 @@
         });
         $("#anularButton").click(function () {
 
-            byaMsgBox.confirm("Desea Anular el proceso?", function (result) {
+            byaMsgBox.confirm("Desea Anular el Item Seleccionado?", function (result) {
                 if (result) {
                     Anular();
                 }
