@@ -46,7 +46,7 @@
     var _createElements = function () {
         // $("#TextIdSerie").byaFormatInput('0123456789');      
         var sourcePla = byaPage.getSource(urlToSubSeries);
-        $("#CboSubSeries").byaCombo({ DataSource: sourcePla, Value: "idSubSerie", Display: "SubSerie" });
+        $("#CboSubSeries").byaCombo({ DataSource: sourcePla, Value: "idSubSeries", Display: "SubSerie" });
     };
     var _Abrir = function (TiposDocumentales) {
         var parametrosJSON = { "idTipoDocumentales": TiposDocumentales };
@@ -59,7 +59,7 @@
             async: false,
             success: function (result) {
 
-                var TipD = byaPage.retObj(result.d);
+                var TipD = byaPage.retObj(result.d);             
                 if (TipD != undefined) {
                     $('#TextIdDocumental').val(TipD.idTipDocumentales);
                     $('#TextNombre').val(TipD.Nombe);
