@@ -39,7 +39,7 @@ namespace BLL.Gestion
         {
             public gdocumentosDto oDto { get; set; }
             gdocumentos Dto { get; set; }
-
+        
             #region ImplementaciónMetodosAbstractos
             protected internal override bool esValido()
             {
