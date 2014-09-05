@@ -642,13 +642,31 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="DatosBasicosG\Consultas\Consultas.aspx" />
     <Content Include="DatosBasicosG\Consultas\js\Consultas.js" />
+    <Content Include="DatosBasicosG\Dependencias\Dependencias.aspx" />
+    <Content Include="DatosBasicosG\Dependencias\GesDependencias.aspx" />
+    <Content Include="DatosBasicosG\Dependencias\js\Dependencias.js" />
+    <Content Include="DatosBasicosG\Dependencias\js\GesDependencias.js" />
     <Content Include="DatosBasicosG\Prueba\Prueba.aspx" />
+    <Content Include="DatosBasicosG\RelacionDocumental\GesRelacionDocumental.aspx" />
+    <Content Include="DatosBasicosG\RelacionDocumental\js\GesRelacionDocumental.js" />
+    <Content Include="DatosBasicosG\RelacionDocumental\js\RelacionDocumental.js" />
+    <Content Include="DatosBasicosG\RelacionDocumental\RelacionDocumental.aspx" />
+    <Content Include="DatosBasicosG\Series\GesSeries.aspx" />
+    <Content Include="DatosBasicosG\Series\js\GesSeries.js" />
     <Content Include="DatosBasicosG\Series\js\Series.js" />
     <Content Include="DatosBasicosG\Series\Series.aspx" />
+    <Content Include="DatosBasicosG\SubSeries\GesSubSeries.aspx" />
+    <Content Include="DatosBasicosG\SubSeries\js\GesSubSeries.js" />
+    <Content Include="DatosBasicosG\SubSeries\js\SubSeries.js" />
+    <Content Include="DatosBasicosG\SubSeries\SubSeries.aspx" />
     <Content Include="DatosBasicosG\Terceros\gTerceros.aspx" />
     <Content Include="DatosBasicosG\Terceros\js\gTercersos.js" />
     <Content Include="DatosBasicosG\Terceros\js\Terceros.js" />
     <Content Include="DatosBasicosG\Terceros\Terceros.aspx" />
+    <Content Include="DatosBasicosG\TiposDocumentales\GesTiposDocumentales.aspx" />
+    <Content Include="DatosBasicosG\TiposDocumentales\js\GesTiposDocumentales.js" />
+    <Content Include="DatosBasicosG\TiposDocumentales\js\TiposDocumentales.js" />
+    <Content Include="DatosBasicosG\TiposDocumentales\TiposDocumentales.aspx" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
     <Content Include="Images\heroAccent.png" />
@@ -1062,12 +1080,20 @@
     <Content Include="Seguridad\js\GesUsuarios.js" />
     <Content Include="Seguridad\PanelAdmin.aspx" />
     <Content Include="Seguridad\PerfilxUsuario.aspx" />
+    <Content Include="Servicios\Archivos\wsDependencias.asmx" />
+    <Content Include="Servicios\Archivos\wsDocumentos.asmx" />
+    <Content Include="Servicios\Archivos\wsRelacionDocumental.asmx" />
     <Content Include="Servicios\Archivos\wsSeries.asmx" />
+    <Content Include="Servicios\Archivos\wsSubSeries.asmx" />
+    <Content Include="Servicios\Archivos\wsTiposDocumentales.asmx" />
     <Content Include="Servicios\Bandeja\wsBandejaEntrada.asmx" />
     <Content Include="Servicios\ControlFlujo\wsMenu.asmx" />
     <Content Include="Servicios\ControlFlujo\wsSecurity.asmx" />
     <Content Include="Servicios\DatosBasicosG\wsTerceros.asmx" />
-    <Content Include="Servicios\wsConsultas.asmx" />
+    <Content Include="UpDocumentos\UnidadDoc\GesUnidadDoc.aspx" />
+    <Content Include="UpDocumentos\UnidadDoc\js\GesUnidadDoc.js" />
+    <Content Include="UpDocumentos\UnidadDoc\js\UnidadDoc.js" />
+    <Content Include="UpDocumentos\UnidadDoc\UnidadDoc.aspx" />
     <Content Include="UpDocumentos\UpDirectorio\UpDirectorio.aspx" />
     <Content Include="WebForm2.aspx" />
     <Content Include="jqwidgets\Web.config" />
@@ -1233,6 +1259,20 @@
     <Compile Include="DatosBasicosG\Consultas\Consultas.aspx.designer.cs">
       <DependentUpon>Consultas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DatosBasicosG\Dependencias\Dependencias.aspx.cs">
+      <DependentUpon>Dependencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosBasicosG\Dependencias\Dependencias.aspx.designer.cs">
+      <DependentUpon>Dependencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosBasicosG\Dependencias\GesDependencias.aspx.cs">
+      <DependentUpon>GesDependencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosBasicosG\Dependencias\GesDependencias.aspx.designer.cs">
+      <DependentUpon>GesDependencias.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DatosBasicosG\Prueba\Prueba.aspx.cs">
       <DependentUpon>Prueba.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1240,12 +1280,47 @@
     <Compile Include="DatosBasicosG\Prueba\Prueba.aspx.designer.cs">
       <DependentUpon>Prueba.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DatosBasicosG\RelacionDocumental\GesRelacionDocumental.aspx.cs">
+      <DependentUpon>GesRelacionDocumental.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosBasicosG\RelacionDocumental\GesRelacionDocumental.aspx.designer.cs">
+      <DependentUpon>GesRelacionDocumental.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosBasicosG\RelacionDocumental\RelacionDocumental.aspx.cs">
+      <DependentUpon>RelacionDocumental.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosBasicosG\RelacionDocumental\RelacionDocumental.aspx.designer.cs">
+      <DependentUpon>RelacionDocumental.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosBasicosG\Series\GesSeries.aspx.cs">
+      <DependentUpon>GesSeries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosBasicosG\Series\GesSeries.aspx.designer.cs">
+      <DependentUpon>GesSeries.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DatosBasicosG\Series\Series.aspx.cs">
       <DependentUpon>Series.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DatosBasicosG\Series\Series.aspx.designer.cs">
       <DependentUpon>Series.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosBasicosG\SubSeries\GesSubSeries.aspx.cs">
+      <DependentUpon>GesSubSeries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosBasicosG\SubSeries\GesSubSeries.aspx.designer.cs">
+      <DependentUpon>GesSubSeries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosBasicosG\SubSeries\SubSeries.aspx.cs">
+      <DependentUpon>SubSeries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosBasicosG\SubSeries\SubSeries.aspx.designer.cs">
+      <DependentUpon>SubSeries.aspx</DependentUpon>
     </Compile>
     <Compile Include="DatosBasicosG\Terceros\gTerceros.aspx.cs">
       <DependentUpon>gTerceros.aspx</DependentUpon>
@@ -1260,6 +1335,20 @@
     </Compile>
     <Compile Include="DatosBasicosG\Terceros\Terceros.aspx.designer.cs">
       <DependentUpon>Terceros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosBasicosG\TiposDocumentales\GesTiposDocumentales.aspx.cs">
+      <DependentUpon>GesTiposDocumentales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosBasicosG\TiposDocumentales\GesTiposDocumentales.aspx.designer.cs">
+      <DependentUpon>GesTiposDocumentales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosBasicosG\TiposDocumentales\TiposDocumentales.aspx.cs">
+      <DependentUpon>TiposDocumentales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosBasicosG\TiposDocumentales\TiposDocumentales.aspx.designer.cs">
+      <DependentUpon>TiposDocumentales.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -1311,8 +1400,28 @@
     <Compile Include="Seguridad\PerfilxUsuario.aspx.designer.cs">
       <DependentUpon>PerfilxUsuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Servicios\Archivos\wsDependencias.asmx.cs">
+      <DependentUpon>wsDependencias.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Servicios\Archivos\wsDocumentos.asmx.cs">
+      <DependentUpon>wsDocumentos.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Servicios\Archivos\wsRelacionDocumental.asmx.cs">
+      <DependentUpon>wsRelacionDocumental.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Servicios\Archivos\wsSeries.asmx.cs">
       <DependentUpon>wsSeries.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Servicios\Archivos\wsSubSeries.asmx.cs">
+      <DependentUpon>wsSubSeries.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Servicios\Archivos\wsTiposDocumentales.asmx.cs">
+      <DependentUpon>wsTiposDocumentales.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Servicios\Bandeja\wsBandejaEntrada.asmx.cs">
@@ -1331,16 +1440,26 @@
       <DependentUpon>wsTerceros.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Servicios\wsConsultas.asmx.cs">
-      <DependentUpon>wsConsultas.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="SiteBS.Master.cs">
       <DependentUpon>SiteBS.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SiteBS.Master.designer.cs">
       <DependentUpon>SiteBS.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UpDocumentos\UnidadDoc\GesUnidadDoc.aspx.cs">
+      <DependentUpon>GesUnidadDoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpDocumentos\UnidadDoc\GesUnidadDoc.aspx.designer.cs">
+      <DependentUpon>GesUnidadDoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpDocumentos\UnidadDoc\UnidadDoc.aspx.cs">
+      <DependentUpon>UnidadDoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpDocumentos\UnidadDoc\UnidadDoc.aspx.designer.cs">
+      <DependentUpon>UnidadDoc.aspx</DependentUpon>
     </Compile>
     <Compile Include="UpDocumentos\UpDirectorio\UpDirectorio.aspx.cs">
       <DependentUpon>UpDirectorio.aspx</DependentUpon>

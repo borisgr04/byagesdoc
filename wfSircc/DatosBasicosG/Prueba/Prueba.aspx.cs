@@ -16,7 +16,7 @@ namespace wfSircc.DatosBasicosG.Prueba
 {
     public partial class Prueba : System.Web.UI.Page
     {
-
+        
         Directorios d ;
           
         protected void Page_Load(object sender, EventArgs e)
