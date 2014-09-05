@@ -17,7 +17,7 @@ namespace BLL.Gestion
              Mapper.CreateMap<tiposdocumentalesDto, tiposdocumentales>();
              Mapper.CreateMap<tiposdocumentales, tiposdocumentalesDto>();
          }
-
+       
         public ByARpt Insert(tiposdocumentalesDto Reg)
          {
              tiposdocumentales r = new tiposdocumentales();
@@ -90,7 +90,7 @@ namespace BLL.Gestion
                  if (found != null)
                  {
                      found.Nombe = reg.Nombe;
-                     found.SerieId = reg.SerieId;
+                     found.SubSerieId = reg.SubSerieId;
                      found.TD_Copia = reg.TD_Copia;
                      found.TD_Original = reg.TD_Original;
                    
@@ -124,7 +124,7 @@ namespace BLL.Gestion
                  found = ctx.tiposdocumentales.Where(t => t.idTipDocumentales == reg.idTipDocumentales).FirstOrDefault();
                  if (found != null)
                  {
-                     
+                     found.Estado = "AN";
                      return true;
                  }
                  else
