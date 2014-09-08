@@ -156,7 +156,7 @@
 
 
 $(function () {
-    byaSite.SetModuloP({ TituloForm: "Series", Modulo: "", urlToPanelModulo: "#", Cod_Mod: "", Rol: "" });
+    byaSite.SetModuloP({ TituloForm: "Series", Modulo: "Gestion Documental", urlToPanelModulo: "GesSeries.aspx", Cod_Mod: "GESDOC", Rol: "AD_SER" });
     Series.config.theme = byaSite.tema
     Series.init();
   
