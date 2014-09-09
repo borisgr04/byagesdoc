@@ -137,7 +137,7 @@
 }());
 
 $(function () {
-    byaSite.SetModuloP({ TituloForm: "Consulta de SubSeries", Modulo: "", urlToPanelModulo: "#", Cod_Mod: "", Rol: "" });
+    byaSite.SetModuloP({ TituloForm: "Consulta de SubSeries", Modulo: "Datos Basicos", urlToPanelModulo: "GesSubSeries.aspx", Cod_Mod: "GESDOC", Rol: "GESDOC_SUB" });
     SubSeriesList.config.theme = byaSite.tema
     SubSeriesList.init();
 

@@ -34,6 +34,14 @@
                  &nbsp
              </div>         
               <div class="form-group">
+                    <div class="form-group">
+                    <label for="CboSeries" class="col-sm-2 control-label">
+                      Serie: 
+                    </label>
+                    <div class="col-md-2">
+                          <select id="CboSeries" class="form-control input-sm"></select>               
+                    </div>               
+                </div>
                     <label for="TextIdSubSerie" class="col-sm-2 control-label">
                         Id SubSerie: 
                     </label>
@@ -43,7 +51,7 @@
                 </div>
               <div class="form-group">
                     <label for="TextSubSerie" class="col-sm-2 control-label">
-                        SubSerie: 
+                        Nombre: 
                     </label>
                     <div class="col-md-2">
                         <input id="TextSubSerie" type="text" class="form-control input-sm inputHab" />
@@ -62,49 +70,42 @@
                         Disposición A: 
                     </label>
                     <div class="col-md-2">
-                        <input id="TextA" type="text" class="form-control input-sm inputHab" />
+                            <input id="TextA" type="text" class="form-control input-sm inputHab" />
                     </div>          
                 </div>
                   <div class="form-group">
-                    <label for="TextCT" class="col-sm-2 control-label">
+                    <label for="CheckCT" class="col-sm-2 control-label">
                        Disposición CT: 
                     </label>
                     <div class="col-md-2">
-                        <input id="TextCT" type="text" class="form-control input-sm inputHab" />
+                       <input id="CheckCT" type="checkbox" />
                     </div>          
                 </div>
                   <div class="form-group">
-                    <label for="TextE" class="col-sm-2 control-label">
+                    <label for="CheckE" class="col-sm-2 control-label">
                          Disposición E: 
                     </label>
                     <div class="col-md-2">
-                        <input id="TextE" type="text" class="form-control input-sm inputHab" />
+                           <input id="CheckE" type="checkbox" />
                     </div>          
                 </div>
                   <div class="form-group">
-                    <label for="TextMD" class="col-sm-2 control-label">
+                    <label for="CheckMD" class="col-sm-2 control-label">
                         Disposición MD: 
                     </label>
                     <div class="col-md-2">
-                        <input id="TextMD" type="text" class="form-control input-sm inputHab" />
+                        <input id="CheckMD" type="checkbox" />
                     </div>          
                 </div>
                   <div class="form-group">
-                    <label for="TextS" class="col-sm-2 control-label">
+                    <label for="CheckS" class="col-sm-2 control-label">
                         Disposición S: 
                     </label>
                     <div class="col-md-2">
-                        <input id="TextS" type="text" class="form-control input-sm inputHab" />
+                       <input id="CheckS" type="checkbox" />
                     </div>          
                 </div>
-                  <div class="form-group">
-                    <label for="CboSeries" class="col-sm-2 control-label">
-                      Serie: 
-                    </label>
-                    <div class="col-md-2">
-                          <select id="CboSeries" class="form-control input-sm"></select>               
-                    </div>               
-                </div>
+                
             </div>
            
 

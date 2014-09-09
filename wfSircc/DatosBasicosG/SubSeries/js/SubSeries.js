@@ -11,8 +11,9 @@
     var _addHandlers = function () {
 
         $("#nuevoButton").click(function () {          
-            Controls();
-
+            Controls();         
+         
+           
         });
         $("#guardarButton").click(function () {
             if (Editar == "No") {
@@ -47,7 +48,7 @@
 
     }
     var _createElements = function () {
-        // $("#TextIdSerie").byaFormatInput('0123456789');      
+        $("#TextIdSubSerie").byaFormatInput('0123456789');
         var sourcePla = byaPage.getSource(urlToSeries);
         $("#CboSeries").byaCombo({ DataSource: sourcePla, Value: "idSerie", Display: "Serie" });
     };
@@ -67,11 +68,11 @@
                     $('#TextIdSubSerie').val(Subs.idSubSeries);
                     $('#TextSubSerie').val(Subs.SubSerie);
                     $('#TextAg').val(Subs.RetencionAG);
-                    $('#TextA').val( Subs.DisposicionA);
-                    $("#TextCT").val( Subs.DisposicionCT);
-                    $('#TextE').val(Subs.DisposicionE);
-                    $('#TextMD').val( Subs.DisposicionMD);
-                    $("#TextS").val(Subs.DisposicionS);
+                    $('#TextA').val(Subs.DisposicionA);
+                    document.getElementById("CheckCT").checked = Subs.DisposicionCT;
+                    document.getElementById("CheckE").checked = Subs.DisposicionE;
+                    document.getElementById("CheckMD").checked = Subs.DisposicionMD;
+                    document.getElementById("CheckS").checked = Subs.DisposicionS;               
                     $('#CboSeries').val(Subs.Series_idSerie);                  
                     Editar = "Si";
                 } else {
@@ -91,10 +92,10 @@
         Subs.SubSerie = $('#TextSubSerie').val();     
         Subs.RetencionAG = $('#TextAg').val();
         Subs.DisposicionA = $('#TextA').val();
-        Subs.DisposicionCT = $("#TextCT").val();
-        Subs.DisposicionE = $('#TextE').val();
-        Subs.DisposicionMD = $('#TextMD').val();
-        Subs.DisposicionS = $("#TextS").val();        
+        Subs.DisposicionCT = $("#CheckCT").is(":checked");
+        Subs.DisposicionE = $('#CheckE').is(":checked");
+        Subs.DisposicionMD = $('#CheckMD').is(":checked");
+        Subs.DisposicionS = $("#CheckS").is(":checked");
         Subs.Series_idSerie = $('#CboSeries').val();
         return Subs;
     }
@@ -117,19 +118,19 @@
         $('#TextSubSerie').byaSetHabilitar(true);
         $('#TextAg').byaSetHabilitar(true);
         $('#TextA').byaSetHabilitar(true);
-        $("#TextCT").byaSetHabilitar(true);
-        $('#TextE').byaSetHabilitar(true);
-        $('#TextMD').byaSetHabilitar(true);
-        $("#TextS").byaSetHabilitar(true);
+        $("#CheckCT").byaSetHabilitar(true);
+        $('#CheckE').byaSetHabilitar(true);
+        $('#CheckMD').byaSetHabilitar(true);
+        $("#CheckS").byaSetHabilitar(true);
         $('#CboSeries').byaSetHabilitar(true);
         $('#TextIdSubSerie').val("");
         $('#TextSubSerie').val("");
         $('#TextAg').val("");
         $('#TextA').val("");
-        $("#TextCT").val("");
-        $('#TextE').val("");
-        $('#TextMD').val("");
-        $("#TextS").val("");
+        $("#CheckCT").val("");
+        $('#CheckE').val("");
+        $('#CheckMD').val("");
+        $("#CheckS").val("");
         $('#CboSeries').val("");
         Editar = "No";
 
@@ -139,19 +140,19 @@
         $('#TextSubSerie').byaSetHabilitar(false);
         $('#TextAg').byaSetHabilitar(false);
         $('#TextA').byaSetHabilitar(false);
-        $("#TextCT").byaSetHabilitar(false);
-        $('#TextE').byaSetHabilitar(false);
-        $('#TextMD').byaSetHabilitar(false);
-        $("#TextS").byaSetHabilitar(false);
+        $("#CheckCT").byaSetHabilitar(false);
+        $('#CheckE').byaSetHabilitar(false);
+        $('#CheckMD').byaSetHabilitar(false);
+        $("#CheckS").byaSetHabilitar(false);
         $('#CboSeries').byaSetHabilitar(false);
         $('#TextIdSubSerie').val("");
         $('#TextSubSerie').val("");
         $('#TextAg').val("");
         $('#TextA').val("");
-        $("#TextCT").val("");
-        $('#TextE').val("");
-        $('#TextMD').val("");
-        $("#TextS").val("");
+        $("#CheckCT").val("");
+        $('#CheckE').val("");
+        $('#CheckMD').val("");
+        $("#CheckS").val("");
         $('#CboSeries').val("");
         Editar = "No";
     }
@@ -191,7 +192,7 @@
 
 
 $(function () {
-    byaSite.SetModuloP({ TituloForm: "SubSeries", Modulo: "", urlToPanelModulo: "#", Cod_Mod: "", Rol: "" });
+    byaSite.SetModuloP({ TituloForm: "SubSeries", Modulo: "Consulta de SubSeries", urlToPanelModulo: "GesSubSeries.aspx", Cod_Mod: "GESDOC", Rol: "AD_SUB" });
     SubSeries.config.theme = byaSite.tema
     SubSeries.init();
 
