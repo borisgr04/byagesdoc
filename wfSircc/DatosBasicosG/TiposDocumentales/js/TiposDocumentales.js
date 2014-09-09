@@ -48,7 +48,7 @@
 
     }
     var _createElements = function () {
-        // $("#TextIdSerie").byaFormatInput('0123456789');      
+        $("#TextIdDocumental").byaFormatInput('0123456789');
         var sourcePla = byaPage.getSource(urlToSubSeries);
         $("#CboSubSeries").byaCombo({ DataSource: sourcePla, Value: "idSubSeries", Display: "SubSerie" });
     };
@@ -168,7 +168,7 @@
 
 
 $(function () {
-    byaSite.SetModuloP({ TituloForm: "TiposDocumentales", Modulo: "", urlToPanelModulo: "#", Cod_Mod: "", Rol: "" });
+    byaSite.SetModuloP({ TituloForm: "Tipos Documentales", Modulo: "Consulta Tipos Documentales", urlToPanelModulo: "GesTiposDocumentales.aspx", Cod_Mod: "GESDOC", Rol: "AD_TIP" });
     TiposDocumentales.config.theme = byaSite.tema
     TiposDocumentales.init();
 

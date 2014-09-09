@@ -129,7 +129,7 @@
 }());
 
 $(function () {
-    byaSite.SetModuloP({ TituloForm: "Consulta de Tipos Documentales", Modulo: "", urlToPanelModulo: "#", Cod_Mod: "", Rol: "" });
+    byaSite.SetModuloP({ TituloForm: "Consulta de Tipos Documentales", Modulo: "Datos Basicos", urlToPanelModulo: "GesTiposDocumentales.aspx", Cod_Mod: "GESDOC", Rol: "GESDOC_TIP" });
     TiposDocumentalesList.config.theme = byaSite.tema
     TiposDocumentalesList.init();
 
