@@ -46,7 +46,7 @@
 
     }
     var _createElements = function () {       
-        // $("#TextIdSerie").byaFormatInput('0123456789');      
+        $("#TextIdSerie").byaFormatInput('0123456789');
 
     };
     var _Abrir = function (idSeries) {
@@ -156,7 +156,7 @@
 
 
 $(function () {
-    byaSite.SetModuloP({ TituloForm: "Series", Modulo: "Gestion Documental", urlToPanelModulo: "GesSeries.aspx", Cod_Mod: "GESDOC", Rol: "AD_SER" });
+    byaSite.SetModuloP({ TituloForm: "Series", Modulo: "Consulta Series", urlToPanelModulo: "GesSeries.aspx", Cod_Mod: "GESDOC", Rol: "AD_SER" });
     Series.config.theme = byaSite.tema
     Series.init();
   

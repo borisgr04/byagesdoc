@@ -122,7 +122,7 @@
 }());
 
 $(function () {
-    byaSite.SetModuloP({ TituloForm: "Gestion Documental", Modulo: "Registro de Series", urlToPanelModulo: "GesSeries.aspx", Cod_Mod: "GESDOC", Rol: "GESDOC_SER" });   
+    byaSite.SetModuloP({ TituloForm: "Registro de Series", Modulo: "Datos Basicos", urlToPanelModulo: "GesSeries.aspx", Cod_Mod: "GESDOC", Rol: "GESDOC_SER" });
     SeriesList.config.theme = byaSite.tema
     SeriesList.init();
 

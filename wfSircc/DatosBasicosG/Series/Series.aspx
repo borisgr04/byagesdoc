@@ -45,7 +45,7 @@
                 </div>
               <div class="form-group">
                     <label for="TextSerie" class="col-sm-2 control-label">
-                        Serie: 
+                        Nombre: 
                     </label>
                     <div class="col-md-2">
                         <input id="TextSerie" type="text" class="form-control input-sm inputHab" />
