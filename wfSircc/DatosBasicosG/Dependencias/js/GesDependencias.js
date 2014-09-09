@@ -123,7 +123,7 @@
 }());
 
 $(function () {
-    byaSite.SetModuloP({ TituloForm: "Consulta de Dependencias", Modulo: "", urlToPanelModulo: "#", Cod_Mod: "", Rol: "" });
+    byaSite.SetModuloP({ TituloForm: "Registro de Dependencias", Modulo: "Datos Basicos", urlToPanelModulo: "GesDependencias.aspx", Cod_Mod: "GESDOC", Rol: "GESDOC_DEP" });
     DepenList.config.theme = byaSite.tema
     DepenList.init();
 

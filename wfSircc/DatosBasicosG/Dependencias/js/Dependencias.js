@@ -151,7 +151,7 @@
 
 
 $(function () {
-    byaSite.SetModuloP({ TituloForm: "Series", Modulo: "", urlToPanelModulo: "#", Cod_Mod: "", Rol: "" });
+    byaSite.SetModuloP({ TituloForm: "Dependencias", Modulo: "Consulta de Dependencias", urlToPanelModulo: "GesDependencias.aspx", Cod_Mod: "GESDOC", Rol: "AD_DEP" });
     Dependencias.config.theme = byaSite.tema
     Dependencias.init();
 
