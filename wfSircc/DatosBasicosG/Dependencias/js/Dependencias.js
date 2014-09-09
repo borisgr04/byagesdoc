@@ -45,7 +45,7 @@
 
     }
     var _createElements = function () {
-        // $("#TextIdSerie").byaFormatInput('0123456789');      
+        $("#TextIdDependencia").byaFormatInput('0123456789');
 
     };
     var _Abrir = function (idDependencia) {
