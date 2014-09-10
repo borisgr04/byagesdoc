@@ -9,12 +9,11 @@
     </script>
     <div class="row">
         <div class="col-sm-3">
-            <asp:Button ID="BtnAceptar" runat="server" class="btn btn-primary"  Text="Ver Bandeja de Entrada" Width="167px" OnClick="BtnAceptar_Click1" />
-                                     </div>
+                                    </div>
         <div class="col-sm-3"> 
                                      </div>
         <div class="col-sm-3">
-             <asp:Button ID="BtnMover" runat="server" class="btn btn-primary"  Text="Importar" OnClick="BtnMover_Click1" />
+            
                                      </div>
         <div class="col-sm-3">
                                      </div>
@@ -27,12 +26,14 @@
                     <h3 class="panel-title">Bandeja de Entrada</h3>
                 </div>
                 <div class="panel-body">
-                                <a href="#"  id="BtnUpload" title="Subir Archivos" class="btn btn-danger" onclick="_Upload()">
-                                    <span class="glyphicon glyphicon-paperclip"></span>
-                                </a>
-                                <a href="javascript:location.reload()" title="Actualizar" id="BtnUpdBandeja" class="btn btn-warning">
-                                    <span class="glyphicon glyphicon-refresh"></span>
-                                </a>
+                      <button type="button" title="Subir Archivos" onclick="_Upload()" class="btn btn-danger" id="BtnUpload">
+                            <span class="glyphicon glyphicon-paperclip"></span>
+                            Cargar</button>   
+                      <button  type="button" title="Actualizar" onclick="javascript:location.reload()" class="btn btn-warning" id="BtnUpdBandeja">
+                            <span class="glyphicon glyphicon-refresh"></span>
+                            Actualizar</button>
+                       <asp:LinkButton ID="BtnMover2" OnClick="BtnMover_Click1" runat="server" Text="<span class='glyphicon glyphicon-save'></span> Importar" CssClass="btn btn-primary" />
+
                     <asp:CheckBoxList ID="ChkBE" runat="server" CssClass="table-hover">
                     </asp:CheckBoxList>
                 </div>
@@ -42,6 +43,7 @@
     <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Lista de Documentos Seleccionados</h3>
+                    <asp:Label ID="lbLog" runat="server" Text=""></asp:Label>
                 </div>
                 <div class="panel-body">
                     <asp:CheckBoxList ID="ChkOK" runat="server" CssClass="table-hover">
@@ -51,9 +53,6 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <h3>Log de Resultados</h3>
-    <asp:Label ID="lbLog" runat="server" Text=""></asp:Label>
-        </div>
+    
          <script src="js/UpDirectorio.js"></script>
 </asp:Content>

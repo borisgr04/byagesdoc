@@ -13,22 +13,13 @@ namespace wfSircc.UpDocumentos.UpDirectorio {
     public partial class UpDirectorio {
         
         /// <summary>
-        /// Control BtnAceptar.
+        /// Control BtnMover2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnAceptar;
-        
-        /// <summary>
-        /// Control BtnMover.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnMover;
+        protected global::System.Web.UI.WebControls.LinkButton BtnMover2;
         
         /// <summary>
         /// Control ChkBE.
@@ -40,15 +31,6 @@ namespace wfSircc.UpDocumentos.UpDirectorio {
         protected global::System.Web.UI.WebControls.CheckBoxList ChkBE;
         
         /// <summary>
-        /// Control ChkOK.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList ChkOK;
-        
-        /// <summary>
         /// Control lbLog.
         /// </summary>
         /// <remarks>
@@ -56,5 +38,14 @@ namespace wfSircc.UpDocumentos.UpDirectorio {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbLog;
+        
+        /// <summary>
+        /// Control ChkOK.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList ChkOK;
     }
 }
