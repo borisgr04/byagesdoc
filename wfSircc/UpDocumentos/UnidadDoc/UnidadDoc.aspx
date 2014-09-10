@@ -82,7 +82,7 @@
                 </div>
                 <div class="form-group">
                     <label for="TextNfolios" class="col-sm-2 control-label">
-                      N° Folios: 
+                      N° Folio: 
                     </label>
                     <div class="col-md-2">
                            <input id="TextNfolios" type="text" class="form-control input-sm inputHab" />                
@@ -106,7 +106,7 @@
                 </div>
                   <div class="form-group">
                     <label for="TextArchivador" class="col-sm-2 control-label">
-                      N° Archivador: 
+                      N° Carpeta: 
                     </label>
                     <div class="col-md-2">
                            <input id="TextArchivador" type="text" class="form-control input-sm inputHab" />                
@@ -114,7 +114,7 @@
                 </div>
                 <div class="form-group">
                     <label for="TextGabeta" class="col-sm-2 control-label">
-                      N° Gabeta: 
+                      N° Caja: 
                     </label>
                     <div class="col-md-2">
                            <input id="TextGabeta" type="text" class="form-control input-sm inputHab" />                

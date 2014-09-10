@@ -10,7 +10,11 @@
                             Nuevo</button>
                              <button type="button" class="btn btn-primary" id="editarButton">
                             <span class="glyphicon glyphicon-pencil"></span>
-                            Editar</button>                                      
+                            Editar</button>                     
+                             <button type="button" class="btn btn-danger" id="anularButton">
+                             <span class="glyphicon glyphicon-remove">
+                             </span>Anular</button>      
+                                                                    
                                     
                     </div>
                 </div>    
@@ -37,11 +41,7 @@
                       <div class="row"> 
                            <div class="col-md-12">                           
                            
-                                 <div class="col-md-2">
-                              <button type="button" class="btn btn-danger" id="anularButton">
-                             <span class="glyphicon glyphicon-remove">
-                             </span>Anular</button>      
-                         </div>                  
+                                     
                       </div>                            
                       <div class="col-md-12">  
                              &nbsp                            

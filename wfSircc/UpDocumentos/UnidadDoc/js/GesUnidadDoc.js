@@ -158,7 +158,7 @@
 
 
 $(function () {
-    byaSite.SetModuloP({ TituloForm: "Consulta Documental", Modulo: " Other Pages", urlToPanelModulo: "#", Cod_Mod: "ESPR4", Rol: "EP_CREAR" });
+    byaSite.SetModuloP({ TituloForm: "Consulta Documental", Modulo: "Documentos", urlToPanelModulo: "GesUnidadDoc.aspx", Cod_Mod: "DOCU", Rol: "DOCU_UNI" });
 
     GesUnidadDoc.config.theme = byaSite.tema
     GesUnidadDoc.init();

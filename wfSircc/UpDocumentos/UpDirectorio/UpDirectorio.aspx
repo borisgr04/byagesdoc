@@ -55,4 +55,5 @@
         <h3>Log de Resultados</h3>
     <asp:Label ID="lbLog" runat="server" Text=""></asp:Label>
         </div>
+         <script src="js/UpDirectorio.js"></script>
 </asp:Content>

@@ -11,8 +11,7 @@
     var Editar = "No";
     var _addHandlers = function () {
 
-        $("#nuevoButton").click(function () {
-            alert($("#CboSubSeries").val());
+        $("#nuevoButton").click(function () {          
             Controls();
         });
         $("#guardarButton").click(function () {
@@ -247,7 +246,7 @@
 
 
 $(function () {
-    byaSite.SetModuloP({ TituloForm: "Series", Modulo: "", urlToPanelModulo: "#", Cod_Mod: "", Rol: "" });
+    byaSite.SetModuloP({ TituloForm: "Registro Unidad Documental", Modulo: "Consulta Unidad Documental", urlToPanelModulo: "GesUnidadDoc.aspx", Cod_Mod: "DOCU", Rol: "AD_UNI" });
     UnidadDoc.config.theme = byaSite.tema
     UnidadDoc.init();
 
