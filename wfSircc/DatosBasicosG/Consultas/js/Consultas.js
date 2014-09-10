@@ -132,7 +132,7 @@
 
 
 $(function () {
-    byaSite.SetModuloP({ TituloForm: "Consulta Documental", Modulo: " Other Pages", urlToPanelModulo: "#", Cod_Mod: "ESPR4", Rol: "EP_CREAR" });
+    byaSite.SetModuloP({ TituloForm: "Consulta Documental", Modulo: "Documentos", urlToPanelModulo: "Consultas.apsx", Cod_Mod: "DOCU", Rol: "DOCU_CON" });
    
     Consultas.config.theme = byaSite.tema
     Consultas.init();
