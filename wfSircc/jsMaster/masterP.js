@@ -8,6 +8,7 @@ var masterP = (function ($) {
     var Modulos = [
        { codigo: "ADMIN", nombre: "Administración", icono: "icon-book" },
        { codigo: "GESDOC", nombre: "Datos Básicos", icono: "icon-briefcase" },
+       { codigo: "DOCU", nombre: "Documentos", icono: "icon-briefcase" },
        { codigo: "SEGU", nombre: "Seguridad", icono: "icon-briefcase" }
      /* ,  { codigo: "CONT4", nombre: "Contratos", icono: "icon-edit" },
        ,

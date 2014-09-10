@@ -57,6 +57,16 @@ namespace wfSircc.Servicios.Archivos
 
         }
 
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
+        public List<unidaddocumentalDto> GetsCbo()
+        {
+            string Filtro = null;
+            Manager = new DocumentosBLL();
+            return Manager.Gets(Filtro);
+
+        }
+
 
         [WebMethod(EnableSession = true)]
         [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]

@@ -1,4 +1,8 @@
-﻿var RelacionDocumentalList = (function () {
+﻿/// <reference path="../../../UpDocumentos/UnidadDoc/GesUnidadDoc.aspx" />
+/// <reference path="../../../UpDocumentos/UnidadDoc/GesUnidadDoc.aspx" />
+/// <reference path="../../../UpDocumentos/UnidadDoc/GesUnidadDoc.aspx" />
+/// <reference path="../../../UpDocumentos/UnidadDoc/GesUnidadDoc.aspx" />
+var RelacionDocumentalList = (function () {
     "use strict";
     var grid = '#jqxgridHisto';
     var urlToGrid = "/Servicios/Archivos/wsRelacionDocumental.asmx/Gets";
@@ -134,7 +138,7 @@
 }());
 
 $(function () {
-    byaSite.SetModuloP({ TituloForm: "Consulta de Relacion Documental", Modulo: "", urlToPanelModulo: "#", Cod_Mod: "", Rol: "" });
+    byaSite.SetModuloP({ TituloForm: "Consulta de Relacion Documental", Modulo: "Unidad Documental", urlToPanelModulo: "", Cod_Mod: "", Rol: "" });
     RelacionDocumentalList.config.theme = byaSite.tema
     RelacionDocumentalList.init();
 
