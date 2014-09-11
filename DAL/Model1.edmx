@@ -70,6 +70,7 @@
           <Property Name="idDependencia" Type="varchar" Nullable="false" MaxLength="10" />
           <Property Name="Dependencia" Type="varchar" MaxLength="45" />
           <Property Name="Estado" Type="varchar" MaxLength="45" />
+          <Property Name="Padre" Type="varchar" MaxLength="45" />
         </EntityType>
         <EntityType Name="fc_menu">
           <Key>
@@ -256,6 +257,7 @@
           <Property Name="PagIni" Type="varchar" MaxLength="45" />
           <Property Name="CantidadPag" Type="varchar" MaxLength="45" />
           <Property Name="Descripcion" Type="varchar" MaxLength="45" />
+          <Property Name="Estado" Type="varchar" MaxLength="45" />
         </EntityType>
         <EntityType Name="unidaddocumental">
           <Key>
@@ -488,6 +490,7 @@
           <Property Type="String" Name="Dependencia" MaxLength="45" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="unidaddocumental" Relationship="trdModel.FKDependencias" FromRole="dependencias" ToRole="unidaddocumental" />
           <Property Type="String" Name="Estado" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Padre" MaxLength="45" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="unidaddocumental">
           <Key>
@@ -496,14 +499,14 @@
           <Property Type="String" Name="idUnidadDocumental" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Nombre" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="PalabrasClave" MaxLength="65535" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="FechaCreacion" />
+          <Property Type="DateTime" Name="FechaCreacion" Precision="0" />
           <Property Type="Int32" Name="NroFolios" />
           <Property Type="String" Name="idSubSeries" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="EntidadProductora" />
           <Property Type="Int32" Name="ArchivadorNo" />
           <Property Type="Int32" Name="GabetaNo" />
-          <Property Type="DateTime" Name="FechaExtInicial" />
-          <Property Type="DateTime" Name="FechaExtFinal" />
+          <Property Type="DateTime" Name="FechaExtInicial" Precision="0" />
+          <Property Type="DateTime" Name="FechaExtFinal" Precision="0" />
           <Property Type="String" Name="DependenciaId" MaxLength="10" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="dependencias" Relationship="trdModel.FKDependencias" FromRole="unidaddocumental" ToRole="dependencias" />
           <NavigationProperty Name="subseries" Relationship="trdModel.FkSubseries" FromRole="unidaddocumental" ToRole="subseries" />
@@ -552,31 +555,31 @@
           <Property Type="String" Name="Email" MaxLength="128" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Comment" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Password" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="PasswordKey" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PasswordKey" MaxLength="32" FixedLength="true" Unicode="false" />
           <Property Type="SByte" Name="PasswordFormat" />
           <Property Type="String" Name="PasswordQuestion" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="PasswordAnswer" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Type="Boolean" Name="IsApproved" />
-          <Property Type="DateTime" Name="LastActivityDate" />
-          <Property Type="DateTime" Name="LastLoginDate" />
-          <Property Type="DateTime" Name="LastPasswordChangedDate" />
-          <Property Type="DateTime" Name="CreationDate" />
+          <Property Type="DateTime" Name="LastActivityDate" Precision="0" />
+          <Property Type="DateTime" Name="LastLoginDate" Precision="0" />
+          <Property Type="DateTime" Name="LastPasswordChangedDate" Precision="0" />
+          <Property Type="DateTime" Name="CreationDate" Precision="0" />
           <Property Type="Boolean" Name="IsLockedOut" />
-          <Property Type="DateTime" Name="LastLockedOutDate" />
+          <Property Type="DateTime" Name="LastLockedOutDate" Precision="0" />
           <Property Type="Int64" Name="FailedPasswordAttemptCount" />
-          <Property Type="DateTime" Name="FailedPasswordAttemptWindowStart" />
+          <Property Type="DateTime" Name="FailedPasswordAttemptWindowStart" Precision="0" />
           <Property Type="Int64" Name="FailedPasswordAnswerAttemptCount" />
-          <Property Type="DateTime" Name="FailedPasswordAnswerAttemptWindowStart" />
+          <Property Type="DateTime" Name="FailedPasswordAnswerAttemptWindowStart" Precision="0" />
         </EntityType>
         <EntityType Name="my_aspnet_profiles">
           <Key>
             <PropertyRef Name="userId" />
           </Key>
           <Property Type="Int32" Name="userId" Nullable="false" />
-          <Property Type="String" Name="valueindex" MaxLength="1073741823" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="stringdata" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="valueindex" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="stringdata" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Type="Binary" Name="binarydata" MaxLength="Max" FixedLength="false" />
-          <Property Type="DateTime" Name="lastUpdatedDate" Nullable="false" />
+          <Property Type="DateTime" Name="lastUpdatedDate" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="my_aspnet_roles">
           <Key>
@@ -590,7 +593,7 @@
           <Key>
             <PropertyRef Name="ApplicationId" />
           </Key>
-          <Property Type="DateTime" Name="LastRun" Nullable="false" />
+          <Property Type="DateTime" Name="LastRun" Nullable="false" Precision="0" />
           <Property Type="Int32" Name="IntervalMinutes" Nullable="false" />
           <Property Type="Int32" Name="ApplicationId" Nullable="false" />
         </EntityType>
@@ -601,9 +604,9 @@
           </Key>
           <Property Type="String" Name="SessionId" Nullable="false" MaxLength="191" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="ApplicationId" Nullable="false" />
-          <Property Type="DateTime" Name="Created" Nullable="false" />
-          <Property Type="DateTime" Name="Expires" Nullable="false" />
-          <Property Type="DateTime" Name="LockDate" Nullable="false" />
+          <Property Type="DateTime" Name="Created" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="Expires" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="LockDate" Nullable="false" Precision="0" />
           <Property Type="Int32" Name="LockId" Nullable="false" />
           <Property Type="Int32" Name="Timeout" Nullable="false" />
           <Property Type="Boolean" Name="Locked" Nullable="false" />
@@ -618,7 +621,7 @@
           <Property Type="Int32" Name="applicationId" Nullable="false" />
           <Property Type="String" Name="name" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
           <Property Type="Boolean" Name="isAnonymous" Nullable="false" />
-          <Property Type="DateTime" Name="lastActivityDate" />
+          <Property Type="DateTime" Name="lastActivityDate" Precision="0" />
         </EntityType>
         <EntityType Name="my_aspnet_usersinroles">
           <Key>
@@ -685,6 +688,7 @@
           <Property Type="String" Name="Descripcion" MaxLength="45" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="unidaddocumental" Relationship="trdModel.Fk_UnidadDoc" FromRole="unidadd_tipodoc" ToRole="unidaddocumental" />
           <NavigationProperty Name="tiposdocumentales" Relationship="trdModel.Fk_TipoDoc" FromRole="unidadd_tipodoc" ToRole="tiposdocumentales" />
+          <Property Type="String" Name="Estado" MaxLength="45" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="Fk_UnidadDoc">
           <End Type="trdModel.unidaddocumental" Role="unidaddocumental" Multiplicity="1" />
@@ -798,6 +802,7 @@
           <EntitySetMapping Name="dependencias">
             <EntityTypeMapping TypeName="trdModel.dependencias">
               <MappingFragment StoreEntitySet="dependencias">
+                <ScalarProperty Name="Padre" ColumnName="Padre" />
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="Dependencia" ColumnName="Dependencia" />
                 <ScalarProperty Name="idDependencia" ColumnName="idDependencia" />
@@ -959,6 +964,7 @@
           <EntitySetMapping Name="unidadd_tipodoc">
             <EntityTypeMapping TypeName="trdModel.unidadd_tipodoc">
               <MappingFragment StoreEntitySet="unidadd_tipodoc">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
                 <ScalarProperty Name="CantidadPag" ColumnName="CantidadPag" />
                 <ScalarProperty Name="PagIni" ColumnName="PagIni" />
