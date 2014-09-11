@@ -77,7 +77,7 @@ namespace BLL.Gestion
              }
              protected internal override void Antes()
              {
-                
+                 reg.Estado = "AC";
                  ctx.series.Add(reg);
                 
              }

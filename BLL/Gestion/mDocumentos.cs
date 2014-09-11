@@ -102,7 +102,7 @@ namespace BLL.Gestion
              }
              protected internal override void Antes()
              {
-
+                 reg.Estado = "AC";
                  ctx.unidaddocumental.Add(reg);
 
              }
