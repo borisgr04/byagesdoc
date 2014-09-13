@@ -11,6 +11,7 @@ namespace Entidades
         public string Nombe { get; set; }
         public string TD_Original { get; set; }
         public string TD_Copia { get; set; }
+        public string Nombre_Sub { get; set; }
         public string SubSerieId { get; set; }
 
         //public virtual subseries subseries { get; set; }
