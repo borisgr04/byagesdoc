@@ -61,14 +61,14 @@
                     { name: 'Nombre' },
                     { name: 'PalabrasClave' },
                     { name: 'FechaCreacion', type: 'date' },
-                    { name: 'idSubSeries' },
+                    { name: 'Nombre_Sub' },
                     { name: 'NroFolios' },
                     { name: 'EntidadProductora' },
                     { name: 'ArchivadorNo' },
                     { name: 'GabetaNo' },
                     { name: 'FechaExtInicial', type: 'date' },
                     { name: 'FechaExtFinal', type: 'date' },
-                    { name: 'DependenciaId' },
+                    { name: 'Nombre_Dep' },
 
 
             ],
@@ -105,14 +105,14 @@
                   { text: 'Nombre Documento', datafield: 'Nombre', width: 150 },
                   { text: 'Palabras Claves         ', datafield: 'PalabrasClave', width: 150 },
                   { text: 'Fecha Creacion    ', datafield: 'FechaCreacion', columntype: 'datetimeinput', cellsformat: 'd', align: 'right', cellsalign: 'right' },
-                  { text: 'Id Subseries        ', datafield: 'idSubSeries', width: 150 },
+                  { text: 'Subserie        ', datafield: 'Nombre_Sub', width: 150 },
                   { text: 'N° Folios    ', datafield: 'NroFolios', width: 150 },
                   { text: 'Entidad Productora     ', datafield: 'EntidadProductora', width: 150 },
                   { text: 'N° Archivador', datafield: 'ArchivadorNo', width: 150 },
                   { text: 'N° Gabeta', datafield: 'GabetaNo', width: 150 },
                   { text: 'FechaExtInicial        ', datafield: 'FechaExtInicial', columntype: 'datetimeinput', cellsformat: 'd', align: 'right', cellsalign: 'right' },
                   { text: 'FechaExtFinal        ', datafield: 'FechaExtFinal', columntype: 'datetimeinput', cellsformat: 'd', align: 'right', cellsalign: 'right' },
-                  { text: 'Dependencia    ', datafield: 'DependenciaId', width: 150 }
+                  { text: 'Dependencia    ', datafield: 'Nombre_Dep', width: 150 }
                  
                 ]
             });
