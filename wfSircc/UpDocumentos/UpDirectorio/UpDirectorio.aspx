@@ -43,9 +43,10 @@
     <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Lista de Documentos Seleccionados</h3>
-                    <asp:Label ID="lbLog" runat="server" Text=""></asp:Label>
+                  
                 </div>
                 <div class="panel-body">
+                      <asp:Label ID="lbLog" runat="server" Text=""></asp:Label>
                     <asp:CheckBoxList ID="ChkOK" runat="server" CssClass="table-hover">
                     </asp:CheckBoxList>
                     
