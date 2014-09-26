@@ -38,7 +38,7 @@ namespace BLL.Menu
                 }
                 return strrole;
                 
-            return "";
+          
            }
 
         }

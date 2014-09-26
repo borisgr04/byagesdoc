@@ -87,6 +87,7 @@ var masterP = (function ($) {
                 //item.value.icono
                 var claseOpcion = "";
                 //if (!byaSite.ModuloP) {
+              
                 claseOpcion = item.value.roles == byaSite.ModuloP.Rol ? "active" : "";
                 //}
                 opcion += "<li class='" + claseOpcion + "'><a href='" + item.value.url + "' target='" + item.value.target + "' title='" + item.value.descripcion + "'>";

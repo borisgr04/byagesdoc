@@ -14,15 +14,17 @@
         <div class="col-md-6">
             <div class="btn-toolbar">
                 <div class="btn-group">
-                    <button type="button" value="Consultar" id="BtnConsulta" data-loading-text="Loading..." class="btn btn-default" title="Actualiza el listado de Solicitudes de acuerdo a la dependencia Seleccionada">
+                    <button type="button" value="Consultar" id="BtnConsulta" data-loading-text="Loading..." class="btn btn-sm btn-info" title="Actualiza el listado de Solicitudes de acuerdo a la dependencia Seleccionada">
                         <span class="glyphicon glyphicon-search"></span>Consultar
                     </button>
                 </div>
                 <div class="btn-group">
-                    <button type="button" value="Nuevo" id="BtnNuevo" class="btn btn-default" title="Registrar Nueva Solicitud de Contratación.">
-                        <span class="glyphicon glyphicon-plus"></span>Nuevo
-                    </button>
-                    <button type="button" value="Editar" id="BtnEditar" class="btn btn-default" title="Editar Solicitud Actual">
+                    <button type="button" value="Nuevo" id="BtnNuevo" class="btn btn-sm btn-warning" title="Registrar Nueva Solicitud de Contratación.">
+                        <span class="glyphicon glyphicon-plus-sign"></span>Nuevo
+                    </button>                   
+                </div>
+                 <div class="btn-group">                 
+                    <button type="button" value="Editar" id="BtnEditar" class="btn btn-sm btn-primary" title="Editar Solicitud Actual">
                         <span class="glyphicon glyphicon-pencil"></span>Editar
                     </button>
                 </div>

@@ -14,8 +14,8 @@ namespace BLL.Gestion
         public mTiposDocumentales()
          {
 
-             Mapper.CreateMap<tiposdocumentalesDto, tiposdocumentales>();
-             Mapper.CreateMap<tiposdocumentales, tiposdocumentalesDto>();
+             Mapper.CreateMap<tiposdocumentalesDto, tiposdocumentales>() ;
+             Mapper.CreateMap<tiposdocumentales, tiposdocumentalesDto>().ForMember(dest => dest.Nombre_Sub, opt => opt.MapFrom(src => src.subseries.SubSerie));
          }
        
         public ByARpt Insert(tiposdocumentalesDto Reg)

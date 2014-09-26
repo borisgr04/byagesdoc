@@ -25,7 +25,7 @@ namespace BLL.Security
                 {
                     id = t.fc_menuid,
                     text = t.fc_titulo,
-                    value = new valueTree { icono = t.fc_icono, descripcion = t.fc_descripcion, target = t.fc_target, url = t.fc_url, roles = t.fc_url },
+                    value = new valueTree { icono = t.fc_icono, descripcion = t.fc_descripcion, target = t.fc_target, url = t.fc_url, roles = t.fc_roles },
                     parentid = t.fc_menuid == t.fc_padreid ? "-1" : t.fc_padreid
                     ,roles = t.fc_roles
                 }

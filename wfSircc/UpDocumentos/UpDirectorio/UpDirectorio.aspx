@@ -3,6 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script>
+        
         var _Upload = function () {
             window.open("/jqfileupload/index.html", "mywindow", "width=1000,height=600");
         };
@@ -47,9 +48,6 @@
                 </div>
                 <div class="panel-body">
                       <asp:Label ID="lbLog" runat="server" Text=""></asp:Label>
-                    <asp:CheckBoxList ID="ChkOK" runat="server" CssClass="table-hover">
-                    </asp:CheckBoxList>
-                    
                 </div>
             </div>
         </div>

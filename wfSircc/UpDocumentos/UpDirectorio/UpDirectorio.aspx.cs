@@ -76,10 +76,7 @@ namespace wfSircc.UpDocumentos.UpDirectorio
                 }
             }
             d.MoverArchivos(lBE);
-            ChkOK.DataSource = lBE;
-            ChkOK.DataTextField = "Archivo";
-            ChkOK.DataValueField = "Archivo";
-            ChkOK.DataBind();
+
         }
 
         private void InicializarForm()
@@ -117,11 +114,6 @@ namespace wfSircc.UpDocumentos.UpDirectorio
             }
 
             lbLog.Text = bll.MoverArchivos(lBE);
-
-            ChkOK.DataSource = lBE;
-            ChkOK.DataTextField = "Archivo";
-            ChkOK.DataValueField = "Archivo";
-            ChkOK.DataBind();
 
             ActualizarBandejaEntrada();
         }

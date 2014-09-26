@@ -33,7 +33,7 @@ namespace BLL
         {
             return DocManager.Get(Codigo);
         }
-        public List<unidaddocumentalDto> Gets(string Filtro)
+        public List<unidaddocumentalDto> Gets(unidaddocumentalDto Filtro)
         {
             return DocManager.Gets(Filtro);
          

@@ -50,7 +50,7 @@ namespace wfSircc.Servicios.Archivos
 
         [WebMethod(EnableSession = true)]
         [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Xml)]
-        public string Gets(string Filtro)
+        public string Gets(unidaddocumentalDto Filtro)
         {
             Manager = new DocumentosBLL();
             return ByAUtil.convertListToXML(Manager.Gets(Filtro));
@@ -61,7 +61,7 @@ namespace wfSircc.Servicios.Archivos
         [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
         public List<unidaddocumentalDto> GetsCbo()
         {
-            string Filtro = null;
+            unidaddocumentalDto Filtro = null;
             Manager = new DocumentosBLL();
             return Manager.Gets(Filtro);
 

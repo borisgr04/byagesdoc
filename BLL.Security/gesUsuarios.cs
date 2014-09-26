@@ -30,7 +30,7 @@ namespace BLL.Security
           
             List<USUARIOS_DTO> lst = new List<USUARIOS_DTO>();
             ctx = new trdEntities();
-
+           
             List<my_aspnet_membership> lstO = ctx.my_aspnet_membership.ToList();
 
             Mapper.CreateMap<my_aspnet_membership, USUARIOS_DTO>()
@@ -52,8 +52,16 @@ namespace BLL.Security
          
         private string GetTercero(string username)
         {
-            fc_terceros t = ctx.fc_terceros.Where(ter => ter.terceroId == username).FirstOrDefault();
-            return t.nombre;
+            if (username == "")
+            {
+                fc_terceros t = ctx.fc_terceros.Where(ter => ter.terceroId == username).FirstOrDefault();
+                return t.nombre;
+            }
+            else {
+                return "";
+            }
+            
+            
         }
 
         public List<ModuloRoles> GetRoles(string Modulo,string UserName)

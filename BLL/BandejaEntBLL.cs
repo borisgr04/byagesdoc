@@ -93,6 +93,7 @@ namespace BLL
                     if (!rpt.Error)
                     {
                         d.MoverArchivos();
+                        byaRpt.Mensaje += String.Format("El Documento {0} se cargo: {1} <br/>", be.Archivo, rpt.Mensaje);
                     }
                     else {
                         byaRpt.Mensaje += String.Format("El Documento {0} no se pudo cargar: {1} <br/>", be.Archivo, rpt.Mensaje);
