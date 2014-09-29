@@ -135,16 +135,7 @@
         Editar = "No";
 
     };
-    var limpiar = function () {
-        $('#TextIdSubSerie').byaSetHabilitar(false);
-        $('#TextSubSerie').byaSetHabilitar(false);
-        $('#TextAg').byaSetHabilitar(false);
-        $('#TextA').byaSetHabilitar(false);
-        $("#CheckCT").byaSetHabilitar(false);
-        $('#CheckE').byaSetHabilitar(false);
-        $('#CheckMD').byaSetHabilitar(false);
-        $("#CheckS").byaSetHabilitar(false);
-        $('#CboSeries').byaSetHabilitar(false);
+    var limpiar = function () {      
         $('#TextIdSubSerie').val("");
         $('#TextSubSerie').val("");
         $('#TextAg').val("");

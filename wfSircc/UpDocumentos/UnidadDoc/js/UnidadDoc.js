@@ -201,18 +201,7 @@
         $("#TextFextIni").val("");
         $("#TextFextFin").val("");
         $("#CboDependencia").val("Selecione");
-        $("#TextCodDoc").byaSetHabilitar(false);
-        $("#TextNomDoc").byaSetHabilitar(false);
-        $("#TextPal").byaSetHabilitar(false);
-        $("#TextFecDoc").byaSetHabilitar(false);
-        $("#TextNfolios").byaSetHabilitar(false);
-        $("#CboSubSeries").byaSetHabilitar(false);
-        $("#TextEntidad").byaSetHabilitar(false);
-        $("#TextArchivador").byaSetHabilitar(false);
-        $("#TextGabeta").byaSetHabilitar(false);
-        $("#TextFextIni").byaSetHabilitar(false);
-        $("#TextFextFin").byaSetHabilitar(false);
-        $("#CboDependencia").byaSetHabilitar(false);
+    
         Editar = "No";
     }
 

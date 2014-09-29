@@ -119,12 +119,7 @@
         Editar = "No";
 
     };
-    var limpiar = function () {
-        $('#TextIdDocumental').byaSetHabilitar(false);
-        $('#TextNombre').byaSetHabilitar(false);
-        $('#TextTdOriginal').byaSetHabilitar(false);
-        $('#TextTdCopia').byaSetHabilitar(false); 
-        $('#CboSubSeries').byaSetHabilitar(false);
+    var limpiar = function () {       
         $('#TextIdDocumental').val("");
         $('#TextNombre').val("");
         $('#TextTdOriginal').val("");

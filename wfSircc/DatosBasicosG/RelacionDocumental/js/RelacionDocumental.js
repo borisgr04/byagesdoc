@@ -147,13 +147,6 @@
 
     };
     var limpiar = function () {
-        $('#CboIdUnidad').byaSetHabilitar(false);
-        $('#CboIdTipoDoc').byaSetHabilitar(false);
-        $('#TextCodigo').byaSetHabilitar(false);
-        $('#TextFecDoc').byaSetHabilitar(false);
-        $('#TextPaginaIni').byaSetHabilitar(false);
-        $('#TextCantidad').byaSetHabilitar(false);
-        $('#TextDescripcion').byaSetHabilitar(false);
         $('#CboIdUnidad').val("");
         $('#CboIdTipoDoc').val("");
         $('#TextCodigo').val("");

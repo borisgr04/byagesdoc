@@ -108,8 +108,7 @@
     };
     var limpiar = function () {
         $(msgPpal).html("");
-        $("#TextIdDependencia").byaSetHabilitar(false);
-        $("#TextDependencia").byaSetHabilitar(false);
+   
         $("#TextIdDependencia").val("");
         $("#TextDependencia").val("");
         Editar = "No";

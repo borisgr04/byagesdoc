@@ -110,10 +110,7 @@
         Editar = "No";
 
     };
-    var limpiar = function () {
-        $("#TextIdSerie").byaSetHabilitar(false);
-        $("#TextSerie").byaSetHabilitar(false);
-        $("#TextPro").byaSetHabilitar(false);
+    var limpiar = function () {   
         $("#TextIdSerie").val("");
         $("#TextSerie").val("");
         $("#TextPro").val("");
