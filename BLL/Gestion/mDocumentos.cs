@@ -62,59 +62,71 @@ namespace BLL.Gestion
           using (ctx = new trdEntities())         
           {
               
-              //if (Filtro.idSubSeries != "" && Filtro.NroFolios == null && Filtro.DependenciaId == ""
-              //    && Filtro.GabetaNo == null && Filtro.ArchivadorNo == null && Filtro.EntidadProductora == null
-              //    && Filtro.FechaCreacion == null && Filtro.FechaExtFinal == null && Filtro.FechaExtInicial == null)
-              //{
-              //    List<unidaddocumental> lstO = ctx.unidaddocumental.Where(t => t.idSubSeries == Filtro.idSubSeries &&
-              //                                        t.Estado != "AN").ToList();
-              //    Mapper.Map(lstO, lstT);
               
-              //}
-              //if (Filtro.idSubSeries == "" && Filtro.NroFolios != null && Filtro.DependenciaId == ""
-              //    && Filtro.GabetaNo == null && Filtro.ArchivadorNo == null && Filtro.EntidadProductora == null
-              //    && Filtro.FechaCreacion == null && Filtro.FechaExtFinal == null && Filtro.FechaExtInicial == null)
-              //{
-              //    List<unidaddocumental> lstO = ctx.unidaddocumental.Where(t => t.NroFolios == Filtro.NroFolios &&
-              //                                        t.Estado != "AN").ToList();
-              //    Mapper.Map(lstO, lstT);
-
-              //}
-
-
+              string cFiltro = " Where Estado!='AN' ";
               if (Filtro != null)
               {
-                  if (Filtro.NroFolios != null || Filtro.idSubSeries != "" || Filtro.DependenciaId != ""
-                      || Filtro.GabetaNo != null || Filtro.ArchivadorNo != null || Filtro.EntidadProductora != null
-                      || Filtro.FechaCreacion != null || Filtro.FechaExtFinal != null || Filtro.FechaExtInicial != null)
+                  cFiltro += AddFiltro("idSubSeries", Filtro.idSubSeries);
+                  cFiltro += AddFiltro("DependenciaId", Filtro.DependenciaId);
+                  cFiltro += AddFiltro("NroFolios", Filtro.NroFolios);
+                  cFiltro += AddFiltro("GabetaNo", Filtro.GabetaNo);                
+                  cFiltro += AddFiltro("ArchivadorNo", Filtro.ArchivadorNo);
+                  cFiltro += AddFiltro("EntidadProductora", Filtro.EntidadProductora);
+                  if (Filtro.FechaCreacion.HasValue)
                   {
-                      List<unidaddocumental> lstO = ctx.unidaddocumental.Where(t => t.idSubSeries == Filtro.idSubSeries ||
-                                                      t.DependenciaId == Filtro.DependenciaId ||
-                                                      t.NroFolios == Filtro.NroFolios ||
-                                                      t.GabetaNo == Filtro.GabetaNo ||
-                                                      t.ArchivadorNo == Filtro.ArchivadorNo ||
-                                                      t.EntidadProductora == Filtro.EntidadProductora ||
-                                                      t.FechaCreacion >= Filtro.FechaCreacion ||
-                                                      t.FechaExtFinal == Filtro.FechaExtFinal ||
-                                                      t.FechaExtInicial == Filtro.FechaExtInicial &&
-                                                      t.Estado != "AN").ToList();
-                      Mapper.Map(lstO, lstT);
+                      cFiltro += AddFiltro("FechaCreacion", Filtro.FechaCreacion.Value);
                   }
-                  else
+                  if (Filtro.FechaExtInicial.HasValue)
                   {
-                      List<unidaddocumental> lstO = ctx.unidaddocumental.Where(t => t.Estado != "AN").ToList();
-                      Mapper.Map(lstO, lstT);
+                      cFiltro += AddFiltro("FechaExtInicial", Filtro.FechaExtInicial.Value);
                   }
+                  if (Filtro.FechaExtFinal.HasValue)
+                  {
+                      cFiltro += AddFiltro("FechaExtFinal", Filtro.FechaExtFinal.Value);
+                  }
+              }             
                   
-              }
-              else
-              {
-                  List<unidaddocumental> lstO = ctx.unidaddocumental.Where(t => t.Estado != "AN").ToList();
-                  Mapper.Map(lstO, lstT);
-              }
+                      string Sql = "SELECT * FROM unidaddocumental " + cFiltro;
+                      List<unidaddocumental> lstO = ctx.unidaddocumental.SqlQuery(Sql).ToList();
+                     // List<unidaddocumental> lstO = ctx.unidaddocumental.Where(t => t.Estado != "AN").ToList();
+                      Mapper.Map(lstO, lstT);                 
+                  
+             
+             
           }
           return lstT;
       }
+
+        
+         private static string AddFiltro(string Campo, string Value)
+         {
+             string cFiltro="";
+             if (!String.IsNullOrEmpty(Value))
+             {
+                 cFiltro = String.Format(" And {0} = {1}", Campo, Value);
+             }
+             return cFiltro;
+         }
+         private static string AddFiltro(string Campo, int? Value)
+         {
+             string cFiltro = "";
+             if (Value !=null)
+             {
+                 cFiltro = String.Format(" And {0}  = {1}", Campo, Value);
+             }
+             return cFiltro;
+         }
+         private  string AddFiltro(string Campo, DateTime Value)
+         {
+             string cFiltro = "";
+             if (Value != null)       
+             {
+               
+                
+                 cFiltro = String.Format(" And {0} = {1}", Campo, "'"+Value.Year+"-"+Value.Month+"-"+Value.Day+"'");
+             }
+             return cFiltro;
+         }
 
 
          class cmdInsert : absTemplate
