@@ -107,14 +107,14 @@
                 $("#TextCodDoc").val(cod.Codigo);
                 $("#TextNomDoc").val(cod.Nombre);
                 $("#TextPal").val(cod.PalabrasClave);
-                $("#TextFecDoc").val(byaPage.converJSONDateDMY(cod.FechaCreacion));
+                $("#TextFecDoc").val(byaPage.converJSONDateMDY(cod.FechaCreacion));
                 $("#TextNfolios").val(cod.NroFolios);
                 $("#CboSubSeries").byaSetHabilitar(false);
                 $("#TextEntidad").val(cod.EntidadProductora);
                 $("#TextArchivador").val(cod.ArchivadorNo);
                 $("#TextGabeta").val(cod.GabetaNo);
-                $("#TextFextIni").val(byaPage.converJSONDateDMY(cod.FechaExtInicial));
-                $("#TextFextFin").val(byaPage.converJSONDateDMY(cod.FechaExtFinal));
+                $("#TextFextIni").val(byaPage.converJSONDateMDY(cod.FechaExtInicial));
+                $("#TextFextFin").val(byaPage.converJSONDateMDY(cod.FechaExtFinal));
                 $("#CboDependencia").byaSetHabilitar(false);
                     Editar = "Si";
                 } else
