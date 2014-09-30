@@ -166,12 +166,11 @@ var byaPage = {
         localizationobj.patterns = patterns;
         return localizationobj;
     },
-    converJSONDateDMY: function (dateTime) {
+    converJSONDateMDY: function (dateTime) {
         if (dateTime != null) {
             var date = new Date(parseInt(dateTime.substr(6)));
-            var formatted = ("0" + date.getDate()).slice(-2) + "/" +
-                                        ("0" + (date.getMonth() + 1)).slice(-2) + "/" +
-                                          date.getFullYear();
+            var formatted = ("0" + (date.getMonth() + 1)).slice(-2) + "/" +
+                                        ("0" + date.getDate()).slice(-2) + "/" +date.getFullYear();
             //console.log(formatted);
             return formatted;
         }
