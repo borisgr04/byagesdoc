@@ -41,18 +41,18 @@ namespace BLL.Gestion
              return o.Enviar();
          }
 
-         public List<dependenciasDto> Gets()
+         public List<dependenciasDto> Gets(string Idtercero)
          {
 
              List<dependenciasDto> lstT = new List<dependenciasDto>();
           using (ctx = new trdEntities())
           {
-              List<dependencias> lstO = ctx.dependencias.Where(t=>t.Estado!="AN").ToList();
+              List<dependencias> lstO = ctx.terceros_dep.Where(t => t.IdTerceros == Idtercero).Select(t => t.dependencias).ToList();
               Mapper.Map(lstO, lstT);
           }
           return lstT;
       }
-         public dependenciasDto Gets(string terceroId)
+         public dependenciasDto GetsT(string terceroId)
       {
           dependenciasDto objT = new dependenciasDto();
           using (ctx = new trdEntities())

@@ -23,13 +23,13 @@ namespace BLL
         {
             return DepManager.Anular(Reg);
         }
-        public List<dependenciasDto> Gets()
+        public List<dependenciasDto> Gets(string idTerceros)
         {
-            return DepManager.Gets();
+            return DepManager.Gets(idTerceros);
         }
         public dependenciasDto Get(string dependencias)
         {
-            return DepManager.Gets(dependencias);
+            return DepManager.GetsT(dependencias);
         }
     }
 }

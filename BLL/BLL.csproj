@@ -72,6 +72,7 @@
     <Compile Include="Gestion\mSubSeries.cs" />
     <Compile Include="Gestion\mSeries.cs" />
     <Compile Include="Gestion\mTerceros.cs" />
+    <Compile Include="Gestion\mTerceros_Dep.cs" />
     <Compile Include="Gestion\mTiposDocumentales.cs" />
     <Compile Include="Gestion\mUnidadD_TipoDoc.cs" />
     <Compile Include="IO\Directorios.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeriesBLL.cs" />
     <Compile Include="SubSeriesBLL.cs" />
+    <Compile Include="Terceros_DepBLL.cs" />
     <Compile Include="TiposDocumentalesBLL.cs" />
     <Compile Include="UnidadD_TipoDocBLL.cs" />
   </ItemGroup>

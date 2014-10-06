@@ -54,7 +54,6 @@ namespace BLL.Gestion
              }
              return objT;
          }
-
          public List<unidaddocumentalDto> Gets(unidaddocumentalDto Filtro)
          {
 

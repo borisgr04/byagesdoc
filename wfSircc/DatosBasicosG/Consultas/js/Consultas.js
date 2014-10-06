@@ -41,6 +41,28 @@
             autoclose: true,
             format: 'mm/dd/yyyy',
         });
+
+        $("#TextFecDocFin").datepicker({
+            weekStart: 1,
+            endDate: (f.getMonth() + 1) + "/" + f.getDate() + "/" + f.getFullYear(),
+            todayHighlight: true,
+            autoclose: true,
+            format: 'mm/dd/yyyy',
+        });
+        $("#TextFextIniFin").datepicker({
+            weekStart: 1,
+            endDate: (f.getMonth() + 1) + "/" + f.getDate() + "/" + f.getFullYear(),
+            todayHighlight: true,
+            autoclose: true,
+            format: 'mm/dd/yyyy',
+        });
+        $("#TextFextFin2").datepicker({
+            weekStart: 1,
+            endDate: (f.getMonth() + 1) + "/" + f.getDate() + "/" + f.getFullYear(),
+            todayHighlight: true,
+            autoclose: true,
+            format: 'mm/dd/yyyy',
+        });
     };
     var _Validaciones = function () {
         $("#CboSubSeries").byaSetHabilitar(false);
@@ -51,7 +73,10 @@
         $("#TextEntidad").byaSetHabilitar(false);
         $("#TextFecDoc").byaSetHabilitar(false);
         $("#TextFextIni").byaSetHabilitar(false);
-        $("#TextFextFin").byaSetHabilitar(false);     
+        $("#TextFextFin").byaSetHabilitar(false);
+        $("#TextFecDocFin").byaSetHabilitar(false);
+        $("#TextFextIniFin").byaSetHabilitar(false);
+        $("#TextFextFin2").byaSetHabilitar(false);
 
     };
     var Checks = function () {
@@ -107,25 +132,34 @@
         $("#CheckCreacion").click(function () {
             if ($("#CheckCreacion").is(':checked')) {
                 $("#TextFecDoc").byaSetHabilitar(true);
+                $("#TextFecDocFin").byaSetHabilitar(true);
             } else {
                 $("#TextFecDoc").val("");
                 $("#TextFecDoc").byaSetHabilitar(false);
+                $("#TextFecDocFin").val("");
+                $("#TextFecDocFin").byaSetHabilitar(false);
             }
         });
         $("#CheckInicial").click(function () {
             if ($("#CheckInicial").is(':checked')) {
                 $("#TextFextIni").byaSetHabilitar(true);
+                $("#TextFextIniFin").byaSetHabilitar(true);
             } else {
                 $("#TextFextIni").val("");
                 $("#TextFextIni").byaSetHabilitar(false);
+                $("#TextFextIniFin").val("");
+                $("#TextFextIniFin").byaSetHabilitar(false);
             }
         });
         $("#CheckFinal").click(function () {
             if ($("#CheckFinal").is(':checked')) {
                 $("#TextFextFin").byaSetHabilitar(true);
+                $("#TextFextFin2").byaSetHabilitar(true);
             } else {
                 $("#TextFextFin").val("");
                 $("#TextFextFin").byaSetHabilitar(false);
+                $("#TextFextFin2").val("");
+                $("#TextFextFin2").byaSetHabilitar(false);
             }
         });
 
@@ -231,7 +265,7 @@
 
         $('#modalTerceros').modal('show');
         var dataRecord = Consultas.getRecord();
-        var prew = "<embed src='../../Docs/BE/" + dataRecord.Codigo + ".pdf' width='100%' height='375'>";
+        var prew = "<embed src='../../Docs/OK/" + dataRecord.Codigo + ".pdf' width='100%' height='375'>";
         $("#Pdf").html(prew);
     };
 

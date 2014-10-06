@@ -663,6 +663,8 @@
     <Content Include="DatosBasicosG\Terceros\js\gTercersos.js" />
     <Content Include="DatosBasicosG\Terceros\js\Terceros.js" />
     <Content Include="DatosBasicosG\Terceros\Terceros.aspx" />
+    <Content Include="DatosBasicosG\Terceros_Dep\js\Terceros_Dep.js" />
+    <Content Include="DatosBasicosG\Terceros_Dep\Terceros_Dep.aspx" />
     <Content Include="DatosBasicosG\TiposDocumentales\GesTiposDocumentales.aspx" />
     <Content Include="DatosBasicosG\TiposDocumentales\js\GesTiposDocumentales.js" />
     <Content Include="DatosBasicosG\TiposDocumentales\js\TiposDocumentales.js" />
@@ -1090,6 +1092,7 @@
     <Content Include="Servicios\ControlFlujo\wsMenu.asmx" />
     <Content Include="Servicios\ControlFlujo\wsSecurity.asmx" />
     <Content Include="Servicios\DatosBasicosG\wsTerceros.asmx" />
+    <Content Include="Servicios\DatosBasicosG\wsTerceros_Dep.asmx" />
     <Content Include="UpDocumentos\UnidadDoc\GesUnidadDoc.aspx" />
     <Content Include="UpDocumentos\UnidadDoc\js\GesUnidadDoc.js" />
     <Content Include="UpDocumentos\UnidadDoc\js\UnidadDoc.js" />
@@ -1337,6 +1340,13 @@
     <Compile Include="DatosBasicosG\Terceros\Terceros.aspx.designer.cs">
       <DependentUpon>Terceros.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DatosBasicosG\Terceros_Dep\Terceros_Dep.aspx.cs">
+      <DependentUpon>Terceros_Dep.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosBasicosG\Terceros_Dep\Terceros_Dep.aspx.designer.cs">
+      <DependentUpon>Terceros_Dep.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DatosBasicosG\TiposDocumentales\GesTiposDocumentales.aspx.cs">
       <DependentUpon>GesTiposDocumentales.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1439,6 +1449,10 @@
     </Compile>
     <Compile Include="Servicios\DatosBasicosG\wsTerceros.asmx.cs">
       <DependentUpon>wsTerceros.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Servicios\DatosBasicosG\wsTerceros_Dep.asmx.cs">
+      <DependentUpon>wsTerceros_Dep.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="SiteBS.Master.cs">

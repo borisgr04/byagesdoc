@@ -14,6 +14,11 @@ namespace DAL
     
     public partial class fc_terceros
     {
+        public fc_terceros()
+        {
+            this.terceros_dep = new HashSet<terceros_dep>();
+        }
+    
         public string terceroId { get; set; }
         public string tipodoc { get; set; }
         public string tipoper { get; set; }
@@ -22,5 +27,7 @@ namespace DAL
         public string telefono { get; set; }
         public string correo { get; set; }
         public string lugarexpe { get; set; }
+    
+        public virtual ICollection<terceros_dep> terceros_dep { get; set; }
     }
 }

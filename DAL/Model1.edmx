@@ -22,9 +22,18 @@
           <EntitySet Name="my_aspnet_usersinroles" EntityType="trdModel.Store.my_aspnet_usersinroles" store:Type="Tables" Schema="trd" />
           <EntitySet Name="series" EntityType="trdModel.Store.series" store:Type="Tables" Schema="trd" />
           <EntitySet Name="subseries" EntityType="trdModel.Store.subseries" store:Type="Tables" Schema="trd" />
+          <EntitySet Name="terceros_dep" EntityType="trdModel.Store.terceros_dep" store:Type="Tables" Schema="trd" />
           <EntitySet Name="tiposdocumentales" EntityType="trdModel.Store.tiposdocumentales" store:Type="Tables" Schema="trd" />
           <EntitySet Name="unidadd_tipodoc" EntityType="trdModel.Store.unidadd_tipodoc" store:Type="Tables" Schema="trd" />
           <EntitySet Name="unidaddocumental" EntityType="trdModel.Store.unidaddocumental" store:Type="Tables" Schema="trd" />
+          <AssociationSet Name="Fk_Dep" Association="trdModel.Store.Fk_Dep">
+            <End Role="dependencias" EntitySet="dependencias" />
+            <End Role="terceros_dep" EntitySet="terceros_dep" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_Terceros" Association="trdModel.Store.Fk_Terceros">
+            <End Role="fc_terceros" EntitySet="fc_terceros" />
+            <End Role="terceros_dep" EntitySet="terceros_dep" />
+          </AssociationSet>
           <AssociationSet Name="Fk_TipoDoc" Association="trdModel.Store.Fk_TipoDoc">
             <End Role="tiposdocumentales" EntitySet="tiposdocumentales" />
             <End Role="unidadd_tipodoc" EntitySet="unidadd_tipodoc" />
@@ -235,6 +244,15 @@
           <Property Name="Series_idSerie" Type="varchar" Nullable="false" MaxLength="10" />
           <Property Name="Estado" Type="varchar" MaxLength="45" />
         </EntityType>
+        <EntityType Name="terceros_dep">
+          <Key>
+            <PropertyRef Name="IdTerceros" />
+            <PropertyRef Name="IdDependencias" />
+          </Key>
+          <Property Name="IdTerceros" Type="varchar" Nullable="false" MaxLength="11" />
+          <Property Name="IdDependencias" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Estado" Type="varchar" MaxLength="45" />
+        </EntityType>
         <EntityType Name="tiposdocumentales">
           <Key>
             <PropertyRef Name="idTipDocumentales" />
@@ -279,6 +297,30 @@
           <Property Name="Estado" Type="varchar" MaxLength="45" />
           <Property Name="Vigencia" Type="varchar" MaxLength="45" />
         </EntityType>
+        <Association Name="Fk_Dep">
+          <End Role="dependencias" Type="trdModel.Store.dependencias" Multiplicity="1" />
+          <End Role="terceros_dep" Type="trdModel.Store.terceros_dep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dependencias">
+              <PropertyRef Name="idDependencia" />
+            </Principal>
+            <Dependent Role="terceros_dep">
+              <PropertyRef Name="IdDependencias" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_Terceros">
+          <End Role="fc_terceros" Type="trdModel.Store.fc_terceros" Multiplicity="1" />
+          <End Role="terceros_dep" Type="trdModel.Store.terceros_dep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fc_terceros">
+              <PropertyRef Name="terceroId" />
+            </Principal>
+            <Dependent Role="terceros_dep">
+              <PropertyRef Name="IdTerceros" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="Fk_TipoDoc">
           <End Role="tiposdocumentales" Type="trdModel.Store.tiposdocumentales" Multiplicity="0..1" />
           <End Role="unidadd_tipodoc" Type="trdModel.Store.unidadd_tipodoc" Multiplicity="*" />
@@ -415,6 +457,15 @@
             <End Role="tiposdocumentales" EntitySet="tiposdocumentales" />
             <End Role="unidadd_tipodoc" EntitySet="unidadd_tipodoc" />
           </AssociationSet>
+          <EntitySet Name="terceros_dep" EntityType="trdModel.terceros_dep" />
+          <AssociationSet Name="Fk_Dep" Association="trdModel.Fk_Dep">
+            <End Role="dependencias" EntitySet="dependencias" />
+            <End Role="terceros_dep" EntitySet="terceros_dep" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_Terceros" Association="trdModel.Fk_Terceros">
+            <End Role="fc_terceros" EntitySet="fc_terceros" />
+            <End Role="terceros_dep" EntitySet="terceros_dep" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="fc_menu">
           <Key>
@@ -491,6 +542,7 @@
           <NavigationProperty Name="unidaddocumental" Relationship="trdModel.FKDependencias" FromRole="dependencias" ToRole="unidaddocumental" />
           <Property Type="String" Name="Estado" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Padre" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="terceros_dep" Relationship="trdModel.Fk_Dep" FromRole="dependencias" ToRole="terceros_dep" />
         </EntityType>
         <EntityType Name="unidaddocumental">
           <Key>
@@ -674,6 +726,7 @@
           <Property Type="String" Name="telefono" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="correo" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="lugarexpe" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="terceros_dep" Relationship="trdModel.Fk_Terceros" FromRole="fc_terceros" ToRole="terceros_dep" />
         </EntityType>
         <EntityType Name="unidadd_tipodoc">
           <Key>
@@ -736,6 +789,41 @@
             </Principal>
             <Dependent Role="unidadd_tipodoc">
               <PropertyRef Name="IdTipoDoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="terceros_dep">
+          <Key>
+            <PropertyRef Name="IdTerceros" />
+            <PropertyRef Name="IdDependencias" />
+          </Key>
+          <Property Type="String" Name="IdTerceros" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IdDependencias" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Estado" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="dependencias" Relationship="trdModel.Fk_Dep" FromRole="terceros_dep" ToRole="dependencias" />
+          <NavigationProperty Name="fc_terceros" Relationship="trdModel.Fk_Terceros" FromRole="terceros_dep" ToRole="fc_terceros" />
+        </EntityType>
+        <Association Name="Fk_Dep">
+          <End Type="trdModel.dependencias" Role="dependencias" Multiplicity="1" />
+          <End Type="trdModel.terceros_dep" Role="terceros_dep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dependencias">
+              <PropertyRef Name="idDependencia" />
+            </Principal>
+            <Dependent Role="terceros_dep">
+              <PropertyRef Name="IdDependencias" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_Terceros">
+          <End Type="trdModel.fc_terceros" Role="fc_terceros" Multiplicity="1" />
+          <End Type="trdModel.terceros_dep" Role="terceros_dep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fc_terceros">
+              <PropertyRef Name="terceroId" />
+            </Principal>
+            <Dependent Role="terceros_dep">
+              <PropertyRef Name="IdTerceros" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -984,6 +1072,15 @@
                 <ScalarProperty Name="TD_Original" ColumnName="TD_Original" />
                 <ScalarProperty Name="Nombe" ColumnName="Nombe" />
                 <ScalarProperty Name="idTipDocumentales" ColumnName="idTipDocumentales" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="terceros_dep">
+            <EntityTypeMapping TypeName="trdModel.terceros_dep">
+              <MappingFragment StoreEntitySet="terceros_dep">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="IdDependencias" ColumnName="IdDependencias" />
+                <ScalarProperty Name="IdTerceros" ColumnName="IdTerceros" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -97,7 +97,15 @@
                     </label>                    
                             <div class="input-medium">
                                 <div class="input-group">
-                                    <input class="input-medium date-picker" id="TextFecDoc" type="text" data-date-format="dd-mm-yyyy" placeholder="mm-dd-yyyy" />
+                                    <input class="input-medium date-picker" id="TextFecDoc" type="text" data-date-format="dd-mm-yyyy" placeholder="Desde mm-dd-yyyy" />
+                                    <span class="input-group-addon">
+                                        <i class="icon-calendar"></i>
+                                    </span>
+                                </div>
+                            </div>
+                             <div class="input-medium">
+                                <div class="input-group">
+                                    <input class="input-medium date-picker" id="TextFecDocFin" type="text" data-date-format="dd-mm-yyyy" placeholder="Hasta mm-dd-yyyy" />
                                     <span class="input-group-addon">
                                         <i class="icon-calendar"></i>
                                     </span>
@@ -111,7 +119,15 @@
                     </label>                    
                             <div class="input-medium">
                                 <div class="input-group">
-                                    <input class="input-medium date-picker" id="TextFextIni" type="text" data-date-format="dd-mm-yyyy" placeholder="mm-dd-yyyy" />
+                                    <input class="input-medium date-picker" id="TextFextIni" type="text" data-date-format="dd-mm-yyyy" placeholder="Desde mm-dd-yyyy" />
+                                    <span class="input-group-addon">
+                                        <i class="icon-calendar"></i>
+                                    </span>
+                                </div>
+                            </div>
+                              <div class="input-medium">
+                                <div class="input-group">
+                                    <input class="input-medium date-picker" id="TextFextIniFin" type="text" data-date-format="dd-mm-yyyy" placeholder="Hasta mm-dd-yyyy" />
                                     <span class="input-group-addon">
                                         <i class="icon-calendar"></i>
                                     </span>
@@ -125,7 +141,15 @@
                     </label>                    
                             <div class="input-medium">
                                 <div class="input-group">
-                                    <input class="input-medium date-picker" id="TextFextFin" type="text" data-date-format="dd-mm-yyyy" placeholder="mm-dd-yyyy" />
+                                    <input class="input-medium date-picker" id="TextFextFin" type="text" data-date-format="dd-mm-yyyy" placeholder="Desde mm-dd-yyyy" />
+                                    <span class="input-group-addon">
+                                        <i class="icon-calendar"></i>
+                                    </span>
+                                </div>
+                            </div>
+                               <div class="input-medium">
+                                <div class="input-group">
+                                    <input class="input-medium date-picker" id="TextFextFin2" type="text" data-date-format="dd-mm-yyyy" placeholder="Hasta mm-dd-yyyy" />
                                     <span class="input-group-addon">
                                         <i class="icon-calendar"></i>
                                     </span>

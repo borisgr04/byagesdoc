@@ -123,6 +123,9 @@
     <Compile Include="subseries.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="terceros_dep.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="tiposdocumentales.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

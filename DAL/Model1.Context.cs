@@ -44,5 +44,6 @@ namespace DAL
         public DbSet<fc_terceros> fc_terceros { get; set; }
         public DbSet<unidadd_tipodoc> unidadd_tipodoc { get; set; }
         public DbSet<tiposdocumentales> tiposdocumentales { get; set; }
+        public DbSet<terceros_dep> terceros_dep { get; set; }
     }
 }

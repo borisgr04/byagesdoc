@@ -51,8 +51,9 @@ namespace wfSircc.Servicios.Archivos
         [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
         public List<dependenciasDto> GetDependencias()
         {
+           
             Manager = new DependenciasBLL();
-            return Manager.Gets();
+            return Manager.Gets(this.User.Identity.Name);
 
         }
 
@@ -61,7 +62,7 @@ namespace wfSircc.Servicios.Archivos
         public string Gets()
         {
             Manager = new DependenciasBLL();
-            return ByAUtil.convertListToXML(Manager.Gets());
+            return ByAUtil.convertListToXML(Manager.Gets(this.User.Identity.Name));
 
         }
 

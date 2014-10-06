@@ -12,20 +12,13 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class dependencias
+    public partial class terceros_dep
     {
-        public dependencias()
-        {
-            this.unidaddocumental = new HashSet<unidaddocumental>();
-            this.terceros_dep = new HashSet<terceros_dep>();
-        }
-    
-        public string idDependencia { get; set; }
-        public string Dependencia { get; set; }
+        public string IdTerceros { get; set; }
+        public string IdDependencias { get; set; }
         public string Estado { get; set; }
-        public string Padre { get; set; }
     
-        public virtual ICollection<unidaddocumental> unidaddocumental { get; set; }
-        public virtual ICollection<terceros_dep> terceros_dep { get; set; }
+        public virtual dependencias dependencias { get; set; }
+        public virtual fc_terceros fc_terceros { get; set; }
     }
 }
