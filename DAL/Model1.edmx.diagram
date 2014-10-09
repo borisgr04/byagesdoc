@@ -26,6 +26,7 @@
         <EntityTypeShape EntityType="trdModel.terceros_dep" Width="1.5" PointX="2.8645287597852427" PointY="2.8637050403578694" />
         <AssociationConnector Association="trdModel.Fk_Dep" />
         <AssociationConnector Association="trdModel.Fk_Terceros" />
+        <AssociationConnector Association="trdModel.FK_UnidadDocumental" />
       </Diagram>
       <Diagram DiagramId="59676ead4e8d4373ad951952f6caa9e8" Name="Diagrama3" >
         <EntityTypeShape EntityType="trdModel.my_aspnet_applications" Width="1.5" PointX="0.75" PointY="0.75" FillColor="192, 64, 0" />

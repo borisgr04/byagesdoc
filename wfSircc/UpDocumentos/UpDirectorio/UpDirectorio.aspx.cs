@@ -51,6 +51,7 @@ namespace wfSircc.UpDocumentos.UpDirectorio
 
             configuracionDto BE = mc.Get("BandejaE");
             configuracionDto BOK = mc.Get("BandejaOK");
+            
 
             d = new Directorios(Server.MapPath(BE.Valor), Server.MapPath(BOK.Valor));
 

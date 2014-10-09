@@ -96,6 +96,8 @@ namespace BLL.Gestion
           return lstT;
       }
 
+
+
         
          private static string AddFiltro(string Campo, string Value)
          {

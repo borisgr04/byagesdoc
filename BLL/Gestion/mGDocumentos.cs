@@ -51,6 +51,11 @@ namespace BLL.Gestion
                 
 
                 Mapper.Map(oDto, Dto);
+                string Codigo = Dto.nombre.Substring(0, Dto.nombre.Length - 4);
+
+                var g = ctx.unidaddocumental.Where(t => t.Codigo == Codigo).FirstOrDefault();
+                Dto.id = g.idUnidadDocumental;
+
                 int id;
                 try
                 {

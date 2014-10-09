@@ -52,6 +52,7 @@ namespace wfSircc.Servicios.Archivos
         [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Xml)]
         public string Gets(unidaddocumentalDto Filtro)
         {
+            Session["Filtro"] = Filtro;          
             Manager = new DocumentosBLL();
             return ByAUtil.convertListToXML(Manager.Gets(Filtro));
 

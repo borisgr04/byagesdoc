@@ -14,6 +14,11 @@ namespace DAL
     
     public partial class unidaddocumental
     {
+        public unidaddocumental()
+        {
+            this.gdocumentos = new HashSet<gdocumentos>();
+        }
+    
         public string idUnidadDocumental { get; set; }
         public string Nombre { get; set; }
         public string PalabrasClave { get; set; }
@@ -33,5 +38,6 @@ namespace DAL
         public virtual dependencias dependencias { get; set; }
         public virtual subseries subseries { get; set; }
         public virtual unidadd_tipodoc unidadd_tipodoc { get; set; }
+        public virtual ICollection<gdocumentos> gdocumentos { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace BLL.Gestion
     {
         
          public trdEntities ctx { get; set; }
-
+      
          public mConfiguracion()
          {
 

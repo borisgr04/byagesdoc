@@ -1,4 +1,5 @@
 ﻿using BLL.Gestion;
+using BLL;
 using Entidades;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,22 @@ namespace wfSircc.DatosBasicosG.Consultas
            
 
            
+        }
+  
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            mGenerar mg = new mGenerar();         
+           
+                ArchivosDto b = mg.DescargarZip((unidaddocumentalDto)Session["Filtro"]);
+                Response.ContentType = b.Content;
+                string Adjunto = String.Format("inline; filename=Documento_{0}.zip", b.NomArchivo);
+               Response.AddHeader("content-disposition", Adjunto);
+
+                Response.AddHeader("content-length", b.SoporteB.Length.ToString());
+                Response.BinaryWrite(b.SoporteB);
+            
+            //Response.Redirect("~/ashx/ashxZip.ashx");
+            
         }
 
         //protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)

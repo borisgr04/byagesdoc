@@ -97,5 +97,7 @@ namespace BLL.IO
         public bool Chk { get; set; }
         public string Completa { get; set; }
         public string Archivo { get; set; }
+       
+
     }
 }

@@ -161,8 +161,21 @@
                      
             </div>    
             <!---Registro Presupuestal-->            
-            <div id="tabhist" class="tab-pane ">          
-                   <div class="form-group">                
+      <div id="tabhist" class="tab-pane ">          
+
+          <div class="col-md-12">  
+               <div class="col-md-10">     
+                
+          <asp:Button ID="Button1" class="btn btn-success" runat="server" Text="Descargar Zip" OnClick="Button1_Click" />
+                   </div>
+              </div>
+                   <div class="form-group"> 
+                 
+                       
+                          <div class="col-md-12">             
+                  &nbsp
+                  &nbsp       
+        </div>
                       <div class="col-md-12">             
         <div id="jqxgridConsul"></div>                     
        
@@ -170,12 +183,13 @@
                       <div id="kevin" class="col-md-6">
         <asp:Literal ID="ltPrew" runat="server"></asp:Literal>
         </div>   
-                       </div>          
+                       </div>       
+           </div>   
             </div>
             <!---Polizas de Garantia-->
     
        </div>
-        </div>  
+       
     
     
     

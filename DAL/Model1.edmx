@@ -42,6 +42,10 @@
             <End Role="unidaddocumental" EntitySet="unidaddocumental" />
             <End Role="unidadd_tipodoc" EntitySet="unidadd_tipodoc" />
           </AssociationSet>
+          <AssociationSet Name="FK_UnidadDocumental" Association="trdModel.Store.FK_UnidadDocumental">
+            <End Role="unidaddocumental" EntitySet="unidaddocumental" />
+            <End Role="gdocumentos" EntitySet="gdocumentos" />
+          </AssociationSet>
           <AssociationSet Name="FKDependencias" Association="trdModel.Store.FKDependencias">
             <End Role="dependencias" EntitySet="dependencias" />
             <End Role="unidaddocumental" EntitySet="unidaddocumental" />
@@ -127,6 +131,7 @@
           <Property Name="longitud" Type="int" />
           <Property Name="tipo" Type="varchar" MaxLength="45" />
           <Property Name="estado" Type="varchar" MaxLength="45" />
+          <Property Name="id" Type="varchar" MaxLength="22" />
         </EntityType>
         <EntityType Name="my_aspnet_applications">
           <Key>
@@ -345,6 +350,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_UnidadDocumental">
+          <End Role="unidaddocumental" Type="trdModel.Store.unidaddocumental" Multiplicity="0..1" />
+          <End Role="gdocumentos" Type="trdModel.Store.gdocumentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="unidaddocumental">
+              <PropertyRef Name="idUnidadDocumental" />
+            </Principal>
+            <Dependent Role="gdocumentos">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FKDependencias">
           <End Role="dependencias" Type="trdModel.Store.dependencias" Multiplicity="0..1" />
           <End Role="unidaddocumental" Type="trdModel.Store.unidaddocumental" Multiplicity="*" />
@@ -466,6 +483,10 @@
             <End Role="fc_terceros" EntitySet="fc_terceros" />
             <End Role="terceros_dep" EntitySet="terceros_dep" />
           </AssociationSet>
+          <AssociationSet Name="FK_UnidadDocumental" Association="trdModel.FK_UnidadDocumental">
+            <End Role="unidaddocumental" EntitySet="unidaddocumental" />
+            <End Role="gdocumentos" EntitySet="gdocumentos" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="fc_menu">
           <Key>
@@ -566,6 +587,7 @@
           <Property Type="String" Name="Estado" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Vigencia" MaxLength="45" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="unidadd_tipodoc" Relationship="trdModel.Fk_UnidadDoc" FromRole="unidaddocumental" ToRole="unidadd_tipodoc" />
+          <NavigationProperty Name="gdocumentos" Relationship="trdModel.FK_UnidadDocumental" FromRole="unidaddocumental" ToRole="gdocumentos" />
         </EntityType>
         <Association Name="FKDependencias">
           <End Type="trdModel.dependencias" Role="dependencias" Multiplicity="0..1" />
@@ -701,6 +723,8 @@
           <Property Type="String" Name="tipo" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="estado" MaxLength="45" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="gddocumentos" Relationship="trdModel.id" FromRole="gdocumentos" ToRole="gddocumentos" />
+          <Property Type="String" Name="id" MaxLength="22" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="unidaddocumental" Relationship="trdModel.FK_UnidadDocumental" FromRole="gdocumentos" ToRole="unidaddocumental" />
         </EntityType>
         <Association Name="id">
           <End Type="trdModel.gdocumentos" Role="gdocumentos" Multiplicity="1" />
@@ -824,6 +848,18 @@
             </Principal>
             <Dependent Role="terceros_dep">
               <PropertyRef Name="IdTerceros" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UnidadDocumental">
+          <End Type="trdModel.unidaddocumental" Role="unidaddocumental" Multiplicity="0..1" />
+          <End Type="trdModel.gdocumentos" Role="gdocumentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="unidaddocumental">
+              <PropertyRef Name="idUnidadDocumental" />
+            </Principal>
+            <Dependent Role="gdocumentos">
+              <PropertyRef Name="id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1027,6 +1063,7 @@
           <EntitySetMapping Name="gdocumentos">
             <EntityTypeMapping TypeName="trdModel.gdocumentos">
               <MappingFragment StoreEntitySet="gdocumentos">
+                <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="tipo" ColumnName="tipo" />
                 <ScalarProperty Name="longitud" ColumnName="longitud" />

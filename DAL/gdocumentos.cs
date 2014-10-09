@@ -19,7 +19,9 @@ namespace DAL
         public Nullable<int> longitud { get; set; }
         public string tipo { get; set; }
         public string estado { get; set; }
+        public string id { get; set; }
     
         public virtual gddocumentos gddocumentos { get; set; }
+        public virtual unidaddocumental unidaddocumental { get; set; }
     }
 }
