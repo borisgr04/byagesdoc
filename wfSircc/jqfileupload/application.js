@@ -25,7 +25,7 @@ $(function () {
             progress + '%'
             );
 
-            $("#grd").append("Subio" + i);
+            //$("#grd").append("Subio" + i);
             i = i + 1;
         },
         progressall: function (e, data) {

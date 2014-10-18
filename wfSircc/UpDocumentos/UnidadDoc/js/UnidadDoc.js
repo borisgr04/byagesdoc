@@ -19,7 +19,7 @@
                 Insert();
             } else {
                 Update()
-                Controls();
+               
 
             }
         });
