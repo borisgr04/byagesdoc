@@ -103,14 +103,14 @@
                                     </span>
                                 </div>
                             </div>
-                             <div class="input-medium">
+                           <%--  <div class="input-medium">
                                 <div class="input-group">
                                     <input class="input-medium date-picker" id="TextFecDocFin" type="text" data-date-format="dd-mm-yyyy" placeholder="Hasta mm-dd-yyyy" />
                                     <span class="input-group-addon">
                                         <i class="icon-calendar"></i>
                                     </span>
                                 </div>
-                            </div>
+                            </div>--%>
                 </div> 
                           <div class="col-md-3">
                     <input id="CheckInicial" type="checkbox" />             
@@ -125,14 +125,14 @@
                                     </span>
                                 </div>
                             </div>
-                              <div class="input-medium">
+                            <%--  <div class="input-medium">
                                 <div class="input-group">
                                     <input class="input-medium date-picker" id="TextFextIniFin" type="text" data-date-format="dd-mm-yyyy" placeholder="Hasta mm-dd-yyyy" />
                                     <span class="input-group-addon">
                                         <i class="icon-calendar"></i>
                                     </span>
                                 </div>
-                            </div>
+                            </div>--%>
                 </div> 
                           <div class="col-md-3">
                     <input id="CheckFinal" type="checkbox" />             
@@ -147,14 +147,14 @@
                                     </span>
                                 </div>
                             </div>
-                               <div class="input-medium">
+                               <%--<div class="input-medium">
                                 <div class="input-group">
                                     <input class="input-medium date-picker" id="TextFextFin2" type="text" data-date-format="dd-mm-yyyy" placeholder="Hasta mm-dd-yyyy" />
                                     <span class="input-group-addon">
                                         <i class="icon-calendar"></i>
                                     </span>
                                 </div>
-                            </div>
+                            </div>--%>
                 </div>        
                </div>
                 
