@@ -689,6 +689,7 @@
     <Content Include="jqfileupload\Default.aspx" />
     <Content Include="jqfileupload\Gestion\GD_Bandeja.aspx" />
     <Content Include="jqfileupload\index.html" />
+    <Content Include="jqfileupload\jquery-ui.min.js" />
     <Content Include="jqfileupload\jquery.fileupload-process.js" />
     <Content Include="jqfileupload\jquery.fileupload-ui.css" />
     <Content Include="jqfileupload\jquery.fileupload-ui.js" />
@@ -696,6 +697,8 @@
     <Content Include="jqfileupload\jquery.fileupload.js" />
     <Content Include="jqfileupload\jquery.iframe-transport.js" />
     <Content Include="jqfileupload\Gestion\js\GD_Bandeja.js" />
+    <Content Include="jqfileupload\jquery.min.js" />
+    <Content Include="jqfileupload\jquery.tmpl.min.js" />
     <Content Include="jqfileupload\pbar-ani.gif" />
     <Content Include="jqfileupload\style.css" />
     <Content Include="jqscripts\bootbox.js" />
