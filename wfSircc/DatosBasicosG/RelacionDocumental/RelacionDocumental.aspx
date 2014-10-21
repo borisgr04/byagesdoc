@@ -35,7 +35,7 @@
              </div>         
               <div class="form-group">
                     <label for="CboIdUnidad" class="col-sm-2 control-label">
-                        Id UnidadDocumental: 
+                        Unidad Documental: 
                     </label>
                     <div class="col-md-2">
                         <select id="CboIdUnidad" class="form-control input-sm"></select>           
@@ -43,7 +43,7 @@
                 </div>
               <div class="form-group">
                     <label for="CboIdTipoDoc" class="col-sm-2 control-label">
-                        Id TipoDocumental: 
+                        Tipo Documental: 
                     </label>
                     <div class="col-md-2">
                         <select id="CboIdTipoDoc" class="form-control input-sm"></select>           

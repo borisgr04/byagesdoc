@@ -25,7 +25,7 @@ $(function () {
             progress + '%'
             );
 
-            //$("#grd").append("Subio" + i);
+         
             i = i + 1;
         },
         progressall: function (e, data) {
@@ -54,7 +54,7 @@ $(function () {
     $('#fileupload')
     .bind('fileuploadstop', function (e, data) {
        // i = i + 1;
-        //$("#grd").append("Subio"+i);
+       
         console.log("subio todo..");
         //window.opener.location.reload();
     });

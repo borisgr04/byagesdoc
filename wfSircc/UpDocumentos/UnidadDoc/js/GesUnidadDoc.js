@@ -1,9 +1,12 @@
-﻿var GesUnidadDoc = (function () {
+﻿
+
+var GesUnidadDoc = (function () {
     "use strict";
     var gridCon = '#jqxgridHisto';
     var urlToAnular=  "/Servicios/Archivos/wsDocumentos.asmx/Anular";
     var urlToConsultas = "/Servicios/Archivos/wsDocumentos.asmx/Gets";
     var urlToNuevo = "UnidadDoc.aspx"
+    var urlToTipos = "../../../DatosBasicosG/RelacionDocumental/GesRelacionDocumental.aspx"
     var byaRpta;
     var _addHandlers = function () {
         $("#nuevoButton").click(function () {
@@ -14,6 +17,11 @@
             var target = urlToNuevo + "?Codigo=" + dataRecord.Codigo;
             byaPage.AbrirPagina(target);
         });
+        $("#tiposButton").click(function () {
+            var dataRecord = GesUnidadDoc.getRecord();
+            var target = urlToTipos + "?Id=" + dataRecord.idUnidadDocumental;
+            byaPage.AbrirPagina(target);
+        });        
         $("#anularButton").click(function () {
             byaMsgBox.confirm("Desea Anular el Item Seleccionado?", function (result) {
                 if (result) {

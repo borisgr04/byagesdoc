@@ -4,9 +4,15 @@
     var urlToConsultas = "/Servicios/Archivos/wsDocumentos.asmx/Gets";
     var urlToSubSeries = "/Servicios/Archivos/wsSubSeries.asmx/GetSubSeries";
     var urlToSubDependencias = "/Servicios/Archivos/wsDependencias.asmx/GetDependencias";
-  
+    var urlToTipos = "../../../DatosBasicosG/RelacionDocumental/GesRelacionDocumental.aspx"
     var _addHandlers = function () {
-        
+
+        $("#tiposButton").click(function () {
+            var dataRecord = Consultas.getRecord();
+            var target = urlToTipos + "?Id=" + dataRecord.idUnidadDocumental;
+            byaPage.AbrirPagina(target);
+           
+        });
         $("#BtnBuscar").click(function () {
             _createGrid();
         });

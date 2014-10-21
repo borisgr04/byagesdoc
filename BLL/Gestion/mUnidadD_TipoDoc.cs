@@ -41,12 +41,12 @@ namespace BLL.Gestion
              return o.Enviar();
          }
 
-        public List<UnidadD_TipoDocDto> Gets()
+        public List<UnidadD_TipoDocDto> Gets(unidaddocumentalDto Reg)
          {
              List<UnidadD_TipoDocDto> lstT = new List<UnidadD_TipoDocDto>();
              using (ctx = new trdEntities())
           {
-              List<unidadd_tipodoc> lstO = ctx.unidadd_tipodoc.ToList();
+              List<unidadd_tipodoc> lstO = ctx.unidadd_tipodoc.Where(t=>t.IdUnidadDoc==Reg.idUnidadDocumental).ToList();
               Mapper.Map(lstO, lstT);
           }
           return lstT;

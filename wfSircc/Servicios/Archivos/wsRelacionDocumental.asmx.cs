@@ -52,10 +52,10 @@ namespace wfSircc.Servicios.Archivos
 
         [WebMethod(EnableSession = true)]
         [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Xml)]
-        public string Gets()
+        public string Gets(unidaddocumentalDto Reg)
         {
             Manager = new UnidadD_TipoDocBLL();
-            return ByAUtil.convertListToXML(Manager.Gets());
+            return ByAUtil.convertListToXML(Manager.Gets(Reg));
 
         }
 

@@ -16,13 +16,17 @@
                
                 <div class="col-md-6">
                        
-                        <button type="button" class="btn btn-warning" id="BtnNuevo">
+                          <button type="button" class="btn btn-warning" id="BtnNuevo">
                             <span class="glyphicon glyphicon-plus-sign"></span>
-                            ver Pdf</button>
-                        <button type="button" class="btn btn-info" id="BtnBuscar">
+                            Vista Previa</button>
+                           <button type="button" class="btn btn-info" id="BtnBuscar">
                             <span class="glyphicon glyphicon-pencil"></span>
-                            Buscar</button>   
-                         </div>
+                            Filtrar</button>   
+                    <button type="button" class="btn btn-danger" id="tiposButton">
+                             <span class="glyphicon glyphicon-pencil">
+                             </span>Relacion Documental</button>  
+                           </div>
+                            
                  
                
          </div>      

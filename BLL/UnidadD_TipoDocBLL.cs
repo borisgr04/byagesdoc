@@ -23,9 +23,9 @@ namespace BLL
         {
             return UniManager.Anular(Reg);
         }
-        public List<UnidadD_TipoDocDto> Gets()
+        public List<UnidadD_TipoDocDto> Gets(unidaddocumentalDto Reg)
         {
-            return UniManager.Gets();
+            return UniManager.Gets(Reg);
         }
         public UnidadD_TipoDocDto Get(string idUnidad)
         {

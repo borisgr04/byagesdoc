@@ -1,7 +1,4 @@
-﻿/// <reference path="../../../UpDocumentos/UnidadDoc/GesUnidadDoc.aspx" />
-/// <reference path="../../../UpDocumentos/UnidadDoc/GesUnidadDoc.aspx" />
-/// <reference path="../../../UpDocumentos/UnidadDoc/GesUnidadDoc.aspx" />
-/// <reference path="../../../UpDocumentos/UnidadDoc/GesUnidadDoc.aspx" />
+﻿
 var RelacionDocumentalList = (function () {
     "use strict";
     var grid = '#jqxgridHisto';
@@ -10,6 +7,7 @@ var RelacionDocumentalList = (function () {
     var byaRpta;
     var msgPpal = "#LbMsg";
     var urlToNuevo = "RelacionDocumental.aspx"
+    var IdDocumental;
     var _addHandlers = function () {
         $("#nuevoButton").click(function () {
             byaPage.AbrirPagina(urlToNuevo);
@@ -54,6 +52,8 @@ var RelacionDocumentalList = (function () {
         _createGrid();
     };
     var getDataAdapter = function () {
+        var Reg = {};
+        Reg.idUnidadDocumental = $.getUrlVar('Id');
         var source = {
 
             datatype: "xml",
@@ -70,7 +70,7 @@ var RelacionDocumentalList = (function () {
             async: true,
             record: 'Table',
             url: urlToGrid,
-            data: {}
+            data: { 'Reg': JSON.stringify(Reg) }
         };
         var dataAdapter = new $.jqx.dataAdapter(source, { contentType: 'application/json; charset=utf-8' });
         return dataAdapter;
