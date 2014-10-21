@@ -24,7 +24,7 @@
                             Filtrar</button>   
                     <button type="button" class="btn btn-danger" id="tiposButton">
                              <span class="glyphicon glyphicon-pencil">
-                             </span>Relacion Documental</button>  
+                             </span>Tipos Documentales</button>  
                            </div>
                             
                  
