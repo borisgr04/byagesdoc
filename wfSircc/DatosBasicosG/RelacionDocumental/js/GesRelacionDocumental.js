@@ -27,6 +27,9 @@ var RelacionDocumentalList = (function () {
                 }
             });
         });
+        $("#vistaButton").click(function () {
+            _verVentana();
+        });
 
     };
    
@@ -107,6 +110,17 @@ var RelacionDocumentalList = (function () {
                 ]
             });
 
+    };
+    var _cerrarVentana = function () {
+
+        $('#modalTerceros').modal('hide');
+
+    };
+    var _verVentana = function () {
+        $('#modalTerceros').modal('show');
+        //var dataRecord = Consultas.getRecord();
+        //var prew = "<embed src='../../Docs/OK/" + dataRecord.Codigo + ".pdf' width='100%' height='375'>";
+        //$("#Pdf").html(prew);
     };
     return {
         id_ep: null,
