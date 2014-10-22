@@ -33,6 +33,11 @@ namespace BLL
         {
             return DocManager.Get(Codigo);
         }
+        public unidaddocumentalDto GetID(string id)
+        {
+
+            return DocManager.GetID(id);
+        }
         public List<unidaddocumentalDto> Gets(unidaddocumentalDto Filtro)
         {
             return DocManager.Gets(Filtro);

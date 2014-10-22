@@ -17,11 +17,10 @@
         });
         $('#TxtIdeCon').blur(function () {
             Terceros_Dep.BuscarTercero($('#TxtIdeCon'), $('#TxtNomCon'));
-        });
-        $("#editarButton").click(function () {
-            Update = "Si";                 
+            Update = "Si";
             MultiplesAjax();
         });
+       
         $("#guardarButton").click(function () {
             if (Update == "No") {
                 Insert();
@@ -47,7 +46,9 @@
     };  
     var getDatos = function () {
         var ArrayTer_Dep = new Array();
+
         var datainformations = $(grid).jqxGrid("getdatainformation");
+
         var rowscounts = datainformations.rowscount;
         for (var i = 0; i < rowscounts; i++) {
             var dataRecord = $(grid).jqxGrid('getrowdata', i);
@@ -55,6 +56,11 @@
                 var Ter_Dep = {};
                 Ter_Dep.IdTerceros = $("#TxtIdeCon").val();
                 Ter_Dep.IdDependencias = dataRecord.idDependencia;
+                 ArrayTer_Dep.push(Ter_Dep);
+            } else {
+              
+                var Ter_Dep = {};
+                Ter_Dep.IdTerceros = $("#TxtIdeCon").val();         
                 ArrayTer_Dep.push(Ter_Dep);
             }
         }
@@ -86,7 +92,7 @@
         var jsonData = "{'Reg':" + JSON.stringify(getDatos()) + "}";
         byaPage.POST_Sync(urlToUpdate, jsonData, function (result) {
             byaRpta = byaPage.retObj(result.d);
-            $(msgPpal).msgBox({ titulo: "Actualizar Dependencias a Terceros", mensaje: byaRpta.Mensaje, tipo: !byaRpta.Error });
+            $(msgPpal).msgBox({ titulo: "Registrar Dependencias a Terceros", mensaje: byaRpta.Mensaje, tipo: !byaRpta.Error });
             MultiplesAjax();
             if (!byaRpta.Error) {
 

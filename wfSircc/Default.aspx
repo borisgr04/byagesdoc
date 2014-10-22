@@ -7,6 +7,6 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-
+    <h1>  Bienvenido, al Sistema de Información de Gestión Documental  </h1>
+    <script src="jsMaster/Default.js"></script>
 </asp:Content>

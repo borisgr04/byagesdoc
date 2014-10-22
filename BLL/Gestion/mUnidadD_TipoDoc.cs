@@ -16,7 +16,7 @@ namespace BLL.Gestion
          {
 
              Mapper.CreateMap<UnidadD_TipoDocDto, unidadd_tipodoc>();
-             Mapper.CreateMap<unidadd_tipodoc, UnidadD_TipoDocDto>();
+             Mapper.CreateMap<unidadd_tipodoc, UnidadD_TipoDocDto>().ForMember(dest => dest.NombreTipoDoc, opt => opt.MapFrom(src => src.tiposdocumentales.Nombe)); 
          }
 
         public ByARpt Insert(UnidadD_TipoDocDto Reg)

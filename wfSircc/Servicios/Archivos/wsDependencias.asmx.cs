@@ -62,7 +62,7 @@ namespace wfSircc.Servicios.Archivos
         public string Gets()
         {
             Manager = new DependenciasBLL();
-            return ByAUtil.convertListToXML(Manager.Gets(this.User.Identity.Name));
+            return ByAUtil.convertListToXML(Manager.Gets());
 
         }
 

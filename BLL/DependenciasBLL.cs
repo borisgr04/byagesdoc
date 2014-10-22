@@ -27,6 +27,10 @@ namespace BLL
         {
             return DepManager.Gets(idTerceros);
         }
+        public List<dependenciasDto> Gets()
+        {
+            return DepManager.Gets();
+        }
         public dependenciasDto Get(string dependencias)
         {
             return DepManager.GetsT(dependencias);

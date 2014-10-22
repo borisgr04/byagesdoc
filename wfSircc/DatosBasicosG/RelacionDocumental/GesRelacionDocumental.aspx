@@ -34,9 +34,10 @@
         </div>
        <br />
     <br />
-      <div class="row">                      
-                      <div class="col-md-3">  
-                                         Listado de Relacion Documental  
+      <div class="row">               
+          
+                      <div class="col-md-9">  
+                                     <h2 id="TituloUnidad"></h2>       
                       </div>                                      
                       <div class="col-md-12">  
                              &nbsp                            

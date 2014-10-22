@@ -52,6 +52,17 @@ namespace BLL.Gestion
           }
           return lstT;
       }
+         public List<dependenciasDto> Gets()
+         {
+
+             List<dependenciasDto> lstT = new List<dependenciasDto>();
+             using (ctx = new trdEntities())
+             {
+                 List<dependencias> lstO = ctx.dependencias.ToList();
+                 Mapper.Map(lstO, lstT);
+             }
+             return lstT;
+         }
          public dependenciasDto GetsT(string terceroId)
       {
           dependenciasDto objT = new dependenciasDto();

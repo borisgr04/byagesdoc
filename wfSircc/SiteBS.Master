@@ -89,7 +89,7 @@
                     <a href="#" class="navbar-brand">
                         <small>
                             <i class="glyphicon glyphicon-pencil"></i>
-                            SIRCC &reg 
+                            SIGESDOC &reg 
                         </small>
                     </a>
                     <!-- /.brand -->
@@ -302,7 +302,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>--%>
+                        </li>
                         <li class="red">
                             <a data-toggle="dropdown" href="#" class="dropdown-toggle">
                                 <span class="user-info">
@@ -313,7 +313,7 @@
                             </a>
                             <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close" id="mpLstVigencias">
                             </ul>
-                        </li>
+                        </li>--%>
                         <li class="light-blue">
                             <a data-toggle="dropdown" href="#" class="dropdown-toggle">
                                 <img class="nav-user-photo" src="/Content/Bootstrap_Personalize/avatars/avatar2.png" alt="Jason's Photo" />
@@ -327,20 +327,7 @@
                             </a>
 
                             <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-                                <li>
-                                    <a href="#">
-                                        <i class="icon-cog"></i>
-                                        Settings
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="#">
-                                        <i class="icon-user"></i>
-                                        Profile
-                                    </a>
-                                </li>
-
+                                
                                 <li class="divider"></li>
 
                                 <li>
@@ -431,7 +418,7 @@
                         <ul class="breadcrumb">
                             <li>
                                 <i class="icon-home home-icon"></i>
-                                <a href="#">Home</a>
+                                <a href="/default.aspx">Home</a>
                             </li>
 
                             <li>

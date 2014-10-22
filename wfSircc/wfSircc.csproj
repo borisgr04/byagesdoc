@@ -1072,6 +1072,7 @@
     <Content Include="jqwidgets\styles\jqx.ui-sunny.css" />
     <Content Include="jqwidgets\styles\jqx.web.css" />
     <Content Include="jqwidgets\styles\jqx.windowsphone.css" />
+    <Content Include="jsMaster\Default.js" />
     <Content Include="jsMaster\masterP.js" />
     <Content Include="login.aspx" />
     <Content Include="packages.config" />

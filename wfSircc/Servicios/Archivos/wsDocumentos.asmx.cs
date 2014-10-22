@@ -77,6 +77,14 @@ namespace wfSircc.Servicios.Archivos
             return Manager.Get(Reg.Codigo);
 
         }
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
+        public unidaddocumentalDto GetID(unidaddocumentalDto Reg)
+        {
+            Manager = new DocumentosBLL();
+            return Manager.GetID(Reg.idUnidadDocumental);
+
+        }
       
        
     }

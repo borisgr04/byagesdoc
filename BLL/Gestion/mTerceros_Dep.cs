@@ -98,8 +98,12 @@ namespace BLL.Gestion
                   }
                   foreach (var r in reg)
                   {
-                      r.Estado = "AC";
-                      ctx.terceros_dep.Add(r);
+                      if (r.IdDependencias != null)
+                      {
+
+                          r.Estado = "AC";
+                          ctx.terceros_dep.Add(r);
+                      }
                   }
                   
                  

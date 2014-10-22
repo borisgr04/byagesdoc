@@ -3,8 +3,8 @@
 var byaSite = {
     showlog: true,
     tema: 'arctic',
-    usuario: 'sircc_user',
-    vigencia: 'sircc_vig',
+    usuario: 'sigesdoc_user',
+    vigencia: 'sigesdoc_vig',
     modulo: 'modulo',
     ModuloActual: null,
     OpcionActual: null,

@@ -39,6 +39,7 @@ var masterP = (function ($) {
     };
     var _createWidgets = function () {
         $("#mpVigencia").text(byaSite.getVigencia()); //mostrar vigencia
+        
         $("#mpUserName").text(byaSite.getUsuario());//mostrar usuario
         //$("#mpUserName").text("Boris Arturo González");//mostrar usuario
 

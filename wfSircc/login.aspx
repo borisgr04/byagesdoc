@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>SIRCC &reg</title>
+    <title>SIGESDOC &reg</title>
 
     <script type="text/javascript" src="jqscripts/jquery-1.10.1.min.js"></script>
     <link href="Content/bootstrap/bootstrap.css" rel="stylesheet" />
@@ -29,7 +29,7 @@
 </head>
 <body>
     <div class="form-signin-img">
-        <h3> GesDoc &reg</h3>
+        <h3> SIGESDOC &reg</h3>
         <%--<img src="Images/imagesLogin/sircc.png" alt="Usuario"
             style="margin: 0px;" />--%>
     </div>
@@ -52,7 +52,7 @@
     </form>
 
     <div class="container">
-        admin-fc2014.
+        
     </div>
     <!-- /container -->
 

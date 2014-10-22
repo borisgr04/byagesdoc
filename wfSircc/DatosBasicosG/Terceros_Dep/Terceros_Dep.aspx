@@ -13,9 +13,7 @@
                              <button type="button" class="btn btn-success" id="guardarButton">
                             <span class="glyphicon glyphicon-floppy-saved"></span>
                             Guardar</button>    
-                            <button type="button" class="btn btn-info" id="editarButton">
-                            <span class="glyphicon glyphicon-floppy-saved"></span>
-                            Editar</button>                               
+                                             
                         <button type="button" class="btn btn-danger" id="cancelarButton">
                             <span class="glyphicon glyphicon-remove"></span>
                             Cancelar</button>                 

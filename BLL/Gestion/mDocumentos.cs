@@ -54,6 +54,18 @@ namespace BLL.Gestion
              }
              return objT;
          }
+         public unidaddocumentalDto GetID(string id)
+         {
+
+             unidaddocumentalDto objT = new unidaddocumentalDto();
+             using (ctx = new trdEntities())
+             {
+                 unidaddocumental objO = ctx.unidaddocumental.Where(t => t.idUnidadDocumental == id).FirstOrDefault();
+                 Mapper.Map(objO, objT);
+
+             }
+             return objT;
+         }
          public List<unidaddocumentalDto> Gets(unidaddocumentalDto Filtro)
          {
 

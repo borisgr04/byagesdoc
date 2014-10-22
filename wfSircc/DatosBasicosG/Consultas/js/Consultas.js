@@ -271,6 +271,7 @@
 
         $('#modalTerceros').modal('show');
         var dataRecord = Consultas.getRecord();
+      //  var prew = "<embed src='/ashx/ashxDoc.ashx?codigo="+dataRecord.Codigo + ' width='100%' height='375'>";
         var prew = "<embed src='../../Docs/OK/" + dataRecord.Codigo + ".pdf' width='100%' height='375'>";
         $("#Pdf").html(prew);
     };

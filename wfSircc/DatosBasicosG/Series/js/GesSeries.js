@@ -84,9 +84,9 @@
                 enabletooltips: true,
                 localization: byaPage.getLocalization(),
                 columns: [
-                  { text: 'Id Serie     ', datafield: 'idSerie' },
-                  { text: 'Nombre Serie ', datafield: 'Serie' },
-                  { text: 'Procedimiento Cesion', datafield: 'Procedimiento' }
+                  { text: 'Id Serie', datafield: 'idSerie', width: 150 },
+                  { text: 'Nombre Serie ', datafield: 'Serie', width: 400 },
+                  { text: 'Procedimiento', datafield: 'Procedimiento', width: 600 }
 
                 ]
             });

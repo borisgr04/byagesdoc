@@ -13,7 +13,7 @@ namespace wfSircc
 {
     public partial class login : System.Web.UI.Page
     {
-        /*
+        
           protected void Page_Load(object sender, EventArgs e)
           {
               if (!IsPostBack)
@@ -35,20 +35,20 @@ namespace wfSircc
               }
             
           }
-
-          [WebMethod]
-          public static string Validar(string user, string pwd)
-          {
-              if (Membership.ValidateUser(user, pwd))
-              {
-                  return "1";
-              }
-              else
-              {
-                  return "0";
-              }
-          }
-        */
+          /*
+            [WebMethod]
+            public static string Validar(string user, string pwd)
+            {
+                if (Membership.ValidateUser(user, pwd))
+                {
+                    return "1";
+                }
+                else
+                {
+                    return "0";
+                }
+            }
+          */
         
           private void SetCookieUser(string usuario, string vig)
           {
@@ -56,12 +56,12 @@ namespace wfSircc
 
               HttpCookie myCookie;
 
-              myCookie = new HttpCookie("fc_user");
+              myCookie = new HttpCookie("sigesdoc_user");
               myCookie.Value = usuario;
               myCookie.Expires = now.AddHours(8);
               HttpContext.Current.Response.Cookies.Add(myCookie);
 
-              myCookie = new HttpCookie("fc_vig");
+              myCookie = new HttpCookie("sigesdoc_vig");
               myCookie.Value = vig;
               myCookie.Expires = now.AddHours(8);
               HttpContext.Current.Response.Cookies.Add(myCookie);

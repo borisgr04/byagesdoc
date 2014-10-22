@@ -8,7 +8,9 @@ namespace Entidades
     public class UnidadD_TipoDocDto
     {
         public string IdUnidadDoc { get; set; }
+        public string NombreUnidadDoc { get; set; }
         public string IdTipoDoc { get; set; }
+        public string NombreTipoDoc { get; set; }
         public string Codigo { get; set; }
         public string FechaDoc { get; set; }
         public string PagIni { get; set; }

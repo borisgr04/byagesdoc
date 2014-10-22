@@ -41,19 +41,8 @@ namespace wfSircc.DatosBasicosG.Prueba
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //Mostrar Archivos
-
-            //string FilePath = Server.MapPath("/Docs/POOJava.pdf");
-            //WebClient User = new WebClient();
-            //Byte[] FileBuffer = User.DownloadData(FilePath);
-            
+            //byte[] FileBuffer;
             //FileBuffer=PdfManipulation2.ExtractPdfPage(FileBuffer, 1, 2); 
-            
-            ////TextBox1.Text = "Hola Mundo";
-
-            ////string FilePath = Server.MapPath("/Docs/POOJava.pdf");
-            ////WebClient User = new WebClient();
-            ////Byte[] FileBuffer = User.DownloadData(FilePath);
             
             //if (FileBuffer != null)
             //{
