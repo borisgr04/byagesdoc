@@ -241,7 +241,7 @@
           <Property Name="idSubSeries" Type="varchar" Nullable="false" MaxLength="10" />
           <Property Name="SubSerie" Type="varchar" MaxLength="45" />
           <Property Name="RetencionAG" Type="int" />
-          <Property Name="DisposicionA" Type="int" />
+          <Property Name="RetencionAC" Type="int" />
           <Property Name="DisposicionCT" Type="bool" />
           <Property Name="DisposicionE" Type="bool" />
           <Property Name="DisposicionMD" Type="bool" />
@@ -300,7 +300,7 @@
           <Property Name="DependenciaId" Type="varchar" MaxLength="10" />
           <Property Name="Codigo" Type="varchar" MaxLength="45" />
           <Property Name="Estado" Type="varchar" MaxLength="45" />
-          <Property Name="Vigencia" Type="varchar" MaxLength="45" />
+          <Property Name="Vigencia" Type="int" />
         </EntityType>
         <Association Name="Fk_Dep">
           <End Role="dependencias" Type="trdModel.Store.dependencias" Multiplicity="1" />
@@ -522,7 +522,6 @@
           <Property Name="idSubSeries" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="SubSerie" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
           <Property Name="RetencionAG" Type="Int32" />
-          <Property Name="DisposicionA" Type="Int32" />
           <Property Name="DisposicionCT" Type="Boolean" />
           <Property Name="DisposicionE" Type="Boolean" />
           <Property Name="DisposicionMD" Type="Boolean" />
@@ -532,6 +531,7 @@
           <NavigationProperty Name="unidaddocumental" Relationship="trdModel.FkSubseries" FromRole="subseries" ToRole="unidaddocumental" />
           <Property Type="String" Name="Estado" MaxLength="45" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tiposdocumentales" Relationship="trdModel.SubSeriesIdTD" FromRole="subseries" ToRole="tiposdocumentales" />
+          <Property Type="Int32" Name="RetencionAC" />
         </EntityType>
         <Association Name="SerieFK">
           <End Role="series" Type="trdModel.series" Multiplicity="1" />
@@ -585,7 +585,7 @@
           <NavigationProperty Name="subseries" Relationship="trdModel.FkSubseries" FromRole="unidaddocumental" ToRole="subseries" />
           <Property Type="String" Name="Codigo" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Estado" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Vigencia" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Vigencia" />
           <NavigationProperty Name="unidadd_tipodoc" Relationship="trdModel.Fk_UnidadDoc" FromRole="unidaddocumental" ToRole="unidadd_tipodoc" />
           <NavigationProperty Name="gdocumentos" Relationship="trdModel.FK_UnidadDocumental" FromRole="unidaddocumental" ToRole="gdocumentos" />
         </EntityType>
@@ -900,11 +900,11 @@
           <EntitySetMapping Name="subseries">
             <EntityTypeMapping TypeName="trdModel.subseries">
               <MappingFragment StoreEntitySet="subseries">
+                <ScalarProperty Name="RetencionAC" ColumnName="RetencionAC" />
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="idSubSeries" ColumnName="idSubSeries" />
                 <ScalarProperty Name="SubSerie" ColumnName="SubSerie" />
                 <ScalarProperty Name="RetencionAG" ColumnName="RetencionAG" />
-                <ScalarProperty Name="DisposicionA" ColumnName="DisposicionA" />
                 <ScalarProperty Name="DisposicionCT" ColumnName="DisposicionCT" />
                 <ScalarProperty Name="DisposicionE" ColumnName="DisposicionE" />
                 <ScalarProperty Name="DisposicionMD" ColumnName="DisposicionMD" />

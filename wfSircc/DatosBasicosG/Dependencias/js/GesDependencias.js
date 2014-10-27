@@ -57,7 +57,7 @@
             datafields: [
 	                { name: 'idDependencia', type: "String" },
                     { name: 'Dependencia' },
-                    { name: 'Padre' }
+                    { name: 'Nombre_Padre' }
             ],
             async: true,
             record: 'Table',
@@ -87,7 +87,7 @@
                 columns: [
                   { text: 'Id Dependencia     ', datafield: 'idDependencia' },
                   { text: 'Nombre Dependencia ', datafield: 'Dependencia' },
-                  { text: 'Seccion', datafield: 'Padre' }
+                  { text: 'Seccion', datafield: 'Nombre_Padre' }
 
                 ]
             });

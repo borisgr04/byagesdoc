@@ -67,44 +67,58 @@
                 </div>
                   <div class="form-group">
                     <label for="TextA" class="col-sm-2 control-label">
-                        Disposición A: 
+                        Retención AC: 
                     </label>
                     <div class="col-md-2">
                             <input id="TextA" type="text" class="form-control input-sm inputHab" />
                     </div>          
                 </div>
-                  <div class="form-group">
-                    <label for="CheckCT" class="col-sm-2 control-label">
-                       Disposición CT: 
-                    </label>
-                    <div class="col-md-2">
+
+                <div class="row" >
+                       <div class="col-md-12">
+                             <div class="col-md-1">
+                            
+                               </div>
+                           <div class="col-md-3">
+                            Disposición: 
+                               </div>
+                           </div>
+                    <div class="col-md-12">
+                        </div>
+                    <div class="col-md-12">
+                        <div class="col-md-1">
+                          
+                               </div>
+                          <div class="col-md-1">                          
+                       CT                      
                        <input id="CheckCT" type="checkbox" />
-                    </div>          
-                </div>
-                  <div class="form-group">
-                    <label for="CheckE" class="col-sm-2 control-label">
-                         Disposición E: 
-                    </label>
-                    <div class="col-md-2">
+                   
+                           </div>
+                          <div class="col-md-1">                         
+                            E
                            <input id="CheckE" type="checkbox" />
-                    </div>          
+                   
+                           </div>
+                          <div class="col-md-1">
+                           MD 
+                               <input id="CheckMD" type="checkbox" />
+                           </div>
+                          <div class="col-md-1">
+                          S 
+                               <input id="CheckS" type="checkbox" />
+                           </div>
+                           </div>
+                      
+                   
+                      
+
+                      
+  
                 </div>
-                  <div class="form-group">
-                    <label for="CheckMD" class="col-sm-2 control-label">
-                        Disposición MD: 
-                    </label>
-                    <div class="col-md-2">
-                        <input id="CheckMD" type="checkbox" />
-                    </div>          
-                </div>
-                  <div class="form-group">
-                    <label for="CheckS" class="col-sm-2 control-label">
-                        Disposición S: 
-                    </label>
-                    <div class="col-md-2">
-                       <input id="CheckS" type="checkbox" />
-                    </div>          
-                </div>
+                 
+               
+                 
+                
                 
             </div>
            

@@ -91,7 +91,7 @@
         Subs.idSubSeries = $('#TextIdSubSerie').val();
         Subs.SubSerie = $('#TextSubSerie').val();     
         Subs.RetencionAG = $('#TextAg').val();
-        Subs.DisposicionA = $('#TextA').val();
+        Subs.RetencionAC = $('#TextA').val();
         Subs.DisposicionCT = $("#CheckCT").is(":checked");
         Subs.DisposicionE = $('#CheckE').is(":checked");
         Subs.DisposicionMD = $('#CheckMD').is(":checked");

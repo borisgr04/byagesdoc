@@ -58,12 +58,12 @@
 	                { name: 'idSubSeries', type: "String" },
                     { name: 'SubSerie' },
                     { name: 'RetencionAG' },
-                    { name: 'DisposicionA' },
+                    { name: 'RetencionAC' },
                     { name: 'DisposicionCT', type: 'bool' },
                     { name: 'DisposicionE', type: 'bool' },
                     { name: 'DisposicionMD', type: 'bool' },
                     { name: 'DisposicionS', type: 'bool' },
-                    { name: 'Series_idSerie' }
+                    { name: 'Serie' }
             ],
             async: true,
             record: 'Table',
@@ -91,15 +91,15 @@
                 enabletooltips: true,
                 localization: byaPage.getLocalization(),
                 columns: [
-                  { text: 'Id', datafield: 'idSubSeries', width: 150 },
+                  { text: 'Id', datafield: 'idSubSeries', width: 100 },
                   { text: 'Nombre Serie ', datafield: 'SubSerie', width: 200 },
-                  { text: 'RetencionAG', datafield: 'RetencionAG', width: 150 },
-                  { text: 'DisposicionA', datafield: 'DisposicionA', width: 150 },
-                  { text: 'DisposicionCT', datafield: 'DisposicionCT', threestatecheckbox: true, columntype: 'checkbox',   width: 70 },
-                  { text: 'DisposicionE', datafield: 'DisposicionE', threestatecheckbox: true, columntype: 'checkbox', width: 70 },
-                  { text: 'DisposicionMD', datafield: 'DisposicionMD', threestatecheckbox: true, columntype: 'checkbox', width: 70 },
-                  { text: 'DisposicionS', datafield: 'DisposicionS', threestatecheckbox: true, columntype: 'checkbox', width: 70 },
-                  { text: 'Series_idSerie ', datafield: 'Series_idSerie', width: 150 },
+                  { text: 'RetencionAG', datafield: 'RetencionAG', width: 120 },
+                  { text: 'RetencionAC', datafield: 'RetencionAC', width: 120 },
+                  { text: 'Conservación Total', datafield: 'DisposicionCT', threestatecheckbox: true, columntype: 'checkbox',   width: 140 },
+                  { text: 'Eliminado', datafield: 'DisposicionE', threestatecheckbox: true, columntype: 'checkbox', width: 100 },
+                  { text: 'Microfilmación y Digitación', datafield: 'DisposicionMD', threestatecheckbox: true, columntype: 'checkbox', width: 230 },
+                  { text: 'Selección', datafield: 'DisposicionS', threestatecheckbox: true, columntype: 'checkbox', width: 150 },
+                  { text: 'Serie ', datafield: 'Serie', width: 150 },
                
               
 

@@ -17,7 +17,7 @@ namespace BLL.Gestion
          {
 
              Mapper.CreateMap<subseriesDto, subseries>();
-             Mapper.CreateMap<subseries, subseriesDto>();
+             Mapper.CreateMap<subseries, subseriesDto>().ForMember(dest => dest.Serie, opt => opt.MapFrom(src => src.series.Serie)); 
          }
 
          public ByARpt Insert(subseriesDto Reg)
@@ -103,7 +103,7 @@ namespace BLL.Gestion
                  {
                      found.SubSerie = reg.SubSerie;
                      found.RetencionAG = reg.RetencionAG;
-                     found.DisposicionA = reg.DisposicionA;
+                     found.RetencionAC = reg.RetencionAC;
                      found.DisposicionCT = reg.DisposicionCT;
                      found.DisposicionE = reg.DisposicionE;
                      found.DisposicionMD = reg.DisposicionMD;

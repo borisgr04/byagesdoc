@@ -68,6 +68,15 @@ namespace wfSircc.Servicios.Archivos
 
         [WebMethod(EnableSession = true)]
         [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
+        public List<dependenciasDto> GetsCombo()
+        {
+            Manager = new DependenciasBLL();
+            return Manager.Gets();
+
+        }
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
         public dependenciasDto Get(string Dependencia)
         {
             Manager = new DependenciasBLL();

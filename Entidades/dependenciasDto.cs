@@ -10,5 +10,6 @@ namespace Entidades
         public string idDependencia { get; set; }
         public string Dependencia { get; set; }
         public string Padre { get; set; }
+        public string Nombre_Padre { get; set; }
     }
 }

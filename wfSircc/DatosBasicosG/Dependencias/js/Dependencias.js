@@ -3,6 +3,8 @@
     var urlToInsert = "/Servicios/Archivos/wsDependencias.asmx/Insert";
     var urlToUpdate = "/Servicios/Archivos/wsDependencias.asmx/Update";
     var urlToAbrir2 = "/Servicios/Archivos/wsDependencias.asmx/Get";
+    var urlToCombo = "/Servicios/Archivos/wsDependencias.asmx/GetsCombo"
+    
     var byaRpta;
     var idDependencia;
     var msgPpal = "#LbMsg";
@@ -46,7 +48,8 @@
     }
     var _createElements = function () {
         $("#TextIdDependencia").byaFormatInput('0123456789');
-
+        var sourcePla = byaPage.getSource(urlToCombo);
+        $("#CboDep").byaCombo({ DataSource: sourcePla, Value: "idDependencia", Display: "Dependencia" });
     };
     var _Abrir = function (idDependencia) {
 
@@ -63,7 +66,8 @@
                 var Dep = byaPage.retObj(result.d);
                 if (Dep != undefined) {
                     $('#TextIdDependencia').val(Dep.idDependencia);
-                    $('#TextDependencia').val(Dep.Dependencia);                   
+                    $('#TextDependencia').val(Dep.Dependencia);
+                    $('#CboDep').val(Dep.Padre);
                     Editar = "Si";
                 } else {
                     Editar = "No";

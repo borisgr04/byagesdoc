@@ -33,7 +33,7 @@ namespace DAL
         public string DependenciaId { get; set; }
         public string Codigo { get; set; }
         public string Estado { get; set; }
-        public string Vigencia { get; set; }
+        public Nullable<int> Vigencia { get; set; }
     
         public virtual dependencias dependencias { get; set; }
         public virtual subseries subseries { get; set; }

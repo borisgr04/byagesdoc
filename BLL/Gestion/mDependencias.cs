@@ -59,7 +59,17 @@ namespace BLL.Gestion
              using (ctx = new trdEntities())
              {
                  List<dependencias> lstO = ctx.dependencias.ToList();
-                 Mapper.Map(lstO, lstT);
+
+                 foreach (var item in lstO)
+	            {
+		            dependenciasDto p=new dependenciasDto();
+                     p.idDependencia=item.idDependencia;
+                     p.Dependencia=item.Dependencia;
+                     p.Nombre_Padre = ctx.dependencias.Where(t => t.idDependencia.ToString() == item.Padre).Select(t => t.Dependencia).FirstOrDefault();
+                     lstT.Add(p);
+                 }
+                 
+                
              }
              return lstT;
          }

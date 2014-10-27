@@ -16,12 +16,13 @@ namespace Entidades
         public string idSubSeries { get; set; }
         public string SubSerie { get; set; }
         public Nullable<int> RetencionAG { get; set; }
-        public Nullable<int> DisposicionA { get; set; }
+        public Nullable<int> RetencionAC { get; set; }
         public Nullable<bool> DisposicionCT { get; set; }
         public Nullable<bool> DisposicionE { get; set; }
         public Nullable<bool> DisposicionMD { get; set; }
         public Nullable<bool> DisposicionS { get; set; }
         public string Series_idSerie { get; set; }
+        public string Serie { get; set; }
     
         //public virtual series series { get; set; }
         //public virtual ICollection<tiposdocumentales> tiposdocumentales { get; set; }

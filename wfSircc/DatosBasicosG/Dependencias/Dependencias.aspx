@@ -51,12 +51,12 @@
                     </div>          
                 </div>       
                       <div class="form-group">
-                    <label for="TextPadre" class="col-sm-2 control-label">
+                    <label for="CboDep" class="col-sm-2 control-label">
                         Seccion: 
-                    </label>
-                    <div class="col-md-2">
-                        <input id="TextPadre" type="text" class="form-control input-sm inputHab" />
-                    </div>          
+                    </label>   
+                          <div class="col-md-3">               
+                    <select id="CboDep" class="form-control input-sm"></select>   
+                              </div>           
                 </div>            
             </div>
            
