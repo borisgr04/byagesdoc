@@ -23,7 +23,6 @@ namespace DAL
         public string Nombre { get; set; }
         public string PalabrasClave { get; set; }
         public Nullable<System.DateTime> FechaCreacion { get; set; }
-        public Nullable<int> NroFolios { get; set; }
         public string idSubSeries { get; set; }
         public Nullable<int> EntidadProductora { get; set; }
         public Nullable<int> ArchivadorNo { get; set; }
@@ -34,10 +33,19 @@ namespace DAL
         public string Codigo { get; set; }
         public string Estado { get; set; }
         public Nullable<int> Vigencia { get; set; }
+        public string Tema { get; set; }
+        public string Estante { get; set; }
+        public string SoporteFisico { get; set; }
+        public string SoporteDigital { get; set; }
+        public string NroFolioInicial { get; set; }
+        public string NroFolioFinal { get; set; }
+        public string Frecuencia { get; set; }
+        public string Identificacion { get; set; }
     
         public virtual dependencias dependencias { get; set; }
         public virtual subseries subseries { get; set; }
         public virtual unidadd_tipodoc unidadd_tipodoc { get; set; }
         public virtual ICollection<gdocumentos> gdocumentos { get; set; }
+        public virtual vigencia vigencia1 { get; set; }
     }
 }

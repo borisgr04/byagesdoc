@@ -26,6 +26,7 @@
           <EntitySet Name="tiposdocumentales" EntityType="trdModel.Store.tiposdocumentales" store:Type="Tables" Schema="trd" />
           <EntitySet Name="unidadd_tipodoc" EntityType="trdModel.Store.unidadd_tipodoc" store:Type="Tables" Schema="trd" />
           <EntitySet Name="unidaddocumental" EntityType="trdModel.Store.unidaddocumental" store:Type="Tables" Schema="trd" />
+          <EntitySet Name="vigencia" EntityType="trdModel.Store.vigencia" store:Type="Tables" Schema="trd" />
           <AssociationSet Name="Fk_Dep" Association="trdModel.Store.Fk_Dep">
             <End Role="dependencias" EntitySet="dependencias" />
             <End Role="terceros_dep" EntitySet="terceros_dep" />
@@ -52,6 +53,10 @@
           </AssociationSet>
           <AssociationSet Name="FkSubseries" Association="trdModel.Store.FkSubseries">
             <End Role="subseries" EntitySet="subseries" />
+            <End Role="unidaddocumental" EntitySet="unidaddocumental" />
+          </AssociationSet>
+          <AssociationSet Name="FkVigencia" Association="trdModel.Store.FkVigencia">
+            <End Role="vigencia" EntitySet="vigencia" />
             <End Role="unidaddocumental" EntitySet="unidaddocumental" />
           </AssociationSet>
           <AssociationSet Name="id" Association="trdModel.Store.id">
@@ -290,7 +295,6 @@
           <Property Name="Nombre" Type="varchar" MaxLength="45" />
           <Property Name="PalabrasClave" Type="text" />
           <Property Name="FechaCreacion" Type="datetime" />
-          <Property Name="NroFolios" Type="int" />
           <Property Name="idSubSeries" Type="varchar" Nullable="false" MaxLength="45" />
           <Property Name="EntidadProductora" Type="int" />
           <Property Name="ArchivadorNo" Type="int" />
@@ -301,6 +305,21 @@
           <Property Name="Codigo" Type="varchar" MaxLength="45" />
           <Property Name="Estado" Type="varchar" MaxLength="45" />
           <Property Name="Vigencia" Type="int" />
+          <Property Name="Tema" Type="varchar" MaxLength="45" />
+          <Property Name="Estante" Type="varchar" MaxLength="45" />
+          <Property Name="SoporteFisico" Type="varchar" MaxLength="45" />
+          <Property Name="SoporteDigital" Type="varchar" MaxLength="45" />
+          <Property Name="NroFolioInicial" Type="varchar" MaxLength="45" />
+          <Property Name="NroFolioFinal" Type="varchar" MaxLength="45" />
+          <Property Name="Frecuencia" Type="varchar" MaxLength="45" />
+          <Property Name="Identificacion" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="vigencia">
+          <Key>
+            <PropertyRef Name="Vigencia" />
+          </Key>
+          <Property Name="Vigencia" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="varchar" MaxLength="45" />
         </EntityType>
         <Association Name="Fk_Dep">
           <End Role="dependencias" Type="trdModel.Store.dependencias" Multiplicity="1" />
@@ -383,6 +402,18 @@
             </Principal>
             <Dependent Role="unidaddocumental">
               <PropertyRef Name="idSubSeries" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FkVigencia">
+          <End Role="vigencia" Type="trdModel.Store.vigencia" Multiplicity="0..1" />
+          <End Role="unidaddocumental" Type="trdModel.Store.unidaddocumental" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vigencia">
+              <PropertyRef Name="Vigencia" />
+            </Principal>
+            <Dependent Role="unidaddocumental">
+              <PropertyRef Name="Vigencia" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -487,6 +518,11 @@
             <End Role="unidaddocumental" EntitySet="unidaddocumental" />
             <End Role="gdocumentos" EntitySet="gdocumentos" />
           </AssociationSet>
+          <EntitySet Name="vigencia" EntityType="trdModel.vigencia" />
+          <AssociationSet Name="FkVigencia" Association="trdModel.FkVigencia">
+            <End Role="vigencia" EntitySet="vigencia" />
+            <End Role="unidaddocumental" EntitySet="unidaddocumental" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="fc_menu">
           <Key>
@@ -573,7 +609,6 @@
           <Property Type="String" Name="Nombre" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="PalabrasClave" MaxLength="65535" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="FechaCreacion" Precision="0" />
-          <Property Type="Int32" Name="NroFolios" />
           <Property Type="String" Name="idSubSeries" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="EntidadProductora" />
           <Property Type="Int32" Name="ArchivadorNo" />
@@ -588,6 +623,15 @@
           <Property Type="Int32" Name="Vigencia" />
           <NavigationProperty Name="unidadd_tipodoc" Relationship="trdModel.Fk_UnidadDoc" FromRole="unidaddocumental" ToRole="unidadd_tipodoc" />
           <NavigationProperty Name="gdocumentos" Relationship="trdModel.FK_UnidadDocumental" FromRole="unidaddocumental" ToRole="gdocumentos" />
+          <Property Type="String" Name="Tema" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Estante" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SoporteFisico" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SoporteDigital" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NroFolioInicial" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NroFolioFinal" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Frecuencia" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Identificacion" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="vigencia1" Relationship="trdModel.FkVigencia" FromRole="unidaddocumental" ToRole="vigencia" />
         </EntityType>
         <Association Name="FKDependencias">
           <End Type="trdModel.dependencias" Role="dependencias" Multiplicity="0..1" />
@@ -863,6 +907,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="vigencia">
+          <Key>
+            <PropertyRef Name="Vigencia" />
+          </Key>
+          <Property Type="Int32" Name="Vigencia" Nullable="false" />
+          <Property Type="String" Name="Estado" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="unidaddocumental" Relationship="trdModel.FkVigencia" FromRole="vigencia" ToRole="unidaddocumental" />
+        </EntityType>
+        <Association Name="FkVigencia">
+          <End Type="trdModel.vigencia" Role="vigencia" Multiplicity="0..1" />
+          <End Type="trdModel.unidaddocumental" Role="unidaddocumental" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vigencia">
+              <PropertyRef Name="Vigencia" />
+            </Principal>
+            <Dependent Role="unidaddocumental">
+              <PropertyRef Name="Vigencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -936,6 +1000,14 @@
           <EntitySetMapping Name="unidaddocumental">
             <EntityTypeMapping TypeName="trdModel.unidaddocumental">
               <MappingFragment StoreEntitySet="unidaddocumental">
+                <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+                <ScalarProperty Name="Frecuencia" ColumnName="Frecuencia" />
+                <ScalarProperty Name="NroFolioFinal" ColumnName="NroFolioFinal" />
+                <ScalarProperty Name="NroFolioInicial" ColumnName="NroFolioInicial" />
+                <ScalarProperty Name="SoporteDigital" ColumnName="SoporteDigital" />
+                <ScalarProperty Name="SoporteFisico" ColumnName="SoporteFisico" />
+                <ScalarProperty Name="Estante" ColumnName="Estante" />
+                <ScalarProperty Name="Tema" ColumnName="Tema" />
                 <ScalarProperty Name="Vigencia" ColumnName="Vigencia" />
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
@@ -946,7 +1018,6 @@
                 <ScalarProperty Name="ArchivadorNo" ColumnName="ArchivadorNo" />
                 <ScalarProperty Name="EntidadProductora" ColumnName="EntidadProductora" />
                 <ScalarProperty Name="idSubSeries" ColumnName="idSubSeries" />
-                <ScalarProperty Name="NroFolios" ColumnName="NroFolios" />
                 <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
                 <ScalarProperty Name="PalabrasClave" ColumnName="PalabrasClave" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -1118,6 +1189,14 @@
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="IdDependencias" ColumnName="IdDependencias" />
                 <ScalarProperty Name="IdTerceros" ColumnName="IdTerceros" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vigencia">
+            <EntityTypeMapping TypeName="trdModel.vigencia">
+              <MappingFragment StoreEntitySet="vigencia">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Vigencia" ColumnName="Vigencia" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

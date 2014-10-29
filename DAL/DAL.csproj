@@ -135,6 +135,9 @@
     <Compile Include="unidadd_tipodoc.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="vigencia.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config">

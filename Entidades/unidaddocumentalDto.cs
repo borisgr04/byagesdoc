@@ -20,7 +20,16 @@ namespace Entidades
         public Nullable<int> GabetaNo { get; set; }
         public Nullable<System.DateTime> FechaExtInicial { get; set; }
         public Nullable<System.DateTime> FechaExtFinal { get; set; }
+        public Nullable<int> Vigencia { get; set; }
         public string Nombre_Dep { get; set; }
         public string DependenciaId { get; set; }
+        public string Tema { get; set; }
+        public string Estante { get; set; }
+        public string SoporteFisico { get; set; }
+        public string SoporteDigital { get; set; }
+        public string NroFolioInicial { get; set; }
+        public string NroFolioFinal { get; set; }
+        public string Frecuencia { get; set; }
+        public string Identificacion { get; set; }
     }
 }

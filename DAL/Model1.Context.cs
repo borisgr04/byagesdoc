@@ -45,5 +45,6 @@ namespace DAL
         public DbSet<unidadd_tipodoc> unidadd_tipodoc { get; set; }
         public DbSet<tiposdocumentales> tiposdocumentales { get; set; }
         public DbSet<terceros_dep> terceros_dep { get; set; }
+        public DbSet<vigencia> vigencia { get; set; }
     }
 }

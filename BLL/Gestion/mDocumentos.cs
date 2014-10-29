@@ -173,7 +173,8 @@ namespace BLL.Gestion
                      found.Nombre = reg.Nombre;
                      found.PalabrasClave = reg.PalabrasClave;
                      found.FechaCreacion = reg.FechaCreacion;
-                     found.NroFolios = reg.NroFolios;
+                     found.NroFolioInicial = reg.NroFolioInicial;
+                     found.NroFolioFinal = reg.NroFolioFinal;
                      found.EntidadProductora = reg.EntidadProductora;
                      found.ArchivadorNo = reg.ArchivadorNo;
                      found.GabetaNo = reg.GabetaNo;

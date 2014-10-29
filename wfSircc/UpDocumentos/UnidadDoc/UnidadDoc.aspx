@@ -40,71 +40,67 @@
                  &nbsp
                 </div> 
 
+
                 <div class="form-group">
                     <label for="TextCodDoc" class="col-sm-2 control-label">
                       Codigo Documento: 
                     </label>
-                    <div class="col-md-2">
+                    <div class="col-md-2"> 
                            <input id="TextCodDoc" type="text" class="form-control input-sm inputHab" />                
                     </div>               
                 </div>               
-                  <div class="form-group">
+                <div class="form-group">
                     <label for="TextNomDoc" class="col-sm-2 control-label">
-                      Nombre Documento: 
+                      Nombre del Expediente: 
                     </label>
                     <div class="col-md-3">
                            <input id="TextNomDoc" type="text" class="form-control input-sm inputHab" />                
                     </div>               
                 </div>
-                 <div class="form-group">
+                <div class="form-group">
+                    <label for="TextTemaDoc" class="col-sm-2 control-label">
+                      Tema: 
+                    </label>
+                    <div class="col-md-3">
+                           <input id="TextTemaDoc" type="text" class="form-control input-sm inputHab" />                
+                    </div>               
+                </div>
+                <div class="form-group">
+                    <label for="TextIdeDoc" class="col-sm-2 control-label">
+                      Identificación: 
+                    </label>
+                    <div class="col-md-2"> 
+                           <input id="TextIdeDoc" type="text" class="form-control input-sm inputHab" />                
+                    </div>               
+                </div>   
+                <div class="form-group">
                     <label for="TextPal" class="col-sm-2 control-label">
                       Palabras Clabe: 
                     </label>
                     <div class="col-md-4">
                            <textarea id="TextPal" class="form-control input-sm inputHab" ></textarea>                
                     </div>               
-                </div>
-                 <div class="form-group">
-                    <label for="TextFecDoc" class="col-sm-2 control-label">
-                      Fecha de Creacion: 
-                    </label>
-                      <div class="col-sm-3">
-                       
-                            <div class="input-medium">
-                                <div class="input-group">
-                                    <input class="input-medium date-picker" id="TextFecDoc" type="text" data-date-format="dd-mm-yyyy" placeholder="mm-dd-yyyy" />
-                                    <span class="input-group-addon">
-                                        <i class="icon-calendar"></i>
-                                    </span>
-                                </div>
-                            </div>
-                         </div>               
-                </div>
+                </div>                
                 <div class="form-group">
                     <label for="TextNfolios" class="col-sm-2 control-label">
-                      N° Folio: 
+                      N° Folios: 
                     </label>
-                    <div class="col-md-2">
+                    <div class="col-md-1">
                            <input id="TextNfolios" type="text" class="form-control input-sm inputHab" />                
-                    </div>               
+                    </div>        
+                    <div class="col-md-1">
+                           <input id="TextNfoliosF" type="text" class="form-control input-sm inputHab" />                
+                    </div>         
                 </div>
-                   <div class="form-group">
-                    <label for="CboSubSeries" class="col-sm-2 control-label">
-                      SubSerie: 
+                <div class="form-group">
+                    <label for="TextEstante" class="col-sm-2 control-label">
+                      Estante: 
                     </label>
                     <div class="col-md-2">
-                          <select id="CboSubSeries" class="form-control input-sm"></select>               
+                           <input id="TextEstante" type="text" class="form-control input-sm inputHab" />                
                     </div>               
                 </div>
-                 <div class="form-group">
-                    <label for="TextEntidad" class="col-sm-2 control-label">
-                      Entidad Productora: 
-                    </label>
-                    <div class="col-md-2">
-                           <input id="TextEntidad" type="text" class="form-control input-sm inputHab" />                
-                    </div>               
-                </div>
-                  <div class="form-group">
+                <div class="form-group">
                     <label for="TextArchivador" class="col-sm-2 control-label">
                       N° Carpeta: 
                     </label>
@@ -119,6 +115,47 @@
                     <div class="col-md-2">
                            <input id="TextGabeta" type="text" class="form-control input-sm inputHab" />                
                     </div>               
+                </div>
+                  
+                 <div class="form-group">
+                    <label for="TextEntidad" class="col-sm-2 control-label">
+                      Entidad Productora: 
+                    </label>
+                    <div class="col-md-2">
+                           <input id="TextEntidad" type="text" class="form-control input-sm inputHab" />                
+                    </div>               
+                </div>
+                 <div class="form-group">
+                    <label for="CheckFisico" class="col-sm-2 control-label">
+                      Soporte Fisico: 
+                    </label>
+                    <div class="col-md-2">
+                                    <input id="CheckFisico" type="checkbox" />                   
+                    </div>               
+                </div>
+                 <div class="form-group">
+                    <label for="CheckDigital" class="col-sm-2 control-label">
+                      Soporte Digital: 
+                    </label>
+                    <div class="col-md-2">
+                               <input id="CheckDigital" type="checkbox" />           
+                    </div>               
+                </div>
+                <div class="form-group">
+                    <label for="TextFecDoc" class="col-sm-2 control-label">
+                      Fecha de Creacion: 
+                    </label>
+                      <div class="col-sm-3">
+                       
+                            <div class="input-medium">
+                                <div class="input-group">
+                                    <input class="input-medium date-picker" id="TextFecDoc" type="text" data-date-format="dd-mm-yyyy" placeholder="mm-dd-yyyy" />
+                                    <span class="input-group-addon">
+                                        <i class="icon-calendar"></i>
+                                    </span>
+                                </div>
+                            </div>
+                         </div>               
                 </div>
                  <div class="form-group">
                     <label for="TextFextIni" class="col-sm-2 control-label">
@@ -152,12 +189,42 @@
                             </div>
                          </div>                    
                 </div>
+                 <div class="form-group">
+                    <label for="CboSubSeries" class="col-sm-2 control-label">
+                      SubSerie: 
+                    </label>
+                    <div class="col-md-2">
+                          <select id="CboSubSeries" class="form-control input-sm"></select>               
+                    </div>               
+                </div>
                   <div class="form-group">
                     <label for="CboDependencia" class="col-sm-2 control-label">
                       Dependencia: 
                     </label>
                     <div class="col-md-2">
                           <select id="CboDependencia" class="form-control input-sm"></select>               
+                    </div>               
+                </div>
+                  <div class="form-group">
+                    <label for="CboVigencia" class="col-sm-2 control-label">
+                      Vigencia: 
+                    </label>
+                    <div class="col-md-2">
+                          <select id="CboVigencia" class="form-control input-sm"></select>               
+                    </div>               
+                </div>
+                <div class="form-group">
+                    <label for="CboFrecuencia" class="col-sm-2 control-label">
+                      Frecuencia: 
+                    </label>
+                    <div class="col-md-2">
+                          <select id="CboFrecuencia" class="form-control input-sm">    
+                              <option value="0" >Seleccione</option>                          
+                              <option value="1" >Baja</option>
+                              <option value="2">Media</option>
+                              <option value="3">Alta</option>
+                              
+                          </select>               
                     </div>               
                 </div>
                      
