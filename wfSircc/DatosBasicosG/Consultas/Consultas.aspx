@@ -51,27 +51,29 @@
                  &nbsp
                 </div> 
                 <div class="form-group">
-                <div class="col-md-3">
+                    <div class="col-md-12">
+                         
+                          <div class="col-md-3">
                     <input id="CheckSubSeries" type="checkbox" />             
                     <label for="CheckSubSeries" >
                        SubSeries: 
                     </label>
                     <select id="CboSubSeries" class="form-control input-sm"></select>         
-                    </div> 
-                  
-                   <div class="col-md-3">
+                    </div>                   
+                          <div class="col-md-3">
                     <input id="CheckDep" type="checkbox" />             
                     <label for="CheckDep" >
                         Dependencia: 
                     </label>
                     <select id="CboDep" class="form-control input-sm"></select>         
-                </div> 
+                </div>
                           <div class="col-md-2">
                     <input id="CheckFolios" type="checkbox" />             
                     <label for="CheckFolios" >
                         Nº Folios: 
                     </label>
                    <input id="TextFolios" class="form-control inputHab" />
+                   <input id="TextFoliosF" class="form-control inputHab" />
                 </div> 
                           <div class="col-md-2">
                     <input id="CheckCaja" type="checkbox" />             
@@ -86,7 +88,13 @@
                         Nº Carpeta: 
                     </label>
                      <input id="TextCarpeta" class="form-control inputHab" />  
-                </div> 
+              
+                    </div>
+                    </div>
+                    <div class="col-md-12"> 
+                 &nbsp
+                </div>
+                    <div class="col-md-12">
                           <div class="col-md-3">
                     <input id="CheckEntidad" type="checkbox" />             
                     <label for="CheckEntidad" >
@@ -107,14 +115,14 @@
                                     </span>
                                 </div>
                             </div>
-                           <%--  <div class="input-medium">
+                             <div class="input-medium">
                                 <div class="input-group">
                                     <input class="input-medium date-picker" id="TextFecDocFin" type="text" data-date-format="dd-mm-yyyy" placeholder="Hasta mm-dd-yyyy" />
                                     <span class="input-group-addon">
                                         <i class="icon-calendar"></i>
                                     </span>
                                 </div>
-                            </div>--%>
+                            </div>
                 </div> 
                           <div class="col-md-3">
                     <input id="CheckInicial" type="checkbox" />             
@@ -129,14 +137,14 @@
                                     </span>
                                 </div>
                             </div>
-                            <%--  <div class="input-medium">
+                              <div class="input-medium">
                                 <div class="input-group">
                                     <input class="input-medium date-picker" id="TextFextIniFin" type="text" data-date-format="dd-mm-yyyy" placeholder="Hasta mm-dd-yyyy" />
                                     <span class="input-group-addon">
                                         <i class="icon-calendar"></i>
                                     </span>
                                 </div>
-                            </div>--%>
+                            </div>
                 </div> 
                           <div class="col-md-3">
                     <input id="CheckFinal" type="checkbox" />             
@@ -151,15 +159,65 @@
                                     </span>
                                 </div>
                             </div>
-                               <%--<div class="input-medium">
+                               <div class="input-medium">
                                 <div class="input-group">
                                     <input class="input-medium date-picker" id="TextFextFin2" type="text" data-date-format="dd-mm-yyyy" placeholder="Hasta mm-dd-yyyy" />
                                     <span class="input-group-addon">
                                         <i class="icon-calendar"></i>
                                     </span>
                                 </div>
-                            </div>--%>
-                </div>        
+                            </div>
+                </div>      
+                    </div>
+                    <div class="col-md-12"> 
+                 &nbsp
+                </div>
+                    <div class="col-md-12">
+                          <div class="col-md-2">
+                    <input id="CheckEstante" type="checkbox" />             
+                    <label for="TextEstante" >
+                       Estante: 
+                    </label>
+                   <input id="TextEstante" class="form-control inputHab" />
+                   
+                </div> 
+                          <div class="col-md-2">
+                    <input id="CheckFrecuencia" type="checkbox" />             
+                    <label for="CboFrencuencia" >
+                       Frecuencia: 
+                    </label>
+                    <select id="CboFrecuencia" class="form-control input-sm">    
+                              <option value="0" >Seleccione</option>                          
+                              <option value="Baja" >Baja</option>
+                              <option value="Media">Media</option>
+                              <option value="Alta">Alta</option>
+                              
+                          </select>             
+                </div> 
+                          <div class="col-md-2">
+                    <input id="CheckVigencia" type="checkbox" />             
+                    <label for="CboVigencia" >
+                        Vigencia: 
+                    </label>
+                     <select id="CboVigencia" class="form-control input-sm"></select> 
+              
+                    </div>
+                          <div class="col-md-3">
+                    <input id="CheckFisico" type="checkbox" />             
+                    <label for="CheckFisico" >
+                       Soporte Fisico
+                    </label>                    
+                    </div>                   
+                          <div class="col-md-3">
+                    <input id="CheckDigital" type="checkbox" />             
+                    <label for="CheckDigital" >
+                        Soporte Digital: 
+                    </label>
+                         
+                </div>
+                         
+                    </div>
+                          
                </div>
                 
                      
