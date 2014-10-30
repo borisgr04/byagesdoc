@@ -79,7 +79,8 @@ namespace BLL.Gestion
               {
                   cFiltro += AddFiltro("idSubSeries", Filtro.idSubSeries);
                   cFiltro += AddFiltro("DependenciaId", Filtro.DependenciaId);
-                  cFiltro += AddFiltro("NroFolios", Filtro.NroFolios);
+                  cFiltro += AddFiltro("NroFolioInicial", Filtro.NroFolioInicial);
+                  cFiltro += AddFiltro("NroFolioFinal", Filtro.NroFolioFinal);
                   cFiltro += AddFiltro("GabetaNo", Filtro.GabetaNo);                
                   cFiltro += AddFiltro("ArchivadorNo", Filtro.ArchivadorNo);
                   cFiltro += AddFiltro("EntidadProductora", Filtro.EntidadProductora);
@@ -170,6 +171,7 @@ namespace BLL.Gestion
                  found = ctx.unidaddocumental.Where(t => t.Codigo == reg.Codigo).FirstOrDefault();
                  if (found != null)
                  {
+
                      found.Nombre = reg.Nombre;
                      found.PalabrasClave = reg.PalabrasClave;
                      found.FechaCreacion = reg.FechaCreacion;
@@ -182,6 +184,13 @@ namespace BLL.Gestion
                      found.GabetaNo = reg.GabetaNo;
                      found.FechaExtInicial = reg.FechaExtInicial;
                      found.FechaExtFinal = reg.FechaExtFinal;
+                     found.Tema = reg.Tema;
+                     found.Vigencia = reg.Vigencia;
+                     found.SoporteFisico = reg.SoporteFisico;
+                     found.SoporteDigital = reg.SoporteDigital;
+                     found.Frecuencia = reg.Frecuencia;
+                     found.Identificacion = reg.Identificacion;
+                     found.Estante = reg.Estante;
                      return true;
                  }
                  else

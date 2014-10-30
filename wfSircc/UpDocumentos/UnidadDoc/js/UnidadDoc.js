@@ -3,7 +3,8 @@
     var urlToInsert = "/Servicios/Archivos/wsDocumentos.asmx/Insert";
     var urlToUpdate = "/Servicios/Archivos/wsDocumentos.asmx/Update";   
     var urlToSubSeries = "/Servicios/Archivos/wsSubSeries.asmx/GetSubSeries";
-    var urlToSubDependencias = "/Servicios/Archivos/wsDependencias.asmx/GetDependencias";
+    var urlToSubDependencias = "/Servicios/Archivos/wsDependencias.asmx/GetsCombo";
+    var urlToVigencias = "/Servicios/Archivos/wsVigencia.asmx/GetVigenciasCbo"
     var urlToAbrir = "/Servicios/Archivos/wsDocumentos.asmx/Get";
     var byaRpta;
     var Codigo;
@@ -89,6 +90,8 @@
         $("#CboSubSeries").byaCombo({ DataSource: sourcePla, Value: "idSubSeries", Display: "SubSerie" });
         var sourcePla = byaPage.getSource(urlToSubDependencias);
         $("#CboDependencia").byaCombo({ DataSource: sourcePla, Value: "idDependencia", Display: "Dependencia" });
+        var sourcePla = byaPage.getSource(urlToVigencias);
+        $("#CboVigencia").byaCombo({ DataSource: sourcePla, Value: "Vigencia", Display: "Vigencia" });
     };
     var _Abrir = function (Codigo) {
         var Doc = {};
@@ -106,16 +109,27 @@
                 if (cod != undefined) {
                 $("#TextCodDoc").val(cod.Codigo);
                 $("#TextNomDoc").val(cod.Nombre);
+                $("#TextIdeDoc").val(cod.Identificacion);
+                $("#TextTemaDoc").val(cod.Tema);
                 $("#TextPal").val(cod.PalabrasClave);
                 $("#TextFecDoc").val(byaPage.converJSONDateMDY(cod.FechaCreacion));
-                $("#TextNfolios").val(cod.NroFolios);
+                $("#TextNfolios").val(cod.NroFolioInicial);
+                $("#TextNfoliosF").val(cod.NroFolioFinal);             
                 $("#CboSubSeries").byaSetHabilitar(false);
+                $("#CboSubSeries").val(cod.idSubSeries);
                 $("#TextEntidad").val(cod.EntidadProductora);
                 $("#TextArchivador").val(cod.ArchivadorNo);
                 $("#TextGabeta").val(cod.GabetaNo);
                 $("#TextFextIni").val(byaPage.converJSONDateMDY(cod.FechaExtInicial));
                 $("#TextFextFin").val(byaPage.converJSONDateMDY(cod.FechaExtFinal));
-                $("#CboDependencia").byaSetHabilitar(false);
+                $("#CboDependencia").byaSetHabilitar(false);               
+                $("#CboDependencia").val(cod.DependenciaId);
+                $("#CboVigencia").val(cod.Vigencia);
+                $("#TextEstante").val(cod.Estante);                
+                document.getElementById("CheckFisico").checked = cod.SoporteFisico;
+                document.getElementById("CheckDigital").checked = cod.SoporteDigital;              
+                $("#CboFrecuencia").val(cod.Frecuencia);
+                $("#TextIdeDoc").val(cod.Identificacion);
                     Editar = "Si";
                 } else
                 {
@@ -134,16 +148,25 @@
         var Doc = {};
         Doc.Codigo= $("#TextCodDoc").val();
         Doc.Nombre = $("#TextNomDoc").val();
+        Doc.Tema = $("#TextTemaDoc").val();
         Doc.PalabrasClave = $("#TextPal").val();
         Doc.FechaCreacion = $("#TextFecDoc").val();
-        Doc.NroFolios = $("#TextNfolios").val();
+        Doc.NroFolioInicial = $("#TextNfolios").val();
+        Doc.NroFolioFinal = $("#TextNfoliosF").val();
         Doc.idSubSeries = $("#CboSubSeries").val();
         Doc.EntidadProductora = $("#TextEntidad").val();
         Doc.ArchivadorNo = $("#TextArchivador").val();
         Doc.GabetaNo = $("#TextGabeta").val();
         Doc.FechaExtInicial = $("#TextFextIni").val();
         Doc.FechaExtFinal = $("#TextFextFin").val();
-        Doc.DependenciaId = $("#CboDependencia").val();
+        Doc.Vigencia = $("#CboVigencia").val();
+        Doc.DependenciaId = $("#CboDependencia").val();           
+        Doc.Estante = $("#TextEstante").val();
+        Doc.SoporteFisico = $("#CheckFisico").is(":checked");
+        Doc.SoporteDigital = $("#CheckDigital").is(":checked");
+        Doc.Frecuencia = $("#CboFrecuencia").val();
+        Doc.Identificacion = $("#TextIdeDoc").val();
+
         return Doc;
     }
     var Insert = function () {
@@ -175,9 +198,11 @@
         $("#CboDependencia").byaSetHabilitar(true);
         $("#TextCodDoc").val("");
         $("#TextNomDoc").val("");
+        $("#TextTemaDoc").val("");
         $("#TextPal").val("");
         $("#TextFecDoc").val("");
         $("#TextNfolios").val("");
+        $("#TextNfoliosF").val("");
         $("#CboSubSeries").val("Selecione");
         $("#TextEntidad").val("");
         $("#TextArchivador").val("");
@@ -185,15 +210,24 @@
         $("#TextFextIni").val("");
         $("#TextFextFin").val("");
         $("#CboDependencia").val("Selecione");
+        $("#CboVigencia").val("Selecione");
+        $("#CboFrecuencia").val("Selecione");
+        $("#Tema").val("");
+        $("#TextEstante").val("");
+        $("#TextIdeDoc").val("");
+        document.getElementById("CheckFisico").checked = false;
+        document.getElementById("CheckDigital").checked = false;
         Editar = "No";
 
     };
     var limpiar = function () {
         $("#TextCodDoc").val("");
         $("#TextNomDoc").val("");
+        $("#TextTemaDoc").val("");
         $("#TextPal").val("");
         $("#TextFecDoc").val("");
         $("#TextNfolios").val("");
+        $("#TextNfoliosF").val("");
         $("#CboSubSeries").val("Selecione");
         $("#TextEntidad").val("");
         $("#TextArchivador").val("");
@@ -201,6 +235,13 @@
         $("#TextFextIni").val("");
         $("#TextFextFin").val("");
         $("#CboDependencia").val("Selecione");
+        $("#CboVigencia").val("Selecione");
+        $("#CboFrecuencia").val("Selecione");
+        $("#Tema").val("");
+        $("#TextEstante").val("");
+        $("#TextIdeDoc").val("");
+        document.getElementById("CheckFisico").checked = false;
+        document.getElementById("CheckDigital").checked = false;
     
         Editar = "No";
     }
@@ -222,10 +263,9 @@
             return dataRecord;
         },
         init: function () {
-            _addHandlers();
-            _Validaciones();
+            _addHandlers();          
             _createElements();
-           
+            _Validaciones();
 
         }
     };

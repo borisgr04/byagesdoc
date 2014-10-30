@@ -70,14 +70,20 @@ var GesUnidadDoc = (function () {
                     { name: 'PalabrasClave' },
                     { name: 'FechaCreacion', type: 'date' },
                     { name: 'Nombre_Sub' },
-                    { name: 'NroFolios' },
+                    { name: 'NroFolioInicial' },
+                    { name: 'NroFolioFinal' },
                     { name: 'EntidadProductora' },
                     { name: 'ArchivadorNo' },
                     { name: 'GabetaNo' },
                     { name: 'FechaExtInicial', type: 'date' },
                     { name: 'FechaExtFinal', type: 'date' },
-                    { name: 'Nombre_Dep' },
-
+                    { name: 'Vigencia' },
+                    { name: 'Tema' },
+                    { name: 'Estante' },
+                    { name: 'SoporteFisico' ,type:'bool'},
+                    { name: 'SoporteDigital', type: 'bool' },
+                    { name: 'Frecuencia' },
+                    { name: 'Identificacion' }
 
             ],
             async: true,
@@ -109,18 +115,26 @@ var GesUnidadDoc = (function () {
                 pageable: true,
                 enabletooltips: true,                
                 columns: [
-                  { text: 'Codigo', datafield: 'Codigo', width: 150},
+                  { text: 'Codigo', datafield: 'Codigo', width: 140 },
+                  { text: 'Tema    ', datafield: 'Tema', width: 150 },
                   { text: 'Nombre Documento', datafield: 'Nombre', width: 150 },
+                  { text: 'Identificacion    ', datafield: 'Identificacion', width: 150 },
                   { text: 'Palabras Claves         ', datafield: 'PalabrasClave', width: 150 },
-                  { text: 'Fecha Creacion    ', datafield: 'FechaCreacion', columntype: 'datetimeinput', cellsformat: 'd', align: 'right', cellsalign: 'right' },
+                  { text: 'Fecha de Creacion    ', datafield: 'FechaCreacion', columntype: 'datetimeinput', cellsformat: 'd',width:150 },
                   { text: 'Subserie        ', datafield: 'Nombre_Sub', width: 150 },
-                  { text: 'N° Folios    ', datafield: 'NroFolios', width: 150 },
+                  { text: 'Folio Inicial    ', datafield: 'NroFolioInicial', width: 100 },
+                  { text: 'Folio Final    ', datafield: 'NroFolioFinal', width: 100 },
                   { text: 'Entidad Productora     ', datafield: 'EntidadProductora', width: 150 },
-                  { text: 'N° Archivador', datafield: 'ArchivadorNo', width: 150 },
-                  { text: 'N° Gabeta', datafield: 'GabetaNo', width: 150 },
-                  { text: 'FechaExtInicial        ', datafield: 'FechaExtInicial', columntype: 'datetimeinput', cellsformat: 'd', align: 'right', cellsalign: 'right' },
-                  { text: 'FechaExtFinal        ', datafield: 'FechaExtFinal', columntype: 'datetimeinput', cellsformat: 'd', align: 'right', cellsalign: 'right' },
-                  { text: 'Dependencia    ', datafield: 'Nombre_Dep', width: 150 }
+                  { text: 'N° Archivador', datafield: 'ArchivadorNo', width: 120 },
+                  { text: 'N° Gabeta', datafield: 'GabetaNo', width: 100 },
+                  { text: 'Fecha Ext Inicial        ', datafield: 'FechaExtInicial', columntype: 'datetimeinput', cellsformat: 'd', width: 150 },
+                  { text: 'Fecha Ext Final        ', datafield: 'FechaExtFinal', columntype: 'datetimeinput', cellsformat: 'd', width: 150 },
+                  { text: 'Vigencia    ', datafield: 'Vigencia', width: 90 },                  
+                  { text: 'Estante    ', datafield: 'Estante', width: 90 },
+                  { text: 'SoporteFisico    ', datafield: 'SoporteFisico', width: 150, threestatecheckbox: false, columntype: 'checkbox' },
+                  { text: 'SoporteDigital    ', datafield: 'SoporteDigital', width: 150, threestatecheckbox: false, columntype: 'checkbox' },
+                  { text: 'Frecuencia    ', datafield: 'Frecuencia', width: 90}
+                  
                  
                 ]
             });

@@ -72,6 +72,7 @@
     <Compile Include="Gestion\mDependencias.cs" />
     <Compile Include="Gestion\mDocumentos.cs" />
     <Compile Include="Gestion\mGDocumentos.cs" />
+    <Compile Include="Gestion\mVigencia.cs" />
     <Compile Include="mGenerar.cs" />
     <Compile Include="Gestion\mGenerarZip.cs" />
     <Compile Include="Gestion\mSubSeries.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Terceros_DepBLL.cs" />
     <Compile Include="TiposDocumentalesBLL.cs" />
     <Compile Include="UnidadD_TipoDocBLL.cs" />
+    <Compile Include="VigenciaBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ByA\ByA.csproj">

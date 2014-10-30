@@ -1092,6 +1092,7 @@
     <Content Include="Servicios\Archivos\wsSeries.asmx" />
     <Content Include="Servicios\Archivos\wsSubSeries.asmx" />
     <Content Include="Servicios\Archivos\wsTiposDocumentales.asmx" />
+    <Content Include="Servicios\Archivos\wsVigencia.asmx" />
     <Content Include="Servicios\Bandeja\wsBandejaEntrada.asmx" />
     <Content Include="Servicios\ControlFlujo\wsMenu.asmx" />
     <Content Include="Servicios\ControlFlujo\wsSecurity.asmx" />
@@ -1437,6 +1438,10 @@
     </Compile>
     <Compile Include="Servicios\Archivos\wsTiposDocumentales.asmx.cs">
       <DependentUpon>wsTiposDocumentales.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Servicios\Archivos\wsVigencia.asmx.cs">
+      <DependentUpon>wsVigencia.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Servicios\Bandeja\wsBandejaEntrada.asmx.cs">
