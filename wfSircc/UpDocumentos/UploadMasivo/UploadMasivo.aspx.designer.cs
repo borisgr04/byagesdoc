@@ -13,6 +13,15 @@ namespace wfSircc.UpDocumentos.UploadMasivo {
     public partial class UploadMasivo {
         
         /// <summary>
+        /// Control LbMsg.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LbMsg;
+        
+        /// <summary>
         /// Control FileUpload1.
         /// </summary>
         /// <remarks>
@@ -22,6 +31,15 @@ namespace wfSircc.UpDocumentos.UploadMasivo {
         protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
         
         /// <summary>
+        /// Control BtnCargar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnCargar;
+        
+        /// <summary>
         /// Control BtnPlano.
         /// </summary>
         /// <remarks>
@@ -29,5 +47,14 @@ namespace wfSircc.UpDocumentos.UploadMasivo {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnPlano;
+        
+        /// <summary>
+        /// Control GridPlano.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridPlano;
     }
 }

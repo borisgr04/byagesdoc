@@ -14,7 +14,7 @@ namespace wfSircc.UpDocumentos.UploadMasivo
     public partial class UploadMasivo : System.Web.UI.Page
     {
         List<unidaddocumentalDto> lstM;
-        List<unidaddocumentalDto> lstS;
+        List<unidaddocumentalDto> lstS  = new List<unidaddocumentalDto>();
         DocumentosBLL Manager;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,12 +23,16 @@ namespace wfSircc.UpDocumentos.UploadMasivo
 
         protected void BtnPlano_Click(object sender, EventArgs e)
         {
-            if (FileUpload1.HasFile)
+            Manager = new DocumentosBLL();
+            if (lstS.Count != 0)
             {
-                Manager = new DocumentosBLL();
-                lstS = new List<unidaddocumentalDto>();
-                Manager.Insert(LeesMovimientos(FileUpload1.FileBytes));              
-
+                LbMsg.CssClass = "alert alert-success col-md-12";
+                LbMsg.Text = Manager.Insert(lstS).Mensaje;
+            }
+            else
+            {
+                LbMsg.CssClass = "alert alert-danger col-md-12";
+                LbMsg.Text = "Debe Cargar el archivo plano antes de guardarlo";
             }
         }
         private List<unidaddocumentalDto> LeesMovimientos(byte[] filas)
@@ -82,6 +86,18 @@ namespace wfSircc.UpDocumentos.UploadMasivo
             }
             objReader.Close();
             return arrText;
+        }
+        protected void BtnCargar_Click(object sender, EventArgs e)
+        {
+            if (FileUpload1.HasFile)
+            {
+               Manager = new DocumentosBLL();
+             
+               lstS = LeesMovimientos(FileUpload1.FileBytes);
+               GridPlano.DataSource = lstS;
+               GridPlano.DataBind();
+
+            }
         }
     }
 }
