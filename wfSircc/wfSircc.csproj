@@ -1104,6 +1104,7 @@
     <Content Include="UpDocumentos\UnidadDoc\UnidadDoc.aspx" />
     <Content Include="UpDocumentos\UpDirectorio\Js\UpDirectorio.js" />
     <Content Include="UpDocumentos\UpDirectorio\UpDirectorio.aspx" />
+    <Content Include="UpDocumentos\UploadMasivo\UploadMasivo.aspx" />
     <Content Include="WebForm2.aspx" />
     <Content Include="jqwidgets\Web.config" />
     <Content Include="jqscripts\Web.config" />
@@ -1491,6 +1492,13 @@
     </Compile>
     <Compile Include="UpDocumentos\UpDirectorio\UpDirectorio.aspx.designer.cs">
       <DependentUpon>UpDirectorio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpDocumentos\UploadMasivo\UploadMasivo.aspx.cs">
+      <DependentUpon>UploadMasivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpDocumentos\UploadMasivo\UploadMasivo.aspx.designer.cs">
+      <DependentUpon>UploadMasivo.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm2.aspx.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>

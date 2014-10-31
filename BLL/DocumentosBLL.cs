@@ -21,6 +21,10 @@ namespace BLL
         {
             return DocManager.Insert(Reg);
         }
+        public ByARpt Insert(List<unidaddocumentalDto> Reg)
+        {
+            return DocManager.Insert(Reg);
+        }
         public ByARpt Update(unidaddocumentalDto Reg)
         {
             return DocManager.Update(Reg);

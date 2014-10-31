@@ -28,6 +28,13 @@ namespace BLL.Gestion
              cmdInsert o = new cmdInsert { reg = r };
              return o.Enviar();
          }
+         public ByARpt Insert(List<unidaddocumentalDto> Reg)
+         {
+             List<unidaddocumental> r = new List<unidaddocumental>();
+             Mapper.Map(Reg, r);
+             cmdInsertList o = new cmdInsertList { ListReg = r };
+             return o.Enviar();
+         }
          public ByARpt Update(unidaddocumentalDto Reg)
          {
              unidaddocumental r = new unidaddocumental();
@@ -157,6 +164,35 @@ namespace BLL.Gestion
              {
                  reg.Estado = "AC";
                  ctx.unidaddocumental.Add(reg);
+
+             }
+
+
+         }
+         class cmdInsertList : absTemplate
+         {
+
+
+             public List<unidaddocumental> ListReg { get; set; }
+             public int ContadorId;
+             protected internal override bool esValido()
+             {
+
+                 return true;
+             }
+             protected internal override void Antes()
+             {
+                 ContadorId = Convert.ToInt32(ctx.unidaddocumental.Select(t => t.idUnidadDocumental).Max());
+                 foreach (var item in ListReg)
+                 {
+                     ContadorId = ContadorId + 1;
+                     item.idUnidadDocumental = ContadorId.ToString();                     
+                     item.Estado = "AC";
+                     ctx.unidaddocumental.Add(item);
+                     
+                 }
+              
+                
 
              }
 

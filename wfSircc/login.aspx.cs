@@ -18,6 +18,8 @@ namespace wfSircc
           {
               if (!IsPostBack)
               {
+               
+                 
                   if (Request.QueryString["opt"] == "logout")
                   {
                       Session.Abandon();
@@ -84,7 +86,7 @@ namespace wfSircc
                 lbMsg.ForeColor = System.Drawing.Color.Red;
             }
 
-
+           
            
         }
     }

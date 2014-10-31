@@ -41,15 +41,16 @@ namespace wfSircc.DatosBasicosG.Prueba
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //byte[] FileBuffer;
-            //FileBuffer=PdfManipulation2.ExtractPdfPage(FileBuffer, 1, 2); 
-            
-            //if (FileBuffer != null)
-            //{
-            //    Response.ContentType = "application/pdf";
-            //    Response.AddHeader("content-length", FileBuffer.Length.ToString());
-            //    Response.BinaryWrite(FileBuffer);
-            //}
+            byte[] FileBuffer=null;
+           
+            FileBuffer = PdfManipulation2.ExtractPdfPage(FileBuffer, 1, 2);
+
+            if (FileBuffer != null)
+            {
+                Response.ContentType = "application/pdf";
+                Response.AddHeader("content-length", FileBuffer.Length.ToString());
+                Response.BinaryWrite(FileBuffer);
+            }
         }
 
 
