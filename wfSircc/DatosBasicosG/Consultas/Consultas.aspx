@@ -20,16 +20,16 @@
                 <div class="col-md-9">
                        
                           <button type="button" class="btn btn-warning" id="BtnNuevo">
-                            <span class="glyphicon glyphicon-plus-sign"></span>
+                            <span class="glyphicon glyphicon-file "></span>
                             Vista Previa</button>
                            <button type="button" class="btn btn-info" id="BtnBuscar">
-                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="glyphicon glyphicon-search"></span>
                             Filtrar</button>   
                            <button type="button" class="btn btn-danger" id="tiposButton">
-                                <span class="glyphicon glyphicon-pencil">
+                                <span class="glyphicon glyphicon-info-sign">
                                 </span>Tipos Documentales</button>  
-                            <asp:LinkButton ID="BtnReporte"  runat="server" Text="<span class='glyphicon glyphicon-pencil'></span> Ver Reporte" CssClass="btn btn-primary" />
-                            <asp:LinkButton ID="LinkButton1"  runat="server" Text="<span class='glyphicon glyphicon-save'></span>  Descargar Archivos " CssClass="btn btn-success" OnClick="LinkButton1_Click" />
+                            <asp:LinkButton ID="BtnReporte"  runat="server" Text="<span class='glyphicon glyphicon-eye-open'></span> Ver Reporte" CssClass="btn btn-primary" OnClick="BtnReporte_Click" />
+                            <asp:LinkButton ID="LinkButton1"  runat="server" Text="<span class='glyphicon glyphicon-download-alt'></span>  Descargar Archivos " CssClass="btn btn-success" OnClick="LinkButton1_Click" />
 
                            </div>
                             
@@ -262,7 +262,7 @@
                       </LocalReport>
                   </rsweb:ReportViewer>
                   <asp:ObjectDataSource ID="ObjReporte" runat="server" SelectMethod="Gets" TypeName="BLL.Gestion.mDocumentos" >
-                       <SelectParameters>
+                      <SelectParameters>
                         <asp:Parameter Name="Filtro" Type="Object" />
                         </SelectParameters>
                   </asp:ObjectDataSource>

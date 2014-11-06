@@ -22,7 +22,6 @@ namespace wfSircc.DatosBasicosG.Consultas
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
             mGenerar mg = new mGenerar();
-
             ArchivosDto b = mg.DescargarZip((unidaddocumentalDto)Session["Filtro"]);
             Response.ContentType = b.Content;
             string Adjunto = String.Format("inline; filename=Documento_{0}.zip", b.NomArchivo);
@@ -30,6 +29,13 @@ namespace wfSircc.DatosBasicosG.Consultas
             Response.AddHeader("content-length", b.SoporteB.Length.ToString());
             Response.BinaryWrite(b.SoporteB);
 
+        }
+
+        protected void BtnReporte_Click(object sender, EventArgs e)     
+        {
+          
+           
+         
         }
      
     }
