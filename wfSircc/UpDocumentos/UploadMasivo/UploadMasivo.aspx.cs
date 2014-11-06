@@ -50,25 +50,29 @@ namespace wfSircc.UpDocumentos.UploadMasivo
         }
         private unidaddocumentalDto MapearArrayToMovimiento(string[] campos)
         {
+            
             unidaddocumentalDto m = new unidaddocumentalDto();
-            m.Codigo = campos[0];
-            m.DependenciaId = campos[1];
-            m.idSubSeries = campos[2];
-            m.Tema = campos[3];
-            m.Nombre = campos[4];
-            m.Identificacion = campos[5];
-            m.FechaCreacion = Convert.ToDateTime(campos[6]);
-            m.FechaExtInicial = Convert.ToDateTime(campos[7]);
-            m.FechaExtFinal = Convert.ToDateTime(campos[8]);
-            m.NroFolioInicial = campos[9];
-            m.NroFolioFinal = campos[10];
-            m.ArchivadorNo = Convert.ToInt32(campos[11]);
-            m.GabetaNo = Convert.ToInt32(campos[12]);
-            m.Estante = campos[13];
-            m.SoporteFisico = campos[14];
-            m.SoporteDigital = campos[15];
-            m.Frecuencia = campos[16];
-            m.Vigencia = Convert.ToInt32(campos[17]);
+            m.Codigo = campos[16]+"."+campos[1]+"."+campos[2];
+            m.DependenciaId = campos[0];
+            m.idSubSeries = campos[1];
+            m.Tema = campos[2];
+            m.Nombre = campos[3];
+            m.Identificacion = campos[4];
+            if ((campos[6] != "") && (campos[7]!=""))
+            {
+                m.FechaCreacion = Convert.ToDateTime("01/01/"+campos[5]);
+                m.FechaExtInicial = Convert.ToDateTime("01/01/" + campos[6]);
+                m.FechaExtFinal = Convert.ToDateTime("31/12/" + campos[7]);
+            }          
+            m.NroFolioInicial = campos[8];
+            m.NroFolioFinal = campos[9];
+            m.ArchivadorNo = Convert.ToInt32(campos[10]);
+            m.GabetaNo = Convert.ToInt32(campos[11]);
+            m.Estante = campos[12];
+            m.SoporteFisico = campos[13];
+            m.SoporteDigital = campos[14];
+            m.Frecuencia = campos[15];
+            m.Vigencia = Convert.ToInt32(campos[16]);
            
             return m;
         }

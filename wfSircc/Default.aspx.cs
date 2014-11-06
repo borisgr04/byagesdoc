@@ -15,7 +15,8 @@ namespace wfSircc
           //  genRoles m = new genRoles();
             //string roles = m.GenerarRoles();
             //Label1.Text = roles;
-            if (DateTime.Now.ToShortDateString() == "15/12/2014")
+            
+            if (DateTime.Now.Date >= Convert.ToDateTime("15/12/2014"))
             {
                 Session.Abandon();
                 FormsAuthentication.SignOut();

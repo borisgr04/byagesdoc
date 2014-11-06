@@ -188,6 +188,7 @@ namespace BLL.Gestion
                      ContadorId = ContadorId + 1;
                      item.idUnidadDocumental = ContadorId.ToString();                     
                      item.Estado = "AC";
+                     item.Codigo = item.Codigo + "." + ContadorId;
                      ctx.unidaddocumental.Add(item);
                      
                  }

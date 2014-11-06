@@ -669,6 +669,8 @@
     <Content Include="DatosBasicosG\TiposDocumentales\js\GesTiposDocumentales.js" />
     <Content Include="DatosBasicosG\TiposDocumentales\js\TiposDocumentales.js" />
     <Content Include="DatosBasicosG\TiposDocumentales\TiposDocumentales.aspx" />
+    <Content Include="DatosBasicosG\Vigencias\js\Vigencias.js" />
+    <Content Include="DatosBasicosG\Vigencias\Vigencias.aspx" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
     <Content Include="Images\heroAccent.png" />
@@ -1368,6 +1370,13 @@
     <Compile Include="DatosBasicosG\TiposDocumentales\TiposDocumentales.aspx.designer.cs">
       <DependentUpon>TiposDocumentales.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DatosBasicosG\Vigencias\Vigencias.aspx.cs">
+      <DependentUpon>Vigencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosBasicosG\Vigencias\Vigencias.aspx.designer.cs">
+      <DependentUpon>Vigencias.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1544,6 +1553,9 @@
       <Project>{3faa6732-648c-4b58-ba49-76dffb7937bd}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Rpt\RptListaUniDoc.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

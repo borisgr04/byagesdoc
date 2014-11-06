@@ -1,8 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteBS.Master" AutoEventWireup="true" CodeBehind="Consultas.aspx.cs" Inherits="wfSircc.DatosBasicosG.Consultas.Consultas" %>
 
+<%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+      <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <style>
 
         .Incrimentar {
@@ -14,7 +17,7 @@
     <div class="row">
          <div class="col-md-12">
                
-                <div class="col-md-6">
+                <div class="col-md-9">
                        
                           <button type="button" class="btn btn-warning" id="BtnNuevo">
                             <span class="glyphicon glyphicon-plus-sign"></span>
@@ -22,13 +25,14 @@
                            <button type="button" class="btn btn-info" id="BtnBuscar">
                             <span class="glyphicon glyphicon-pencil"></span>
                             Filtrar</button>   
-                    <button type="button" class="btn btn-danger" id="tiposButton">
-                             <span class="glyphicon glyphicon-pencil">
-                             </span>Tipos Documentales</button>  
+                           <button type="button" class="btn btn-danger" id="tiposButton">
+                                <span class="glyphicon glyphicon-pencil">
+                                </span>Tipos Documentales</button>  
+                            <asp:LinkButton ID="BtnReporte"  runat="server" Text="<span class='glyphicon glyphicon-pencil'></span> Ver Reporte" CssClass="btn btn-primary" />
+                            <asp:LinkButton ID="LinkButton1"  runat="server" Text="<span class='glyphicon glyphicon-save'></span>  Descargar Archivos " CssClass="btn btn-success" OnClick="LinkButton1_Click" />
+
                            </div>
                             
-                 
-               
          </div>      
          <div class="col-md-12"> 
          &nbsp
@@ -41,7 +45,8 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs">
             <li class="active"><a href="#tabRadi" data-toggle="tab">1.Filtros</a></li>
-            <li><a href="#tabhist" data-toggle="tab">2.Consultas</a></li>        
+            <li><a href="#tabhist" data-toggle="tab">2.Consultas</a></li>  
+            <li><a href="#tabreporte" data-toggle="tab">3.Reporte</a></li>        
         </ul>
 
         <div class="tab-content">
@@ -221,14 +226,13 @@
                </div>
                 
                      
-            </div>    
-            <!---Registro Presupuestal-->            
-      <div id="tabhist" class="tab-pane ">          
+            </div>                       
+            <div id="tabhist" class="tab-pane ">          
 
           <div class="col-md-12">  
                <div class="col-md-10">     
                 
-          <asp:Button ID="Button1" class="btn btn-success" runat="server" Text="Descargar Zip" OnClick="Button1_Click" />
+        
                    </div>
               </div>
                    <div class="form-group"> 
@@ -246,9 +250,28 @@
         <asp:Literal ID="ltPrew" runat="server"></asp:Literal>
         </div>   
                        </div>       
-           </div>   
-            </div>
-            <!---Polizas de Garantia-->
+           </div> 
+             <div id="tabreporte" class="tab-pane ">          
+                 
+              <div class="form-group">                  
+                  <rsweb:ReportViewer ID="ReportViewer1" Width="100%" runat="server">
+                      <LocalReport ReportPath="Rpt\RptListaUniDoc.rdlc">
+                          <DataSources>
+                  <rsweb:ReportDataSource DataSourceId="ObjReporte" Name="DsetTunidadDocumental" />
+                      </DataSources>
+                      </LocalReport>
+                  </rsweb:ReportViewer>
+                  <asp:ObjectDataSource ID="ObjReporte" runat="server" SelectMethod="Gets" TypeName="BLL.Gestion.mDocumentos" >
+                       <SelectParameters>
+                        <asp:Parameter Name="Filtro" Type="Object" />
+                        </SelectParameters>
+                  </asp:ObjectDataSource>
+              </div>
+                  
+           </div>  
+
+        </div>
+           
     
        </div>
        
@@ -285,8 +308,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="H5">Vista en Pdf</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;           <h4 class="modal-title" id="H5">Vista en Pdf</h4>
                 </div>
                 <div id="Pdf" class="modal-body">                    
                 </div>

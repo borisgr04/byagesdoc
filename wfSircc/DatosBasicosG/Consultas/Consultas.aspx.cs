@@ -15,33 +15,22 @@ namespace wfSircc.DatosBasicosG.Consultas
         protected void Page_Load(object sender, EventArgs e)
         {
            
-
-           
+          
         }
-  
-        protected void Button1_Click(object sender, EventArgs e)
+ 
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
         {
-            mGenerar mg = new mGenerar();         
-           
-                ArchivosDto b = mg.DescargarZip((unidaddocumentalDto)Session["Filtro"]);
-                Response.ContentType = b.Content;
-                string Adjunto = String.Format("inline; filename=Documento_{0}.zip", b.NomArchivo);
-               Response.AddHeader("content-disposition", Adjunto);
+            mGenerar mg = new mGenerar();
 
-                Response.AddHeader("content-length", b.SoporteB.Length.ToString());
-                Response.BinaryWrite(b.SoporteB);
-            
-            //Response.Redirect("~/ashx/ashxZip.ashx");
-            
+            ArchivosDto b = mg.DescargarZip((unidaddocumentalDto)Session["Filtro"]);
+            Response.ContentType = b.Content;
+            string Adjunto = String.Format("inline; filename=Documento_{0}.zip", b.NomArchivo);
+            Response.AddHeader("content-disposition", Adjunto);
+            Response.AddHeader("content-length", b.SoporteB.Length.ToString());
+            Response.BinaryWrite(b.SoporteB);
+
         }
-
-        //protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    //Response.Redirect("/ashx/ashxDoc.ashx?doc="+GridView1.SelectedValue.ToString());
-
-        //    //string prew = "<embed src='/Docs/BE/" + GridView1.SelectedValue.ToString() + ".pdf' width='100%' height='375'>";
-
-        //    //ltPrew.Text = prew;
-        //}
+     
     }
 }
