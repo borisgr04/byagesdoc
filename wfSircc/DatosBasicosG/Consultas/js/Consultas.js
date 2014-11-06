@@ -15,7 +15,9 @@
            
         });
         $("#BtnBuscar").click(function () {
+          
             _createGrid();
+            $("#Reporte").show();
         });
         $("#BtnNuevo").click(function () {
            
@@ -72,6 +74,7 @@
         });
     };
     var _Validaciones = function () {
+        $("#Reporte").hide();
         $("#CboSubSeries").byaSetHabilitar(false);
         $("#CboDep").byaSetHabilitar(false);
         $("#TextFolios").byaSetHabilitar(false);
@@ -206,6 +209,7 @@
 
     };
     var _createElements = function () {
+
         ActualizarDataPicker();
         var sourcePla = byaPage.getSource(urlToSubSeries);
         $("#CboSubSeries").byaCombo({ DataSource: sourcePla, Value: "idSubSeries", Display: "SubSerie" });

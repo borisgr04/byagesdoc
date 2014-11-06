@@ -68,6 +68,15 @@ namespace wfSircc.Servicios.Archivos
 
         }
 
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
+        public List<unidaddocumentalDto> Reporte()
+        {
+                     
+            Manager = new DocumentosBLL();
+            return Manager.Gets((unidaddocumentalDto)Session["Filtro"]);
+
+        }
 
         [WebMethod(EnableSession = true)]
         [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]

@@ -28,7 +28,6 @@
                            <button type="button" class="btn btn-danger" id="tiposButton">
                                 <span class="glyphicon glyphicon-info-sign">
                                 </span>Tipos Documentales</button>  
-                            <asp:LinkButton ID="BtnReporte"  runat="server" Text="<span class='glyphicon glyphicon-eye-open'></span> Ver Reporte" CssClass="btn btn-primary" OnClick="BtnReporte_Click" />
                             <asp:LinkButton ID="LinkButton1"  runat="server" Text="<span class='glyphicon glyphicon-download-alt'></span>  Descargar Archivos " CssClass="btn btn-success" OnClick="LinkButton1_Click" />
 
                            </div>
@@ -253,19 +252,18 @@
            </div> 
              <div id="tabreporte" class="tab-pane ">          
                  
-              <div class="form-group">                  
-                  <rsweb:ReportViewer ID="ReportViewer1" Width="100%" runat="server">
+              <div id="Reporte" class="form-group">                  
+                  <rsweb:ReportViewer ID="ReportViewer1" Width="100%" Height="300px" runat="server">
                       <LocalReport ReportPath="Rpt\RptListaUniDoc.rdlc">
                           <DataSources>
                   <rsweb:ReportDataSource DataSourceId="ObjReporte" Name="DsetTunidadDocumental" />
                       </DataSources>
                       </LocalReport>
                   </rsweb:ReportViewer>
-                  <asp:ObjectDataSource ID="ObjReporte" runat="server" SelectMethod="Gets" TypeName="BLL.Gestion.mDocumentos" >
-                      <SelectParameters>
-                        <asp:Parameter Name="Filtro" Type="Object" />
-                        </SelectParameters>
+                  <asp:ObjectDataSource ID="ObjReporte" runat="server" SelectMethod="Reporte" TypeName="wfSircc.Servicios.Archivos.wsDocumentos" >
+                    
                   </asp:ObjectDataSource>
+                
               </div>
                   
            </div>  
