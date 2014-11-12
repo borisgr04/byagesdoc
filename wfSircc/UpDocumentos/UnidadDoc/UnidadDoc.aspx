@@ -220,9 +220,9 @@
                     <div class="col-md-2">
                           <select id="CboFrecuencia" class="form-control input-sm">    
                               <option value="0" >Seleccione</option>                          
-                              <option value="Baja" >Baja</option>
-                              <option value="Media">Media</option>
-                              <option value="Alta">Alta</option>
+                              <option value="BAJA" >Baja</option>
+                              <option value="MEDIA">Media</option>
+                              <option value="ALTA">Alta</option>
                               
                           </select>               
                     </div>               

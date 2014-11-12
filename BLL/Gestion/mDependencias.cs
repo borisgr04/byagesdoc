@@ -115,7 +115,7 @@ namespace BLL.Gestion
                  if (found != null)
                  {
                      found.Dependencia = reg.Dependencia;
- 
+                     found.Padre = reg.Padre;
           
                      return true;
                  }

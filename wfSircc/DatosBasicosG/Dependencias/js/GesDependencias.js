@@ -85,9 +85,9 @@
                 enabletooltips: true,
                 localization: byaPage.getLocalization(),
                 columns: [
-                  { text: 'Id Dependencia     ', datafield: 'idDependencia' },
-                  { text: 'Nombre Dependencia ', datafield: 'Dependencia' },
-                  { text: 'Seccion', datafield: 'Nombre_Padre' }
+                  { text: 'Id Dependencia     ', datafield: 'idDependencia',width:150},
+                  { text: 'Nombre Dependencia ', datafield: 'Dependencia', width: 500 },
+                  { text: 'Seccion', datafield: 'Nombre_Padre', width: 485 }
 
                 ]
             });

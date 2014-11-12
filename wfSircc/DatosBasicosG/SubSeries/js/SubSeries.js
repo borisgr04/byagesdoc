@@ -48,7 +48,7 @@
 
     }
     var _createElements = function () {
-        $("#TextIdSubSerie").byaFormatInput('0123456789');
+        $("#TextIdSubSerie").byaFormatInput('0123456789.');
         var sourcePla = byaPage.getSource(urlToSeries);
         $("#CboSeries").byaCombo({ DataSource: sourcePla, Value: "idSerie", Display: "Serie" });
     };

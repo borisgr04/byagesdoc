@@ -84,7 +84,7 @@
         var Dep = {};
         Dep.idDependencia = $('#TextIdDependencia').val();
         Dep.Dependencia = $('#TextDependencia').val();
-       
+        Dep.Padre = $('#CboDep').val();
         return Dep;
     }
     var Insert = function () {

@@ -52,7 +52,7 @@ namespace wfSircc.UpDocumentos.UploadMasivo
         {
             
             unidaddocumentalDto m = new unidaddocumentalDto();
-            m.Codigo = campos[16]+"."+campos[1]+"."+campos[2];
+            m.Codigo = campos[16]+"."+campos[0]+"."+campos[1];
             m.DependenciaId = campos[0];
             m.idSubSeries = campos[1];
             m.Tema = campos[2];
@@ -72,7 +72,11 @@ namespace wfSircc.UpDocumentos.UploadMasivo
             m.SoporteFisico = campos[13];
             m.SoporteDigital = campos[14];
             m.Frecuencia = campos[15];
-            m.Vigencia = Convert.ToInt32(campos[16]);
+            if (campos[16] != "")
+            {
+                m.Vigencia = Convert.ToInt32(campos[16]);
+            }  
+          
            
             return m;
         }
