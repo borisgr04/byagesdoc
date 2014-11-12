@@ -12,6 +12,8 @@ namespace Entidades
         public string Nombre { get; set; }
         public string PalabrasClave { get; set; }
         public Nullable<System.DateTime> FechaCreacion { get; set; }
+        public string Nombre_Serie { get; set; }
+        public string idSeries { get; set; }
         public string Nombre_Sub { get; set; }
         public string idSubSeries { get; set; }
         public Nullable<int> EntidadProductora { get; set; }

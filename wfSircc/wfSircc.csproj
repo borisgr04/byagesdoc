@@ -676,6 +676,7 @@
     <Content Include="Images\heroAccent.png" />
     <Content Include="Images\imagesLogin\Nombre.png" />
     <Content Include="Images\imagesLogin\sircc.png" />
+    <Content Include="Images\Img.png" />
     <Content Include="Images\orderedList0.png" />
     <Content Include="Images\orderedList1.png" />
     <Content Include="Images\orderedList2.png" />
@@ -1556,6 +1557,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Rpt\RptListaUniDoc.rdlc" />
+    <EmbeddedResource Include="Rpt\RptRotulos.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

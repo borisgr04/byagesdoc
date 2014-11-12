@@ -19,7 +19,10 @@ namespace BLL.Gestion
              Mapper.CreateMap<unidaddocumentalDto, unidaddocumental>();
              Mapper.CreateMap<unidaddocumental, unidaddocumentalDto>()
                  .ForMember(dest => dest.Nombre_Sub, opt => opt.MapFrom(src => src.subseries.SubSerie))
-                 .ForMember(dest => dest.Nombre_Dep, opt => opt.MapFrom(src => src.dependencias.Dependencia));
+                 .ForMember(dest => dest.Nombre_Dep, opt => opt.MapFrom(src => src.dependencias.Dependencia))
+                 .ForMember(dest => dest.Nombre_Serie, opt => opt.MapFrom(src => src.subseries.series.Serie))
+                 .ForMember(dest => dest.idSeries, opt => opt.MapFrom(src => src.subseries.series.idSerie));
+
          }
          public ByARpt Insert(unidaddocumentalDto Reg)
          {

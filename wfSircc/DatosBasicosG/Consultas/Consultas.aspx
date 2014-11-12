@@ -45,7 +45,8 @@
         <ul class="nav nav-tabs">
             <li class="active"><a href="#tabRadi" data-toggle="tab">1.Filtros</a></li>
             <li><a href="#tabhist" data-toggle="tab">2.Consultas</a></li>  
-            <li><a href="#tabreporte" data-toggle="tab">3.Reporte</a></li>        
+            <li><a href="#tabreporte" data-toggle="tab">3.Reporte</a></li>
+              <li><a href="#tabrotulo" data-toggle="tab">3.Rotulos</a></li>        
         </ul>
 
         <div class="tab-content">
@@ -261,6 +262,23 @@
                       </LocalReport>
                   </rsweb:ReportViewer>
                   <asp:ObjectDataSource ID="ObjReporte" runat="server" SelectMethod="Reporte" TypeName="wfSircc.Servicios.Archivos.wsDocumentos" >
+                    
+                  </asp:ObjectDataSource>
+                
+              </div>
+                  
+           </div>  
+             <div id="tabrotulo" class="tab-pane ">          
+                 
+              <div id="Rotulo" class="form-group">                  
+                  <rsweb:ReportViewer ID="ReportViewer2" Width="100%" Height="300px" runat="server">
+                      <LocalReport ReportPath="Rpt\RptRotulos.rdlc">
+                          <DataSources>
+                  <rsweb:ReportDataSource DataSourceId="ObjRotulos" Name="DataSet1" />
+                      </DataSources>
+                      </LocalReport>
+                  </rsweb:ReportViewer>
+ <asp:ObjectDataSource ID="ObjRotulos" runat="server" SelectMethod="Reporte" TypeName="wfSircc.Servicios.Archivos.wsDocumentos" >
                     
                   </asp:ObjectDataSource>
                 

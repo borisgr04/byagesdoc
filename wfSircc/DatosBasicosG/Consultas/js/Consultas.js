@@ -18,6 +18,7 @@
           
             _createGrid();
             $("#Reporte").show();
+            $("#Rotulo").show();
         });
         $("#BtnNuevo").click(function () {
            
@@ -75,6 +76,7 @@
     };
     var _Validaciones = function () {
         $("#Reporte").hide();
+        $("#Rotulo").hide();
         $("#CboSubSeries").byaSetHabilitar(false);
         $("#CboDep").byaSetHabilitar(false);
         $("#TextFolios").byaSetHabilitar(false);
