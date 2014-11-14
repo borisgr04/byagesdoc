@@ -93,7 +93,8 @@
         $("#TextEstante").byaSetHabilitar(false);
         $("#CboFrecuencia").byaSetHabilitar(false);
         $("#CboVigencia").byaSetHabilitar(false);
-
+        $("#CboFisico").byaSetHabilitar(false);
+        $("#CboDigital").byaSetHabilitar(false);
     };
     var Checks = function () {
 
@@ -190,11 +191,14 @@
             }
         });
         $("#CheckFrecuencia").click(function () {
-            if ($("#CheckFrecuencia").is(':checked')) {
-                $("#CboFrencuencia").byaSetHabilitar(true);
-            } else {
-                $("#CboFrencuencia").val("Seleccione");
-                $("#CboFrencuencia").byaSetHabilitar(false);
+            if ($("#CheckFrecuencia").is(':checked'))
+            {
+                $("#CboFrecuencia").byaSetHabilitar(true);
+
+            } else
+            {
+                $("#CboFrecuencia").val("Seleccione");
+                $("#CboFrecuencia").byaSetHabilitar(false);
             }
         });
         $("#CheckVigencia").click(function () {
@@ -207,8 +211,26 @@
                
             }
         });
-      
+        $("#CheckFisico").click(function () {
+            if ($("#CheckFisico").is(':checked')) {
+                $("#CboFisico").byaSetHabilitar(true);
 
+            } else {
+                $("#CboFisico").val("Seleccione");
+                $("#CboFisico").byaSetHabilitar(false);
+
+            }
+        });
+        $("#CheckDigital").click(function () {
+            if ($("#CheckDigital").is(':checked')) {
+                $("#CboDigital").byaSetHabilitar(true);
+
+            } else {
+                $("#CboDigital").val("Seleccione");
+                $("#CboDigital").byaSetHabilitar(false);
+
+            }
+        });
     };
     var _createElements = function () {
 
@@ -312,9 +334,18 @@
         Cons.GabetaNo = $('#TextCaja').val();
         Cons.ArchivadorNo = $("#TextCarpeta").val();
         Cons.EntidadProductora = $('#TextEntidad').val();
-        Cons.FechaCreacion = $('#TextFecDoc').val();
+        Cons.Estante = $('#TextEstante').val();
+        Cons.Frecuencia = $('#CboFrecuencia').val();
+        Cons.Vigencia = $('#CboVigencia').val();
+        Cons.SoporteFisico = $('#CboFisico').val();
+        Cons.SoporteDigital = $('#CboDigital').val();
+        Cons.FechaCreacion = $('#TextFecDoc').val();        
         Cons.FechaExtInicial = $("#TextFextIni").val();
         Cons.FechaExtFinal = $('#TextFextFin').val();
+        Cons.FechaCreacion2 = $('#TextFecDocFin').val();
+        Cons.FechaExtInicial2 = $("#TextFextIniFin").val();
+        Cons.FechaExtFinal2 = $('#TextFextFin2').val();
+
         return Cons;
     };
     var _cerrarVentana = function () {

@@ -188,11 +188,11 @@
                 </div> 
                           <div class="col-md-2">
                     <input id="CheckFrecuencia" type="checkbox" />             
-                    <label for="CboFrencuencia" >
+                    <label for="CboFrecuencia" >
                        Frecuencia: 
                     </label>
                     <select id="CboFrecuencia" class="form-control input-sm">    
-                              <option value="0" >Seleccione</option>                          
+                              <option value="" >Seleccione</option>                          
                               <option value="BAJA" >Baja</option>
                               <option value="MEDIA">Media</option>
                               <option value="ALTA">Alta</option>
@@ -211,14 +211,23 @@
                     <input id="CheckFisico" type="checkbox" />             
                     <label for="CheckFisico" >
                        Soporte Fisico
-                    </label>                    
+                    </label>   
+                          <select id="CboFisico" class="form-control input-sm">   
+                              <option value="" >Seleccione</option>          
+                              <option value="1" >SI</option>                          
+                              <option value="0" >NO</option>                    
+                          </select>            
                     </div>                   
                           <div class="col-md-3">
                     <input id="CheckDigital" type="checkbox" />             
                     <label for="CheckDigital" >
                         Soporte Digital: 
                     </label>
-                         
+                       <select id="CboDigital" class="form-control input-sm">    
+                              <option value="" >Seleccione</option> 
+                              <option value="1" >SI</option>                          
+                              <option value="0" >NO</option>                    
+                          </select>     
                 </div>
                          
                     </div>
