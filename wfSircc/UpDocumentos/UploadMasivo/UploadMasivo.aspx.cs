@@ -16,8 +16,9 @@ namespace wfSircc.UpDocumentos.UploadMasivo
     {
         List<unidaddocumentalDto> lstM;
         static List<unidaddocumentalDto> lstS = new List<unidaddocumentalDto>();
-      
+        List<Grid> GridList = new List<Grid>();
         DocumentosBLL Manager;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -117,11 +118,65 @@ namespace wfSircc.UpDocumentos.UploadMasivo
             if (FileUpload1.HasFile)
             {
                Manager = new DocumentosBLL();              
-               lstS = LeesMovimientos(FileUpload1.FileBytes);               
-               GridPlano.DataSource = lstS;
+               lstS = LeesMovimientos(FileUpload1.FileBytes);
+               foreach (var item in lstS)
+               {
+                   Grid G = new Grid();
+                   G.Codigo = item.Codigo;
+                   G.Seccion = item.DependenciaId;
+                   G.SubSerie = item.idSubSeries;
+                   G.Tema = item.Tema;
+                   G.Nombre_De_Expediente = item.Nombre;
+                   G.Identificacion = item.Identificacion;
+                   G.Fecha_De_Creacion = item.FechaCreacion;
+                   G.Fecha_Ext_Inicial = item.FechaExtInicial;
+                   G.Fecha_Ext_Final = item.FechaExtFinal;
+                   G.Folio_Inicial = item.NroFolioInicial;
+                   G.Folio_Final = item.NroFolioFinal;
+                   G.ArchivadorNo = item.ArchivadorNo;
+                   G.GabetaNo = item.GabetaNo;
+                   G.Estante = item.Estante;
+                   G.Soporte_Fisico = item.SoporteFisico;
+                   G.Soporte_Digital = item.SoporteDigital;
+                   G.Frecuencia = item.Frecuencia;
+                   G.Vigencia = item.Vigencia;
+                   GridList.Add(G);
+               }
+               GridPlano.DataSource = GridList;
                GridPlano.DataBind();
-
+             
             }
+        }
+
+
+
+        class Grid
+        {
+       
+            public string Codigo { get; set; }
+            public string Seccion { get; set; }
+            public string SubSerie { get; set; }
+            public string Tema { get; set; }
+            public string Nombre_De_Expediente { get; set; }
+            public string Identificacion { get; set; }
+            public  Nullable<System.DateTime> Fecha_De_Creacion { get; set; }
+            public Nullable<System.DateTime> Fecha_Ext_Inicial { get; set; }
+            public Nullable<System.DateTime> Fecha_Ext_Final { get; set; }
+            public string Folio_Inicial { get; set; }
+            public string Folio_Final { get; set; }
+            public Nullable<int> ArchivadorNo { get; set; }
+            public Nullable<int> GabetaNo { get; set; }
+            public string Estante { get; set; }
+            public string Soporte_Fisico { get; set; }
+            public string Soporte_Digital { get; set; }
+            public string Frecuencia { get; set; }
+            public  Nullable<int> Vigencia { get; set; }        
+          
+        
+           
+          
+        
+        
         }
     }
 }
