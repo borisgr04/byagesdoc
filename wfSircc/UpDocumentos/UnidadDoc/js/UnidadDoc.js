@@ -106,8 +106,7 @@
             async: false,
             success: function (result) {
                 var cod = byaPage.retObj(result.d);
-                if (cod != undefined) {
-                $("#TextCodDoc").val(cod.Codigo);
+                if (cod != undefined) {               
                 $("#TextNomDoc").val(cod.Nombre);
                 $("#TextIdeDoc").val(cod.Identificacion);
                 $("#TextTemaDoc").val(cod.Tema);
@@ -146,7 +145,7 @@
     };
     var getDatos = function () {
         var Doc = {};
-        Doc.Codigo= $("#TextCodDoc").val();
+        Doc.Codigo = $("#CboVigencia").val() + "." + $("#CboDependencia").val() + "." + $("#CboSubSeries").val();
         Doc.Nombre = $("#TextNomDoc").val();
         Doc.Tema = $("#TextTemaDoc").val();
         Doc.PalabrasClave = $("#TextPal").val();
@@ -183,8 +182,8 @@
 
     }
     var Controls = function () {
-        $(msgPpal).html("");        
-        $("#TextCodDoc").byaSetHabilitar(true);
+        $(msgPpal).html("");      
+      
         $("#TextNomDoc").byaSetHabilitar(true);
         $("#TextPal").byaSetHabilitar(true);
         $("#TextFecDoc").byaSetHabilitar(true);
@@ -196,7 +195,7 @@
         $("#TextFextIni").byaSetHabilitar(true);
         $("#TextFextFin").byaSetHabilitar(true);
         $("#CboDependencia").byaSetHabilitar(true);
-        $("#TextCodDoc").val("");
+       
         $("#TextNomDoc").val("");
         $("#TextTemaDoc").val("");
         $("#TextPal").val("");
@@ -221,7 +220,7 @@
 
     };
     var limpiar = function () {
-        $("#TextCodDoc").val("");
+      
         $("#TextNomDoc").val("");
         $("#TextTemaDoc").val("");
         $("#TextPal").val("");

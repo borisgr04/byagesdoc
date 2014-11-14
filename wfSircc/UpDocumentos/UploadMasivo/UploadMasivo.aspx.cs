@@ -1,4 +1,5 @@
 ﻿using BLL;
+using ByA;
 using Entidades;
 using System;
 using System.Collections;
@@ -14,20 +15,27 @@ namespace wfSircc.UpDocumentos.UploadMasivo
     public partial class UploadMasivo : System.Web.UI.Page
     {
         List<unidaddocumentalDto> lstM;
-        List<unidaddocumentalDto> lstS  = new List<unidaddocumentalDto>();
+        static List<unidaddocumentalDto> lstS = new List<unidaddocumentalDto>();
+      
         DocumentosBLL Manager;
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
         protected void BtnPlano_Click(object sender, EventArgs e)
         {
             Manager = new DocumentosBLL();
+
             if (lstS.Count != 0)
             {
+                ByARpt Lb = new ByARpt();
+                Lb = Manager.Insert(lstS); 
                 LbMsg.CssClass = "alert alert-success col-md-12";
-                LbMsg.Text = Manager.Insert(lstS).Mensaje;
+                LbMsg.Text = Lb.Mensaje +", "+ Lb.Filas +" Registros Guardados";              
+                lstS.Clear();
+                GridPlano.DataSource = null;
+                GridPlano.DataBind();
+              
             }
             else
             {
@@ -58,7 +66,7 @@ namespace wfSircc.UpDocumentos.UploadMasivo
             m.Tema = campos[2];
             m.Nombre = campos[3];
             m.Identificacion = campos[4];
-            if ((campos[6] != "") && (campos[7]!=""))
+            if ((campos[6] != "") && (campos[7] != "") && (campos[5] != "NO TIENE") && (campos[6] != "NO TIENE") && (campos[7] != "NO TIENE"))
             {
                 m.FechaCreacion = Convert.ToDateTime("01/01/"+campos[5]);
                 m.FechaExtInicial = Convert.ToDateTime("01/01/" + campos[6]);
@@ -69,8 +77,17 @@ namespace wfSircc.UpDocumentos.UploadMasivo
             m.ArchivadorNo = Convert.ToInt32(campos[10]);
             m.GabetaNo = Convert.ToInt32(campos[11]);
             m.Estante = campos[12];
-            m.SoporteFisico = campos[13];
-            m.SoporteDigital = campos[14];
+            if (campos[13] == "S")
+            {
+                m.SoporteFisico = 1.ToString();
+            }
+            else { m.SoporteFisico = 0.ToString(); }
+            if (campos[14] == "S")
+            {
+                m.SoporteDigital = 1.ToString();
+            }
+            else { m.SoporteDigital = 0.ToString(); }          
+         
             m.Frecuencia = campos[15];
             if (campos[16] != "")
             {
@@ -99,9 +116,8 @@ namespace wfSircc.UpDocumentos.UploadMasivo
         {
             if (FileUpload1.HasFile)
             {
-               Manager = new DocumentosBLL();
-             
-               lstS = LeesMovimientos(FileUpload1.FileBytes);
+               Manager = new DocumentosBLL();              
+               lstS = LeesMovimientos(FileUpload1.FileBytes);               
                GridPlano.DataSource = lstS;
                GridPlano.DataBind();
 

@@ -12,6 +12,7 @@ namespace Entidades
         public string Nombre { get; set; }
         public string PalabrasClave { get; set; }
         public Nullable<System.DateTime> FechaCreacion { get; set; }
+        public Nullable<System.DateTime> FechaCreacion2 { get; set; }
         public string Nombre_Serie { get; set; }
         public string idSeries { get; set; }
         public string Nombre_Sub { get; set; }
@@ -21,6 +22,8 @@ namespace Entidades
         public Nullable<int> GabetaNo { get; set; }
         public Nullable<System.DateTime> FechaExtInicial { get; set; }
         public Nullable<System.DateTime> FechaExtFinal { get; set; }
+        public Nullable<System.DateTime> FechaExtInicial2 { get; set; }
+        public Nullable<System.DateTime> FechaExtFinal2 { get; set; }
         public Nullable<int> Vigencia { get; set; }
         public string Nombre_Dep { get; set; }
         public string DependenciaId { get; set; }

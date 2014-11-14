@@ -38,17 +38,7 @@
                
                 <div class="col-md-12"> 
                  &nbsp
-                </div> 
-
-
-                <div class="form-group">
-                    <label for="TextCodDoc" class="col-sm-2 control-label">
-                      Codigo Documento: 
-                    </label>
-                    <div class="col-md-2"> 
-                           <input id="TextCodDoc" type="text" class="form-control input-sm inputHab" />                
-                    </div>               
-                </div>               
+                </div>                      
                 <div class="form-group">
                     <label for="TextNomDoc" class="col-sm-2 control-label">
                       Nombre del Expediente: 
@@ -61,8 +51,8 @@
                     <label for="TextTemaDoc" class="col-sm-2 control-label">
                       Tema: 
                     </label>
-                    <div class="col-md-3">
-                           <input id="TextTemaDoc" type="text" class="form-control input-sm inputHab" />                
+                    <div class="col-md-4">
+                        <textarea id="TextTemaDoc" class="form-control input-sm inputHab"></textarea>                                      
                     </div>               
                 </div>
                 <div class="form-group">

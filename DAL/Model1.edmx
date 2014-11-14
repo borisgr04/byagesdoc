@@ -244,7 +244,7 @@
             <PropertyRef Name="idSubSeries" />
           </Key>
           <Property Name="idSubSeries" Type="varchar" Nullable="false" MaxLength="10" />
-          <Property Name="SubSerie" Type="varchar" MaxLength="45" />
+          <Property Name="SubSerie" Type="varchar" MaxLength="200" />
           <Property Name="RetencionAG" Type="int" />
           <Property Name="RetencionAC" Type="int" />
           <Property Name="DisposicionCT" Type="bool" />
@@ -292,7 +292,7 @@
             <PropertyRef Name="idUnidadDocumental" />
           </Key>
           <Property Name="idUnidadDocumental" Type="varchar" Nullable="false" MaxLength="20" />
-          <Property Name="Nombre" Type="varchar" MaxLength="45" />
+          <Property Name="Nombre" Type="varchar" MaxLength="250" />
           <Property Name="PalabrasClave" Type="text" />
           <Property Name="FechaCreacion" Type="datetime" />
           <Property Name="idSubSeries" Type="varchar" Nullable="false" MaxLength="45" />
@@ -305,7 +305,7 @@
           <Property Name="Codigo" Type="varchar" MaxLength="45" />
           <Property Name="Estado" Type="varchar" MaxLength="45" />
           <Property Name="Vigencia" Type="int" />
-          <Property Name="Tema" Type="varchar" MaxLength="45" />
+          <Property Name="Tema" Type="varchar" MaxLength="250" />
           <Property Name="Estante" Type="varchar" MaxLength="45" />
           <Property Name="SoporteFisico" Type="varchar" MaxLength="45" />
           <Property Name="SoporteDigital" Type="varchar" MaxLength="45" />
@@ -606,7 +606,7 @@
             <PropertyRef Name="idUnidadDocumental" />
           </Key>
           <Property Type="String" Name="idUnidadDocumental" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Nombre" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Nombre" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="PalabrasClave" MaxLength="65535" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="FechaCreacion" Precision="0" />
           <Property Type="String" Name="idSubSeries" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
@@ -623,7 +623,7 @@
           <Property Type="Int32" Name="Vigencia" />
           <NavigationProperty Name="unidadd_tipodoc" Relationship="trdModel.Fk_UnidadDoc" FromRole="unidaddocumental" ToRole="unidadd_tipodoc" />
           <NavigationProperty Name="gdocumentos" Relationship="trdModel.FK_UnidadDocumental" FromRole="unidaddocumental" ToRole="gdocumentos" />
-          <Property Type="String" Name="Tema" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Tema" FixedLength="false" Unicode="false" MaxLength="1000" />
           <Property Type="String" Name="Estante" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="SoporteFisico" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="SoporteDigital" MaxLength="45" FixedLength="false" Unicode="false" />

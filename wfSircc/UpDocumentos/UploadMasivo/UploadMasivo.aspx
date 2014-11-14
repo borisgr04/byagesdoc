@@ -10,8 +10,7 @@
    
         <br />
     <br />
-           <br />
-    <br />
+        
            <div class="form-horizontal" role="form" id="formDATOS">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs">

@@ -10,9 +10,9 @@ using System.Text;
 namespace BLL.Gestion
 {
    public class mDocumentos:absBLL
-    {        
-       
+    {
 
+      
          public mDocumentos()
          {
 
@@ -94,18 +94,25 @@ namespace BLL.Gestion
                   cFiltro += AddFiltro("GabetaNo", Filtro.GabetaNo);                
                   cFiltro += AddFiltro("ArchivadorNo", Filtro.ArchivadorNo);
                   cFiltro += AddFiltro("EntidadProductora", Filtro.EntidadProductora);
-                  if (Filtro.FechaCreacion.HasValue)
+                  cFiltro += AddFiltro("Estante", Filtro.Estante);
+                  cFiltro += AddFiltro("Frecuencia", Filtro.Frecuencia);
+                  cFiltro += AddFiltro("Vigencia", Filtro.Vigencia);
+                  cFiltro += AddFiltro("SoporteFisico", Filtro.SoporteFisico);
+                  cFiltro += AddFiltro("SoporteDigital", Filtro.SoporteDigital);
+                  if ((Filtro.FechaCreacion.HasValue) && (Filtro.FechaCreacion2.HasValue))
                   {
-                      cFiltro += AddFiltro("FechaCreacion", Filtro.FechaCreacion.Value);
+                      cFiltro += AddFiltro("FechaCreacion", Filtro.FechaCreacion.Value, Filtro.FechaCreacion2.Value);
                   }
-                  if (Filtro.FechaExtInicial.HasValue)
+                  if ((Filtro.FechaExtInicial.HasValue) && (Filtro.FechaExtInicial2.HasValue))
                   {
-                      cFiltro += AddFiltro("FechaExtInicial", Filtro.FechaExtInicial.Value);
+                      cFiltro += AddFiltro("FechaExtInicial", Filtro.FechaExtInicial.Value, Filtro.FechaExtInicial2.Value);
                   }
-                  if (Filtro.FechaExtFinal.HasValue)
+                  if ((Filtro.FechaExtFinal.HasValue) && (Filtro.FechaExtFinal2.HasValue))
                   {
-                      cFiltro += AddFiltro("FechaExtFinal", Filtro.FechaExtFinal.Value);
+                      cFiltro += AddFiltro("FechaExtFinal", Filtro.FechaExtFinal.Value, Filtro.FechaExtFinal2.Value);
                   }
+
+             
               }             
                   
                       string Sql = "SELECT * FROM unidaddocumental " + cFiltro;
@@ -140,14 +147,14 @@ namespace BLL.Gestion
              }
              return cFiltro;
          }
-         private  string AddFiltro(string Campo, DateTime Value)
+         private  string AddFiltro(string Campo, DateTime Value,DateTime Value2)
          {
              string cFiltro = "";
              if (Value != null)       
              {
-               
+            
                 
-                 cFiltro = String.Format(" And {0} = {1}", Campo, "'"+Value.Year+"-"+Value.Month+"-"+Value.Day+"'");
+                 cFiltro = String.Format(" And {0} >= {1} And {0} <= {2} ", Campo, "'"+Value.Year+"-"+Value.Month+"-"+Value.Day+"'","'"+Value2.Year+"-"+Value2.Month+"-"+Value2.Day+"'");
              }
              return cFiltro;
          }
@@ -160,11 +167,12 @@ namespace BLL.Gestion
              public unidaddocumental reg { get; set; }
              protected internal override bool esValido()
              {
-                 reg.idUnidadDocumental =Convert.ToString(Convert.ToInt32(ctx.unidaddocumental.Select(t => t.idUnidadDocumental).Max()) + 1);
+                 reg.idUnidadDocumental =Convert.ToString(Convert.ToInt32(ctx.unidaddocumental.Select(t => t.idUnidadDocumental).Count()) + 1);
                  return true;
              }
              protected internal override void Antes()
              {
+                 reg.Codigo = reg.Codigo + "." + reg.idUnidadDocumental;
                  reg.Estado = "AC";
                  ctx.unidaddocumental.Add(reg);
 
@@ -185,7 +193,7 @@ namespace BLL.Gestion
              }
              protected internal override void Antes()
              {
-                 ContadorId = Convert.ToInt32(ctx.unidaddocumental.Select(t => t.idUnidadDocumental).Max());
+                 ContadorId = Convert.ToInt32(ctx.unidaddocumental.Select(t => t.idUnidadDocumental).Count());
                  foreach (var item in ListReg)
                  {
                      ContadorId = ContadorId + 1;
@@ -195,12 +203,13 @@ namespace BLL.Gestion
                      ctx.unidaddocumental.Add(item);
                      
                  }
+
               
                 
 
              }
 
-
+            
          }
          class cmdUpdate : absTemplate
          {
