@@ -1201,9 +1201,6 @@
     <Content Include="Content\aceadmin\font\glyphicons-halflings-regular.eot" />
     <Content Include="Content\aceadmin\font\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\aceadmin\font\glyphicons-halflings-regular.woff" />
-    <Content Include="Docs\BE\10.10.0001.pdf" />
-    <Content Include="Docs\BE\10.10.0002.pdf" />
-    <Content Include="Docs\BE\10.10.0003.pdf" />
     <None Include="Properties\PublishProfiles\prueba.pubxml" />
     <None Include="Properties\PublishProfiles\Sircc4.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
@@ -1521,6 +1518,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Docs\BE\" />
     <Folder Include="Docs\OK\" />
   </ItemGroup>
   <ItemGroup>
