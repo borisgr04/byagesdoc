@@ -1201,6 +1201,7 @@
     <Content Include="Content\aceadmin\font\glyphicons-halflings-regular.eot" />
     <Content Include="Content\aceadmin\font\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\aceadmin\font\glyphicons-halflings-regular.woff" />
+    <None Include="Properties\PublishProfiles\GesDoc.pubxml" />
     <None Include="Properties\PublishProfiles\prueba.pubxml" />
     <None Include="Properties\PublishProfiles\Sircc4.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
