@@ -115,10 +115,10 @@ var GesUnidadDoc = (function () {
                 pageable: true,
                 enabletooltips: true,                
                 columns: [
-                  { text: 'Codigo', datafield: 'Codigo', width: 140 },
+                  { text: 'Codigo', datafield: 'Codigo', width: 200 },
                   { text: 'Tema    ', datafield: 'Tema', width: 750 },
                   { text: 'Nombre Documento', datafield: 'Nombre', width: 150 },
-                  { text: 'Identificacion    ', datafield: 'Identificacion', width: 150 },
+                  { text: 'Identificacion    ', datafield: 'Identificacion', width: 200 },
                   { text: 'Palabras Claves         ', datafield: 'PalabrasClave', width: 150 },
                   { text: 'Fecha de Creacion    ', datafield: 'FechaCreacion', columntype: 'datetimeinput', cellsformat: 'd',width:150 },
                   { text: 'Subserie        ', datafield: 'Nombre_Sub', width: 150 },

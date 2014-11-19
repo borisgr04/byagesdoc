@@ -300,7 +300,7 @@
                 pageable: true,
                 enabletooltips: true,
                 columns: [
-                  { text: 'Codigo', datafield: 'Codigo', width: 140 },
+                  { text: 'Codigo', datafield: 'Codigo', width: 200 },
                   { text: 'Tema    ', datafield: 'Tema', width: 150 },
                   { text: 'Nombre Documento', datafield: 'Nombre', width: 150 },
                   { text: 'Identificacion    ', datafield: 'Identificacion', width: 150 },

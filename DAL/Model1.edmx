@@ -292,7 +292,7 @@
             <PropertyRef Name="idUnidadDocumental" />
           </Key>
           <Property Name="idUnidadDocumental" Type="varchar" Nullable="false" MaxLength="20" />
-          <Property Name="Nombre" Type="varchar" MaxLength="250" />
+          <Property Name="Nombre" Type="varchar" />
           <Property Name="PalabrasClave" Type="text" />
           <Property Name="FechaCreacion" Type="datetime" />
           <Property Name="idSubSeries" Type="varchar" Nullable="false" MaxLength="45" />
@@ -305,14 +305,14 @@
           <Property Name="Codigo" Type="varchar" MaxLength="45" />
           <Property Name="Estado" Type="varchar" MaxLength="45" />
           <Property Name="Vigencia" Type="int" />
-          <Property Name="Tema" Type="varchar" MaxLength="250" />
+          <Property Name="Tema" Type="varchar" />
           <Property Name="Estante" Type="varchar" MaxLength="45" />
           <Property Name="SoporteFisico" Type="varchar" MaxLength="45" />
           <Property Name="SoporteDigital" Type="varchar" MaxLength="45" />
           <Property Name="NroFolioInicial" Type="varchar" MaxLength="45" />
           <Property Name="NroFolioFinal" Type="varchar" MaxLength="45" />
           <Property Name="Frecuencia" Type="varchar" MaxLength="45" />
-          <Property Name="Identificacion" Type="varchar" MaxLength="45" />
+          <Property Name="Identificacion" Type="varchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="vigencia">
           <Key>
@@ -630,7 +630,7 @@
           <Property Type="String" Name="NroFolioInicial" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="NroFolioFinal" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Frecuencia" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Identificacion" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Identificacion" MaxLength="200" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="vigencia1" Relationship="trdModel.FkVigencia" FromRole="unidaddocumental" ToRole="vigencia" />
         </EntityType>
         <Association Name="FKDependencias">

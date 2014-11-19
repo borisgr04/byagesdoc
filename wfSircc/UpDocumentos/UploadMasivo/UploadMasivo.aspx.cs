@@ -66,17 +66,21 @@ namespace wfSircc.UpDocumentos.UploadMasivo
             m.idSubSeries = campos[1];
             m.Tema = campos[2];
             m.Nombre = campos[3];
-            m.Identificacion = campos[4];
-            if ((campos[6] != "") && (campos[7] != "") && (campos[5] != "NO TIENE") && (campos[6] != "NO TIENE") && (campos[7] != "NO TIENE"))
-            {
-                m.FechaCreacion = Convert.ToDateTime("01/01/"+campos[5]);
-                m.FechaExtInicial = Convert.ToDateTime("01/01/" + campos[6]);
-                m.FechaExtFinal = Convert.ToDateTime("31/12/" + campos[7]);
-            }          
+            m.Identificacion = campos[4];           
+            m.FechaCreacion = Convert.ToDateTime("01/01/"+campos[5]);
+            m.FechaExtInicial = Convert.ToDateTime("01/01/" + campos[6]);
+            m.FechaExtFinal = Convert.ToDateTime("31/12/" + campos[7]);                     
             m.NroFolioInicial = campos[8];
             m.NroFolioFinal = campos[9];
-            m.ArchivadorNo = Convert.ToInt32(campos[10]);
-            m.GabetaNo = Convert.ToInt32(campos[11]);
+            if (campos[10] !="")
+            {
+                m.ArchivadorNo = Convert.ToInt32(campos[10]);
+            }
+            if (campos[11] !="")
+            {
+                m.GabetaNo = Convert.ToInt32(campos[11]);
+            }
+           
             m.Estante = campos[12];
             if (campos[13] == "S")
             {
@@ -89,11 +93,9 @@ namespace wfSircc.UpDocumentos.UploadMasivo
             }
             else { m.SoporteDigital = 0.ToString(); }          
          
-            m.Frecuencia = campos[15];
-            if (campos[16] != "")
-            {
-                m.Vigencia = Convert.ToInt32(campos[16]);
-            }  
+            m.Frecuencia = campos[15];          
+            m.Vigencia = Convert.ToInt32(campos[16]);
+            
           
            
             return m;
