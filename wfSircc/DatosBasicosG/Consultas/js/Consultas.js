@@ -2,7 +2,8 @@
     "use strict";
     var grid = '#jqxgridConsul';    
     var urlToConsultas = "/Servicios/Archivos/wsDocumentos.asmx/Gets";
-    var urlToSubSeries = "/Servicios/Archivos/wsSubSeries.asmx/GetSubSeries";
+    var urlToSubSeries = "/Servicios/Archivos/wsSubSeries.asmx/GetSubSeries2";
+    var urlToSeries = "/Servicios/Archivos/wsSeries.asmx/GetSeriesCbo";
     var urlToSubDependencias = "/Servicios/Archivos/wsDependencias.asmx/GetDependencias";
     var urlToTipos = "../../../DatosBasicosG/RelacionDocumental/GesRelacionDocumental.aspx";
     var urlToVigencias = "/Servicios/Archivos/wsVigencia.asmx/GetVigenciasCbo";
@@ -23,6 +24,10 @@
         $("#BtnNuevo").click(function () {
            
             _verVentana();
+        });
+        $("#CboSeries").change(function () {
+         
+            MultiplesAjax();
         });
         Checks();
 
@@ -78,6 +83,7 @@
         $("#Reporte").hide();
         $("#Rotulo").hide();
         $("#CboSubSeries").byaSetHabilitar(false);
+        $("#CboSeries").byaSetHabilitar(false);
         $("#CboDep").byaSetHabilitar(false);
         $("#TextFolios").byaSetHabilitar(false);
         $('#TextFoliosF').byaSetHabilitar(false);
@@ -97,7 +103,14 @@
         $("#CboDigital").byaSetHabilitar(false);
     };
     var Checks = function () {
-
+        $("#CheckSeries").click(function () {
+            if ($("#CheckSeries").is(':checked')) {
+                $("#CboSeries").byaSetHabilitar(true);
+            } else {
+                $("#CboSeries").val("Seleccione");
+                $("#CboSeries").byaSetHabilitar(false);
+            }
+        });
         $("#CheckSubSeries").click(function () {
             if ($("#CheckSubSeries").is(':checked')) {
                 $("#CboSubSeries").byaSetHabilitar(true);
@@ -232,11 +245,34 @@
             }
         });
     };
+    var MultiplesAjax = function () {
+        $('#CboSubSeries').html("");
+        $.ajax({
+            type: "GET",
+            url: urlToSubSeries,
+            data: { 'Serie':  $("#CboSeries").val() },
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            async: false,
+            success: function (result) {               
+                var lClientes = (typeof result.d) == 'string' ? eval('(' + result.d + ')') : result.d;               
+                $.each(lClientes, function (i, item) {
+                    $('#CboSubSeries').append('<option value='+item.idSubSeries+'>'+item.SubSerie+'</option>');
+              
+                });
+               
+            },
+            error: function (jqXHR, status, error) {
+                alert(error + "-" + jqXHR.responseText);
+            }
+        });
+
+    }
     var _createElements = function () {
 
         ActualizarDataPicker();
-        var sourcePla = byaPage.getSource(urlToSubSeries);
-        $("#CboSubSeries").byaCombo({ DataSource: sourcePla, Value: "idSubSeries", Display: "SubSerie" });
+        var sourcePla = byaPage.getSource(urlToSeries);
+        $("#CboSeries").byaCombo({ DataSource: sourcePla, Value: "idSerie", Display: "Serie" });      
         var sourcePla = byaPage.getSource(urlToSubDependencias);
         $("#CboDep").byaCombo({ DataSource: sourcePla, Value: "idDependencia", Display: "Dependencia" });
         var sourcePla = byaPage.getSource(urlToVigencias);
@@ -327,7 +363,10 @@
     };
     var getDatos = function () {
         var Cons = {};
-        Cons.idSubSeries = $('#CboSubSeries').val();
+        if ($("#CheckSubSeries").is(':checked')) {
+            Cons.idSubSeries = $('#CboSubSeries').val();
+        }
+        Cons.idSeries = $('#CboSeries').val();
         Cons.DependenciaId = $('#CboDep').val();
         Cons.NroFolioInicial = $('#TextFolios').val();
         Cons.NroFolioFinal = $('#TextFoliosF').val();

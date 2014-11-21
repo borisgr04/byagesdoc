@@ -57,7 +57,14 @@
                 </div> 
                 <div class="form-group">
                     <div class="col-md-12">
-                         
+                            
+                          <div class="col-md-3">
+                    <input id="CheckSeries" type="checkbox" />             
+                    <label for="CheckSeries" >
+                       Series: 
+                    </label>
+                    <select id="CboSeries" class="form-control input-sm"></select>         
+                    </div>    
                           <div class="col-md-3">
                     <input id="CheckSubSeries" type="checkbox" />             
                     <label for="CheckSubSeries" >
@@ -72,14 +79,33 @@
                     </label>
                     <select id="CboDep" class="form-control input-sm"></select>         
                 </div>
-                          <div class="col-md-2">
-                    <input id="CheckFolios" type="checkbox" />             
-                    <label for="CheckFolios" >
-                        Nº Folios: 
+                          <div class="col-md-1">                       
+                         <input id="CheckFolios" type="checkbox" /> 
+                        <label for="CheckFolios" >
+                          FolioI:
+                         </label>   
+                       <input id="TextFolios" class="form-control inputHab" />                               
+                       </div> 
+                          <div class="col-md-1">
+                                <label for="CheckFolios" >
+                         FolioF:
+                    </label>   
+                                   <input id="TextFoliosF" class="form-control inputHab" />         
+                             </div>        
+                          <div class="col-md-1">
+                    <input id="CheckEstante" type="checkbox" />             
+                    <label for="TextEstante" >
+                       Estante: 
                     </label>
-                   <input id="TextFolios" class="form-control inputHab" />
-                   <input id="TextFoliosF" class="form-control inputHab" />
+                   <input id="TextEstante" class="form-control inputHab" />
+                   
                 </div> 
+
+                    </div>
+                    <div class="col-md-12"> 
+                 &nbsp
+                </div>
+                    <div class="col-md-12">
                           <div class="col-md-2">
                     <input id="CheckCaja" type="checkbox" />             
                     <label for="CheckCaja" >
@@ -95,18 +121,62 @@
                      <input id="TextCarpeta" class="form-control inputHab" />  
               
                     </div>
-                    </div>
-                    <div class="col-md-12"> 
-                 &nbsp
-                </div>
-                    <div class="col-md-12">
-                          <div class="col-md-3">
+                          <div class="col-md-2">
                     <input id="CheckEntidad" type="checkbox" />             
                     <label for="CheckEntidad" >
                         Entidad Productora: 
                     </label>
                      <input id="TextEntidad" class="form-control inputHab" />  
-                </div> 
+                </div>  
+                          <div class="col-md-2">
+                    <input id="CheckFrecuencia" type="checkbox" />             
+                    <label for="CboFrecuencia" >
+                       Frecuencia: 
+                    </label>
+                    <select id="CboFrecuencia" class="form-control input-sm">    
+                              <option value="" >Seleccione</option>                          
+                              <option value="BAJA" >Baja</option>
+                              <option value="MEDIA">Media</option>
+                              <option value="ALTA">Alta</option>
+                              
+                          </select>             
+                </div>                        
+                          <div class="col-md-2">
+                    <input id="CheckFisico" type="checkbox" />             
+                    <label for="CheckFisico" >
+                       Soporte Fisico
+                    </label>   
+                          <select id="CboFisico" class="form-control input-sm">   
+                              <option value="" >Seleccione</option>          
+                              <option value="1" >SI</option>                          
+                              <option value="0" >NO</option>                    
+                          </select>            
+                    </div>                   
+                          <div class="col-md-2">
+                    <input id="CheckDigital" type="checkbox" />             
+                    <label for="CheckDigital" >
+                        Soporte Digital: 
+                    </label>
+                       <select id="CboDigital" class="form-control input-sm">    
+                              <option value="" >Seleccione</option> 
+                              <option value="1" >SI</option>                          
+                              <option value="0" >NO</option>                    
+                          </select>     
+                </div>
+                         
+                    </div>                   
+                    <div class="col-md-12"> 
+                 &nbsp
+                </div>
+                    <div class="col-md-12">
+                          <div class="col-md-3">
+                    <input id="CheckVigencia" type="checkbox" />             
+                    <label for="CboVigencia" >
+                        Vigencia: 
+                    </label>
+                     <select id="CboVigencia" class="form-control input-sm"></select> 
+              
+                    </div>   
                           <div class="col-md-3">
                     <input id="CheckCreacion" type="checkbox" />             
                     <label for="CheckCreacion" >
@@ -172,65 +242,10 @@
                                     </span>
                                 </div>
                             </div>
-                </div>      
-                    </div>
-                    <div class="col-md-12"> 
-                 &nbsp
-                </div>
-                    <div class="col-md-12">
-                          <div class="col-md-2">
-                    <input id="CheckEstante" type="checkbox" />             
-                    <label for="TextEstante" >
-                       Estante: 
-                    </label>
-                   <input id="TextEstante" class="form-control inputHab" />
-                   
-                </div> 
-                          <div class="col-md-2">
-                    <input id="CheckFrecuencia" type="checkbox" />             
-                    <label for="CboFrecuencia" >
-                       Frecuencia: 
-                    </label>
-                    <select id="CboFrecuencia" class="form-control input-sm">    
-                              <option value="" >Seleccione</option>                          
-                              <option value="BAJA" >Baja</option>
-                              <option value="MEDIA">Media</option>
-                              <option value="ALTA">Alta</option>
-                              
-                          </select>             
-                </div> 
-                          <div class="col-md-2">
-                    <input id="CheckVigencia" type="checkbox" />             
-                    <label for="CboVigencia" >
-                        Vigencia: 
-                    </label>
-                     <select id="CboVigencia" class="form-control input-sm"></select> 
-              
-                    </div>
-                          <div class="col-md-3">
-                    <input id="CheckFisico" type="checkbox" />             
-                    <label for="CheckFisico" >
-                       Soporte Fisico
-                    </label>   
-                          <select id="CboFisico" class="form-control input-sm">   
-                              <option value="" >Seleccione</option>          
-                              <option value="1" >SI</option>                          
-                              <option value="0" >NO</option>                    
-                          </select>            
-                    </div>                   
-                          <div class="col-md-3">
-                    <input id="CheckDigital" type="checkbox" />             
-                    <label for="CheckDigital" >
-                        Soporte Digital: 
-                    </label>
-                       <select id="CboDigital" class="form-control input-sm">    
-                              <option value="" >Seleccione</option> 
-                              <option value="1" >SI</option>                          
-                              <option value="0" >NO</option>                    
-                          </select>     
-                </div>
-                         
-                    </div>
+                </div>   
+                    
+                        
+                 </div>
                           
                </div>
                 

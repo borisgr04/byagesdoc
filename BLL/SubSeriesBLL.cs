@@ -27,6 +27,10 @@ namespace BLL
         {
             return SubManager.Gets();
         }
+        public List<subseriesDto> Gets(string Serie)
+        {
+            return SubManager.Gets(Serie);
+        }
         public subseriesDto Get(string subserieId)
         {
             return SubManager.Get(subserieId);

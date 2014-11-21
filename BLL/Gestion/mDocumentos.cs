@@ -82,13 +82,16 @@ namespace BLL.Gestion
           List<unidaddocumentalDto> lstT = new List<unidaddocumentalDto>();
           using (ctx = new trdEntities())         
           {
-              
-              
-              string cFiltro = " Where Estado!='AN' ";
+
+
+              string cFiltro = " Where unidaddocumental.Estado!='AN'";
               if (Filtro != null)
               {
-                  cFiltro += AddFiltro("idSubSeries", Filtro.idSubSeries);
-                  cFiltro += AddFiltro("DependenciaId", Filtro.DependenciaId);
+                  cFiltro = "";
+                  cFiltro += AddFiltroInner("inner join subseries on unidaddocumental.idSubSeries=subseries.idSubSeries inner join series on subseries.Series_idSerie", Filtro.idSeries);
+                  cFiltro += " Where unidaddocumental.Estado!='AN'";
+                  cFiltro += AddFiltro("unidaddocumental.idSubSeries", Filtro.idSubSeries);
+                  cFiltro += AddFiltro("unidaddocumental.DependenciaId", Filtro.DependenciaId);
                   cFiltro += AddFiltro("NroFolioInicial", Filtro.NroFolioInicial);
                   cFiltro += AddFiltro("NroFolioFinal", Filtro.NroFolioFinal);
                   cFiltro += AddFiltro("GabetaNo", Filtro.GabetaNo);                
@@ -96,7 +99,7 @@ namespace BLL.Gestion
                   cFiltro += AddFiltro("EntidadProductora", Filtro.EntidadProductora);
                   cFiltro += AddFiltro("Estante", Filtro.Estante);
                   cFiltro += AddFiltro("Frecuencia", Filtro.Frecuencia);
-                  cFiltro += AddFiltro("Vigencia", Filtro.Vigencia);
+                  cFiltro += AddFiltro("unidaddocumental.Vigencia", Filtro.Vigencia);
                   cFiltro += AddFiltro("SoporteFisico", Filtro.SoporteFisico);
                   cFiltro += AddFiltro("SoporteDigital", Filtro.SoporteDigital);
                   if ((Filtro.FechaCreacion.HasValue) && (Filtro.FechaCreacion2.HasValue))
@@ -113,10 +116,10 @@ namespace BLL.Gestion
                   }
 
              
-              }             
-                  
+              }
+              
                       string Sql = "SELECT * FROM unidaddocumental " + cFiltro;
-                      List<unidaddocumental> lstO = ctx.unidaddocumental.SqlQuery(Sql).ToList();
+                      List<unidaddocumental> lstO = ctx.unidaddocumental.SqlQuery(Sql).ToList();                    
                      // List<unidaddocumental> lstO = ctx.unidaddocumental.Where(t => t.Estado != "AN").ToList();
                       Mapper.Map(lstO, lstT);                 
                   
@@ -127,7 +130,15 @@ namespace BLL.Gestion
       }
 
 
-
+         private static string AddFiltroInner(string Campo, string Value)
+         {
+             string cFiltro = "";
+             if (!String.IsNullOrEmpty(Value))
+             {
+                 cFiltro = String.Format("{0} = {1} ", Campo, Value);
+             }
+             return cFiltro;
+         }
         
          private static string AddFiltro(string Campo, string Value)
          {

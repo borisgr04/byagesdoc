@@ -54,6 +54,10 @@ namespace BLL.Gestion
       }
          public List<subseriesDto> Gets(string serieId)
          {
+             if (serieId.Length == 1)
+             {
+                 serieId = serieId.PadLeft(2, '0');
+             }
              List<subseriesDto> lstT = new List<subseriesDto>();
              using (ctx = new trdEntities())
              {
