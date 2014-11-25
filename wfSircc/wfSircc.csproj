@@ -1202,6 +1202,7 @@
     <Content Include="Content\aceadmin\font\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\aceadmin\font\glyphicons-halflings-regular.woff" />
     <Content Include="ashx\GetPDF.ashx" />
+    <Content Include="Admin\Web.config" />
     <None Include="Properties\PublishProfiles\GesDoc.pubxml" />
     <None Include="Properties\PublishProfiles\prueba.pubxml" />
     <None Include="Properties\PublishProfiles\Sircc4.pubxml" />
