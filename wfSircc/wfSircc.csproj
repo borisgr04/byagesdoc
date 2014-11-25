@@ -1202,24 +1202,6 @@
     <Content Include="Content\aceadmin\font\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\aceadmin\font\glyphicons-halflings-regular.woff" />
     <Content Include="ashx\GetPDF.ashx" />
-    <Content Include="DatosBasicosG\web.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Admin\web.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <None Include="Admin\Web.Debug.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
-    <None Include="Admin\Web.Release.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
-    <None Include="DatosBasicosG\Web.Debug.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
-    <None Include="DatosBasicosG\Web.Release.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
     <None Include="Properties\PublishProfiles\GesDoc.pubxml" />
     <None Include="Properties\PublishProfiles\prueba.pubxml" />
     <None Include="Properties\PublishProfiles\Sircc4.pubxml" />
@@ -1547,15 +1529,6 @@
   <ItemGroup>
     <Content Include="Seguridad\Web.config" />
     <Content Include="SiteBS.Master" />
-    <Content Include="UpDocumentos\web.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <None Include="UpDocumentos\Web.Debug.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
-    <None Include="UpDocumentos\Web.Release.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
