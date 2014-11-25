@@ -38,7 +38,10 @@ namespace BLL
           }
           
        }
-
+        public ArchivosDto GetByte(string Codigo)
+        {
+            return DocManager.GetByte(Codigo);
+        }
     }
     
 }

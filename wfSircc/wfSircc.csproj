@@ -1201,6 +1201,7 @@
     <Content Include="Content\aceadmin\font\glyphicons-halflings-regular.eot" />
     <Content Include="Content\aceadmin\font\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\aceadmin\font\glyphicons-halflings-regular.woff" />
+    <Content Include="ashx\GetPDF.ashx" />
     <None Include="Properties\PublishProfiles\GesDoc.pubxml" />
     <None Include="Properties\PublishProfiles\prueba.pubxml" />
     <None Include="Properties\PublishProfiles\Sircc4.pubxml" />
@@ -1255,6 +1256,9 @@
     </Compile>
     <Compile Include="ashx\ashxDoc.ashx.cs">
       <DependentUpon>ashxDoc.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ashx\GetPDF.ashx.cs">
+      <DependentUpon>GetPDF.ashx</DependentUpon>
     </Compile>
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Contact.aspx.cs">

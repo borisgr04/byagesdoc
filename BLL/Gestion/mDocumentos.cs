@@ -64,6 +64,21 @@ namespace BLL.Gestion
              }
              return objT;
          }
+         public ArchivosDto GetByte(string Codigo)
+         {
+             ArchivosDto objB = new ArchivosDto();
+           
+             using (ctx = new trdEntities())
+             {
+                 foreach (var item in ctx.gddocumentos.Where(t => t.gdocumentos.unidaddocumental.Codigo == Codigo).Select(t => new { t.documento, t.gdocumentos.nombre }).ToList())
+                 {                   
+                     objB.NomArchivo = item.nombre;
+                     objB.SoporteB = item.documento;
+                 }
+                 return objB;
+             }
+            
+         }
          public unidaddocumentalDto GetID(string id)
          {
 

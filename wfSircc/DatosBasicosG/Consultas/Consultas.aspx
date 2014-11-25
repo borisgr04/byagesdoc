@@ -82,15 +82,15 @@
                           <div class="col-md-1">                       
                          <input id="CheckFolios" type="checkbox" /> 
                         <label for="CheckFolios" >
-                          FolioI:
+                          Folio:
                          </label>   
-                       <input id="TextFolios" class="form-control inputHab" />                               
+                       <input id="TextFolios" class="form-control inputHab" placeholder="Inicial" />                               
                        </div> 
                           <div class="col-md-1">
                                 <label for="CheckFolios" >
-                         FolioF:
+                         Folio:
                     </label>   
-                                   <input id="TextFoliosF" class="form-control inputHab" />         
+                                   <input id="TextFoliosF" class="form-control inputHab" placeholder="Final" />         
                              </div>        
                           <div class="col-md-1">
                     <input id="CheckEstante" type="checkbox" />             
