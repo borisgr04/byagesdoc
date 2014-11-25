@@ -11,7 +11,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>10.13351cm</Height>
+              <Height>11.08601cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -100,7 +100,7 @@
                             </Textbox>
                             <Line Name="Line1">
                               <Left>7.74701cm</Left>
-                              <Height>2.31952cm</Height>
+                              <Height>2.41477cm</Height>
                               <Width>0cm</Width>
                               <ZIndex>1</ZIndex>
                               <Style>
@@ -177,7 +177,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!ArchivadorNo.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -222,7 +224,7 @@
                           <rd:DefaultName>Textbox5</rd:DefaultName>
                           <Top>2.50113cm</Top>
                           <Left>7.7523cm</Left>
-                          <Height>0.74965cm</Height>
+                          <Height>0.78493cm</Height>
                           <Width>1.94909cm</Width>
                           <ZIndex>3</ZIndex>
                           <Style>
@@ -244,7 +246,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!GabetaNo.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -255,7 +259,7 @@
                           <rd:DefaultName>Textbox6</rd:DefaultName>
                           <Top>2.50113cm</Top>
                           <Left>9.7014cm</Left>
-                          <Height>0.74965cm</Height>
+                          <Height>0.78493cm</Height>
                           <Width>1.95264cm</Width>
                           <ZIndex>4</ZIndex>
                           <Style>
@@ -310,7 +314,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Nombre_Dep.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -319,9 +325,9 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox6</rd:DefaultName>
-                          <Top>3.25078cm</Top>
+                          <Top>3.28605cm</Top>
                           <Left>7.74347cm</Left>
-                          <Height>1.06364cm</Height>
+                          <Height>1.02837cm</Height>
                           <Width>8.80885cm</Width>
                           <ZIndex>6</ZIndex>
                           <Style>
@@ -376,7 +382,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!DependenciaId.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -454,7 +462,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Tema.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -519,7 +529,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!idSeries.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -585,7 +597,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!idSubSeries.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -651,7 +665,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Year(Fields!FechaExtInicial.Value)</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -718,7 +734,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Nombre_Serie.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -785,7 +803,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Nombre_Sub.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -852,7 +872,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Year(Fields!FechaExtFinal.Value)</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -897,7 +919,7 @@
                           <rd:DefaultName>Textbox5</rd:DefaultName>
                           <Top>2.50113cm</Top>
                           <Left>11.6505cm</Left>
-                          <Height>0.74964cm</Height>
+                          <Height>0.78492cm</Height>
                           <Width>2.97744cm</Width>
                           <ZIndex>23</ZIndex>
                           <Style>
@@ -919,7 +941,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=(Fields!NroFolioInicial.Value-Fields!NroFolioFinal.Value)*-1</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -930,7 +954,7 @@
                           <rd:DefaultName>Textbox6</rd:DefaultName>
                           <Top>2.50113cm</Top>
                           <Left>14.62794cm</Left>
-                          <Height>0.75317cm</Height>
+                          <Height>0.78493cm</Height>
                           <Width>1.92792cm</Width>
                           <ZIndex>24</ZIndex>
                           <Style>
@@ -972,7 +996,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Left>0.05821cm</Left>
-        <Height>10.13351cm</Height>
+        <Height>11.08601cm</Height>
         <Width>16.66566cm</Width>
         <Style>
           <Border>
@@ -981,10 +1005,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>4.02467in</Height>
+    <Height>4.36457in</Height>
     <Style />
   </Body>
-  <Width>6.60742in</Width>
+  <Width>6.597in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
