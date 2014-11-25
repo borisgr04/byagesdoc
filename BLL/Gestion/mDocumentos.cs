@@ -134,7 +134,7 @@ namespace BLL.Gestion
               }
               
                       string Sql = "SELECT * FROM unidaddocumental " + cFiltro;
-                      List<unidaddocumental> lstO = ctx.unidaddocumental.SqlQuery(Sql).ToList();                    
+                      List<unidaddocumental> lstO = ctx.unidaddocumental.SqlQuery(Sql).OrderBy(t => t.GabetaNo).ToList();                 
                      // List<unidaddocumental> lstO = ctx.unidaddocumental.Where(t => t.Estado != "AN").ToList();
                       Mapper.Map(lstO, lstT);                 
                   
