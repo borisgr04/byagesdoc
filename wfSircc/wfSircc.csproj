@@ -640,8 +640,8 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="DatosBasicosG\Consultas\Consultas.aspx" />
-    <Content Include="DatosBasicosG\Consultas\js\Consultas.js" />
+    <Content Include="UpDocumentos\Consultas\Consultas.aspx" />
+    <Content Include="UpDocumentos\Consultas\js\Consultas.js" />
     <Content Include="DatosBasicosG\Dependencias\Dependencias.aspx" />
     <Content Include="DatosBasicosG\Dependencias\GesDependencias.aspx" />
     <Content Include="DatosBasicosG\Dependencias\js\Dependencias.js" />
@@ -659,12 +659,12 @@
     <Content Include="DatosBasicosG\SubSeries\js\GesSubSeries.js" />
     <Content Include="DatosBasicosG\SubSeries\js\SubSeries.js" />
     <Content Include="DatosBasicosG\SubSeries\SubSeries.aspx" />
-    <Content Include="DatosBasicosG\Terceros\gTerceros.aspx" />
-    <Content Include="DatosBasicosG\Terceros\js\gTercersos.js" />
-    <Content Include="DatosBasicosG\Terceros\js\Terceros.js" />
-    <Content Include="DatosBasicosG\Terceros\Terceros.aspx" />
-    <Content Include="DatosBasicosG\Terceros_Dep\js\Terceros_Dep.js" />
-    <Content Include="DatosBasicosG\Terceros_Dep\Terceros_Dep.aspx" />
+    <Content Include="Admin\Terceros\gTerceros.aspx" />
+    <Content Include="Admin\Terceros\js\gTercersos.js" />
+    <Content Include="Admin\Terceros\js\Terceros.js" />
+    <Content Include="Admin\Terceros\Terceros.aspx" />
+    <Content Include="Admin\Terceros_Dep\js\Terceros_Dep.js" />
+    <Content Include="Admin\Terceros_Dep\Terceros_Dep.aspx" />
     <Content Include="DatosBasicosG\TiposDocumentales\GesTiposDocumentales.aspx" />
     <Content Include="DatosBasicosG\TiposDocumentales\js\GesTiposDocumentales.js" />
     <Content Include="DatosBasicosG\TiposDocumentales\js\TiposDocumentales.js" />
@@ -1268,11 +1268,11 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DatosBasicosG\Consultas\Consultas.aspx.cs">
+    <Compile Include="UpDocumentos\Consultas\Consultas.aspx.cs">
       <DependentUpon>Consultas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DatosBasicosG\Consultas\Consultas.aspx.designer.cs">
+    <Compile Include="UpDocumentos\Consultas\Consultas.aspx.designer.cs">
       <DependentUpon>Consultas.aspx</DependentUpon>
     </Compile>
     <Compile Include="DatosBasicosG\Dependencias\Dependencias.aspx.cs">
@@ -1338,25 +1338,25 @@
     <Compile Include="DatosBasicosG\SubSeries\SubSeries.aspx.designer.cs">
       <DependentUpon>SubSeries.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DatosBasicosG\Terceros\gTerceros.aspx.cs">
+    <Compile Include="Admin\Terceros\gTerceros.aspx.cs">
       <DependentUpon>gTerceros.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DatosBasicosG\Terceros\gTerceros.aspx.designer.cs">
+    <Compile Include="Admin\Terceros\gTerceros.aspx.designer.cs">
       <DependentUpon>gTerceros.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DatosBasicosG\Terceros\Terceros.aspx.cs">
+    <Compile Include="Admin\Terceros\Terceros.aspx.cs">
       <DependentUpon>Terceros.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DatosBasicosG\Terceros\Terceros.aspx.designer.cs">
+    <Compile Include="Admin\Terceros\Terceros.aspx.designer.cs">
       <DependentUpon>Terceros.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DatosBasicosG\Terceros_Dep\Terceros_Dep.aspx.cs">
+    <Compile Include="Admin\Terceros_Dep\Terceros_Dep.aspx.cs">
       <DependentUpon>Terceros_Dep.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DatosBasicosG\Terceros_Dep\Terceros_Dep.aspx.designer.cs">
+    <Compile Include="Admin\Terceros_Dep\Terceros_Dep.aspx.designer.cs">
       <DependentUpon>Terceros_Dep.aspx</DependentUpon>
     </Compile>
     <Compile Include="DatosBasicosG\TiposDocumentales\GesTiposDocumentales.aspx.cs">

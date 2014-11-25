@@ -23,10 +23,15 @@
             <select id="CboFil" class="form-control input-sm">
                 <optgroup label="Datos Básicos">
                     <option value="ADMIN">Administrador</option>
-                 
                 </optgroup>
                 <optgroup label="Seguridad">
                     <option value="SEGU">Seguridad</option>
+                </optgroup>
+                <optgroup label="Datos Básicos">
+                    <option value="GESDOC">Datos Básicos</option>
+                </optgroup>
+                <optgroup label="Documentos">
+                    <option value="DOCU">Documentos</option>
                 </optgroup>
                 
 
