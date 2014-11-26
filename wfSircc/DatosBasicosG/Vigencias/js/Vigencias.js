@@ -204,7 +204,7 @@ var Vigencia = (function () {
 
 
 $(function () {
-    byaSite.SetModuloP({ TituloForm: "Vigencias", Modulo: "Registro de Vigencias", urlToPanelModulo: "Vigencias.aspx", Cod_Mod: "GESDOC", Rol: "GES_VIG" });
+    byaSite.SetModuloP({ TituloForm: "Vigencias", Modulo: "Registro de Vigencias", urlToPanelModulo: "Vigencias.aspx", Cod_Mod: "GESDOC", Rol: "GESDOC_VIG" });
     Vigencia.config.theme = byaSite.tema
     Vigencia.init();
     VigenciasList.config.theme = byaSite.tema

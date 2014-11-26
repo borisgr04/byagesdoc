@@ -1203,6 +1203,13 @@
     <Content Include="Content\aceadmin\font\glyphicons-halflings-regular.woff" />
     <Content Include="ashx\GetPDF.ashx" />
     <Content Include="Admin\Terceros\Web.config" />
+    <Content Include="Admin\Terceros_Dep\Web.config" />
+    <Content Include="DatosBasicosG\Dependencias\Web.config" />
+    <Content Include="DatosBasicosG\RelacionDocumental\Web.config" />
+    <Content Include="DatosBasicosG\Series\Web.config" />
+    <Content Include="DatosBasicosG\SubSeries\Web.config" />
+    <Content Include="DatosBasicosG\TiposDocumentales\Web.config" />
+    <Content Include="DatosBasicosG\Vigencias\Web.config" />
     <None Include="Properties\PublishProfiles\GesDoc.pubxml" />
     <None Include="Properties\PublishProfiles\prueba.pubxml" />
     <None Include="Properties\PublishProfiles\Sircc4.pubxml" />
