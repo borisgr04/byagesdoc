@@ -1537,6 +1537,10 @@
   <ItemGroup>
     <Content Include="Seguridad\Web.config" />
     <Content Include="SiteBS.Master" />
+    <Content Include="UpDocumentos\Consultas\Web.config" />
+    <Content Include="UpDocumentos\UnidadDoc\Web.config" />
+    <Content Include="UpDocumentos\UpDirectorio\Web.config" />
+    <Content Include="UpDocumentos\UploadMasivo\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
