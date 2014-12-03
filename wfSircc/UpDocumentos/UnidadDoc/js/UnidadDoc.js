@@ -47,21 +47,19 @@
         });
         $("#TextFextIni").datepicker({
             weekStart: 1,
-            endDate: (f.getMonth() + 1) + "/" + f.getDate() + "/" + f.getFullYear(),
-            todayHighlight: true,
+           todayHighlight: true,
             autoclose: true,
             format: 'mm/dd/yyyy',
         });
         $("#TextFextFin").datepicker({
             weekStart: 1,
-            endDate: (f.getMonth() + 1) + "/" + f.getDate() + "/" + f.getFullYear(),
             todayHighlight: true,
             autoclose: true,
             format: 'mm/dd/yyyy',
         });
     };
     var Update = function () {
-
+        
         var jsonData = "{'Reg':" + JSON.stringify(getDatos()) + "}";
         byaPage.POST_Sync(urlToUpdate, jsonData, function (result) {
             byaRpta = byaPage.retObj(result.d);
@@ -145,7 +143,13 @@
     };
     var getDatos = function () {
         var Doc = {};
-        Doc.Codigo = $("#CboVigencia").val() + "." + $("#CboDependencia").val() + "." + $("#CboSubSeries").val();
+        if (Editar == "No") {
+            Doc.Codigo = $("#CboVigencia").val() + "." + $("#CboDependencia").val() + "." + $("#CboSubSeries").val();
+        } else {
+            Doc.Codigo =Codigo;
+
+        }
+       
         Doc.Nombre = $("#TextNomDoc").val();
         Doc.Tema = $("#TextTemaDoc").val();
         Doc.PalabrasClave = $("#TextPal").val();
