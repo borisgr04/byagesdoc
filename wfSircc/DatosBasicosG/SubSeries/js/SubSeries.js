@@ -65,10 +65,11 @@
 
                 var Subs = byaPage.retObj(result.d);
                 if (Subs != undefined) {
+                    $('#CboSeries').byaSetHabilitar(false);
                     $('#TextIdSubSerie').val(Subs.idSubSeries);
                     $('#TextSubSerie').val(Subs.SubSerie);
                     $('#TextAg').val(Subs.RetencionAG);
-                    $('#TextA').val(Subs.DisposicionA);
+                    $('#TextA').val(Subs.RetencionAC);
                     document.getElementById("CheckCT").checked = Subs.DisposicionCT;
                     document.getElementById("CheckE").checked = Subs.DisposicionE;
                     document.getElementById("CheckMD").checked = Subs.DisposicionMD;
@@ -88,7 +89,12 @@
     };
     var getDatos = function () {
         var Subs = {};
-        Subs.idSubSeries = $('#TextIdSubSerie').val();
+        if (Editar == "No") {
+            Subs.idSubSeries = $('#CboSeries').val() + "." + $('#TextIdSubSerie').val();
+        } else {
+            Subs.idSubSeries = $('#TextIdSubSerie').val();
+        }
+            
         Subs.SubSerie = $('#TextSubSerie').val();     
         Subs.RetencionAG = $('#TextAg').val();
         Subs.RetencionAC = $('#TextA').val();

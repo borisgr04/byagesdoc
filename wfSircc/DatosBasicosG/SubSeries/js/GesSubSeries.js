@@ -95,10 +95,10 @@
                   { text: 'Nombre Serie ', datafield: 'SubSerie', width: 200 },
                   { text: 'RetencionAG', datafield: 'RetencionAG', width: 120 },
                   { text: 'RetencionAC', datafield: 'RetencionAC', width: 120 },
-                  { text: 'Conservación Total', datafield: 'DisposicionCT', threestatecheckbox: true, columntype: 'checkbox',   width: 140 },
-                  { text: 'Eliminado', datafield: 'DisposicionE', threestatecheckbox: true, columntype: 'checkbox', width: 100 },
-                  { text: 'Microfilmación y Digitación', datafield: 'DisposicionMD', threestatecheckbox: true, columntype: 'checkbox', width: 230 },
-                  { text: 'Selección', datafield: 'DisposicionS', threestatecheckbox: true, columntype: 'checkbox', width: 150 },
+                  { text: 'Conservación Total', datafield: 'DisposicionCT', columntype: 'checkbox',   width: 140 },
+                  { text: 'Eliminado', datafield: 'DisposicionE',  columntype: 'checkbox', width: 100 },
+                  { text: 'Microfilmación y Digitación', datafield: 'DisposicionMD',  columntype: 'checkbox', width: 230 },
+                  { text: 'Selección', datafield: 'DisposicionS',  columntype: 'checkbox', width: 150 },
                   { text: 'Serie ', datafield: 'Serie', width: 150 },
                
               

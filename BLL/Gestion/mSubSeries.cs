@@ -68,6 +68,11 @@ namespace BLL.Gestion
          }
          public subseriesDto Get(string subserieId)
       {
+
+          if (subserieId.Length >= 3)
+          {
+              subserieId = subserieId.PadLeft(subserieId.Length+1, '0');
+          }
           subseriesDto objT = new subseriesDto();
           using (ctx = new trdEntities())
           {
